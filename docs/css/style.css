@@ -195,27 +195,18 @@ a:hover { color: var(--text-primary); }
 
 .sidebar__brand {
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
   margin-bottom: var(--space-7);
 }
-.sidebar__brand-mark {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--brand-gold), #B45309);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--bg-base);
-  box-shadow: 0 0 18px rgba(251, 191, 36, 0.3);
+.brand-logo {
+  height: 24px;
+  width: auto;
+  display: block;
 }
-.sidebar__brand-name {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-style: italic;
-  color: var(--text-primary);
-  line-height: 1;
+.brand-logo--lg {
+  height: 36px;
 }
 .sidebar__brand-sub {
   font-family: var(--font-mono);
@@ -223,7 +214,6 @@ a:hover { color: var(--text-primary); }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-top: 4px;
 }
 
 .nav { display: flex; flex-direction: column; gap: 2px; }
@@ -698,24 +688,9 @@ a:hover { color: var(--text-primary); }
   align-items: center;
   gap: var(--space-3);
   margin-bottom: var(--space-6);
-}
-.auth-card__mark {
-  width: 56px; height: 56px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--brand-gold), #B45309);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 700;
-  font-size: 28px;
-  color: var(--bg-base);
-  box-shadow: 0 0 24px rgba(251, 191, 36, 0.35);
-}
-.auth-card__name {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-style: italic;
-  color: var(--text-primary);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+  width: 100%;
 }
 .auth-card__sub {
   font-family: var(--font-mono);
