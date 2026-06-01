@@ -74,7 +74,7 @@ PHANTOM_REDIRECTS = [
 
 def fetch(url, timeout=30):
     r = subprocess.run(
-        ["curl.exe", "-s", "-A", UA, "-L", "-w", "\n---STATUS:%{http_code} TIME:%{time_total}---", url],
+        ["curl", "-s", "-A", UA, "-L", "-w", "\n---STATUS:%{http_code} TIME:%{time_total}---", url],
         capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout,
     )
     body = r.stdout
@@ -171,7 +171,7 @@ def check_phantom_redirects():
     results = []
     for src, expected in PHANTOM_REDIRECTS:
         r = subprocess.run(
-            ["curl.exe", "-s", "-o", "NUL", "-w", "%{http_code}|%{redirect_url}", "-A", UA,
+            ["curl", "-s", "-o", "NUL", "-w", "%{http_code}|%{redirect_url}", "-A", UA,
              "--max-redirs", "0", f"https://cmsprime.com{src}"],
             capture_output=True, text=True, timeout=15
         )

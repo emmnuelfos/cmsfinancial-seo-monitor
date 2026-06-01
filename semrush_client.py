@@ -34,7 +34,7 @@ class SemrushClient:
         qs = "&".join(f"{k}={self._encode(v)}" for k, v in params.items())
         url = f"{base}?{qs}"
         r = subprocess.run(
-            ["curl.exe", "-s", "-A", UA, "--max-time", "30", url],
+            ["curl", "-s", "-A", UA, "--max-time", "30", url],
             capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=40,
         )
         body = r.stdout.strip()
@@ -134,7 +134,7 @@ class SemrushClient:
     def api_units_remaining(self) -> int:
         """Get the remaining API unit balance."""
         url = f"https://www.semrush.com/users/countapiunits.html?key={self.api_key}"
-        r = subprocess.run(["curl.exe", "-s", url], capture_output=True, text=True, timeout=15)
+        r = subprocess.run(["curl", "-s", url], capture_output=True, text=True, timeout=15)
         try:
             return int(r.stdout.strip())
         except Exception:
