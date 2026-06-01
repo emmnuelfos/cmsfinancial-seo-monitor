@@ -1,0 +1,48 @@
+name: CMS Prime weekly SEO monitor
+
+on:
+  schedule:
+    # Runs every Monday at 09:00 UTC (13:00 Dubai time)
+    - cron: '0 9 * * 1'
+  workflow_dispatch:  # allow manual trigger from the Actions tab
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install google-api-python-client google-auth
+
+      - name: Write GSC service-account credentials
+        env:
+          GSC_CREDS_JSON: ${{ secrets.GSC_CREDS_JSON }}
+        run: |
+          mkdir -p secrets
+          echo "$GSC_CREDS_JSON" > secrets/cmsprime-gsc-creds.json
+          echo "GSC_CREDS_PATH=$(pwd)/secrets/cmsprime-gsc-creds.json" >> $GITHUB_ENV
+
+      - name: Run weekly monitor
+        env:
+          SEMRUSH_API_KEY: ${{ secrets.SEMRUSH_API_KEY }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+        run: |
+          python monitor.py
+
+      - name: Archive audit JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-${{ github.run_id }}
+          path: audit_*.json
+          retention-days: 90
