@@ -4,7 +4,7 @@
     {
       "URL": "https://cmsprime.com/",
       "HTTP": "200",
-      "Fetch (s)": 0.51,
+      "Fetch (s)": 0.25,
       "Size (KB)": 884,
       "Title length": 59,
       "Desc length": 140,
@@ -22,7 +22,7 @@
     {
       "URL": "https://cmsprime.com/metatrader-4/",
       "HTTP": "200",
-      "Fetch (s)": 0.85,
+      "Fetch (s)": 0.77,
       "Size (KB)": 624,
       "Title length": 53,
       "Desc length": 119,
@@ -40,7 +40,7 @@
     {
       "URL": "https://cmsprime.com/online-forex-trading/",
       "HTTP": "200",
-      "Fetch (s)": 1.08,
+      "Fetch (s)": 0.27,
       "Size (KB)": 719,
       "Title length": 60,
       "Desc length": 137,
@@ -58,7 +58,7 @@
     {
       "URL": "https://cmsprime.com/stock-cfds-trading/",
       "HTTP": "200",
-      "Fetch (s)": 0.99,
+      "Fetch (s)": 0.73,
       "Size (KB)": 650,
       "Title length": 54,
       "Desc length": 126,
@@ -76,7 +76,7 @@
     {
       "URL": "https://cmsprime.com/ar/metatrader-4/",
       "HTTP": "200",
-      "Fetch (s)": 1.19,
+      "Fetch (s)": 1.48,
       "Size (KB)": 382,
       "Title length": 51,
       "Desc length": 154,
@@ -94,7 +94,7 @@
     {
       "URL": "https://cmsprime.com/fa/metatrader-4/",
       "HTTP": "200",
-      "Fetch (s)": 1.43,
+      "Fetch (s)": 1.19,
       "Size (KB)": 167,
       "Title length": 53,
       "Desc length": 0,

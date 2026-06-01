@@ -8,7 +8,7 @@
       "phantom_301s_ok": 10,
       "phantom_301s_total": 10,
       "pages_sampled": 6,
-      "avg_fetch_time_s": 1.01,
+      "avg_fetch_time_s": 0.78,
       "avg_html_kb": 571,
       "pages_with_hreflang_3plus": 6,
       "pages_with_org_schema": 6,
