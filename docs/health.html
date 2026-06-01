@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Technical Health — CMS Prime Performance Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/auth.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__brand-mark">C</div>
+        <div>
+          <div class="sidebar__brand-name">CMS Prime</div>
+          <div class="sidebar__brand-sub">Console</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <div class="nav__group-label">Performance</div>
+        <a class="nav__link" href="./index.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+        <a class="nav__link" href="./rankings.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+        <a class="nav__link" href="./backlinks.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Backlinks</a>
+        <a class="nav__link is-active" href="./health.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Technical Health</a>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__status"><span class="status-dot"></span><span>Live data · auto-refresh Mondays</span></div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-header fade-up" data-stagger="0">
+        <div class="page-header__intro">
+          <span class="eyebrow">Indexability · Schema · Redirects</span>
+          <h1 class="display-title">Technical health.</h1>
+          <p class="lead">
+            The plumbing behind cmsprime.com — hreflang annotations, Yoast schema graph, regulatory credentials, phantom-URL redirects, and per-page audit results across EN/AR/FA installs.
+          </p>
+        </div>
+        <div class="page-header__meta">
+          <span>Sample pages audited</span>
+          <strong id="samplesAudited">—</strong>
+          <span style="margin-top:8px">Redirects firing</span>
+          <strong id="redirectsHero">—</strong>
+        </div>
+      </header>
+
+      <section class="health-grid fade-up" data-stagger="1" style="margin-bottom: var(--space-6);">
+        <div class="health-card">
+          <div class="health-card__head">
+            <div class="health-card__title">Phantom 301 redirects</div>
+            <span class="badge is-pos" id="redirectsBadge">—</span>
+          </div>
+          <div class="health-card__metric"><span id="redirectsMetric">—</span><span class="health-card__metric-sub">/<span id="redirectsTotal">—</span></span></div>
+          <div class="health-card__desc">Old slugs from prior URL structure routed to canonical pages.</div>
+        </div>
+        <div class="health-card">
+          <div class="health-card__head">
+            <div class="health-card__title">Hreflang coverage</div>
+            <span class="badge is-pos" id="hreflangBadge">—</span>
+          </div>
+          <div class="health-card__metric"><span id="hreflangMetric">—</span><span class="health-card__metric-sub">/<span id="hreflangTotal">—</span></span></div>
+          <div class="health-card__desc">Pages emitting language-version annotations for EN/AR/FA.</div>
+        </div>
+        <div class="health-card">
+          <div class="health-card__head">
+            <div class="health-card__title">Organization schema</div>
+            <span class="badge is-pos" id="schemaBadge">—</span>
+          </div>
+          <div class="health-card__metric"><span id="schemaMetric">—</span><span class="health-card__metric-sub">/<span id="schemaTotal">—</span></span></div>
+          <div class="health-card__desc">JSON-LD Organization graph present on each sampled page.</div>
+        </div>
+        <div class="health-card">
+          <div class="health-card__head">
+            <div class="health-card__title">Regulatory credentials</div>
+            <span class="badge is-pos" id="credentialsBadge">—</span>
+          </div>
+          <div class="health-card__metric"><span id="credentialsMetric">—</span><span class="health-card__metric-sub">/<span id="credentialsTotal">—</span></span></div>
+          <div class="health-card__desc">FSC Mauritius + SVG + Saint Lucia licenses emitted in schema.</div>
+        </div>
+      </section>
+
+      <section class="card fade-up" data-stagger="2" style="margin-bottom: var(--space-6);">
+        <div class="card__header">
+          <div>
+            <div class="card__title">Phantom-slug 301 status</div>
+            <div class="card__subtitle">10 historical URLs routed to canonical destinations</div>
+          </div>
+        </div>
+        <div class="card__body is-flush">
+          <div class="table-scroll">
+            <table class="data-table" id="redirTable">
+              <thead>
+                <tr>
+                  <th>Source URL</th>
+                  <th style="width:80px" class="is-numeric">HTTP</th>
+                  <th>Destination</th>
+                  <th style="width:120px">Status</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card fade-up" data-stagger="3">
+        <div class="card__header">
+          <div>
+            <div class="card__title">Per-page audit</div>
+            <div class="card__subtitle">6 sample pages across language versions</div>
+          </div>
+        </div>
+        <div class="card__body is-flush">
+          <div class="table-scroll">
+            <table class="data-table" id="pageTable">
+              <thead>
+                <tr>
+                  <th>URL</th>
+                  <th class="is-numeric" data-sort="num" style="width:80px">HTTP <span class="sort-arrow"></span></th>
+                  <th class="is-numeric" data-sort="num" style="width:90px">Size (KB) <span class="sort-arrow"></span></th>
+                  <th class="is-numeric" data-sort="num" style="width:80px">Fetch (s) <span class="sort-arrow"></span></th>
+                  <th class="is-numeric" data-sort="num" style="width:80px">Hreflang <span class="sort-arrow"></span></th>
+                  <th style="width:70px">Org <span class="sort-arrow"></span></th>
+                  <th style="width:90px">Credentials <span class="sort-arrow"></span></th>
+                  <th class="is-numeric" data-sort="num" style="width:90px">Imgs no-dim <span class="sort-arrow"></span></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="./index.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+      <a class="bottom-nav__item" href="./rankings.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+      <a class="bottom-nav__item" href="./backlinks.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Backlinks</a>
+      <a class="bottom-nav__item is-active" href="./health.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health</a>
+    </div>
+  </nav>
+
+  <script src="./js/app.js"></script>
+  <script>
+  (async function () {
+    let kpis, pages, redirects;
+    try {
+      [kpis, pages, redirects] = await Promise.all([CMS.loadData('kpis'), CMS.loadData('pages'), CMS.loadData('redirects')]);
+    } catch (e) {
+      document.querySelector('.main').innerHTML = `<div class="empty-state"><h2 style="color:var(--neg)">Could not load data</h2><p>${e.message}</p></div>`;
+      return;
+    }
+
+    const latest = (kpis.rows || []).slice(-1)[0] || {};
+    document.getElementById('samplesAudited').textContent = latest.pages_sampled || '—';
+    document.getElementById('redirectsHero').textContent = `${latest.phantom_301s_ok}/${latest.phantom_301s_total}`;
+
+    function setHealthCard(prefix, ok, total) {
+      const okN = Number(ok || 0);
+      const totalN = Number(total || 0);
+      document.getElementById(prefix + 'Metric').textContent = okN;
+      document.getElementById(prefix + 'Total').textContent = totalN;
+      const ratio = totalN ? okN / totalN : 0;
+      const badge = document.getElementById(prefix + 'Badge');
+      badge.className = 'badge ' + (ratio >= 0.95 ? 'is-pos' : ratio >= 0.6 ? 'is-warn' : 'is-neg');
+      badge.textContent = ratio >= 0.95 ? 'All clear' : ratio >= 0.6 ? 'Partial' : 'Needs work';
+    }
+    setHealthCard('redirects',   latest.phantom_301s_ok,         latest.phantom_301s_total);
+    setHealthCard('hreflang',    latest.pages_with_hreflang_3plus, latest.pages_sampled);
+    setHealthCard('schema',      latest.pages_with_org_schema,     latest.pages_sampled);
+    setHealthCard('credentials', latest.pages_with_credentials,    latest.pages_sampled);
+
+    // Phantom redirects table
+    const redirRows = redirects.rows || [];
+    document.querySelector('#redirTable tbody').innerHTML = redirRows.map(r => `
+      <tr>
+        <td class="is-muted"><span class="row-url">${r.Source}</span></td>
+        <td class="is-numeric"><span class="badge ${r['HTTP code'] === '301' ? 'is-pos' : 'is-neg'}">${r['HTTP code']}</span></td>
+        <td class="is-primary"><span class="row-url">${r.Destination}</span></td>
+        <td>${r.OK === 'Y' ? '<span class="badge is-pos">Firing</span>' : '<span class="badge is-neg">Failed</span>'}</td>
+      </tr>
+    `).join('');
+
+    // Page audit table
+    const pageRows = pages.rows || [];
+    document.querySelector('#pageTable tbody').innerHTML = pageRows.map(p => {
+      const sizeClass = (p['Size (KB)'] > 700) ? 'is-warn' : 'is-pos';
+      const fetchClass = (p['Fetch (s)'] > 2) ? 'is-warn' : 'is-pos';
+      const imgsClass = (p['Images no dims'] > 100) ? 'is-neg' : (p['Images no dims'] > 0 ? 'is-warn' : 'is-pos');
+      return `
+        <tr>
+          <td class="is-primary"><span class="row-url">${(p.URL || '').replace('https://cmsprime.com', '')}</span></td>
+          <td class="is-numeric"><span class="badge ${p.HTTP === '200' ? 'is-pos' : 'is-neg'}">${p.HTTP}</span></td>
+          <td class="is-numeric" data-sort-value="${p['Size (KB)']}"><span class="badge ${sizeClass}">${p['Size (KB)']}</span></td>
+          <td class="is-numeric" data-sort-value="${p['Fetch (s)']}"><span class="badge ${fetchClass}">${p['Fetch (s)']}</span></td>
+          <td class="is-numeric" data-sort-value="${p['Hreflang count']}"><span class="badge ${p['Hreflang count'] >= 3 ? 'is-pos' : 'is-warn'}">${p['Hreflang count']}</span></td>
+          <td><span class="badge ${p['Org schema'] === 'Y' ? 'is-pos' : 'is-neg'}">${p['Org schema']}</span></td>
+          <td><span class="badge ${p['Credentials'] === 'Y' ? 'is-pos' : 'is-neg'}">${p['Credentials']}</span></td>
+          <td class="is-numeric" data-sort-value="${p['Images no dims']}"><span class="badge ${imgsClass}">${p['Images no dims']}</span></td>
+        </tr>
+      `;
+    }).join('');
+    CMS.makeTableSortable(document.getElementById('pageTable'));
+  })();
+  </script>
+</body>
+</html>

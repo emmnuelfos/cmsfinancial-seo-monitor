@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Backlinks — CMS Prime Performance Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/auth.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__brand-mark">C</div>
+        <div>
+          <div class="sidebar__brand-name">CMS Prime</div>
+          <div class="sidebar__brand-sub">Console</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <div class="nav__group-label">Performance</div>
+        <a class="nav__link" href="./index.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+        <a class="nav__link" href="./rankings.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+        <a class="nav__link is-active" href="./backlinks.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Backlinks</a>
+        <a class="nav__link" href="./health.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Technical Health</a>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__status"><span class="status-dot"></span><span>Live data · auto-refresh Mondays</span></div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-header fade-up" data-stagger="0">
+        <div class="page-header__intro">
+          <span class="eyebrow">Authority &amp; Off-page</span>
+          <h1 class="display-title">Backlinks.</h1>
+          <p class="lead">
+            External links pointing at cmsprime.com — the strongest signal of authority. Domain count, link totals, and the most powerful referring domains, ranked by their own authority.
+          </p>
+        </div>
+        <div class="page-header__meta">
+          <span>Total backlinks</span>
+          <strong id="totalBl">—</strong>
+          <span style="margin-top:8px">Referring domains</span>
+          <strong id="totalRd">—</strong>
+        </div>
+      </header>
+
+      <section class="scorecard-grid fade-up" data-stagger="1">
+        <div class="scorecard">
+          <div class="scorecard__label">Authority Score</div>
+          <div class="scorecard__value num" id="ascore_value">—</div>
+          <div class="scorecard__delta is-flat" id="ascore_delta">—</div>
+        </div>
+        <div class="scorecard">
+          <div class="scorecard__label">Total backlinks</div>
+          <div class="scorecard__value num" id="bl_value">—</div>
+          <div class="scorecard__delta is-flat" id="bl_delta">—</div>
+        </div>
+        <div class="scorecard">
+          <div class="scorecard__label">Follow links</div>
+          <div class="scorecard__value num" id="follow_value">—</div>
+          <div class="scorecard__delta is-info" id="follow_pct">—</div>
+        </div>
+        <div class="scorecard">
+          <div class="scorecard__label">Nofollow links</div>
+          <div class="scorecard__value num" id="nofollow_value">—</div>
+          <div class="scorecard__delta is-flat" id="nofollow_pct">—</div>
+        </div>
+      </section>
+
+      <section class="charts-row fade-up" data-stagger="2">
+        <div class="card">
+          <div class="card__header">
+            <div>
+              <div class="card__title">Backlink growth</div>
+              <div class="card__subtitle">Total backlinks and referring domains over time</div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="chart-frame"><canvas id="blChart"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__header">
+            <div>
+              <div class="card__title">Link composition</div>
+              <div class="card__subtitle">Follow vs Nofollow</div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="chart-frame"><canvas id="compChart"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="card fade-up" data-stagger="3">
+        <div class="card__header">
+          <div>
+            <div class="card__title">Top referring domains</div>
+            <div class="card__subtitle">Sorted by domain authority — click any column header to re-sort</div>
+          </div>
+          <span class="badge is-faint" id="resultCount">—</span>
+        </div>
+        <div class="card__body is-flush">
+          <div class="table-scroll">
+            <table class="data-table" id="rdTable">
+              <thead>
+                <tr>
+                  <th data-sort="num" class="is-numeric" style="width:80px">DA <span class="sort-arrow"></span></th>
+                  <th data-sort="str">Domain <span class="sort-arrow"></span></th>
+                  <th data-sort="num" class="is-numeric" style="width:120px">Backlinks <span class="sort-arrow"></span></th>
+                  <th data-sort="str" style="width:80px">Country <span class="sort-arrow"></span></th>
+                  <th data-sort="date" class="is-numeric" style="width:110px">First seen <span class="sort-arrow"></span></th>
+                  <th data-sort="date" class="is-numeric" style="width:110px">Last seen <span class="sort-arrow"></span></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="./index.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+      <a class="bottom-nav__item" href="./rankings.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+      <a class="bottom-nav__item is-active" href="./backlinks.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Backlinks</a>
+      <a class="bottom-nav__item" href="./health.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health</a>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/charts.js"></script>
+  <script>
+  (async function () {
+    let kpis, domains;
+    try {
+      [kpis, domains] = await Promise.all([CMS.loadData('kpis'), CMS.loadData('domains')]);
+    } catch (e) {
+      document.querySelector('.main').innerHTML = `<div class="empty-state"><h2 style="color:var(--neg)">Could not load data</h2><p>${e.message}</p></div>`;
+      return;
+    }
+
+    const rows = kpis.rows || [];
+    const latest = rows[rows.length - 1] || {};
+    const prev = rows[rows.length - 2] || null;
+
+    // Header
+    document.getElementById('totalBl').textContent = CMS.fmt.comma(latest.semrush_total_backlinks);
+    document.getElementById('totalRd').textContent = CMS.fmt.comma(latest.semrush_referring_domains);
+
+    // Scorecards
+    const setScore = (id, val, prevVal) => {
+      const el = document.getElementById(id + '_value');
+      if (val != null) CMS.countUp(el, Number(val), { duration: 1100 });
+      const d = CMS.scorecardDelta(val, prevVal);
+      const dEl = document.getElementById(id + '_delta');
+      if (dEl) { dEl.className = 'scorecard__delta ' + d.cls; dEl.innerHTML = `${d.arrow}<span>${d.text}</span>`; }
+    };
+    setScore('ascore',   latest.semrush_ascore,             prev?.semrush_ascore);
+    setScore('bl',       latest.semrush_total_backlinks,    prev?.semrush_total_backlinks);
+    setScore('follow',   latest.semrush_follow_links,       prev?.semrush_follow_links);
+    setScore('nofollow', latest.semrush_nofollow_links,     prev?.semrush_nofollow_links);
+
+    // Follow % vs total
+    if (latest.semrush_total_backlinks > 0) {
+      const fpct = (latest.semrush_follow_links / latest.semrush_total_backlinks * 100).toFixed(1);
+      const nfpct = (latest.semrush_nofollow_links / latest.semrush_total_backlinks * 100).toFixed(1);
+      document.getElementById('follow_pct').innerHTML = `<span>${fpct}% of total</span>`;
+      document.getElementById('nofollow_pct').innerHTML = `<span>${nfpct}% of total</span>`;
+    }
+
+    // Backlink growth chart
+    const labels = rows.map(r => CMS.fmt.dateShort(r.date));
+    CMSCharts.timeSeriesChart(document.getElementById('blChart'), {
+      labels,
+      datasets: [
+        { label: 'Backlinks', data: rows.map(r => r.semrush_total_backlinks), color: CMSCharts.COLORS.gold },
+        { label: 'Ref. domains', data: rows.map(r => r.semrush_referring_domains), color: CMSCharts.COLORS.info },
+      ],
+    });
+
+    // Composition doughnut
+    CMSCharts.doughnutChart(document.getElementById('compChart'), {
+      labels: ['Follow', 'Nofollow'],
+      data: [latest.semrush_follow_links, latest.semrush_nofollow_links],
+      colors: [CMSCharts.COLORS.pos, '#475569'],
+    });
+
+    // Top referring domains table
+    const refRows = domains.rows || [];
+    const tbody = document.querySelector('#rdTable tbody');
+    tbody.innerHTML = refRows.map(d => {
+      const da = parseInt(d['Domain Authority']) || 0;
+      const daClass = da >= 60 ? 'is-pos' : da >= 30 ? 'is-info' : da >= 15 ? 'is-warn' : 'is-faint';
+      return `
+        <tr>
+          <td class="is-numeric" data-sort-value="${da}"><span class="badge ${daClass}">${da}</span></td>
+          <td class="is-primary">${d.Domain || '—'}</td>
+          <td class="is-numeric" data-sort-value="${d.Backlinks || 0}">${CMS.fmt.comma(d.Backlinks)}</td>
+          <td class="is-muted">${(d.Country || '').toUpperCase()}</td>
+          <td class="is-numeric is-muted" data-sort-value="${d['First seen'] || ''}">${CMS.fmt.dateShort(d['First seen'])}</td>
+          <td class="is-numeric is-muted" data-sort-value="${d['Last seen'] || ''}">${CMS.fmt.dateShort(d['Last seen'])}</td>
+        </tr>
+      `;
+    }).join('');
+    CMS.makeTableSortable(document.getElementById('rdTable'));
+    document.getElementById('resultCount').textContent = `${refRows.length} domains`;
+  })();
+  </script>
+</body>
+</html>

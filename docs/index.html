@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Overview — CMS Prime Performance Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/auth.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__brand-mark">C</div>
+        <div>
+          <div class="sidebar__brand-name">CMS Prime</div>
+          <div class="sidebar__brand-sub">Console</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav__group-label">Performance</div>
+        <a class="nav__link is-active" href="./index.html">
+          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          Overview
+        </a>
+        <a class="nav__link" href="./rankings.html">
+          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
+          Rankings
+        </a>
+        <a class="nav__link" href="./backlinks.html">
+          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          Backlinks
+        </a>
+        <a class="nav__link" href="./health.html">
+          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Technical Health
+        </a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="sidebar__status">
+          <span class="status-dot"></span>
+          <span>Live data · auto-refresh Mondays</span>
+        </div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="page-header fade-up" data-stagger="0">
+        <div class="page-header__intro">
+          <span class="eyebrow">SEO Performance · UAE database</span>
+          <h1 class="display-title">Overview.</h1>
+          <p class="lead">
+            A weekly readout of organic visibility, ranking movement, backlink growth, and technical health for cmsprime.com across three language versions.
+          </p>
+        </div>
+        <div class="page-header__meta">
+          <span>Last refreshed</span>
+          <strong id="lastRefresh">—</strong>
+          <span style="margin-top:8px">Reporting period</span>
+          <strong id="reportingPeriod">—</strong>
+        </div>
+      </header>
+
+      <!-- Hero scorecards -->
+      <section class="scorecard-grid">
+        <div class="scorecard fade-up" data-stagger="1">
+          <div class="scorecard__label">Organic keywords (UAE)</div>
+          <div class="scorecard__value num" id="kw_value">—</div>
+          <div class="scorecard__delta is-flat" id="kw_delta">—</div>
+          <canvas class="scorecard__spark" id="kw_spark"></canvas>
+        </div>
+        <div class="scorecard fade-up" data-stagger="2">
+          <div class="scorecard__label">Est. monthly traffic</div>
+          <div class="scorecard__value num" id="traffic_value">—</div>
+          <div class="scorecard__delta is-flat" id="traffic_delta">—</div>
+          <canvas class="scorecard__spark" id="traffic_spark"></canvas>
+        </div>
+        <div class="scorecard fade-up" data-stagger="3">
+          <div class="scorecard__label">Referring domains</div>
+          <div class="scorecard__value num" id="rd_value">—</div>
+          <div class="scorecard__delta is-flat" id="rd_delta">—</div>
+          <canvas class="scorecard__spark" id="rd_spark"></canvas>
+        </div>
+        <div class="scorecard fade-up" data-stagger="4">
+          <div class="scorecard__label">Authority Score</div>
+          <div class="scorecard__value num" id="as_value">—</div>
+          <div class="scorecard__delta is-flat" id="as_delta">—</div>
+          <canvas class="scorecard__spark" id="as_spark"></canvas>
+        </div>
+      </section>
+
+      <!-- Charts row -->
+      <section class="charts-row fade-up" data-stagger="5">
+        <div class="card">
+          <div class="card__header">
+            <div>
+              <div class="card__title">Keyword visibility trend</div>
+              <div class="card__subtitle">Organic keywords + estimated traffic over time · UAE database</div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="chart-frame">
+              <canvas id="visibilityChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <div>
+              <div class="card__title">Indexation by language</div>
+              <div class="card__subtitle">URLs in sitemap</div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="chart-frame">
+              <canvas id="indexationChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top keywords + recent deployments -->
+      <section style="display:grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-4); margin-bottom: var(--space-6);" class="fade-up" data-stagger="5">
+        <div class="card">
+          <div class="card__header">
+            <div>
+              <div class="card__title">Top ranking keywords</div>
+              <div class="card__subtitle">By estimated traffic share · UAE</div>
+            </div>
+            <a class="card__subtitle" href="./rankings.html" style="color: var(--brand-gold);">View all →</a>
+          </div>
+          <div class="card__body is-flush">
+            <div class="table-scroll">
+              <table class="data-table" id="topKwTable">
+                <thead>
+                  <tr>
+                    <th>Keyword</th>
+                    <th style="width:60px" class="is-numeric">Pos</th>
+                    <th style="width:80px" class="is-numeric">Volume</th>
+                    <th style="width:80px" class="is-numeric">Traffic %</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <div>
+              <div class="card__title">System status</div>
+              <div class="card__subtitle">Today</div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div style="display:flex; flex-direction: column; gap: var(--space-3);">
+              <div style="display:flex; justify-content: space-between; align-items: center;">
+                <span class="label">Phantom 301s firing</span>
+                <span class="badge is-pos" id="redirects_status">— / —</span>
+              </div>
+              <div style="display:flex; justify-content: space-between; align-items: center;">
+                <span class="label">Pages with hreflang</span>
+                <span class="badge is-pos" id="hreflang_status">—</span>
+              </div>
+              <div style="display:flex; justify-content: space-between; align-items: center;">
+                <span class="label">Pages with org schema</span>
+                <span class="badge is-pos" id="schema_status">—</span>
+              </div>
+              <div style="display:flex; justify-content: space-between; align-items: center;">
+                <span class="label">Regulatory credentials in schema</span>
+                <span class="badge is-pos" id="credentials_status">—</span>
+              </div>
+              <hr class="divider">
+              <div style="display:flex; justify-content: space-between; align-items: center;">
+                <span class="label">Avg page weight</span>
+                <span class="num" id="avg_kb" style="color: var(--text-primary); font-size: 13px;">—</span>
+              </div>
+              <div style="display:flex; justify-content: space-between; align-items: center;">
+                <span class="label">Avg fetch time</span>
+                <span class="num" id="avg_fetch" style="color: var(--text-primary); font-size: 13px;">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav" aria-label="Mobile">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item is-active" href="./index.html">
+        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        Overview
+      </a>
+      <a class="bottom-nav__item" href="./rankings.html">
+        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
+        Rankings
+      </a>
+      <a class="bottom-nav__item" href="./backlinks.html">
+        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Backlinks
+      </a>
+      <a class="bottom-nav__item" href="./health.html">
+        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        Health
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/charts.js"></script>
+  <script>
+  (async function () {
+    let kpis, keywords, meta;
+    try {
+      [kpis, keywords, meta] = await Promise.all([
+        CMS.loadData('kpis'),
+        CMS.loadData('keywords'),
+        CMS.loadData('meta'),
+      ]);
+    } catch (e) {
+      document.querySelector('.main').innerHTML = `<div class="empty-state"><h2 style="color:var(--neg)">Could not load dashboard data</h2><p>${e.message}</p></div>`;
+      return;
+    }
+
+    const rows = kpis.rows || [];
+    const latest = rows[rows.length - 1] || {};
+    const previous = rows[rows.length - 2] || null;
+
+    // Header meta
+    if (meta?.last_refreshed) document.getElementById('lastRefresh').textContent = CMS.fmt.date(meta.last_refreshed);
+    if (rows.length) {
+      const first = rows[0].date, last = latest.date;
+      document.getElementById('reportingPeriod').textContent = first === last ? CMS.fmt.dateShort(last) : `${CMS.fmt.dateShort(first)} → ${CMS.fmt.dateShort(last)}`;
+    }
+
+    // Scorecards
+    function bindScore(prefix, value, prev, sparkValues, color) {
+      const el = document.getElementById(prefix + '_value');
+      if (el && value != null) CMS.countUp(el, Number(value), { duration: 1100 });
+      const deltaEl = document.getElementById(prefix + '_delta');
+      const d = CMS.scorecardDelta(value, prev);
+      deltaEl.className = 'scorecard__delta ' + d.cls;
+      deltaEl.innerHTML = `${d.arrow}<span>${d.text}</span>`;
+      const sparkCanvas = document.getElementById(prefix + '_spark');
+      if (sparkCanvas && sparkValues && sparkValues.length > 1) {
+        CMSCharts.sparkline(sparkCanvas, sparkValues, color);
+      }
+    }
+    const kwSeries = rows.map(r => r.semrush_organic_kw_ae).filter(v => v != null);
+    const trafficSeries = rows.map(r => r.semrush_organic_traffic_ae).filter(v => v != null);
+    const rdSeries = rows.map(r => r.semrush_referring_domains).filter(v => v != null);
+    const asSeries = rows.map(r => r.semrush_ascore).filter(v => v != null);
+
+    bindScore('kw',      latest.semrush_organic_kw_ae,      previous?.semrush_organic_kw_ae,      kwSeries,      CMSCharts.COLORS.info);
+    bindScore('traffic', latest.semrush_organic_traffic_ae, previous?.semrush_organic_traffic_ae, trafficSeries, CMSCharts.COLORS.gold);
+    bindScore('rd',      latest.semrush_referring_domains,  previous?.semrush_referring_domains,  rdSeries,      CMSCharts.COLORS.pos);
+    bindScore('as',      latest.semrush_ascore,             previous?.semrush_ascore,             asSeries,      CMSCharts.COLORS.blue);
+
+    // Visibility chart
+    if (rows.length > 0) {
+      const labels = rows.map(r => CMS.fmt.dateShort(r.date));
+      CMSCharts.timeSeriesChart(document.getElementById('visibilityChart'), {
+        labels,
+        datasets: [
+          { label: 'Organic keywords', data: kwSeries, color: CMSCharts.COLORS.info },
+          { label: 'Est. traffic',     data: trafficSeries, color: CMSCharts.COLORS.gold },
+        ],
+      });
+    }
+
+    // Indexation chart
+    if (rows.length > 0) {
+      const labels = rows.map(r => CMS.fmt.dateShort(r.date));
+      CMSCharts.timeSeriesChart(document.getElementById('indexationChart'), {
+        labels,
+        datasets: [
+          { label: 'EN', data: rows.map(r => r.sitemap_en_count), color: CMSCharts.COLORS.info },
+          { label: 'AR', data: rows.map(r => r.sitemap_ar_count), color: CMSCharts.COLORS.gold },
+          { label: 'FA', data: rows.map(r => r.sitemap_fa_count), color: CMSCharts.COLORS.pos },
+        ],
+      });
+    }
+
+    // Top keywords (filter to ranking and limit to top 8 by traffic %)
+    const topKws = (keywords.rows || [])
+      .filter(k => k.Position && Number(k.Position) <= 100)
+      .sort((a, b) => parseFloat(b['Traffic (%)'] || 0) - parseFloat(a['Traffic (%)'] || 0))
+      .slice(0, 8);
+    const tbody = document.querySelector('#topKwTable tbody');
+    tbody.innerHTML = topKws.map(k => `
+      <tr>
+        <td>
+          <div class="row-link">${k.Keyword}</div>
+          <div class="row-url">${(k.URL || '').replace('https://cmsprime.com', '')}</div>
+        </td>
+        <td class="is-numeric"><span class="position-pill ${CMS.positionClass(k.Position)}">${k.Position}</span></td>
+        <td class="is-numeric">${CMS.fmt.comma(k['Search Volume'])}</td>
+        <td class="is-numeric">${CMS.fmt.decimal(k['Traffic (%)'] || 0, 2)}%</td>
+      </tr>
+    `).join('') || `<tr><td colspan="4" class="empty-state">No ranking keywords yet — check back next week.</td></tr>`;
+
+    // System status badges
+    const setBadge = (id, ok, total, ok_text, fail_text) => {
+      const el = document.getElementById(id);
+      const pass = total ? (ok / total >= 0.9) : (ok > 0);
+      el.className = 'badge ' + (pass ? 'is-pos' : (ok > 0 ? 'is-warn' : 'is-neg'));
+      el.textContent = total != null ? `${ok} / ${total}` : ok;
+    };
+    setBadge('redirects_status', latest.phantom_301s_ok, latest.phantom_301s_total);
+    setBadge('hreflang_status',  latest.pages_with_hreflang_3plus, latest.pages_sampled);
+    setBadge('schema_status',    latest.pages_with_org_schema,     latest.pages_sampled);
+    setBadge('credentials_status', latest.pages_with_credentials,   latest.pages_sampled);
+    document.getElementById('avg_kb').textContent    = latest.avg_html_kb != null ? `${latest.avg_html_kb} KB` : '—';
+    document.getElementById('avg_fetch').textContent = latest.avg_fetch_time_s != null ? `${latest.avg_fetch_time_s} s` : '—';
+  })();
+  </script>
+</body>
+</html>

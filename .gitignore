@@ -23,3 +23,5 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# NOTE: docs/data/*.json IS committed — that's the dashboard data layer

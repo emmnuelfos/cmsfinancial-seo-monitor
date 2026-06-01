@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>CMS Prime Performance Console — Sign in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <form class="auth-card" id="loginForm" autocomplete="off">
+      <div class="auth-card__brand">
+        <div class="auth-card__mark">C</div>
+        <div style="text-align:center">
+          <div class="auth-card__name">CMS Prime</div>
+          <div class="auth-card__sub">Performance Console</div>
+        </div>
+      </div>
+
+      <h1 class="auth-card__title">Restricted access</h1>
+      <p class="auth-card__lead">
+        This dashboard contains performance and analytics data for <strong style="color:var(--text-secondary)">cmsprime.com</strong>. Enter the access key provided to your team to continue.
+      </p>
+
+      <div class="auth-field">
+        <label for="pwd">Access key</label>
+        <input class="auth-input" type="password" id="pwd" name="pwd" placeholder="••••••••••••" autofocus required>
+      </div>
+
+      <div class="auth-error" id="err"></div>
+
+      <button class="btn btn--primary" type="submit" id="submitBtn">
+        Authenticate
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="auth-footer">
+        <span>cmsprime.com</span>
+        <span>Powered by Adnika</span>
+      </div>
+    </form>
+  </main>
+
+  <script src="./js/auth.js"></script>
+  <script>
+    (async function () {
+      // If already authenticated, redirect to dashboard
+      const ok = await window.CMSAuth.checkAuth();
+      if (ok) {
+        const params = new URLSearchParams(window.location.search);
+        const back = params.get('back') || 'index.html';
+        window.location.replace('./' + back);
+        return;
+      }
+
+      const form = document.getElementById('loginForm');
+      const pwd  = document.getElementById('pwd');
+      const err  = document.getElementById('err');
+      const btn  = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        err.textContent = '';
+        btn.disabled = true;
+        const original = btn.innerHTML;
+        btn.innerHTML = 'Authenticating...';
+        const result = await window.CMSAuth.attemptLogin(pwd.value);
+        if (result.ok) {
+          const params = new URLSearchParams(window.location.search);
+          const back = params.get('back') || 'index.html';
+          window.location.replace('./' + back);
+        } else {
+          err.textContent = result.error;
+          btn.disabled = false;
+          btn.innerHTML = original;
+          pwd.select();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

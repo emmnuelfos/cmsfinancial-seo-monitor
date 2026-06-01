@@ -1,0 +1,75 @@
+{
+  "date": "2026-06-01",
+  "rows": [
+    {
+      "Source": "/mt4-trading-platform",
+      "HTTP code": "301",
+      "Destination": "/metatrader-4/",
+      "Expected": "/metatrader-4/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/mt5-trading-platform",
+      "HTTP code": "301",
+      "Destination": "/metatrader-5/",
+      "Expected": "/metatrader-5/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/cfd-trading",
+      "HTTP code": "301",
+      "Destination": "/stock-cfds-trading/",
+      "Expected": "/stock-cfds-trading/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/index-trading",
+      "HTTP code": "301",
+      "Destination": "/indices-trading/",
+      "Expected": "/indices-trading/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/funded-account",
+      "HTTP code": "301",
+      "Destination": "/fundedaccounts/",
+      "Expected": "/fundedaccounts/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/commodity-trading-uae",
+      "HTTP code": "301",
+      "Destination": "/commodities-trading/",
+      "Expected": "/commodities-trading/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/forex-trading-uae",
+      "HTTP code": "301",
+      "Destination": "/online-forex-trading/",
+      "Expected": "/online-forex-trading/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/forex-web-trading-platform",
+      "HTTP code": "301",
+      "Destination": "/online-forex-trading/",
+      "Expected": "/online-forex-trading/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/best-online-trading-platform-in-uae",
+      "HTTP code": "301",
+      "Destination": "/online-forex-trading/",
+      "Expected": "/online-forex-trading/",
+      "OK": "Y"
+    },
+    {
+      "Source": "/cms-card",
+      "HTTP code": "301",
+      "Destination": "/cpay/",
+      "Expected": "/cpay/",
+      "OK": "Y"
+    }
+  ]
+}

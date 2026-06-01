@@ -12,11 +12,13 @@ Pushes to:
 Usage:
   python monitor.py                   # run for today UTC
   python monitor.py --date 2026-06-15 # backdate
-  python monitor.py --skip-sheets     # local only (for testing)
+  python monitor.py --skip-sheets     # skip Google Sheets push
+  python monitor.py --skip-dashboard  # skip writing docs/data/*.json
   python monitor.py --skip-semrush    # technical audit only (saves API units)
 """
 import argparse
 import csv
+import hashlib
 import json
 import os
 import re
@@ -187,7 +189,123 @@ def check_phantom_redirects():
 
 # ---- Main pipeline ----
 
-def run(date_str=None, skip_sheets=False, skip_semrush=False):
+def write_dashboard_data(date_str, summary, page_audits, redirects, semrush_data):
+    """Append today's row to historical KPI series, replace snapshot tabs, write auth hash.
+    Outputs to docs/data/*.json so the static dashboard can render."""
+    data_dir = HERE / "docs" / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    # ---- kpis.json — historical time-series, append-only (latest at end) ----
+    kpis_path = data_dir / "kpis.json"
+    existing = {"rows": []}
+    if kpis_path.exists():
+        try:
+            existing = json.loads(kpis_path.read_text(encoding="utf-8"))
+        except Exception:
+            existing = {"rows": []}
+    rows = [r for r in existing.get("rows", []) if r.get("date") != date_str]
+    rows.append(summary)
+    rows.sort(key=lambda r: r.get("date", ""))
+    kpis_path.write_text(json.dumps({"rows": rows, "updated": date_str}, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    # ---- keywords.json — latest snapshot of top ranking keywords ----
+    keyword_rows = []
+    for k in semrush_data.get("top_keywords_ae", []):
+        keyword_rows.append({
+            "Keyword": k.get("Keyword", ""),
+            "Position": k.get("Position", ""),
+            "Previous position": k.get("Previous position", ""),
+            "Search Volume": k.get("Search Volume", ""),
+            "CPC": k.get("CPC", ""),
+            "Traffic (%)": k.get("Traffic (%)", ""),
+            "URL": k.get("Url", ""),
+        })
+    (data_dir / "keywords.json").write_text(
+        json.dumps({"date": date_str, "rows": keyword_rows}, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # ---- domains.json — latest snapshot of top referring domains ----
+    domain_rows = []
+    for d in semrush_data.get("top_referring_domains", []):
+        domain_rows.append({
+            "Domain Authority": d.get("domain_ascore", ""),
+            "Domain": d.get("domain", ""),
+            "Backlinks": d.get("backlinks_num", ""),
+            "Country": d.get("country", ""),
+            "First seen": d.get("first_seen", ""),
+            "Last seen": d.get("last_seen", ""),
+        })
+    (data_dir / "domains.json").write_text(
+        json.dumps({"date": date_str, "rows": domain_rows}, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # ---- pages.json — latest page audit ----
+    page_rows = []
+    for a in page_audits:
+        page_rows.append({
+            "URL": a.get("url", ""),
+            "HTTP": a.get("http_code", ""),
+            "Fetch (s)": a.get("fetch_time_s", ""),
+            "Size (KB)": a.get("html_size_kb", ""),
+            "Title length": a.get("title_len", ""),
+            "Desc length": a.get("desc_len", ""),
+            "Canonical OK": "Y" if a.get("canonical_self") else "N",
+            "H1 count": a.get("h1_count", ""),
+            "Hreflang count": a.get("hreflang_count", ""),
+            "Org schema": "Y" if a.get("has_organization_schema") else "N",
+            "Credentials": "Y" if a.get("has_credential_schema") else "N",
+            "RB CSS in head": a.get("rb_css_head", ""),
+            "RB JS in head": a.get("rb_js_head_blocking", ""),
+            "Total images": a.get("imgs_total", ""),
+            "Images no dims": a.get("imgs_no_dimensions", ""),
+            "Images no lazy": a.get("imgs_no_lazy", ""),
+        })
+    (data_dir / "pages.json").write_text(
+        json.dumps({"date": date_str, "rows": page_rows}, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # ---- redirects.json — phantom-slug 301 status ----
+    redir_rows = [{
+        "Source": r["src"],
+        "HTTP code": r["code"],
+        "Destination": r["dst"],
+        "Expected": r["expected"],
+        "OK": "Y" if r["ok"] else "N",
+    } for r in redirects]
+    (data_dir / "redirects.json").write_text(
+        json.dumps({"date": date_str, "rows": redir_rows}, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # ---- meta.json — last refresh info ----
+    (data_dir / "meta.json").write_text(
+        json.dumps({"last_refreshed": date_str, "total_weeks": len(rows)}, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # ---- auth.json — SHA-256 of the dashboard password (from env, never committed) ----
+    pwd = os.environ.get("DASHBOARD_PASSWORD")
+    if pwd:
+        hash_hex = hashlib.sha256(pwd.encode("utf-8")).hexdigest()
+        (data_dir / "auth.json").write_text(
+            json.dumps({"hash": hash_hex, "updated": date_str}, indent=2),
+            encoding="utf-8",
+        )
+
+    return {
+        "kpis_rows": len(rows),
+        "keywords": len(keyword_rows),
+        "domains": len(domain_rows),
+        "pages": len(page_rows),
+        "redirects": len(redir_rows),
+        "auth_written": bool(pwd),
+    }
+
+
+def run(date_str=None, skip_sheets=False, skip_semrush=False, skip_dashboard=False):
     date_str = date_str or datetime.utcnow().strftime("%Y-%m-%d")
     print(f"\n{'=' * 70}\nCMS Prime weekly SEO monitor — {date_str}\n{'=' * 70}\n")
 
@@ -291,12 +409,22 @@ def run(date_str=None, skip_sheets=False, skip_semrush=False):
         writer.writerow(summary)
     print(f"   appended row to {csv_path.name}")
 
-    # ---- 4. Sheets push ----
+    # ---- 4. Dashboard JSON (for docs/) ----
+    if not skip_dashboard:
+        info = write_dashboard_data(date_str, summary, page_audits, redirects, semrush_data)
+        print(f"\n4. Dashboard data written → docs/data/")
+        print(f"   kpis rows: {info['kpis_rows']}  keywords: {info['keywords']}  domains: {info['domains']}  pages: {info['pages']}")
+        if info["auth_written"]:
+            print(f"   auth.json written (SHA-256 of DASHBOARD_PASSWORD)")
+    else:
+        print("\n4. Dashboard JSON: SKIPPED (--skip-dashboard)")
+
+    # ---- 5. Sheets push ----
     if skip_sheets:
-        print("\n4. Sheets push: SKIPPED (--skip-sheets)")
+        print("\n5. Sheets push: SKIPPED (--skip-sheets)")
         return summary
 
-    print("\n4. Pushing to Google Sheet...")
+    print("\n5. Pushing to Google Sheet...")
     sheet_id = os.environ.get("SHEET_ID")
     if not sheet_id:
         print("   ERROR: SHEET_ID env var not set; skipping sheets push")
@@ -406,6 +534,7 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--date", help="Run date YYYY-MM-DD (default: today UTC)")
     p.add_argument("--skip-sheets", action="store_true")
+    p.add_argument("--skip-dashboard", action="store_true", help="Skip writing JSON to docs/data/")
     p.add_argument("--skip-semrush", action="store_true")
     args = p.parse_args()
-    run(args.date, skip_sheets=args.skip_sheets, skip_semrush=args.skip_semrush)
+    run(args.date, skip_sheets=args.skip_sheets, skip_semrush=args.skip_semrush, skip_dashboard=args.skip_dashboard)
