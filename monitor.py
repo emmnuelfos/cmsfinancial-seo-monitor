@@ -526,6 +526,15 @@ def run(date_str=None, skip_sheets=False, skip_semrush=False, skip_dashboard=Fal
     sw.replace_tab("Auto - Phantom Redirects", redir_headers, redir_rows)
     print(f"   - Auto - Phantom Redirects: {len(redir_rows)} redirects")
 
+    # ---- Refresh the Monthly Report data file ----
+    # Reads the task sheet + kpis.json we just wrote, produces docs/data/monthly.json.
+    # No Semrush calls — uses only the data we already have on hand.
+    try:
+        import build_monthly
+        build_monthly.main()
+    except Exception as e:
+        print(f"   monthly report refresh skipped: {e}")
+
     print(f"\n{'=' * 70}\nDone. View at https://docs.google.com/spreadsheets/d/{sheet_id}/edit")
     return summary
 

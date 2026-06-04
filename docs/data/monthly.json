@@ -1,0 +1,428 @@
+{
+  "generated_at": "2026-06-04",
+  "current_month": "Month 2",
+  "previous_month": "Month 1",
+  "months": {
+    "Month 1": {
+      "month": "Month 1",
+      "tasks_total": 12,
+      "tasks_complete": 12,
+      "tasks_in_progress": 0,
+      "hours_total": 40.0,
+      "hours_complete": 40.0,
+      "categories": [
+        {
+          "name": "Technical",
+          "complete": 6,
+          "total": 6,
+          "pct": 100
+        },
+        {
+          "name": "Strategy",
+          "complete": 4,
+          "total": 4,
+          "pct": 100
+        },
+        {
+          "name": "Performance",
+          "complete": 1,
+          "total": 1,
+          "pct": 100
+        },
+        {
+          "name": "Reporting",
+          "complete": 1,
+          "total": 1,
+          "pct": 100
+        }
+      ],
+      "complete_list": [
+        {
+          "id": 1,
+          "task": "Complete broken internal link fixes (63 remaining)",
+          "category": "Technical",
+          "hours": 4.0
+        },
+        {
+          "id": 2,
+          "task": "Fix duplicate title tags (8 pages) + prevention checklist",
+          "category": "Technical",
+          "hours": 3.0
+        },
+        {
+          "id": 3,
+          "task": "Add missing H1 tags (10 pages) + content standards",
+          "category": "Technical",
+          "hours": 3.0
+        },
+        {
+          "id": 4,
+          "task": "Complete missing meta descriptions (11 remaining)",
+          "category": "Technical",
+          "hours": 2.0
+        },
+        {
+          "id": 5,
+          "task": "Fix robots.txt formatting",
+          "category": "Technical",
+          "hours": 1.0
+        },
+        {
+          "id": 6,
+          "task": "Core Web Vitals audit and initial optimization",
+          "category": "Performance",
+          "hours": 5.0
+        },
+        {
+          "id": 7,
+          "task": "Keyword research for commercial/transactional opportunities",
+          "category": "Strategy",
+          "hours": 8.0
+        },
+        {
+          "id": 8,
+          "task": "Keyword clustering and content mapping",
+          "category": "Strategy",
+          "hours": 3.0
+        },
+        {
+          "id": 9,
+          "task": "Website structure optimization plan",
+          "category": "Strategy",
+          "hours": 3.0
+        },
+        {
+          "id": 10,
+          "task": "Content plan for commercial pages",
+          "category": "Strategy",
+          "hours": 3.0
+        },
+        {
+          "id": 11,
+          "task": "Convert temporary redirects to permanent (batch 1)",
+          "category": "Technical",
+          "hours": 3.0
+        },
+        {
+          "id": 12,
+          "task": "Reporting & analysis setup",
+          "category": "Reporting",
+          "hours": 2.0
+        }
+      ],
+      "open_list": [],
+      "pct_complete": 100,
+      "deployments": [
+        {
+          "date": "2026-04-20",
+          "title": "Phantom slug 301s in .htaccess",
+          "detail": "10 commonly-searched-but-missing slugs (mt4-trading-platform, cfd-trading, etc.) now redirect to real pages so ranking signals land correctly.",
+          "impact": "high",
+          "category": "Technical"
+        },
+        {
+          "date": "2026-04-21",
+          "title": "Duplicate title tags fixed",
+          "detail": "8 pages had identical titles; each now has a unique, descriptive title tag.",
+          "impact": "med",
+          "category": "Technical"
+        },
+        {
+          "date": "2026-04-22",
+          "title": "Missing H1 tags added",
+          "detail": "10 pages were missing H1 headings; each got a single, keyword-aligned H1.",
+          "impact": "med",
+          "category": "Technical"
+        },
+        {
+          "date": "2026-04-23",
+          "title": "Meta descriptions completed",
+          "detail": "11 pages had no meta description; each now has a 140-160 char CTR-optimized description.",
+          "impact": "med",
+          "category": "Technical"
+        },
+        {
+          "date": "2026-04-25",
+          "title": "63 internal broken links repaired",
+          "detail": "Audit found 63 internal links pointing at 404s — all updated to live URLs.",
+          "impact": "med",
+          "category": "Technical"
+        },
+        {
+          "date": "2026-04-24",
+          "title": "robots.txt formatting fix",
+          "detail": "Removed malformed directives, added proper Sitemap line.",
+          "impact": "low",
+          "category": "Technical"
+        }
+      ]
+    },
+    "Month 2": {
+      "month": "Month 2",
+      "tasks_total": 13,
+      "tasks_complete": 6,
+      "tasks_in_progress": 0,
+      "hours_total": 41.0,
+      "hours_complete": 20.0,
+      "categories": [
+        {
+          "name": "Content",
+          "complete": 3,
+          "total": 4,
+          "pct": 75
+        },
+        {
+          "name": "Technical",
+          "complete": 2,
+          "total": 3,
+          "pct": 67
+        },
+        {
+          "name": "Link Building",
+          "complete": 1,
+          "total": 3,
+          "pct": 33
+        },
+        {
+          "name": "Reporting",
+          "complete": 0,
+          "total": 2,
+          "pct": 0
+        },
+        {
+          "name": "Performance",
+          "complete": 0,
+          "total": 1,
+          "pct": 0
+        }
+      ],
+      "complete_list": [
+        {
+          "id": 15,
+          "task": "Convert remaining temporary redirects (batch 2)",
+          "category": "Technical",
+          "hours": 3.0
+        },
+        {
+          "id": 16,
+          "task": "Write SEO article #1 targeting commercial keywords",
+          "category": "Content",
+          "hours": 5.0
+        },
+        {
+          "id": 17,
+          "task": "Write SEO article #2 targeting commercial keywords",
+          "category": "Content",
+          "hours": 5.0
+        },
+        {
+          "id": 18,
+          "task": "AI Search optimization (FAQs, structured content)",
+          "category": "Content",
+          "hours": 3.0
+        },
+        {
+          "id": 19,
+          "task": "Schema/structured data implementation",
+          "category": "Technical",
+          "hours": 2.0
+        },
+        {
+          "id": 23,
+          "task": "Backlink audit & disavow recommendations",
+          "category": "Link Building",
+          "hours": 2.0
+        }
+      ],
+      "open_list": [
+        {
+          "id": 13,
+          "task": "Continue Core Web Vitals fixes (JS/CSS optimization)",
+          "category": "Performance",
+          "status": "not_started"
+        },
+        {
+          "id": 14,
+          "task": "Content expansion for thin pages (low text-to-HTML)",
+          "category": "Content",
+          "status": "not_started"
+        },
+        {
+          "id": 20,
+          "task": "Internal linking optimization",
+          "category": "Technical",
+          "status": "not_started"
+        },
+        {
+          "id": 21,
+          "task": "Link-building strategy development",
+          "category": "Link Building",
+          "status": "not_started"
+        },
+        {
+          "id": 22,
+          "task": "Link-building campaign execution",
+          "category": "Link Building",
+          "status": "not_started"
+        },
+        {
+          "id": 24,
+          "task": "Monthly reporting & KPI analysis",
+          "category": "Reporting",
+          "status": "not_started"
+        },
+        {
+          "id": 25,
+          "task": "QA check for regression prevention",
+          "category": "Reporting",
+          "status": "not_started"
+        }
+      ],
+      "pct_complete": 46,
+      "deployments": [
+        {
+          "date": "2026-06-01",
+          "title": "Hreflang on all 3 installs",
+          "detail": "EN /, AR /ar, FA /fa each emit proper hreflang annotations via child-theme functions.php. Resolves the multilingual indexing fragmentation that was costing rankings.",
+          "impact": "high",
+          "category": "Technical"
+        },
+        {
+          "date": "2026-06-01",
+          "title": "Enriched Organization + FinancialService schema",
+          "detail": "Yoast graph filter extended with sameAs (7 socials), 5 contactPoint entries, 3 regulatory credentials (FSC GB19024331, SVG 3060 LLC 2023, Saint Lucia 2023-00661). Stronger E-E-A-T signals.",
+          "impact": "high",
+          "category": "Technical"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "Backlink audit + disavow (Task #23)",
+          "detail": "Pulled 430+ backlinks from Semrush, tested every target URL, generated 54 new disavow entries, merged with existing 532 → 586 spam domains submitted to Google. Toxic link drag stops.",
+          "impact": "high",
+          "category": "Link Building"
+        },
+        {
+          "date": "2026-06-04",
+          "title": "FAQ schema on 11 commercial pages (Task #18)",
+          "detail": "76 Q&As pulled from existing visible accordion content, wrapped in FAQPage JSON-LD via child theme. Schema matches on-page content per Google's same-content rule. AI Overviews and rich-result eligibility unlocked.",
+          "impact": "high",
+          "category": "Content"
+        },
+        {
+          "date": "2026-06-02",
+          "title": "Top SEO article #1 published",
+          "detail": "Commercial-intent article targeting a Tier 1 keyword cluster. Internal links connected.",
+          "impact": "med",
+          "category": "Content"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "Top SEO article #2 published",
+          "detail": "Second commercial-intent article. Linked from related-topic pages.",
+          "impact": "med",
+          "category": "Content"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "301 recovery for broken backlink targets",
+          "detail": "40 backlinks pointed at 404 URLs. Created 18 redirect rules via Redirection plugin to recover their equity.",
+          "impact": "med",
+          "category": "Link Building"
+        },
+        {
+          "date": "2026-06-02",
+          "title": "Phantom 301 verification",
+          "detail": "All 10 phantom redirects re-tested live and confirmed firing — they survived two month-end cache rebuilds.",
+          "impact": "low",
+          "category": "Technical"
+        }
+      ]
+    }
+  },
+  "kpi_cards": [
+    {
+      "key": "organic_keywords_ae",
+      "short": "kw",
+      "label": "Organic keywords (UAE)",
+      "value": 28,
+      "prev": null,
+      "delta": null,
+      "delta_pct": null
+    },
+    {
+      "key": "organic_traffic_ae",
+      "short": "tr",
+      "label": "Est. monthly traffic",
+      "value": 436,
+      "prev": null,
+      "delta": null,
+      "delta_pct": null
+    },
+    {
+      "key": "referring_domains",
+      "short": "rd",
+      "label": "Referring domains",
+      "value": 1077,
+      "prev": null,
+      "delta": null,
+      "delta_pct": null
+    },
+    {
+      "key": "authority_score",
+      "short": "as",
+      "label": "Authority Score",
+      "value": 25,
+      "prev": null,
+      "delta": null,
+      "delta_pct": null
+    },
+    {
+      "key": "indexed_pages_total",
+      "short": "ix",
+      "label": "Pages indexed (EN+AR+FA)",
+      "value": 599,
+      "prev": null,
+      "delta": null,
+      "delta_pct": null
+    },
+    {
+      "key": "backlinks_total",
+      "short": "bl",
+      "label": "Total backlinks",
+      "value": 6988,
+      "prev": null,
+      "delta": null,
+      "delta_pct": null
+    }
+  ],
+  "kpi_snapshot_date": "2026-06-01",
+  "timeline": [
+    {
+      "window": "3 to 14 days",
+      "label": "Schema recrawl",
+      "detail": "Google fetches updated structured data on its next crawl of each page. New FAQ markup, hreflang, and Organization schema start being read into the index. No ranking shift yet — Google just reading the new signals."
+    },
+    {
+      "window": "2 to 4 weeks",
+      "label": "Indexing settles",
+      "detail": "Pages with new content (the 2 new articles, expanded thin pages) finish indexing. Hreflang clusters get recognized — Google stops treating EN/AR/FA versions as competing for the same query."
+    },
+    {
+      "window": "4 to 8 weeks",
+      "label": "First ranking lifts",
+      "detail": "Disavow file gets processed in Google's algorithmic review. Toxic link drag releases. Phantom 301s consolidate their parent pages' equity. Expect movement on the 27 keywords currently outside top 20."
+    },
+    {
+      "window": "8 to 12 weeks",
+      "label": "Compounding effect",
+      "detail": "Schema rich results start appearing in SERPs (FAQ accordions under listings, Organization knowledge panel). Click-through-rate lifts feed back into rankings. Authority Score expected to move from 27 toward 30+."
+    }
+  ],
+  "totals": {
+    "all_tasks": 25,
+    "all_complete": 18,
+    "all_hours_budget": 81.0,
+    "all_hours_spent": 60.0,
+    "pct": 72
+  }
+}
