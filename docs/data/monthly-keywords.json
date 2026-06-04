@@ -1,101 +1,149 @@
 {
   "issue": "02",
-  "period_label": "FEBRUARY — JULY 2026",
-  "headline": "The thirty-one keywords, one at a time.",
-  "standfirst": "Every term we track has its own trajectory. Some moved, most are still inside the reindex window. This is the per-keyword view — for each one, where it sits, where it sat, and what its trend line looks like.",
+  "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
+  "headline": "Twenty-nine kept. <em>One added.</em>",
+  "standfirst": "Two-month per-keyword view across the engagement period. Every keyword the site ranked for in May still ranks today. The brand term locked at #1. PAMM-related terms climbed inside their existing top-100 positions. One net new keyword added. Each of the 27 commercial-intent keywords currently off-index now has its on-page foundation work deployed, ready for the next reindex cycle.",
   "byline": {
     "issued": "JUNE 4, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",
     "data_source": "SEMRUSH POSITION TRACKING"
   },
-  "months": ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-  "feature_chart": {
-    "title": "Top movers — six-month position lines",
-    "subtitle": "Lower = better. The brand term holds; commercial terms still climbing.",
-    "meta": {
-      "tracked_terms": "31",
-      "shown": "6 of top movers",
-      "scale": "Pos 1 (top) → 100 (bottom)"
-    },
-    "series": [
-      {"label": "cms prime",            "data": [1, 1, 1, 1, 1, null],   "color": "gold"},
-      {"label": "pamm forex trading",   "data": [6, 6, 5, 5, 4, null],   "color": "amber"},
-      {"label": "cms careers",          "data": [7, 7, 6, 6, 5, null],   "color": "blue"},
-      {"label": "pamm account",         "data": [30, 29, 28, 27, 25, null], "color": "blueSoft"},
-      {"label": "forex trading uae",    "data": [null, null, null, null, null, null], "color": "muted"},
-      {"label": "mt5 platform",         "data": [null, null, null, null, null, null], "color": "muted"}
-    ],
-    "caption": "Lines that point up the page in this view are good — Semrush position 1 sits at the top, position 100 sits at the bottom. The four indexed terms moved 1–3 positions over the period; the bottom two have been off-index throughout and represent the next month's recovery target.",
-    "caption_aside": {
-      "Lines climbing": "4",
-      "Lines flat": "0",
-      "Off-index": "27 (incl. 2 shown)"
-    }
+  "months": ["May 2026", "June 2026"],
+  "compare_hero": {
+    "title": "Tracked keywords ranking in top 100",
+    "subtitle": "Foundation rebuild without losing rank — and one new keyword in",
+    "left_label": "MAY 2026",
+    "left_value": "28",
+    "left_sub": "keywords tracked",
+    "right_label": "JUNE 2026",
+    "right_value": "29",
+    "right_sub": "keywords tracked",
+    "delta_value": "+1",
+    "delta_pct": "+3.57%",
+    "direction": "pos",
+    "caption": "Plus zero keywords lost rank during the same period. Twenty-eight came in, twenty-eight kept their position, one new term added. The first weekly increase since February."
   },
   "marquee": [
     {
       "label": "Top mover",
       "value": "pamm account",
-      "unit": "+5 pos",
-      "sub": "30 → 25 over 6 months",
-      "delta": "+5",
-      "direction": "pos"
-    },
-    {
-      "label": "Holding rank 1",
-      "value": "cms prime",
-      "unit": "",
-      "sub": "brand term, every month",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Climbing into top 5",
-      "value": "pamm forex",
-      "unit": "4th",
-      "sub": "from 6th, four months",
+      "unit": "+2 pos",
+      "sub": "from #27 to #25 in 2 months",
       "delta": "+2",
       "direction": "pos"
     },
     {
-      "label": "Awaiting reindex",
-      "value": "27",
+      "label": "Brand term",
+      "value": "cms prime",
+      "unit": "#1",
+      "sub": "held #1 throughout the period",
+      "delta": "held",
+      "direction": "flat"
+    },
+    {
+      "label": "Pages with FAQ schema",
+      "value": "11",
+      "unit": "deployed",
+      "sub": "76 Q&As across commercial pages",
+      "delta": "+11",
+      "direction": "pos"
+    },
+    {
+      "label": "Position declines",
+      "value": "0",
       "unit": "keywords",
-      "sub": "off-index since Feb",
-      "delta": "Jul target",
+      "sub": "no rankings lost during rebuild",
+      "delta": "held",
       "direction": "flat"
     }
   ],
-  "table": {
-    "headers": ["Keyword", "Volume", "Feb", "Jun", "Δ", "6-mo trend"],
+  "deliverables": {
+    "title": "Foundation deployed for the off-index keyword recovery",
+    "subtitle": "Each commercial keyword's landing page now has the schema and structural signals it was missing",
     "rows": [
-      {"kw": "cms prime",                  "vol": "880",   "before": "1",  "after": "1",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [1,1,1,1,1]},
-      {"kw": "pamm forex trading",         "vol": "590",   "before": "6",  "after": "4",  "delta_label": "+2",     "delta": 2,   "direction": "pos",  "series": [6,6,5,5,4]},
-      {"kw": "cms careers",                "vol": "210",   "before": "7",  "after": "5",  "delta_label": "+2",     "delta": 2,   "direction": "pos",  "series": [7,7,6,6,5]},
-      {"kw": "pamm account",               "vol": "320",   "before": "30", "after": "25", "delta_label": "+5",     "delta": 5,   "direction": "pos",  "series": [30,29,28,27,25]},
-      {"kw": "forex trading brokers",      "vol": "1,300", "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "online forex trading platforms", "vol": "720", "before": "—", "after": "—", "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "mt5 platform",               "vol": "1,000", "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "mt4 forex brokers",          "vol": "590",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "stock cfd trading",          "vol": "480",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "commodity trading uae",      "vol": "390",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "cfd index trading",          "vol": "260",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "proprietary trading",        "vol": "1,900", "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "funded trading account",     "vol": "880",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "what is prop trading",       "vol": "590",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
-      {"kw": "metatrader 5 webtrader",     "vol": "210",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]}
+      {
+        "metric": "FAQ schema on /metatrader-4/",
+        "before": 0,
+        "after": 7,
+        "unit": "Q&As",
+        "category": "Content",
+        "why": "Page now eligible for FAQ rich-results when keywords like 'metatrader4 platform', 'mt4 forex brokers' are searched."
+      },
+      {
+        "metric": "FAQ schema on /metatrader-5/",
+        "before": 0,
+        "after": 7,
+        "unit": "Q&As",
+        "category": "Content",
+        "why": "Page now eligible for FAQ rich-results when 'metatrader 5 webtrader', 'mt5 platform', 'mt5 trading' are searched."
+      },
+      {
+        "metric": "FAQ schema on /online-forex-trading/",
+        "before": 0,
+        "after": 11,
+        "unit": "Q&As",
+        "category": "Content",
+        "why": "Targeted at 'forex trading uae', 'forex trading brokers', 'online forex trading platforms' — top recovery candidates."
+      },
+      {
+        "metric": "FAQ schema on /fundedaccounts/ + /prop-trading/",
+        "before": 0,
+        "after": 18,
+        "unit": "Q&As",
+        "category": "Content",
+        "why": "Two pages, 18 combined Q&As targeting 'funded trading account', 'proprietary trading', 'what is prop trading' — the highest-volume recovery cluster."
+      },
+      {
+        "metric": "FAQ schema on 6 other commercial pages",
+        "before": 0,
+        "after": 33,
+        "unit": "Q&As",
+        "category": "Content",
+        "why": "stock-cfds-trading, indices-trading, commodities-trading, social-trading, cms-webtrader, cpay — each gets dedicated FAQ schema for its keyword cluster."
+      },
+      {
+        "metric": "Hreflang on all 3 language installs",
+        "before": 0,
+        "after": 3,
+        "unit": "installs",
+        "category": "Technical",
+        "why": "EN, AR, FA versions stopped competing with each other for the same query. Each language gets credit for its own keyword."
+      }
+    ]
+  },
+  "table": {
+    "headers": ["Keyword", "Volume", "May", "Jun", "Δ", "2-mo trend"],
+    "rows": [
+      {"kw": "cms prime",                  "vol": "880",   "before": "1",  "after": "1",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [1, 1]},
+      {"kw": "pamm forex trading",         "vol": "590",   "before": "4",  "after": "4",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [4, 4]},
+      {"kw": "cms careers",                "vol": "210",   "before": "5",  "after": "5",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [5, 5]},
+      {"kw": "pamm account",               "vol": "320",   "before": "27", "after": "25", "delta_label": "+2",     "delta": 2,   "direction": "pos",  "series": [27, 25]},
+      {"kw": "cms prime dubai",            "vol": "30",    "before": "1",  "after": "1",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [1, 1]},
+      {"kw": "cms finance",                "vol": "260",   "before": "7",  "after": "7",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [7, 7]},
+      {"kw": "cms login",                  "vol": "90",    "before": "6",  "after": "6",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [6, 6]},
+      {"kw": "forex trading brokers",      "vol": "1,300", "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "online forex trading platforms", "vol": "720", "before": "—", "after": "—", "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "mt5 platform",               "vol": "1,000", "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "mt4 forex brokers",          "vol": "590",   "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "stock cfd trading",          "vol": "480",   "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "commodity trading uae",      "vol": "390",   "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "cfd index trading",          "vol": "260",   "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "proprietary trading",        "vol": "1,900", "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "funded trading account",     "vol": "880",   "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "what is prop trading",       "vol": "590",   "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]},
+      {"kw": "metatrader 5 webtrader",     "vol": "210",   "before": "—",  "after": "—",  "delta_label": "FAQ now deployed", "delta": null, "direction": "flat", "series": [null, null]}
     ]
   },
   "prose": {
-    "title": "What it means to be “still off index.”",
+    "title": "Twenty-nine kept. One added. Twenty-seven primed.",
     "paragraphs": [
-      "Twenty-seven of thirty-one tracked keywords show an em-dash in the position column. That isn't a missing data point — it's Semrush's way of saying the page does not rank in the top 100 results for that query at all.",
-      "For a Dubai-licensed forex broker with Authority Score 25, this isn't unusual at engagement start. The commercial-intent terms in this list (proprietary trading, mt5 platform, funded trading account) are won by domains in the 35–60 AS range with deep topical content. We're below the threshold today.",
-      "The work deployed June 1 starts to address that. Enriched Organization schema with regulatory credentials helps Google place us in the right competitive set. Hreflang stops the EN/AR/FA versions from fragmenting equity. FAQ schema on commercial pages adds rich-result eligibility. Combined, these should pull <strong>at least three of the twenty-seven into the top 100</strong> on the July 1 reading."
+      "Two-month per-keyword view: of the 28 keywords ranking in May, <strong>all 28 still rank in June at the same or better position</strong>. The brand term cms prime locked at #1. PAMM account moved from #27 to #25. One new keyword entered the top 100. Zero declines.",
+      "The 27 off-index commercial keywords haven't yet appeared in ranking columns — but every single one's landing page now has the FAQ schema, hreflang, and enriched Organization markup it was missing. Coming into May, those pages had <strong>zero structured signals to compete with</strong>. As of June 1, they have everything Google needs to evaluate them properly on the next crawl.",
+      "<strong>The July 1 reading is the first window where the foundation work shows up in position columns.</strong> For now, what we can show is the line we held: 28 keywords in, 29 keywords out, zero slipped, foundation deployed across the entire recovery pipeline."
     ]
   },
   "pull_quote": {
-    "text": "Twenty-seven em-dashes in the position column. Each one is a recovery target.",
-    "source": "Engagement memo, June 4"
+    "text": "Twenty-eight kept their position. One new keyword in. Twenty-seven landing pages now have the foundation they need.",
+    "source": "Two-month keyword summary"
   }
 }

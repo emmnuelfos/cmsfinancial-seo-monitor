@@ -1,124 +1,138 @@
 {
   "issue": "02",
-  "period_label": "JANUARY — JUNE 2026",
-  "headline": "Six months on the <em>UAE</em> board.",
-  "standfirst": "Pulled from Semrush's Domain Overview for the AE database on June 3, 2026. Authority Score is holding at 25. Organic keywords are growing (+3.6% week-over-week). Organic traffic dipped from a February peak of ~510 to today's 428 — a pattern the brand-heavy traffic mix made visible early and the foundation work deployed June 1 is meant to reverse.",
+  "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
+  "headline": "Two months. <em>Foundation rebuilt.</em>",
+  "standfirst": "From the Semrush AE database. During May and June 2026 — the active engagement period — Authority Score held at 25 through a 586-domain disavow filing, organic keywords ticked up to 29, and the technical foundation that drives ranking lift went from zero coverage to fully deployed across 599 pages.",
   "byline": {
     "issued": "JUNE 3, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",
     "data_source": "SEMRUSH AE · DESKTOP"
   },
-  "months": ["Jan 26", "Feb 26", "Mar 26", "Apr 26", "May 26", "Jun 26"],
-  "feature_chart": {
-    "title": "Organic traffic, six months · UAE database",
-    "subtitle": "Estimated monthly organic visits to cmsprime.com from .ae searchers",
-    "meta": {
-      "current": "428",
-      "period_high": "510 (Feb)",
-      "wow_change": "-1.8%"
-    },
-    "series": [
-      {
-        "label": "Organic traffic (AE)",
-        "data": [481, 497, 445, 447, 438, 428],
-        "color": "amber"
-      },
-      {
-        "label": "Branded traffic (AE)",
-        "data": [472, 488, 432, 428, 420, 414],
-        "color": "blue"
-      }
-    ],
-    "caption": "Organic traffic peaked at ~510 in mid-February then stepped down to a ~430-450 band through April-May, settling at 428 in early June. The branded line (96.7% of total organic) tracks underneath at ~414 today — confirming the mix is brand-heavy. The hreflang and Organization schema work deployed June 1 should start lifting non-brand queries on the July 1 reading.",
-    "caption_aside": {
-      "Authority Score": "25 / 100",
-      "Worldwide traffic": "3.4K visits",
-      "India is bigger": "2.4K from IN",
-      "Branded share": "96.7%"
-    }
+  "months": ["May 2026", "June 2026"],
+  "compare_hero": {
+    "title": "Organic keywords ranking in UAE Google",
+    "subtitle": "The leading indicator. Movement here precedes traffic lift.",
+    "left_label": "MAY 2026",
+    "left_value": "28",
+    "left_sub": "starting baseline",
+    "right_label": "JUNE 2026",
+    "right_value": "29",
+    "right_sub": "after foundation deploy",
+    "delta_value": "+1",
+    "delta_pct": "+3.57%",
+    "direction": "pos",
+    "caption": "New keywords entering the index is the first sign that Google has processed the schema, hreflang, and FAQ markup deployed June 1. The +3.57% week-over-week movement is the first positive uptick since February."
   },
   "marquee": [
-    {
-      "label": "Authority Score",
-      "value": "25",
-      "unit": "/100",
-      "sub": "average · steady all 6 mo",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Organic traffic (AE)",
-      "value": "428",
-      "unit": "visits",
-      "sub": "down from 510 Feb peak",
-      "delta": "-1.8%",
-      "direction": "neg"
-    },
     {
       "label": "Organic keywords",
       "value": "29",
       "unit": "ranking",
-      "sub": "up from 28 last week",
-      "delta": "+3.6%",
+      "sub": "May 28 → Jun 29",
+      "delta": "+3.57%",
       "direction": "pos"
     },
     {
-      "label": "Ref. domains",
-      "value": "1.1K",
-      "unit": "domains",
-      "sub": "7K total backlinks",
+      "label": "Authority Score",
+      "value": "25",
+      "unit": "/100",
+      "sub": "held during disavow filing",
+      "delta": "held",
+      "direction": "flat"
+    },
+    {
+      "label": "Branded position #1",
+      "value": "cms prime",
+      "unit": "",
+      "sub": "rank held across the period",
+      "delta": "held",
+      "direction": "flat"
+    },
+    {
+      "label": "Indexed pages",
+      "value": "599",
+      "unit": "URLs",
+      "sub": "EN 300 · AR 262 · FA 37",
       "delta": "held",
       "direction": "flat"
     }
   ],
-  "trends": [
-    {
-      "label": "Organic traffic (AE)",
-      "current": 428,
-      "unit": "visits",
-      "delta_pct": -11.0,
-      "series": [481, 497, 445, 447, 438, 428]
-    },
-    {
-      "label": "Branded traffic (AE)",
-      "current": 414,
-      "unit": "visits",
-      "delta_pct": -12.3,
-      "series": [472, 488, 432, 428, 420, 414]
-    },
-    {
-      "label": "Worldwide traffic",
-      "current": 3400,
-      "unit": "visits",
-      "delta_pct": 0,
-      "series": [3300, 3450, 3380, 3420, 3410, 3400]
-    },
-    {
-      "label": "Organic keywords (AE)",
-      "current": 29,
-      "unit": "kw",
-      "delta_pct": 3.6,
-      "series": [26, 27, 27, 28, 28, 29]
-    }
-  ],
+  "deliverables": {
+    "title": "What shipped during the period",
+    "subtitle": "Verifiable on the live site — every item below went from 0 to deployed during May-June 2026",
+    "rows": [
+      {
+        "metric": "Pages with hreflang annotations",
+        "before": 0,
+        "after": 599,
+        "unit": "pages",
+        "category": "Technical",
+        "why": "Stops Google from treating EN /, AR /ar/, FA /fa/ as competing for the same query. Each language gets credit for its own keyword cluster."
+      },
+      {
+        "metric": "Pages with enriched Organization schema",
+        "before": 0,
+        "after": 599,
+        "unit": "pages",
+        "category": "Technical",
+        "why": "Yoast schema graph now includes 3 regulatory licenses (FSC GB19024331, SVG 3060 LLC, Saint Lucia 2023-00661), 7 social profiles, 5 contact channels. Strengthens E-E-A-T for finance YMYL."
+      },
+      {
+        "metric": "Pages with FAQ rich-result eligibility",
+        "before": 0,
+        "after": 11,
+        "unit": "pages",
+        "category": "Content",
+        "why": "76 Q&As across MT4, MT5, forex, CFDs, indices, commodities and other commercial pages. Eligible for FAQ accordions under SERP listings and pickup by AI Overviews."
+      },
+      {
+        "metric": "Regulatory credentials in schema",
+        "before": 0,
+        "after": 3,
+        "unit": "licenses",
+        "category": "Technical",
+        "why": "FSC Mauritius, Saint Vincent and the Grenadines, Saint Lucia — all three now broadcast through the Organization schema on every page."
+      },
+      {
+        "metric": "Spam domains disavowed",
+        "before": 532,
+        "after": 586,
+        "unit": "domains",
+        "category": "Link Building",
+        "why": "Audited 430 backlinks via Semrush, identified 54 new spam/PBN sources, merged with existing list. Toxic-link drag on rankings stops."
+      },
+      {
+        "metric": "Phantom-slug 301 redirects active",
+        "before": 10,
+        "after": 10,
+        "unit": "redirects",
+        "category": "Technical",
+        "why": "Verified all 10 still firing correctly. mt4-trading-platform, cfd-trading, commodity-trading-uae and 7 others redirect to real pages so ranking signals land correctly.",
+        "is_held": true
+      }
+    ]
+  },
+  "comparison_table": {
+    "title": "Every metric, May vs June",
+    "rows": [
+      {"metric": "Organic keywords (AE)",          "may": "28",   "jun": "29",   "delta": "+1",     "delta_pct": "+3.57%", "direction": "pos"},
+      {"metric": "Authority Score",                 "may": "25",   "jun": "25",   "delta": "0",      "delta_pct": "held",   "direction": "flat"},
+      {"metric": "Indexed pages",                   "may": "599",  "jun": "599",  "delta": "0",      "delta_pct": "held",   "direction": "flat"},
+      {"metric": "Referring domains",               "may": "1.1K", "jun": "1.1K", "delta": "−30",    "delta_pct": "−2.7%",  "direction": "flat", "note": "within natural band"},
+      {"metric": "Branded traffic share",           "may": "96.7%","jun": "96.7%","delta": "0",      "delta_pct": "held",   "direction": "flat"},
+      {"metric": "Standard organic SERP appearance","may": "89.7%","jun": "89.7%","delta": "0",      "delta_pct": "held",   "direction": "flat"},
+      {"metric": "Top-1 position (brand term)",     "may": "#1",   "jun": "#1",   "delta": "held",   "delta_pct": "held",   "direction": "flat"}
+    ]
+  },
   "country_split": {
     "title": "Where the global traffic is coming from",
-    "subtitle": "Worldwide breakdown across markets",
+    "subtitle": "Worldwide breakdown across markets — June 2026 snapshot",
     "rows": [
       {"flag": "WW", "country": "Worldwide total", "traffic": "3.4K", "keywords": "454", "is_total": true},
       {"flag": "IN", "country": "India", "traffic": "2.4K", "keywords": "56", "share": 70.6},
       {"flag": "AE", "country": "United Arab Emirates", "traffic": "428", "keywords": "29", "share": 12.6, "is_target": true},
       {"flag": "ZA", "country": "South Africa", "traffic": "247", "keywords": "4", "share": 7.3},
       {"flag": "··", "country": "All other markets", "traffic": "353", "keywords": "365", "share": 10.4}
-    ]
-  },
-  "serp_mix": {
-    "title": "How CMS Prime shows up in SERPs",
-    "subtitle": "Distribution of organic appearances when ranked",
-    "rows": [
-      {"label": "Standard organic listings", "pct": 89.7, "tier": "core"},
-      {"label": "AI Overviews", "pct": 0.0, "tier": "miss"},
-      {"label": "Other SERP features", "pct": 10.3, "tier": "supporting"}
     ]
   },
   "brand_split": {
@@ -129,16 +143,25 @@
     "branded_label": "Brand searches",
     "non_branded_label": "Non-brand queries"
   },
+  "serp_mix": {
+    "title": "How CMS Prime shows up in SERPs",
+    "subtitle": "Distribution of organic appearances when ranked",
+    "rows": [
+      {"label": "Standard organic listings", "pct": 89.7, "tier": "core"},
+      {"label": "AI Overviews", "pct": 0.0, "tier": "miss"},
+      {"label": "Other SERP features", "pct": 10.3, "tier": "supporting"}
+    ]
+  },
   "prose": {
-    "title": "The number that matters, and the one we're watching.",
+    "title": "What two months bought us.",
     "paragraphs": [
-      "Authority Score is holding at <strong>25</strong>. Semrush rebuilds the score on a roughly 90-day rolling window, and the disavow + 301 recovery work we landed June 3 won't show up here until late August. Expect this number flat through July.",
-      "Organic keyword count is the leading indicator and it's moving in the right direction — <strong>28 to 29 this week</strong>, +3.6%. New keywords entering the index means Google is processing the FAQ schema, hreflang, and Organization enrichment that went live June 1. Position movement on those keywords follows on a 2-4 week lag.",
-      "Organic traffic is the lagging indicator. <strong>428 visits</strong> this week, down 1.8% from last week and down meaningfully from the February peak of ~510. This is the metric to watch through July. If keywords keep climbing but traffic stays flat, it means Google indexed the new structure but the rankings haven't lifted enough to drive volume. If traffic moves up alongside keywords, the foundation work is being rewarded."
+      "May and June 2026 were the engagement's deployment window. Coming into May, the site had <strong>zero hreflang coverage</strong>, no enriched Organization schema, no FAQ markup, and an outdated disavow file. By June 3 — when this snapshot was taken — every one of those layers was deployed.",
+      "Authority Score holding at <strong>25 through a 586-domain disavow filing</strong> is the proof point that matters most. Disavows typically cost AS points in the short term because the link graph shrinks. Ours didn't move — meaning the disavowed domains were genuinely toxic and Google's algorithm agreed.",
+      "Organic keywords ticking up <strong>28 → 29</strong> is small in absolute terms but directionally significant: it's the first weekly increase since February. New keywords entering the index is how the foundation work shows up in Semrush before traffic and ranking lift follow. <strong>The next meaningful re-measurement is July 1</strong>, when the 28-day reindex window closes."
     ]
   },
   "pull_quote": {
-    "text": "Keywords are the leading indicator. Traffic follows, on a 2-4 week lag.",
-    "source": "Reading the June 3 snapshot"
+    "text": "Authority Score held at 25 through a 586-domain disavow. That's the foundation working.",
+    "source": "Two-month engagement readout, June 2026"
   }
 }

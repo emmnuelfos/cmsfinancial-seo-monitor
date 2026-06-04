@@ -249,6 +249,83 @@
     }
   }
 
+  // ---- Compare Hero — big before/after callout ----
+  function renderCompareHero(el, data) {
+    if (!el || !data) return;
+    const cls = data.direction === "pos" ? "is-pos" : (data.direction === "neg" ? "is-neg" : "is-flat");
+    el.innerHTML =
+      '<div class="compare-hero__head">' +
+      '  <div>' +
+      '    <h2 class="compare-hero__title">' + (data.title || '') + '</h2>' +
+      '    <div class="compare-hero__subtitle">' + (data.subtitle || '') + '</div>' +
+      '  </div>' +
+      '</div>' +
+      '<div class="compare-hero__body">' +
+      '  <div class="compare-hero__side compare-hero__side--left">' +
+      '    <span class="compare-hero__period">' + (data.left_label || '') + '</span>' +
+      '    <span class="compare-hero__value">' + (data.left_value || '—') + '</span>' +
+      '    <span class="compare-hero__sub">' + (data.left_sub || '') + '</span>' +
+      '  </div>' +
+      '  <div class="compare-hero__arrow">' +
+      '    <svg viewBox="0 0 160 24" fill="none">' +
+      '      <line x1="4" y1="12" x2="140" y2="12" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 4"/>' +
+      '      <path d="M130 4 L154 12 L130 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>' +
+      '    </svg>' +
+      '    <span class="compare-hero__delta ' + cls + '">' + (data.delta_value || '') + '</span>' +
+      '    <span class="compare-hero__delta-pct ' + cls + '">' + (data.delta_pct || '') + '</span>' +
+      '  </div>' +
+      '  <div class="compare-hero__side compare-hero__side--right">' +
+      '    <span class="compare-hero__period">' + (data.right_label || '') + '</span>' +
+      '    <span class="compare-hero__value">' + (data.right_value || '—') + '</span>' +
+      '    <span class="compare-hero__sub">' + (data.right_sub || '') + '</span>' +
+      '  </div>' +
+      '</div>' +
+      (data.caption ? '<p class="compare-hero__caption">' + data.caption + '</p>' : '');
+  }
+
+  // ---- Deliverables grid — what shipped from 0 to N ----
+  function renderDeliverables(el, items) {
+    if (!el || !items) return;
+    el.innerHTML = "";
+    items.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "deliverable-card" + (item.is_held ? " is-held" : "");
+      const catCls = (item.category || "").replace(/\s+/g, "");
+      const arrowChar = item.is_held ? "=" : "→";
+      const heldTag = item.is_held ? '<span class="deliverable-card__tag">held</span>' : '';
+      card.innerHTML =
+        '<div class="deliverable-card__head">' +
+        '  <div class="deliverable-card__metric">' + item.metric + '</div>' +
+        '  <span class="deliverable-card__category is-' + catCls + '">' + (item.category || '') + '</span>' +
+        '</div>' +
+        '<div class="deliverable-card__values">' +
+        '  <span class="deliverable-card__before">' + item.before + '</span>' +
+        '  <span class="deliverable-card__arrow">' + arrowChar + '</span>' +
+        '  <span class="deliverable-card__after">' + item.after + '<span class="deliverable-card__unit">' + (item.unit || '') + '</span>' + heldTag + '</span>' +
+        '</div>' +
+        '<p class="deliverable-card__why">' + (item.why || '') + '</p>';
+      el.appendChild(card);
+    });
+  }
+
+  // ---- Compare table ----
+  function renderCompareTable(el, rows) {
+    if (!el || !rows) return;
+    el.innerHTML = "";
+    rows.forEach(r => {
+      const dCls = r.direction === "pos" ? "is-pos" : (r.direction === "neg" ? "is-neg" : "is-flat");
+      const tr = document.createElement("tr");
+      tr.innerHTML =
+        '<td class="col-metric">' + r.metric + '</td>' +
+        '<td class="col-num col-may">' + r.may + '</td>' +
+        '<td class="col-num col-jun">' + r.jun + '</td>' +
+        '<td class="col-delta ' + dCls + '">' + r.delta + '</td>' +
+        '<td class="col-delta ' + dCls + '">' + r.delta_pct + '</td>' +
+        '<td class="col-note">' + (r.note || '') + '</td>';
+      el.appendChild(tr);
+    });
+  }
+
   // ---- Public API ----
   root.MonthlyReport = {
     PAL: PAL,
@@ -260,5 +337,8 @@
     renderMarquee: renderMarquee,
     renderTrendStrip: renderTrendStrip,
     renderHead: renderHead,
+    renderCompareHero: renderCompareHero,
+    renderDeliverables: renderDeliverables,
+    renderCompareTable: renderCompareTable,
   };
 })(window);
