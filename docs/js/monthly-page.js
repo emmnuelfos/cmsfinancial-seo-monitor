@@ -195,6 +195,271 @@
     });
   }
 
+  // ===========================================================
+  // COMPARISON CHART HELPERS — replace bar-lists / tables where
+  // a visual comparison story lands harder than raw numbers.
+  // ===========================================================
+
+  // Grouped vertical bars: May vs June side-by-side per metric
+  function drawCompareBars(ctx, labels, beforeVals, afterVals, opts) {
+    opts = opts || {};
+    return new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: opts.beforeLabel || "Before",
+            data: beforeVals,
+            backgroundColor: PAL.muted,
+            borderColor: PAL.muted,
+            borderWidth: 1,
+            borderRadius: 2,
+            barPercentage: 0.85,
+            categoryPercentage: 0.65,
+          },
+          {
+            label: opts.afterLabel || "After",
+            data: afterVals,
+            backgroundColor: PAL.gold,
+            borderColor: PAL.gold,
+            borderWidth: 1,
+            borderRadius: 2,
+            barPercentage: 0.85,
+            categoryPercentage: 0.65,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: "top",
+            align: "end",
+            labels: {
+              boxWidth: 10,
+              boxHeight: 10,
+              padding: 14,
+              font: { family: FONT_MONO, size: 10.5, weight: 600 },
+              color: PAL.text,
+              usePointStyle: false,
+              textTransform: "uppercase",
+            },
+          },
+          tooltip: {
+            callbacks: {
+              label: (item) => item.dataset.label + ": " + fmt(item.parsed.y) + (opts.unit || ""),
+            },
+          },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { font: { family: FONT_MONO, size: 10.5 }, color: PAL.text },
+            border: { color: PAL.rule },
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: PAL.grid, drawBorder: false },
+            ticks: {
+              font: { family: FONT_MONO, size: 10 },
+              color: PAL.text,
+              padding: 6,
+              callback: (v) => opts.shortNum ? shortFmt(v) : fmt(v),
+            },
+            border: { display: false },
+          },
+        },
+      },
+    });
+  }
+
+  function shortFmt(n) {
+    if (n === null || n === undefined) return "";
+    if (Math.abs(n) >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "K";
+    return fmt(n);
+  }
+
+  // Horizontal bar chart — for distributions (authority, TLD, countries, etc.)
+  function drawHorizontalBars(ctx, labels, values, opts) {
+    opts = opts || {};
+    const colors = opts.colors || values.map((_, i) => i === 0 ? PAL.gold : (i < 3 ? PAL.amber : PAL.blueSoft));
+    return new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: labels,
+        datasets: [{
+          data: values,
+          backgroundColor: colors,
+          borderColor: colors,
+          borderWidth: 0,
+          borderRadius: 2,
+          barPercentage: 0.85,
+          categoryPercentage: 0.75,
+        }],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (item) => fmt(item.parsed.x) + (opts.unit || ""),
+            },
+          },
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            grid: { color: PAL.grid },
+            ticks: { font: { family: FONT_MONO, size: 10 }, color: PAL.text },
+            border: { display: false },
+          },
+          y: {
+            grid: { display: false },
+            ticks: {
+              font: { family: FONT_MONO, size: 11 },
+              color: PAL.text,
+              padding: 4,
+            },
+            border: { color: PAL.rule },
+          },
+        },
+      },
+    });
+  }
+
+  // Donut chart — for share/proportion data (intent, TLD, brand split)
+  function drawDonut(ctx, labels, values, opts) {
+    opts = opts || {};
+    const colors = opts.colors || [PAL.gold, PAL.blue, PAL.amber, PAL.muted, PAL.text];
+    return new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: labels,
+        datasets: [{
+          data: values,
+          backgroundColor: colors,
+          borderColor: "#020617",
+          borderWidth: 2,
+          hoverOffset: 6,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: "62%",
+        plugins: {
+          legend: {
+            display: true,
+            position: "right",
+            labels: {
+              boxWidth: 10,
+              boxHeight: 10,
+              padding: 10,
+              font: { family: FONT_MONO, size: 11 },
+              color: PAL.text,
+              usePointStyle: false,
+              generateLabels: (chart) => {
+                const data = chart.data;
+                return data.labels.map((label, i) => ({
+                  text: label + " · " + data.datasets[0].data[i] + (opts.unit || ""),
+                  fillStyle: data.datasets[0].backgroundColor[i],
+                  strokeStyle: data.datasets[0].backgroundColor[i],
+                  lineWidth: 0,
+                  index: i,
+                }));
+              },
+            },
+          },
+          tooltip: {
+            callbacks: {
+              label: (item) => item.label + ": " + fmt(item.parsed) + (opts.unit || ""),
+            },
+          },
+        },
+      },
+    });
+  }
+
+  // Slope chart — keyword position movement (multiple lines, May -> June)
+  // Best for showing rank changes (lower = better, so reversed y-axis)
+  function drawSlope(ctx, items, opts) {
+    opts = opts || {};
+    // items: [{label, before, after, color}]
+    const labels = [opts.leftLabel || "Before", opts.rightLabel || "After"];
+    const datasets = items.map((it, i) => ({
+      label: it.label,
+      data: [it.before, it.after],
+      borderColor: it.color || (i % 2 ? PAL.gold : PAL.blue),
+      backgroundColor: it.color || (i % 2 ? PAL.gold : PAL.blue),
+      borderWidth: 2.5,
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      pointBackgroundColor: it.color || (i % 2 ? PAL.gold : PAL.blue),
+      pointBorderColor: "#020617",
+      pointBorderWidth: 2,
+      tension: 0,
+    }));
+    return new Chart(ctx, {
+      type: "line",
+      data: { labels: labels, datasets: datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            display: true,
+            position: "right",
+            labels: {
+              boxWidth: 8,
+              boxHeight: 8,
+              padding: 8,
+              font: { family: FONT_MONO, size: 11 },
+              color: PAL.text,
+              usePointStyle: true,
+              pointStyle: "circle",
+            },
+          },
+          tooltip: {
+            callbacks: {
+              title: (items) => items[0].label,
+              label: (item) => item.dataset.label + ": rank #" + item.parsed.y,
+            },
+          },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: {
+              font: { family: FONT_MONO, size: 11, weight: 600 },
+              color: PAL.text,
+              padding: 8,
+            },
+            border: { color: PAL.rule, width: 1 },
+          },
+          y: {
+            reverse: true,
+            beginAtZero: false,
+            grid: { color: PAL.grid, drawBorder: false },
+            ticks: {
+              font: { family: FONT_MONO, size: 10 },
+              color: PAL.text,
+              padding: 6,
+              callback: (v) => "#" + v,
+            },
+            border: { display: false },
+          },
+        },
+      },
+    });
+  }
+
   // ---- Win-strip renderer (compact tile row for the executive summary style) ----
   function renderWinStrip(el, tiles) {
     if (!el) return;
@@ -352,6 +617,10 @@
     drawSpark: drawSpark,
     renderMarquee: renderMarquee,
     renderWinStrip: renderWinStrip,
+    drawCompareBars: drawCompareBars,
+    drawHorizontalBars: drawHorizontalBars,
+    drawDonut: drawDonut,
+    drawSlope: drawSlope,
     renderTrendStrip: renderTrendStrip,
     renderHead: renderHead,
     renderCompareHero: renderCompareHero,

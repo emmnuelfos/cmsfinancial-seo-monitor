@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
   <script src="./js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -64,6 +65,36 @@
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
+
+      <!-- Chart: keyword positions May → June (slope chart) -->
+      <section class="fade-up" data-stagger="4">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Keyword positions · slope view</h2>
+          <span class="summary-section-head__meta">lower = better · 4 tracked keywords</span>
+        </div>
+        <div class="compact-chart">
+          <div class="compact-chart__head">
+            <div class="compact-chart__title">Position movement across the engagement window</div>
+            <div class="compact-chart__sub">Apr 26 → Jun 4</div>
+          </div>
+          <div class="compact-chart__canvas-wrap is-h220">
+            <canvas id="slopeChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chart: visibility gain per keyword (horizontal bar) -->
+      <section class="fade-up" data-stagger="4">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Visibility gain per improved keyword</h2>
+          <span class="summary-section-head__meta">total +4.71% · vs −2.42% loss</span>
+        </div>
+        <div class="compact-chart">
+          <div class="compact-chart__canvas-wrap is-h180">
+            <canvas id="visGainChart"></canvas>
+          </div>
+        </div>
+      </section>
 
       <!-- Top movers — improved + declined -->
       <section class="summary-twocol fade-up" data-stagger="4">
@@ -193,6 +224,30 @@
       $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
 
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
+
+      // --- Slope chart: keyword positions May → June ---
+      const slopeItems = [
+        {label: "pamm forex trading", before: 19, after: 6,  color: MonthlyReport.PAL.gold},
+        {label: "cms careers",        before: 35, after: 10, color: MonthlyReport.PAL.amber},
+        {label: "pamm account",       before: 29, after: 12, color: MonthlyReport.PAL.blue},
+        {label: "cms prime (brand)",  before: 1,  after: 1,  color: "#A78BFA"},
+      ];
+      MonthlyReport.drawSlope(
+        document.getElementById("slopeChart").getContext("2d"),
+        slopeItems,
+        {leftLabel: "Apr 26 (start)", rightLabel: "Jun 4 (now)"}
+      );
+
+      // --- Visibility gain horizontal bars ---
+      MonthlyReport.drawHorizontalBars(
+        document.getElementById("visGainChart").getContext("2d"),
+        ["pamm forex trading", "cms careers", "pamm account", "metatrader4 platform"],
+        [2.75, 1.36, 0.60, -2.42],
+        {
+          unit: "%",
+          colors: [MonthlyReport.PAL.pos, MonthlyReport.PAL.pos, MonthlyReport.PAL.pos, MonthlyReport.PAL.neg],
+        }
+      );
 
       // Improved + declined
       if (data.top_movers) {

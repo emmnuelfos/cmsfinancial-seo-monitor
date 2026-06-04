@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
   <script src="./js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -65,6 +66,23 @@
 
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
+      <!-- Comparison chart: May vs June across foundation deliverables -->
+      <section class="fade-up" data-stagger="4">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">May → June · foundation deployment</h2>
+          <span class="summary-section-head__meta">grouped bars · before vs after</span>
+        </div>
+        <div class="compact-chart">
+          <div class="compact-chart__head">
+            <div class="compact-chart__title">Page coverage of foundation layers</div>
+            <div class="compact-chart__sub">deployed across all 599 indexable pages</div>
+          </div>
+          <div class="compact-chart__canvas-wrap is-h220">
+            <canvas id="deployChart"></canvas>
+          </div>
+        </div>
+      </section>
+
       <!-- All-metrics table -->
       <section class="fade-up" data-stagger="4">
         <div class="summary-section-head">
@@ -86,37 +104,39 @@
         </table>
       </section>
 
-      <!-- Two-column: Country split + SERP mix -->
+      <!-- Two-column: Country traffic chart + SERP donut -->
       <section class="summary-twocol fade-up" data-stagger="5">
         <div>
           <div class="summary-section-head">
-            <h2 class="summary-section-head__title">Country breakdown</h2>
-            <span class="summary-section-head__meta" id="countrySubtitle">—</span>
+            <h2 class="summary-section-head__title">Traffic by country</h2>
+            <span class="summary-section-head__meta">worldwide breakdown</span>
           </div>
-          <table class="summary-table is-compact">
-            <thead>
-              <tr>
-                <th>Market</th>
-                <th class="is-num">Traffic</th>
-                <th class="is-num">Keywords</th>
-              </tr>
-            </thead>
-            <tbody id="countryTable"></tbody>
-          </table>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="countryChart"></canvas>
+            </div>
+          </div>
         </div>
         <div>
           <div class="summary-section-head">
-            <h2 class="summary-section-head__title">SERP appearance</h2>
-            <span class="summary-section-head__meta">June 2026 snapshot</span>
+            <h2 class="summary-section-head__title">SERP appearance mix</h2>
+            <span class="summary-section-head__meta">June 2026 distribution</span>
           </div>
-          <ul class="bar-list" id="serpList"></ul>
-
-          <div class="summary-section-head" style="margin-top: var(--space-5);">
-            <h2 class="summary-section-head__title">Brand vs non-brand</h2>
-            <span class="summary-section-head__meta">share of organic traffic</span>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="serpChart"></canvas>
+            </div>
           </div>
-          <div class="split-bar" id="brandBar"></div>
         </div>
+      </section>
+
+      <!-- Brand split -->
+      <section class="fade-up" data-stagger="5">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Brand vs non-brand traffic</h2>
+          <span class="summary-section-head__meta">share of organic traffic</span>
+        </div>
+        <div class="split-bar" id="brandBar"></div>
       </section>
 
       <!-- Deliverables timeline -->
@@ -166,6 +186,37 @@
       // Win strip
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
 
+      // --- Deployment comparison chart: May → June ---
+      MonthlyReport.drawCompareBars(
+        document.getElementById("deployChart").getContext("2d"),
+        ["Hreflang pages", "Enriched schema", "FAQ pages", "Reg. credentials"],
+        [0, 0, 0, 0],
+        [599, 599, 11, 3],
+        {beforeLabel: "May 2026", afterLabel: "June 2026", unit: ""}
+      );
+
+      // --- Country traffic horizontal bars ---
+      MonthlyReport.drawHorizontalBars(
+        document.getElementById("countryChart").getContext("2d"),
+        ["India", "Worldwide", "UAE (target)", "South Africa", "Other"],
+        [2400, 3400, 428, 247, 353],
+        {
+          unit: " visits",
+          colors: [MonthlyReport.PAL.blue, MonthlyReport.PAL.muted, MonthlyReport.PAL.gold, MonthlyReport.PAL.blueSoft, MonthlyReport.PAL.text],
+        }
+      );
+
+      // --- SERP appearance donut ---
+      MonthlyReport.drawDonut(
+        document.getElementById("serpChart").getContext("2d"),
+        ["Standard organic", "Other SERP features", "AI Overviews"],
+        [89.7, 10.3, 0],
+        {
+          unit: "%",
+          colors: [MonthlyReport.PAL.pos, MonthlyReport.PAL.blue, MonthlyReport.PAL.muted],
+        }
+      );
+
       // Metrics table from comparison_table
       if (data.comparison_table) {
         const tbody = $("#metricsTable");
@@ -182,42 +233,6 @@
             '<td class="num ' + cls + '">' + r.delta_pct + '</td>' +
             '<td style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);">' + (r.note || '') + '</td>';
           tbody.appendChild(tr);
-        });
-      }
-
-      // Country split
-      if (data.country_split) {
-        $("#countrySubtitle").textContent = data.country_split.subtitle || "";
-        const tbody = $("#countryTable");
-        tbody.innerHTML = "";
-        data.country_split.rows.forEach(r => {
-          const tr = document.createElement("tr");
-          if (r.is_total) tr.className = "is-flat";
-          if (r.is_target) tr.className = "is-pos";
-          const targetTag = r.is_target ? '<span class="state state-pos" style="margin-left:6px;">target</span>' : '';
-          tr.innerHTML =
-            '<td class="metric-name">' + r.flag + ' · ' + r.country + targetTag + '</td>' +
-            '<td class="num is-strong">' + r.traffic + '</td>' +
-            '<td class="num">' + r.keywords + '</td>';
-          tbody.appendChild(tr);
-        });
-      }
-
-      // SERP list (bar-list component)
-      if (data.serp_mix) {
-        const ul = $("#serpList");
-        ul.innerHTML = "";
-        data.serp_mix.rows.forEach(r => {
-          const li = document.createElement("li");
-          li.className = "bar-list__item is-" + r.tier;
-          li.innerHTML =
-            '<div class="bar-list__row"><span class="bar-list__label">' + r.label + '</span>' +
-            '<span class="bar-list__pct">' + r.pct + '%</span></div>' +
-            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
-          ul.appendChild(li);
-          requestAnimationFrame(() => {
-            li.querySelector(".bar-list__fill").style.width = r.pct + "%";
-          });
         });
       }
 

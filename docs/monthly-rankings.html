@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
   <script src="./js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -64,6 +65,45 @@
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
+
+      <!-- Charts row: Footprint comparison + Intent donut -->
+      <section class="summary-twocol fade-up" data-stagger="4">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Keyword footprint by database</h2>
+            <span class="summary-section-head__meta">US vs IN vs AE</span>
+          </div>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="footprintChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Keywords by search intent</h2>
+            <span class="summary-section-head__meta">% of 29 tracked kw</span>
+          </div>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="intentChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top pages traffic share chart -->
+      <section class="fade-up" data-stagger="4">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Top pages · share of organic traffic</h2>
+          <span class="summary-section-head__meta">5 pages account for 100%</span>
+        </div>
+        <div class="compact-chart">
+          <div class="compact-chart__canvas-wrap is-h200">
+            <canvas id="topPagesChart"></canvas>
+          </div>
+        </div>
+      </section>
 
       <!-- Top keywords + Country footprint -->
       <section class="summary-twocol fade-up" data-stagger="4">
@@ -200,6 +240,39 @@
       $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
 
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
+
+      // --- Footprint comparison chart (US / IN / AE) ---
+      MonthlyReport.drawHorizontalBars(
+        document.getElementById("footprintChart").getContext("2d"),
+        ["United States", "India", "UAE (target)"],
+        [128, 56, 29],
+        {
+          unit: " kw",
+          colors: [MonthlyReport.PAL.muted, MonthlyReport.PAL.blue, MonthlyReport.PAL.gold],
+        }
+      );
+
+      // --- Intent donut ---
+      MonthlyReport.drawDonut(
+        document.getElementById("intentChart").getContext("2d"),
+        ["Informational", "Navigational", "Transactional"],
+        [71, 22.6, 6.5],
+        {
+          unit: "%",
+          colors: [MonthlyReport.PAL.blue, MonthlyReport.PAL.gold, MonthlyReport.PAL.amber],
+        }
+      );
+
+      // --- Top pages horizontal bars ---
+      MonthlyReport.drawHorizontalBars(
+        document.getElementById("topPagesChart").getContext("2d"),
+        ["/", "/about-us/", "mycms.../login", "/ebook/", "/trading-central/"],
+        [97.19, 1.40, 0.93, 0.46, 0.01],
+        {
+          unit: "%",
+          colors: [MonthlyReport.PAL.gold, MonthlyReport.PAL.blue, MonthlyReport.PAL.blue, MonthlyReport.PAL.blueSoft, MonthlyReport.PAL.muted],
+        }
+      );
 
       // Top keywords
       if (data.top_keywords) {

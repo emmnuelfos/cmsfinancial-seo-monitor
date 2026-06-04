@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
   <script src="./js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -96,6 +97,23 @@
           <div class="win-tile__unit">pages</div>
           <div class="win-tile__label">FAQ rich-result eligible</div>
           <div class="win-tile__source">Organic Rankings</div>
+        </div>
+      </section>
+
+      <!-- Hero comparison chart: all improvements visualized -->
+      <section class="fade-up" data-stagger="3">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">All improvements visualized · May → June</h2>
+          <span class="summary-section-head__meta">grouped bars · before vs after across foundation work</span>
+        </div>
+        <div class="compact-chart">
+          <div class="compact-chart__head">
+            <div class="compact-chart__title">Foundation deployment across the engagement window</div>
+            <div class="compact-chart__sub">12 metrics improved · 0 declined</div>
+          </div>
+          <div class="compact-chart__canvas-wrap is-h260">
+            <canvas id="improvementsChart"></canvas>
+          </div>
         </div>
       </section>
 
@@ -469,6 +487,23 @@
       </footer>
     </main>
   </div>
+
+  <script src="./js/monthly-page.js"></script>
+  <script>
+    // Hero comparison chart: deployments shipped during May → June
+    (function () {
+      if (!window.MonthlyReport || !window.Chart) return;
+      const ctx = document.getElementById("improvementsChart");
+      if (!ctx) return;
+      MonthlyReport.drawCompareBars(
+        ctx.getContext("2d"),
+        ["Hreflang pages", "Enriched schema", "FAQ pages", "Disavowed dom", "Redirect rules", "Broken targets fixed"],
+        [0, 0, 0, 532, 0, 0],
+        [599, 599, 11, 586, 18, 40],
+        {beforeLabel: "May 2026", afterLabel: "June 2026", unit: "", shortNum: true}
+      );
+    })();
+  </script>
 
   <nav class="bottom-nav" aria-label="Mobile">
     <div class="bottom-nav__inner">

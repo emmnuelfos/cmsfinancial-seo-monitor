@@ -368,6 +368,59 @@
 .summary-footer__nav a:hover { border-bottom-color: var(--brand-gold); }
 
 /* =========================================================
+   Compact chart wrappers — fixed-height containers
+   so Chart.js never escapes its bounds
+   ========================================================= */
+.compact-chart {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule-color);
+  padding: var(--space-3) var(--space-4) var(--space-3);
+  margin-top: var(--space-3);
+}
+.compact-chart__canvas-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.compact-chart__canvas-wrap.is-h160 { height: 160px; }
+.compact-chart__canvas-wrap.is-h180 { height: 180px; }
+.compact-chart__canvas-wrap.is-h200 { height: 200px; }
+.compact-chart__canvas-wrap.is-h220 { height: 220px; }
+.compact-chart__canvas-wrap.is-h260 { height: 260px; }
+.compact-chart__canvas-wrap.is-h300 { height: 300px; }
+.compact-chart__canvas-wrap canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+.compact-chart__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-2);
+  gap: var(--space-3);
+}
+.compact-chart__title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.compact-chart__sub {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* =========================================================
    Bar list — compact horizontal bars with label + pct
    Used for SERP mix, intent split, authority dist, TLD, link types
    ========================================================= */

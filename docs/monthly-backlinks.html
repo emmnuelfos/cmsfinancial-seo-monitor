@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
   <script src="./js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -64,6 +65,58 @@
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
+
+      <!-- May vs June backlinks comparison + Authority distribution -->
+      <section class="summary-twocol fade-up" data-stagger="4">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">May → June · link counts</h2>
+            <span class="summary-section-head__meta">disavow processing effect</span>
+          </div>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="linkChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Referring domains by Authority Score</h2>
+            <span class="summary-section-head__meta">1,083 linking domains</span>
+          </div>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="authChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TLD donut + Countries chart -->
+      <section class="summary-twocol fade-up" data-stagger="5">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">By top-level domain</h2>
+            <span class="summary-section-head__meta">PBN signatures flagged</span>
+          </div>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="tldChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Top countries</h2>
+            <span class="summary-section-head__meta">where links physically live</span>
+          </div>
+          <div class="compact-chart">
+            <div class="compact-chart__canvas-wrap is-h220">
+              <canvas id="countriesChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Cleanup shipped (timeline) -->
       <section class="fade-up" data-stagger="4">
@@ -181,6 +234,51 @@
       $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
 
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
+
+      // --- May → June link comparison ---
+      MonthlyReport.drawCompareBars(
+        document.getElementById("linkChart").getContext("2d"),
+        ["Total backlinks", "Referring domains", "Disavowed spam"],
+        [8000, 1107, 532],
+        [7000, 1077, 586],
+        {beforeLabel: "May 2026", afterLabel: "June 2026", unit: "", shortNum: true}
+      );
+
+      // --- Authority Score distribution ---
+      MonthlyReport.drawHorizontalBars(
+        document.getElementById("authChart").getContext("2d"),
+        ["0—10 (weak)", "11—20", "21—30", "31—40", "41—50", "51—60", "61+"],
+        [899, 51, 56, 26, 30, 14, 11],
+        {
+          unit: " dom",
+          colors: [
+            MonthlyReport.PAL.muted, MonthlyReport.PAL.blueSoft, MonthlyReport.PAL.blueSoft,
+            MonthlyReport.PAL.blue, MonthlyReport.PAL.blue, MonthlyReport.PAL.amber, MonthlyReport.PAL.gold
+          ],
+        }
+      );
+
+      // --- TLD donut ---
+      MonthlyReport.drawDonut(
+        document.getElementById("tldChart").getContext("2d"),
+        [".com", "other", ".space (PBN)", ".site (PBN)"],
+        [51, 34, 7, 7],
+        {
+          unit: "%",
+          colors: [MonthlyReport.PAL.gold, MonthlyReport.PAL.blue, MonthlyReport.PAL.neg, MonthlyReport.PAL.neg],
+        }
+      );
+
+      // --- Countries horizontal bars ---
+      MonthlyReport.drawHorizontalBars(
+        document.getElementById("countriesChart").getContext("2d"),
+        ["United States", "Singapore", "France", "Iran", "Germany", "UK"],
+        [365, 80, 21, 17, 17, 11],
+        {
+          unit: " dom",
+          colors: [MonthlyReport.PAL.gold, MonthlyReport.PAL.amber, MonthlyReport.PAL.blue, MonthlyReport.PAL.blue, MonthlyReport.PAL.blueSoft, MonthlyReport.PAL.blueSoft],
+        }
+      );
 
       // Cleanup list
       if (data.deliverables) {
