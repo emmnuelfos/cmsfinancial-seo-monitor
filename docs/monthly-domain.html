@@ -108,14 +108,45 @@
 
       <div class="trend-strip fade-up" data-stagger="5" id="trendStrip"></div>
 
-      <!-- Editorial prose -->
+      <!-- Geography + Brand split -->
       <div class="section-rule fade-up" data-stagger="6">
-        <span class="section-rule__label">§ III — Analysis</span>
+        <span class="section-rule__label">§ III — Where the traffic comes from</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">FIG. 06–08</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="6">
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="geoTitle">Country breakdown · worldwide → markets</div>
+            <table class="geo-rows">
+              <tbody id="geoRows"></tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="brandTitle">Brand vs non-brand</div>
+            <div class="brand-split">
+              <div class="brand-split__bar" id="brandBar"></div>
+              <p class="brand-split__caption" id="brandCaption">—</p>
+            </div>
+          </div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="serpTitle">SERP appearance mix</div>
+            <div id="serpMix"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial prose -->
+      <div class="section-rule fade-up" data-stagger="7">
+        <span class="section-rule__label">§ IV — Analysis</span>
         <span class="section-rule__line"></span>
         <span class="section-rule__counter">PROSE</span>
       </div>
 
-      <div class="editorial-grid fade-up" data-stagger="6">
+      <div class="editorial-grid fade-up" data-stagger="7">
         <div class="editorial-prose">
           <h3 id="proseTitle">—</h3>
           <div id="proseBody" class="drop-cap"></div>
@@ -190,10 +221,84 @@
         }
       }
       const ctx = document.getElementById("featChart").getContext("2d");
-      MonthlyReport.drawFeatureChart(ctx, data.months, fc.series, { unit: "%", yUnit: "%", beginAtZero: false });
+      MonthlyReport.drawFeatureChart(ctx, data.months, fc.series, { unit: "", yUnit: "", beginAtZero: false });
 
       // Trend strip
       MonthlyReport.renderTrendStrip(document.getElementById("trendStrip"), data.trends || [], data.months);
+
+      // Country split
+      if (data.country_split) {
+        const cs = data.country_split;
+        document.getElementById("geoTitle").textContent = cs.subtitle || cs.title;
+        const tbody = document.getElementById("geoRows");
+        tbody.innerHTML = "";
+        cs.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          if (r.is_total) tr.classList.add("is-total");
+          if (r.is_total) {
+            tr.innerHTML =
+              '<td class="geo-flag">·</td>' +
+              '<td class="geo-name">' + r.country + '</td>' +
+              '<td class="geo-bar"></td>' +
+              '<td class="geo-num">' + r.traffic + '</td>' +
+              '<td class="geo-sub">' + r.keywords + ' kw</td>';
+          } else {
+            const targetCls = r.is_target ? " is-target" : "";
+            const tag = r.is_target ? '<span class="geo-target-tag">target</span>' : '';
+            tr.innerHTML =
+              '<td class="geo-flag">' + r.flag + '</td>' +
+              '<td class="geo-name' + targetCls + '">' + r.country + tag + '</td>' +
+              '<td class="geo-bar"><div class="geo-bar__track"><div class="geo-bar__fill' + targetCls + '" style="width:0"></div></div></td>' +
+              '<td class="geo-num' + targetCls + '">' + r.traffic + '</td>' +
+              '<td class="geo-sub">' + r.keywords + ' kw</td>';
+          }
+          tbody.appendChild(tr);
+          if (!r.is_total) {
+            requestAnimationFrame(() => {
+              const fill = tr.querySelector(".geo-bar__fill");
+              if (fill) fill.style.width = (r.share || 0) + "%";
+            });
+          }
+        });
+      }
+
+      // Brand split
+      if (data.brand_split) {
+        const bs = data.brand_split;
+        document.getElementById("brandTitle").textContent = bs.subtitle || bs.title;
+        const bar = document.getElementById("brandBar");
+        bar.innerHTML =
+          '<div class="brand-split__seg is-brand" style="flex:' + bs.branded_pct + ';">' +
+          '  <div class="brand-split__seg-label">' + bs.branded_label + '</div>' +
+          '  <div class="brand-split__seg-value">' + bs.branded_pct + '%</div>' +
+          '</div>' +
+          '<div class="brand-split__seg is-non-brand" style="flex:' + bs.non_branded_pct + ';">' +
+          '  <div class="brand-split__seg-label">' + bs.non_branded_label + '</div>' +
+          '  <div class="brand-split__seg-value">' + bs.non_branded_pct + '%</div>' +
+          '</div>';
+        document.getElementById("brandCaption").textContent = "The brand term 'cms prime' accounts for nearly all organic traffic. Non-brand commercial queries are the recovery opportunity.";
+      }
+
+      // SERP mix
+      if (data.serp_mix) {
+        const sm = data.serp_mix;
+        document.getElementById("serpTitle").textContent = sm.subtitle || sm.title;
+        const el = document.getElementById("serpMix");
+        el.innerHTML = "";
+        sm.rows.forEach(r => {
+          const row = document.createElement("div");
+          row.className = "serp-mix__row is-" + r.tier;
+          row.innerHTML =
+            '<span class="serp-mix__label">' + r.label + '</span>' +
+            '<span class="serp-mix__pct">' + r.pct + '%</span>' +
+            '<div class="serp-mix__bar"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
+          el.appendChild(row);
+          requestAnimationFrame(() => {
+            const fill = row.querySelector(".serp-mix__bar-fill");
+            if (fill) fill.style.width = r.pct + "%";
+          });
+        });
+      }
 
       // Prose
       if (data.prose) {

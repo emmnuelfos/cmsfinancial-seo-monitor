@@ -609,6 +609,191 @@
 }
 
 /* =========================================================
+   Geography table (country split)
+   ========================================================= */
+.geo-rows {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+.geo-rows tr {
+  border-bottom: 1px solid var(--rule-color);
+}
+.geo-rows tr:last-child { border-bottom: none; }
+.geo-rows td {
+  padding: var(--space-3) var(--space-3) var(--space-3) 0;
+  vertical-align: middle;
+}
+.geo-flag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  width: 32px;
+  font-weight: 600;
+}
+.geo-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.005em;
+}
+.geo-name.is-target { color: var(--brand-gold); }
+.geo-target-tag {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--brand-gold);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: var(--space-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.geo-bar { width: 35%; min-width: 80px; }
+.geo-bar__track {
+  height: 6px;
+  background: var(--border-faint);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.geo-bar__fill {
+  height: 100%;
+  background: var(--data-blue);
+  border-radius: 3px;
+  transition: width 700ms var(--ease-out);
+}
+.geo-bar__fill.is-target { background: var(--brand-gold); }
+.geo-num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+  text-align: right;
+  padding-right: var(--space-3) !important;
+}
+.geo-num.is-target { color: var(--brand-gold); }
+.geo-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: right;
+}
+.geo-rows tr.is-total td { border-bottom: 2px solid var(--text-primary); }
+.geo-rows tr.is-total .geo-name { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); font-weight: 600; }
+.geo-rows tr.is-total .geo-num { font-size: 16px; color: var(--text-primary); }
+
+/* =========================================================
+   Brand split — large numeric callout with bar
+   ========================================================= */
+.brand-split { padding: 0; }
+.brand-split__bar {
+  display: flex;
+  height: 72px;
+  width: 100%;
+  border: 1px solid var(--rule-color);
+}
+.brand-split__seg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--space-4);
+  position: relative;
+}
+.brand-split__seg.is-brand {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.18), rgba(251, 191, 36, 0.06));
+  border-right: 1px solid var(--rule-color);
+}
+.brand-split__seg.is-non-brand { background: var(--paper-tint); }
+.brand-split__seg-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.brand-split__seg-value {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+.brand-split__seg.is-brand .brand-split__seg-value { color: var(--brand-gold); }
+.brand-split__caption {
+  font-family: var(--font-editorial);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-style: italic;
+  margin: var(--space-3) 0 0;
+}
+
+/* =========================================================
+   SERP mix — labels + bars
+   ========================================================= */
+.serp-mix__row {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.serp-mix__label {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.serp-mix__bar {
+  height: 5px;
+  background: var(--border-faint);
+  border-radius: 3px;
+  overflow: hidden;
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-3);
+}
+.serp-mix__bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 700ms var(--ease-out);
+}
+.serp-mix__row.is-core .serp-mix__bar-fill { background: var(--pos); }
+.serp-mix__row.is-supporting .serp-mix__bar-fill { background: var(--data-blue); }
+.serp-mix__row.is-miss .serp-mix__bar-fill { background: var(--text-faint); }
+.serp-mix__row.is-miss .serp-mix__label { color: var(--text-muted); }
+.serp-mix__pct {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.serp-mix__row.is-core .serp-mix__pct { color: var(--pos); }
+.serp-mix__row.is-supporting .serp-mix__pct { color: var(--data-blue); }
+.serp-mix__row.is-miss .serp-mix__pct { color: var(--text-muted); }
+
+/* Sub-section heading (for the where/how section blocks) */
+.sub-section {
+  margin: var(--space-5) 0;
+}
+.sub-section__title {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+/* =========================================================
    Rank movers list (Organic Rankings page)
    ========================================================= */
 .movers-grid {
