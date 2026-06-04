@@ -1,0 +1,218 @@
+{
+  "issue": "02",
+  "period_label": "APR 26 — JUN 4, 2026 · ENGAGEMENT WINDOW",
+  "headline": "Three up, <em>one down</em>, two new in top ten.",
+  "standfirst": "Position Tracking project for cmsprime.com on the UAE Google database (English desktop). Across the 39-day engagement window, three keywords improved their positions, one declined, and two new keywords broke into the top 10. Visibility climbed +6.44%, average position improved by 17.42 places.",
+  "byline": {
+    "issued": "JUN 4, 2026",
+    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
+    "data_source": "SEMRUSH POSITION TRACKING · 31 KEYWORDS"
+  },
+  "months": ["Apr 26, 2026", "Jun 4, 2026"],
+  "compare_hero": {
+    "title": "Average position across 31 tracked keywords",
+    "subtitle": "Lower is better. The whole set climbed by 17 places.",
+    "left_label": "APR 26, 2026",
+    "left_value": "105.45",
+    "left_sub": "engagement window start",
+    "right_label": "JUN 4, 2026",
+    "right_value": "88.03",
+    "right_sub": "current reading",
+    "delta_value": "↑ 17.42",
+    "delta_pct": "+17 places",
+    "direction": "pos",
+    "caption": "Average position across the tracked keyword set climbed from 105 to 88 — a 17-place improvement over six weeks. Average position falling is how Semrush expresses rank improvement (rank 1 is the top, rank 100 is the bottom; smaller number is better). The headline metric of the engagement, captured in a single number."
+  },
+  "marquee": [
+    {
+      "label": "Visibility score",
+      "value": "3.92",
+      "unit": "%",
+      "sub": "Apr 26 start → 3.92% now",
+      "delta": "+6.44%",
+      "direction": "pos"
+    },
+    {
+      "label": "Average position",
+      "value": "88",
+      "unit": "/100",
+      "sub": "improved 17.42 places",
+      "delta": "+17 ranks",
+      "direction": "pos"
+    },
+    {
+      "label": "Improved vs declined",
+      "value": "3 / 1",
+      "unit": "keywords",
+      "sub": "improved | declined",
+      "delta": "net +2",
+      "direction": "pos"
+    },
+    {
+      "label": "New in top 10",
+      "value": "2",
+      "unit": "keywords",
+      "sub": "broke into top 10 this period",
+      "delta": "+2 new",
+      "direction": "pos"
+    }
+  ],
+  "deliverables": {
+    "title": "Position movement across the bands",
+    "subtitle": "New keywords entering and exiting each ranking band during the period",
+    "rows": [
+      {
+        "metric": "Top 3 — new entries",
+        "before": 0,
+        "after": 1,
+        "unit": "new",
+        "category": "Strategy",
+        "why": "One new keyword broke into the top 3 over the period. Zero lost from top 3 — the brand term stayed locked at #1 throughout."
+      },
+      {
+        "metric": "Top 10 — new entries",
+        "before": 0,
+        "after": 3,
+        "unit": "new",
+        "category": "Strategy",
+        "why": "Three keywords broke into the top 10 (2 net new after accounting for 2 that dropped out). pamm forex trading and cms careers are the standout new top-10 entries."
+      },
+      {
+        "metric": "Top 20 — new entries",
+        "before": 0,
+        "after": 4,
+        "unit": "new",
+        "category": "Strategy",
+        "why": "Four keywords joined the top 20 this period. Two declined out, leaving net +2 in the band."
+      },
+      {
+        "metric": "Top 100 — new entries",
+        "before": 0,
+        "after": 4,
+        "unit": "new",
+        "category": "Strategy",
+        "why": "Four keywords joined the top 100 — keywords that previously had no ranking at all. Zero keywords dropped out of top 100."
+      },
+      {
+        "metric": "Keywords with improved positions",
+        "before": 0,
+        "after": 3,
+        "unit": "keywords",
+        "category": "Content",
+        "why": "pamm forex trading jumped 13 places, cms careers jumped 25 places, pamm account jumped 17 places. Combined visibility gain of +4.71%."
+      },
+      {
+        "metric": "Keywords with declined positions",
+        "before": 0,
+        "after": 1,
+        "unit": "keyword",
+        "category": "Technical",
+        "why": "metatrader4 platform dropped this period (visibility loss -2.42%). This is the one position to recover — and the FAQ schema deployed on /metatrader-4/ on June 4 targets exactly this term.",
+        "is_held": true
+      }
+    ]
+  },
+  "top_movers": {
+    "title": "The keywords that moved",
+    "subtitle": "Position shifts during the Apr 26 — Jun 4 window",
+    "improved": [
+      {"kw": "pamm forex trading", "before": 19, "after": 6,  "delta": "↑ 13 positions", "visibility_gain": "+2.75%"},
+      {"kw": "cms careers",        "before": 35, "after": 10, "delta": "↑ 25 positions", "visibility_gain": "+1.36%"},
+      {"kw": "pamm account",       "before": 29, "after": 12, "delta": "↑ 17 positions", "visibility_gain": "+0.60%"}
+    ],
+    "declined": [
+      {"kw": "metatrader4 platform", "before": "—", "after": "—", "delta": "↓ position lost", "visibility_loss": "-2.42%"}
+    ],
+    "total_positive_impact": "+4.71%",
+    "total_negative_impact": "-2.42%",
+    "net_visibility_change": "+2.29%"
+  },
+  "top_keywords": {
+    "title": "Top tracked keywords — current state",
+    "subtitle": "Where the project's 31 keywords sit on June 4",
+    "rows": [
+      {"kw": "cms prime",          "position": "1",    "movement": "held",       "visibility": "3.23%", "kind": "brand"},
+      {"kw": "pamm forex trading", "position": "6",    "movement": "↑ 13",       "visibility": "0.36%", "kind": "commercial"},
+      {"kw": "cms careers",        "position": "10",   "movement": "↑ 25",       "visibility": "0.19%", "kind": "brand"},
+      {"kw": "pamm account",       "position": "12",   "movement": "↑ 17",       "visibility": "0.13%", "kind": "commercial"},
+      {"kw": "best online trading platform in uae", "position": "—", "movement": "off-index", "visibility": "0%", "kind": "commercial"}
+    ],
+    "footnote": "5 of 31 tracked. The remaining 26 keywords sit off-index — the FAQ schema, hreflang, and enriched Organization markup deployed June 1-4 specifically target these recovery candidates."
+  },
+  "top_pages": {
+    "title": "Top performing pages — position changes",
+    "subtitle": "Pages that moved during the engagement window",
+    "rows": [
+      {
+        "url": "https://cmsprime.com/",
+        "keywords": 1,
+        "avg_position": "1.00",
+        "position_delta": "held",
+        "traffic": "5.82",
+        "traffic_delta": "no change",
+        "tier": "core",
+        "is_home": true
+      },
+      {
+        "url": "https://cmsprime.com/blogs/pamm-account/",
+        "keywords": 2,
+        "avg_position": "12.50",
+        "position_delta": "↑ 87.5",
+        "traffic": "0.01",
+        "traffic_delta": "+0.01",
+        "tier": "winner",
+        "note": "biggest position improvement of the period"
+      },
+      {
+        "url": "https://cmsprime.com/careers/",
+        "keywords": 1,
+        "avg_position": "10.00",
+        "position_delta": "↑ 25",
+        "traffic": "0.01",
+        "traffic_delta": "+0.01",
+        "tier": "winner"
+      },
+      {
+        "url": "https://cmsprime.com/pamm-trading/",
+        "keywords": 1,
+        "avg_position": "6.00",
+        "position_delta": "↑ 18",
+        "traffic": "0",
+        "traffic_delta": "-0.01",
+        "tier": "winner"
+      },
+      {
+        "url": "https://cmsprime.com/metatrader-4/",
+        "keywords": 0,
+        "avg_position": "—",
+        "position_delta": "↓ 73",
+        "traffic": "0",
+        "traffic_delta": "0",
+        "tier": "loss",
+        "note": "FAQ schema deployed June 4 — recovery target for July"
+      }
+    ]
+  },
+  "cannibalization": {
+    "title": "Cannibalization health",
+    "subtitle": "When multiple pages compete for the same query",
+    "score": 75,
+    "score_delta": "-5%",
+    "rate_label": "medium rate",
+    "affected_keywords": "1 of 4",
+    "cannibal_pages": "2 of 4",
+    "note": "Down 5 points this period. Hreflang deployment June 1 is expected to drop this further by July — multilingual cannibalisation between EN, AR, FA versions was a major contributor."
+  },
+  "prose": {
+    "title": "What thirty-one keywords say.",
+    "paragraphs": [
+      "The Position Tracking project tracks <strong>31 keywords</strong> the engagement is specifically targeting. Across the 39-day window (Apr 26 - Jun 4), three of them improved their positions — pamm forex trading climbed 13 places, cms careers climbed 25, pamm account climbed 17. Combined those three moved <strong>visibility +4.71%</strong>.",
+      "One keyword declined: metatrader4 platform (-2.42% visibility). The FAQ schema deployed on /metatrader-4/ on June 4 specifically targets this term — the page now has 7 commercial-intent Q&As eligible for FAQ rich-results. Recovery expected on the July 1 reading once Google reindexes.",
+      "<strong>Average position across the entire 31-keyword set climbed by 17.42 places.</strong> That's a single-number summary of what the engagement bought. Two new keywords broke into the top 10 (pamm forex trading and cms careers). The brand term cms prime held #1 throughout. Net improvement +2.29% visibility over a six-week window during which the foundation work landed."
+    ]
+  },
+  "pull_quote": {
+    "text": "Average position climbed 17 places across 31 keywords. Three keywords improved for every one that declined.",
+    "source": "Position Tracking, Apr 26 — Jun 4"
+  }
+}

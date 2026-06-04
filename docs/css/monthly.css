@@ -1090,6 +1090,99 @@
   margin-bottom: var(--space-4);
 }
 
+/* Cannibalization card — Position Tracking */
+.cannibal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--rule-color);
+  border-left: 3px solid var(--brand-gold);
+  padding: var(--space-5);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+.cannibal-card__score {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-items: center;
+  border-right: 1px solid var(--rule-color);
+  padding-right: var(--space-5);
+  min-width: 120px;
+}
+.cannibal-card__value {
+  font-family: var(--font-mono);
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--brand-gold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cannibal-card__delta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--pos);
+  font-weight: 600;
+}
+.cannibal-card__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: var(--space-1);
+}
+.cannibal-card__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+.cannibal-card__stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cannibal-card__stat-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.cannibal-card__stat-value {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.cannibal-card__note {
+  font-family: var(--font-editorial);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-style: italic;
+  margin: 0;
+  grid-column: 1 / -1;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-faint);
+}
+@media (max-width: 700px) {
+  .cannibal-card {
+    grid-template-columns: 1fr;
+  }
+  .cannibal-card__score {
+    border-right: none;
+    border-bottom: 1px solid var(--rule-color);
+    padding-right: 0;
+    padding-bottom: var(--space-4);
+  }
+}
+
 /* Empty state — used for "Position changes: nothing moved" */
 .empty-state {
   padding: var(--space-5);

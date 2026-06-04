@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Position Tracking — CMS Prime Monthly Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="icon" type="image/png" href="./assets/cms-fav.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/monthly.css">
+  <script src="./js/auth.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="./assets/cms-logo-light.svg" alt="CMS Prime" class="brand-logo">
+        <div class="sidebar__brand-sub">Performance Console</div>
+      </div>
+      <nav class="nav">
+        <div class="nav__group-label">Performance</div>
+        <a class="nav__link" href="./index.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+        <a class="nav__link" href="./rankings.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+        <a class="nav__link" href="./backlinks.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Backlinks</a>
+        <a class="nav__link" href="./health.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Technical Health</a>
+        <a class="nav__link is-active" href="./monthly.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Monthly Report</a>
+        <div class="nav__sublist">
+          <a class="nav__sub-link" href="./monthly-domain.html"><span class="nav__sub-link__num">01</span>Domain Overview</a>
+          <a class="nav__sub-link" href="./monthly-rankings.html"><span class="nav__sub-link__num">02</span>Organic Rankings</a>
+          <a class="nav__sub-link is-active" href="./monthly-tracking.html"><span class="nav__sub-link__num">03</span>Position Tracking</a>
+          <a class="nav__sub-link" href="./monthly-backlinks.html"><span class="nav__sub-link__num">04</span>Backlinks</a>
+        </div>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__status"><span class="status-dot"></span><span>Live data · auto-refresh Mondays</span></div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <div class="report-tabs fade-up" data-stagger="0">
+        <span class="report-tabs__kicker">Monthly Report</span>
+        <a class="report-tabs__link" href="./monthly-domain.html"><span class="report-tabs__num">01</span>Domain Overview</a>
+        <a class="report-tabs__link" href="./monthly-rankings.html"><span class="report-tabs__num">02</span>Organic Rankings</a>
+        <a class="report-tabs__link is-active" href="./monthly-tracking.html"><span class="report-tabs__num">03</span>Position Tracking</a>
+        <a class="report-tabs__link" href="./monthly-backlinks.html"><span class="report-tabs__num">04</span>Backlinks</a>
+      </div>
+
+      <div class="issue-bar fade-up" data-stagger="1">
+        <div class="issue-bar__left">
+          <span class="issue-bar__num" id="issueNum">—</span>
+          <span id="periodLabel">—</span>
+        </div>
+        <div class="issue-bar__right">Position Tracking · Chapter 03</div>
+      </div>
+
+      <div class="editorial-head fade-up" data-stagger="2">
+        <div class="editorial-head__main">
+          <div class="editorial-head__kicker">Chapter 03 — Tracked keywords</div>
+          <h1 class="editorial-head__title" id="pageTitle">—</h1>
+          <p class="editorial-head__standfirst" id="pageStandfirst">—</p>
+        </div>
+        <div class="editorial-head__byline">
+          <div id="bylineIssued"><strong>—</strong></div>
+          <div id="bylineAuthor">—</div>
+          <div id="bylineSource">—</div>
+        </div>
+      </div>
+
+      <div class="marquee-row fade-up" data-stagger="3" id="marqueeRow"></div>
+
+      <!-- § I — Compare Hero -->
+      <div class="section-rule fade-up" data-stagger="4">
+        <span class="section-rule__label">§ I — The headline movement</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">APR 26 → JUN 4</span>
+      </div>
+
+      <section class="compare-hero fade-up" data-stagger="4" id="compareHero"></section>
+
+      <!-- § II — Position band movements -->
+      <div class="section-rule fade-up" data-stagger="5">
+        <span class="section-rule__label">§ II — Position-band movements</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">39 DAYS</span>
+      </div>
+
+      <div class="sub-section fade-up" data-stagger="5">
+        <div class="sub-section__title" id="delivTitle">—</div>
+        <div class="deliverables-grid" id="deliverablesGrid"></div>
+      </div>
+
+      <!-- § III — Top movers (improved vs declined) -->
+      <div class="section-rule fade-up" data-stagger="6">
+        <span class="section-rule__label">§ III — Improved vs declined</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">VISIBILITY SHIFTS</span>
+      </div>
+
+      <div class="movers-grid fade-up" data-stagger="6">
+        <div class="movers-col">
+          <div class="movers-col__head">▲ Positive impact <span style="color: var(--text-faint); font-weight: 500; margin-left: var(--space-3);" id="positiveImpactTotal">—</span></div>
+          <ul class="movers-list" id="improvedList"></ul>
+        </div>
+        <div class="movers-col">
+          <div class="movers-col__head">▼ Negative impact <span style="color: var(--text-faint); font-weight: 500; margin-left: var(--space-3);" id="negativeImpactTotal">—</span></div>
+          <ul class="movers-list" id="declinedList"></ul>
+        </div>
+      </div>
+
+      <!-- § IV — Top tracked keywords current state -->
+      <div class="section-rule fade-up" data-stagger="7">
+        <span class="section-rule__label">§ IV — Top tracked keywords today</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">TABLE</span>
+      </div>
+
+      <table class="data-rows fade-up" data-stagger="7">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th class="is-num">Position</th>
+            <th class="is-num">Movement</th>
+            <th class="is-num">Visibility</th>
+          </tr>
+        </thead>
+        <tbody id="kwTableBody"></tbody>
+      </table>
+      <p class="page-footer-note__text" id="kwFootnote" style="margin-top: var(--space-3); margin-bottom: var(--space-7);">—</p>
+
+      <!-- § V — Top pages by position change -->
+      <div class="section-rule fade-up" data-stagger="8">
+        <span class="section-rule__label">§ V — Top page movements</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">LANDING PAGES</span>
+      </div>
+
+      <table class="data-rows fade-up" data-stagger="8">
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th class="is-num">Keywords</th>
+            <th class="is-num">Avg position</th>
+            <th class="is-num">Position Δ</th>
+            <th class="is-num">Traffic Δ</th>
+          </tr>
+        </thead>
+        <tbody id="pagesTableBody"></tbody>
+      </table>
+
+      <!-- § VI — Cannibalization -->
+      <div class="section-rule fade-up" data-stagger="9">
+        <span class="section-rule__label">§ VI — Cannibalization health</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">PAGE OVERLAP</span>
+      </div>
+
+      <div class="sub-section fade-up" data-stagger="9">
+        <div id="cannibalBox"></div>
+      </div>
+
+      <!-- § VII — Prose -->
+      <div class="section-rule fade-up" data-stagger="10">
+        <span class="section-rule__label">§ VII — Analysis</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">PROSE</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="10">
+        <div class="editorial-prose">
+          <h3 id="proseTitle">—</h3>
+          <div id="proseBody" class="drop-cap"></div>
+        </div>
+        <div>
+          <blockquote class="pull-quote">
+            <span id="pullQuoteText">—</span>
+            <span class="pull-quote__source" id="pullQuoteSource">—</span>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="page-footer-note fade-up" data-stagger="10">
+        <p class="page-footer-note__text">
+          Source: Semrush Position Tracking project for the CMS Prime engagement (project ID 11594457). Database: United Arab Emirates (Google), English, Desktop. Reporting window: April 26 — June 4, 2026 (39 days). 31 keywords tracked. Updated 2 hours before export captured June 4, 2026.
+        </p>
+        <div class="page-footer-note__nav">
+          <a href="./monthly-rankings.html">← Previous: Rankings</a>
+          <a href="./monthly-backlinks.html">Next: Backlinks →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="./index.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+      <a class="bottom-nav__item" href="./rankings.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+      <a class="bottom-nav__item" href="./backlinks.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Links</a>
+      <a class="bottom-nav__item" href="./health.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health</a>
+      <a class="bottom-nav__item is-active" href="./monthly.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Report</a>
+    </div>
+  </nav>
+
+  <script src="./js/monthly-page.js"></script>
+  <script>
+  (async function () {
+    function $(s) { return document.querySelector(s); }
+    try {
+      const r = await fetch("./data/monthly-tracking.json?cb=" + Date.now());
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const data = await r.json();
+
+      MonthlyReport.renderHead(data, {
+        issueNum: "#issueNum",
+        periodLabel: "#periodLabel",
+        title: "#pageTitle",
+        standfirst: "#pageStandfirst",
+        issuedAt: "#bylineIssued",
+        author: "#bylineAuthor",
+        dataSource: "#bylineSource",
+      });
+
+      MonthlyReport.renderMarquee(document.getElementById("marqueeRow"), data.marquee || []);
+      MonthlyReport.renderCompareHero(document.getElementById("compareHero"), data.compare_hero);
+
+      if (data.deliverables) {
+        $("#delivTitle").textContent = data.deliverables.subtitle || data.deliverables.title;
+        MonthlyReport.renderDeliverables(document.getElementById("deliverablesGrid"), data.deliverables.rows || []);
+      }
+
+      // Movers (improved + declined)
+      if (data.top_movers) {
+        $("#positiveImpactTotal").textContent = "(" + (data.top_movers.total_positive_impact || '') + ")";
+        $("#negativeImpactTotal").textContent = "(" + (data.top_movers.total_negative_impact || '') + ")";
+
+        const impUL = $("#improvedList");
+        impUL.innerHTML = "";
+        (data.top_movers.improved || []).forEach(m => {
+          const li = document.createElement("li");
+          li.className = "mover-item";
+          li.innerHTML =
+            '<span class="mover-item__keyword">' + m.kw + '</span>' +
+            '<span class="mover-item__from-to">' + m.before + ' → ' + m.after + '</span>' +
+            '<span class="mover-item__delta is-pos">' + m.visibility_gain + '</span>';
+          impUL.appendChild(li);
+        });
+
+        const declUL = $("#declinedList");
+        declUL.innerHTML = "";
+        (data.top_movers.declined || []).forEach(m => {
+          const li = document.createElement("li");
+          li.className = "mover-item";
+          li.innerHTML =
+            '<span class="mover-item__keyword">' + m.kw + '</span>' +
+            '<span class="mover-item__from-to">' + m.before + ' → ' + m.after + '</span>' +
+            '<span class="mover-item__delta is-neg">' + m.visibility_loss + '</span>';
+          declUL.appendChild(li);
+        });
+      }
+
+      // Top tracked keywords
+      if (data.top_keywords) {
+        const tk = data.top_keywords;
+        const tbody = $("#kwTableBody");
+        tbody.innerHTML = "";
+        tk.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          const posCls = r.position === "—" ? "is-before" : "is-after";
+          let moveCls = "is-flat";
+          if (r.movement.indexOf("↑") >= 0) moveCls = "is-pos";
+          else if (r.movement.indexOf("↓") >= 0 || r.movement === "off-index") moveCls = "is-neg";
+          const kindLabel = r.kind === "brand" ? "brand term" : (r.kind === "commercial" ? "commercial" : "");
+          tr.innerHTML =
+            '<td><div class="row-metric">' + r.kw + '</div>' +
+            (kindLabel ? '<span class="row-sub">' + kindLabel + '</span>' : '') + '</td>' +
+            '<td class="num ' + posCls + '">' + (r.position === "—" ? "off-index" : "#" + r.position) + '</td>' +
+            '<td class="delta-num ' + moveCls + '">' + r.movement + '</td>' +
+            '<td class="num">' + r.visibility + '</td>';
+          tbody.appendChild(tr);
+        });
+        $("#kwFootnote").textContent = tk.footnote || "";
+      }
+
+      // Top pages
+      if (data.top_pages) {
+        const tp = data.top_pages;
+        const tbody = $("#pagesTableBody");
+        tbody.innerHTML = "";
+        tp.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          let tierBadge = "";
+          if (r.tier === "winner") tierBadge = '<span class="row-sub" style="color: var(--pos);">improved' + (r.note ? ' · ' + r.note : '') + '</span>';
+          else if (r.tier === "loss") tierBadge = '<span class="row-sub" style="color: var(--neg);">' + (r.note || 'declined') + '</span>';
+          else if (r.is_home) tierBadge = '<span class="row-sub" style="color: var(--brand-gold);">homepage</span>';
+          let posDeltaCls = "is-flat";
+          if (r.position_delta.indexOf("↑") >= 0) posDeltaCls = "is-pos";
+          else if (r.position_delta.indexOf("↓") >= 0) posDeltaCls = "is-neg";
+          let trafficCls = "is-flat";
+          if (r.traffic_delta.indexOf("+") >= 0) trafficCls = "is-pos";
+          else if (r.traffic_delta.indexOf("-") >= 0) trafficCls = "is-neg";
+          tr.innerHTML =
+            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:12.5px;letter-spacing:0;">' + r.url + '</div>' + tierBadge + '</td>' +
+            '<td class="num">' + r.keywords + '</td>' +
+            '<td class="num">' + r.avg_position + '</td>' +
+            '<td class="delta-num ' + posDeltaCls + '">' + r.position_delta + '</td>' +
+            '<td class="delta-num ' + trafficCls + '">' + r.traffic_delta + '</td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Cannibalization
+      if (data.cannibalization) {
+        const c = data.cannibalization;
+        $("#cannibalBox").innerHTML =
+          '<div class="cannibal-card">' +
+          '  <div class="cannibal-card__score">' +
+          '    <span class="cannibal-card__value">' + c.score + '%</span>' +
+          '    <span class="cannibal-card__delta">' + c.score_delta + '</span>' +
+          '    <span class="cannibal-card__label">' + c.rate_label + '</span>' +
+          '  </div>' +
+          '  <div class="cannibal-card__stats">' +
+          '    <div><span class="cannibal-card__stat-label">Affected keywords</span><span class="cannibal-card__stat-value">' + c.affected_keywords + '</span></div>' +
+          '    <div><span class="cannibal-card__stat-label">Cannibal pages</span><span class="cannibal-card__stat-value">' + c.cannibal_pages + '</span></div>' +
+          '  </div>' +
+          '  <p class="cannibal-card__note">' + c.note + '</p>' +
+          '</div>';
+      }
+
+      if (data.prose) {
+        $("#proseTitle").textContent = data.prose.title || "";
+        const body = $("#proseBody");
+        (data.prose.paragraphs || []).forEach(p => {
+          const para = document.createElement("p");
+          para.innerHTML = p;
+          body.appendChild(para);
+        });
+      }
+      if (data.pull_quote) {
+        $("#pullQuoteText").textContent = data.pull_quote.text;
+        $("#pullQuoteSource").textContent = "— " + data.pull_quote.source;
+      }
+    } catch (e) {
+      console.error(e);
+      document.querySelector(".main").insertAdjacentHTML("beforeend",
+        '<div style="margin-top:24px;padding:16px;background:rgba(239,68,68,0.1);border:1px solid #EF4444;border-radius:4px;color:#EF4444;font-family:JetBrains Mono;font-size:12px;">Couldn\'t load report data: ' + e.message + '</div>');
+    }
+  })();
+  </script>
+</body>
+</html>
