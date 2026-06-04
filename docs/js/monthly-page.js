@@ -48,7 +48,7 @@
   if (root.Chart) {
     Chart.defaults.font.family = FONT_MONO;
     Chart.defaults.font.size = 11;
-    Chart.defaults.color = PAL.text;
+    Chart.defaults.color = PAL.textStrong;
     Chart.defaults.borderColor = PAL.grid;
     Chart.defaults.plugins.legend.display = false;
     Chart.defaults.plugins.tooltip.backgroundColor = "#020617";
@@ -57,7 +57,7 @@
     Chart.defaults.plugins.tooltip.titleFont = { family: FONT_MONO, size: 10, weight: 600 };
     Chart.defaults.plugins.tooltip.bodyFont = { family: FONT_MONO, size: 11 };
     Chart.defaults.plugins.tooltip.padding = 10;
-    Chart.defaults.plugins.tooltip.titleColor = PAL.text;
+    Chart.defaults.plugins.tooltip.titleColor = PAL.textStrong;
     Chart.defaults.plugins.tooltip.bodyColor = PAL.textStrong;
     Chart.defaults.plugins.tooltip.cornerRadius = 0;
     Chart.defaults.animation.duration = 800;
@@ -111,7 +111,7 @@
               boxHeight: 10,
               padding: 16,
               font: { family: FONT_MONO, size: 11 },
-              color: PAL.text,
+              color: PAL.textStrong,
               usePointStyle: true,
               pointStyle: "rect",
             },
@@ -131,7 +131,7 @@
             grid: { color: "transparent", drawBorder: false },
             ticks: {
               font: { family: FONT_MONO, size: 11, weight: 500 },
-              color: PAL.text,
+              color: PAL.textStrong,
               padding: 8,
             },
             border: { color: PAL.rule, width: 1 },
@@ -143,7 +143,7 @@
             grid: { color: PAL.grid, drawTicks: false, drawBorder: false },
             ticks: {
               font: { family: FONT_MONO, size: 10 },
-              color: PAL.text,
+              color: PAL.textStrong,
               padding: 8,
               callback: function (v) { return fmt(v) + (opts.yUnit || ""); },
             },
@@ -243,7 +243,7 @@
               boxHeight: 10,
               padding: 14,
               font: { family: FONT_MONO, size: 10.5, weight: 600 },
-              color: PAL.text,
+              color: PAL.textStrong,
               usePointStyle: false,
               textTransform: "uppercase",
             },
@@ -265,7 +265,7 @@
             grid: { color: PAL.grid, drawBorder: false },
             ticks: {
               font: { family: FONT_MONO, size: 10 },
-              color: PAL.text,
+              color: PAL.textStrong,
               padding: 6,
               callback: (v) => opts.shortNum ? shortFmt(v) : fmt(v),
             },
@@ -323,7 +323,7 @@
             grid: { display: false },
             ticks: {
               font: { family: FONT_MONO, size: 11 },
-              color: PAL.text,
+              color: PAL.textStrong,
               padding: 4,
             },
             border: { color: PAL.rule },
@@ -362,7 +362,7 @@
               boxHeight: 10,
               padding: 10,
               font: { family: FONT_MONO, size: 11 },
-              color: PAL.text,
+              color: PAL.textStrong,
               usePointStyle: false,
               generateLabels: (chart) => {
                 const data = chart.data;
@@ -421,7 +421,7 @@
               boxHeight: 8,
               padding: 8,
               font: { family: FONT_MONO, size: 11 },
-              color: PAL.text,
+              color: PAL.textStrong,
               usePointStyle: true,
               pointStyle: "circle",
             },
@@ -438,7 +438,7 @@
             grid: { display: false },
             ticks: {
               font: { family: FONT_MONO, size: 11, weight: 600 },
-              color: PAL.text,
+              color: PAL.textStrong,
               padding: 8,
             },
             border: { color: PAL.rule, width: 1 },
@@ -449,7 +449,7 @@
             grid: { color: PAL.grid, drawBorder: false },
             ticks: {
               font: { family: FONT_MONO, size: 10 },
-              color: PAL.text,
+              color: PAL.textStrong,
               padding: 6,
               callback: (v) => "#" + v,
             },
