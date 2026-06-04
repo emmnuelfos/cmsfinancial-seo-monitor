@@ -65,6 +65,9 @@
 
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
+      <!-- Upload widget · drop next month's Semrush Backlinks export -->
+      <section class="fade-up" data-stagger="2" id="uploadWidget"></section>
+
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
       <!-- May vs June backlinks comparison + Authority distribution -->
@@ -221,13 +224,18 @@
   </nav>
 
   <script src="./js/monthly-page.js"></script>
+  <script src="./js/monthly-upload.js"></script>
   <script>
   (async function () {
     function $(s) { return document.querySelector(s); }
+    MonthlyUpload.init({
+      pageKey: "backlinks",
+      parser: MonthlyUpload.parsers.backlinks,
+      sourceUrl: "./data/monthly-backlinks.json",
+      fileLabel: "Semrush Backlinks Overview HTML export (saved via Save Page / SingleFile)",
+    });
     try {
-      const r = await fetch("./data/monthly-backlinks.json?cb=" + Date.now());
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      const data = await r.json();
+      const data = await MonthlyUpload.loadData("backlinks", "./data/monthly-backlinks.json");
 
       $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
       $("#periodLabel").textContent = data.period_label || "—";

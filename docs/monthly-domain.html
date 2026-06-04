@@ -65,6 +65,9 @@
 
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
+      <!-- Upload widget · drop next month's Semrush Domain Overview export -->
+      <section class="fade-up" data-stagger="2" id="uploadWidget"></section>
+
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
       <!-- Comparison chart: May vs June across foundation deliverables -->
@@ -170,13 +173,18 @@
   </nav>
 
   <script src="./js/monthly-page.js"></script>
+  <script src="./js/monthly-upload.js"></script>
   <script>
   (async function () {
     function $(s) { return document.querySelector(s); }
+    MonthlyUpload.init({
+      pageKey: "domain",
+      parser: MonthlyUpload.parsers.domain,
+      sourceUrl: "./data/monthly-domain.json",
+      fileLabel: "Semrush Domain Overview HTML export (saved via Save Page / SingleFile)",
+    });
     try {
-      const r = await fetch("./data/monthly-domain.json?cb=" + Date.now());
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      const data = await r.json();
+      const data = await MonthlyUpload.loadData("domain", "./data/monthly-domain.json");
 
       // Header
       $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");

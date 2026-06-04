@@ -65,6 +65,9 @@
 
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
+      <!-- Upload widget · drop next month's Semrush Site Audit export -->
+      <section class="fade-up" data-stagger="2" id="uploadWidget"></section>
+
       <!-- Site Health Score · the headline number -->
       <section class="score-block fade-up" data-stagger="2" id="scoreBlock"></section>
 
@@ -186,13 +189,19 @@
   </nav>
 
   <script src="./js/monthly-page.js"></script>
+  <script src="./js/monthly-upload.js"></script>
   <script>
   (async function () {
     function $(s) { return document.querySelector(s); }
+    // Upload widget — drop next month's Semrush HTML to update the page
+    MonthlyUpload.init({
+      pageKey: "health",
+      parser: MonthlyUpload.parsers.health,
+      sourceUrl: "./data/monthly-health.json",
+      fileLabel: "Semrush Site Audit Overview HTML export (saved via Save Page / SingleFile)",
+    });
     try {
-      const r = await fetch("./data/monthly-health.json?cb=" + Date.now());
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      const data = await r.json();
+      const data = await MonthlyUpload.loadData("health", "./data/monthly-health.json");
 
       $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
       $("#periodLabel").textContent = data.period_label || "—";
