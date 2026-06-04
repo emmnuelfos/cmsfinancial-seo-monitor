@@ -70,6 +70,30 @@
 
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
+      <!-- Thematic reports breakdown + Page health -->
+      <section class="summary-twocol fade-up" data-stagger="3">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Thematic reports · category-by-category</h2>
+            <span class="summary-section-head__meta">Semrush groups issues into 7 themes</span>
+          </div>
+          <ul class="bar-list" id="thematicList"></ul>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Page-level breakdown<span class="info-tip is-right" tabindex="0" data-tip="How the 100 audited pages are categorized: Healthy (no issues), Pages with issues (functional but flagged), Redirects (intentional 301s), Broken (4xx/5xx response), Blocked (robots.txt). The Jun 1 reading shows 30 healthy pages (+4) and only 7 broken (mostly old blog URLs in legacy sitemaps).">i</span></h2>
+            <span class="summary-section-head__meta">100 pages audited · Jun 1</span>
+          </div>
+          <ul class="bar-list" id="pageHealthList"></ul>
+
+          <div class="summary-section-head" style="margin-top: var(--space-5);">
+            <h2 class="summary-section-head__title">AI Search Health <span style="color: var(--text-muted); font-size: 11px; font-family: var(--font-mono); margin-left: 6px;">(beta)</span><span class="info-tip is-right" tabindex="0" data-tip="Semrush's beta metric for how well the site is optimized for AI search engines like ChatGPT, Gemini, and Google's AI Overviews. Measures bot access, content structure, and FAQ markup.">i</span></h2>
+            <span class="summary-section-head__meta" id="aiSubtitle">—</span>
+          </div>
+          <div class="callout-card" id="aiSearchCard"></div>
+        </div>
+      </section>
+
       <!-- 3-month trend chart -->
       <section class="fade-up" data-stagger="4">
         <div class="summary-section-head">
@@ -179,35 +203,85 @@
       if (data.site_health_score) {
         const shs = data.site_health_score;
         const readings = shs.readings || [];
-        const future = shs.next_reading;
-        const cells = readings.map(r =>
-          `<div class="score-cell score-cell--${r.tier}">
+        const cells = readings.map(r => {
+          const currentBadge = r.is_current ? '<span class="score-cell__current-badge">CURRENT</span>' : '';
+          const currentCls = r.is_current ? ' score-cell--current' : '';
+          return `<div class="score-cell score-cell--${r.tier}${currentCls}">
+            ${currentBadge}
             <span class="score-cell__date">${r.date}</span>
             <span class="score-cell__num">${r.score}</span>
             <span class="score-cell__suffix">/ 100</span>
             <span class="score-cell__label">${r.label}</span>
             <span class="score-cell__context">${r.context}</span>
-          </div>`
-        ).join("");
-        const futureCell = future
-          ? `<div class="score-cell score-cell--future">
-              <span class="score-cell__date">${future.label.split(' (')[0]}</span>
-              <span class="score-cell__num">${future.label.match(/\\d+-\\d+|\\d+/)?.[0] || ''}</span>
-              <span class="score-cell__suffix">projected</span>
-              <span class="score-cell__label">next crawl</span>
-              <span class="score-cell__context">post-deployment</span>
-            </div>`
-          : '';
+          </div>`;
+        }).join("");
         document.getElementById("scoreBlock").innerHTML =
           `<div class="score-block__head">
             <h2 class="score-block__title">${shs.title}<span class="info-tip" tabindex="0" data-tip="Semrush's overall site quality rating (0-100). Combines detected errors (high weight), warnings (medium), and notices (low) across pages crawled.">i</span></h2>
             <span class="score-block__subtitle">${shs.subtitle}</span>
           </div>
-          <div class="score-row">${cells}${futureCell}</div>
+          <div class="score-row score-row--four">${cells}</div>
           <p class="score-block__caption">${shs.caption}</p>`;
       }
 
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
+
+      // Thematic reports
+      if (data.thematic_reports) {
+        const ul = document.getElementById("thematicList");
+        ul.innerHTML = "";
+        const maxPct = 100;
+        data.thematic_reports.rows.forEach(r => {
+          const tier = r.tier || "core";
+          const tipMarkup = r.tip ? '<span class="info-tip" tabindex="0" data-tip="' + r.tip.replace(/"/g,"&quot;") + '">i</span>' : '';
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + tier;
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + r.label + tipMarkup +
+            ' <span style="color:var(--text-faint);font-size:11px;font-family:var(--font-mono);margin-left:6px;">' + (r.delta || '') + '</span></span>' +
+            '<span class="bar-list__pct">' + r.score + '%</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ul.appendChild(li);
+          requestAnimationFrame(() => { li.querySelector(".bar-list__fill").style.width = (r.score / maxPct * 100) + "%"; });
+        });
+      }
+
+      // Page-level health
+      if (data.page_health) {
+        const ul = document.getElementById("pageHealthList");
+        ul.innerHTML = "";
+        const total = data.page_health.rows.reduce((sum, r) => sum + r.count, 0);
+        data.page_health.rows.forEach(r => {
+          const tier = r.tier || "core";
+          const tipMarkup = r.tip ? '<span class="info-tip" tabindex="0" data-tip="' + r.tip.replace(/"/g,"&quot;") + '">i</span>' : '';
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + tier;
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + r.label + tipMarkup +
+            ' <span style="color:var(--text-faint);font-size:11px;font-family:var(--font-mono);margin-left:6px;">' + (r.delta || '') + '</span></span>' +
+            '<span class="bar-list__pct">' + r.count + ' / 100</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ul.appendChild(li);
+          requestAnimationFrame(() => { li.querySelector(".bar-list__fill").style.width = (r.count / total * 100) + "%"; });
+        });
+      }
+
+      // AI Search Health
+      if (data.ai_search_health) {
+        const ai = data.ai_search_health;
+        document.getElementById("aiSubtitle").textContent = ai.subtitle || "";
+        const botsHtml = (ai.bots || []).map(b => {
+          const cls = b.status === "All good" ? "is-pos" : "is-flat";
+          return `<span class="callout-card__bot ${cls}">${b.name} · ${b.status}</span>`;
+        }).join("");
+        document.getElementById("aiSearchCard").innerHTML =
+          '<div class="callout-card__head">' +
+          '  <span class="callout-card__big">' + ai.score + '%</span>' +
+          '  <span class="callout-card__sub">' + (ai.delta || '') + ' · ' + (ai.issues_count || 0) + ' items flagged</span>' +
+          '</div>' +
+          '<p class="callout-card__body">' + (ai.verdict || '') + '</p>' +
+          '<div class="callout-card__bots">' + botsHtml + '</div>';
+      }
 
       // 3-month trend chart (line)
       if (data.trend_chart) {
