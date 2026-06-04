@@ -5,12 +5,12 @@
   "standfirst": "From the Semrush AE database. During May and June 2026, Authority Score held at 25 through a 586-domain disavow filing, organic keywords ticked up to 29, and the technical foundation went from zero coverage to deployed across 599 pages.",
   "summary_lead": "Aggregated macro KPIs for cmsprime.com across the engagement window. <strong>All metrics improved or held.</strong> Authority Score steady through a 586-domain disavow, organic keywords climbed 28→29 (+3.57%), and 599 pages received the schema and hreflang foundation that drives ranking lift.",
   "win_tiles": [
-    {"num": "+3.57%", "unit": "kw", "label": "Organic keywords lift", "source": "Semrush AE · wow", "direction": "pos"},
-    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through 586-dom disavow", "direction": "flat"},
-    {"num": "+599", "unit": "pages", "label": "Hreflang coverage", "source": "deployed Jun 1", "direction": "pos"},
-    {"num": "+599", "unit": "pages", "label": "Enriched schema", "source": "3 licenses + 7 socials", "direction": "pos"},
-    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "76 Q&As deployed", "direction": "pos"},
-    {"num": "+3", "unit": "licenses", "label": "Regulatory credentials", "source": "FSC + SVG + Saint Lucia", "direction": "pos"}
+    {"num": "+3.57%", "unit": "kw", "label": "Organic keywords lift", "source": "Semrush AE · wow", "direction": "pos", "tip": "Number of keywords your site ranks for in Google's free (non-paid) results. Up from 28 to 29 this week — new keywords entering the index is the first sign that Google has processed our technical work."},
+    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through 586-dom disavow", "direction": "flat", "tip": "Semrush's overall domain strength score (0-100). Higher is better. Holding at 25 through a 586-domain disavow filing means the cleanup was healthy — disavows usually cost Authority Score points temporarily."},
+    {"num": "+599", "unit": "pages", "label": "Hreflang coverage", "source": "deployed Jun 1", "direction": "pos", "tip": "Hreflang is the code that tells Google which language version of a page belongs to which audience (English, Arabic, Persian). Without it, your three language versions compete with each other. Now deployed across all 599 indexable pages."},
+    {"num": "+599", "unit": "pages", "label": "Enriched schema", "source": "3 licenses + 7 socials", "direction": "pos", "tip": "Schema is hidden markup that tells search engines what your content is about — including your regulatory licenses, contact methods, and social profiles. Major trust signal for financial services sites. Now on all 599 pages."},
+    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "76 Q&As deployed", "direction": "pos", "tip": "Pages with FAQ schema markup can show their questions and answers directly in Google search results as expandable accordions. This takes up more screen real estate and can pull traffic from AI Overviews."},
+    {"num": "+3", "unit": "licenses", "label": "Regulatory credentials", "source": "FSC + SVG + Saint Lucia", "direction": "pos", "tip": "Three government-issued financial services licenses (FSC Mauritius, Saint Vincent and the Grenadines, Saint Lucia) are now broadcast through structured data on every page. Big credibility signal for YMYL ('Your Money Your Life') finance queries."}
   ],
   "byline": {
     "issued": "JUNE 3, 2026",

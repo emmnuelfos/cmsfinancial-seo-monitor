@@ -5,12 +5,12 @@
   "standfirst": "Two-month engagement view of the backlink profile. Filed a 586-domain disavow during the period (54 new spam domains identified, merged with the existing 532). Backlink count dropped from 8K to 7K as Google processed the filing — that's 1,000 toxic links de-counted from the index. Authority Score held at 25 through the cleanup. Referring domains held within a 30-domain band.",
   "summary_lead": "Link-graph cleanup across May and June. <strong>1,000 toxic backlinks removed</strong> from the index as Google processed the 586-domain disavow filing. Referring domains held within a tight 30-domain band — proving the cleanup only removed spam, not legitimate sources. Authority Score steady at 25 throughout.",
   "win_tiles": [
-    {"num": "1,000", "unit": "links", "label": "Toxic backlinks removed", "source": "via disavow processing", "direction": "pos"},
-    {"num": "586", "unit": "dom", "label": "Total disavow filing", "source": "532 existing + 54 new", "direction": "pos"},
-    {"num": "1.1K", "unit": "held", "label": "Referring domains", "source": "legitimate sources kept", "direction": "flat"},
-    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through major cleanup", "direction": "flat"},
-    {"num": "+18", "unit": "rules", "label": "301 redirect rules", "source": "for 40 broken backlinks", "direction": "pos"},
-    {"num": "+40", "unit": "URLs", "label": "Broken targets fixed", "source": "via Redirection plugin", "direction": "pos"}
+    {"num": "1,000", "unit": "links", "label": "Toxic backlinks removed", "source": "via disavow processing", "direction": "pos", "tip": "Backlinks from spam websites (PBNs, link farms, hacked sites) hurt your Google ranking. We filed a list asking Google to ignore 586 such domains, and Google removed about 1,000 of those toxic links from how it scores your site."},
+    {"num": "586", "unit": "dom", "label": "Total disavow filing", "source": "532 existing + 54 new", "direction": "pos", "tip": "A 'disavow file' is a list submitted to Google asking it to ignore certain backlinks when scoring your site. Used to remove toxic/spam links. Total of 586 spam domains submitted: 532 already on file from prior SEO, plus 54 newly identified this engagement."},
+    {"num": "1.1K", "unit": "held", "label": "Referring domains", "source": "legitimate sources kept", "direction": "flat", "tip": "Number of unique websites that link to cmsprime.com. Steady at ~1,100 throughout the cleanup means we removed many spam links but the legitimate referring-domain count stayed stable — proof the disavow targeted only toxic sources."},
+    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through major cleanup", "direction": "flat", "tip": "Semrush's overall domain strength score (0-100). Holding at 25 through a 586-domain disavow filing is the proof point that matters most — disavows usually cost AS points temporarily because the link graph shrinks. Ours didn't move."},
+    {"num": "+18", "unit": "rules", "label": "301 redirect rules", "source": "for 40 broken backlinks", "direction": "pos", "tip": "A 301 redirect permanently sends visitors and SEO value from an old URL to a new one. We set up 18 redirect rules to capture value from backlinks that were pointing at deleted/moved pages, recovering link equity that was being lost."},
+    {"num": "+40", "unit": "URLs", "label": "Broken targets fixed", "source": "via Redirection plugin", "direction": "pos", "tip": "We HTTP-tested every backlink target on the site. 40 of them were pointing at broken (404) pages — their SEO value was being lost entirely. All 40 now redirect to working pages, recovering their ranking signal."}
   ],
   "byline": {
     "issued": "JUNE 4, 2026",

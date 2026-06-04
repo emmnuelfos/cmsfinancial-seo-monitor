@@ -368,6 +368,109 @@
 .summary-footer__nav a:hover { border-bottom-color: var(--brand-gold); }
 
 /* =========================================================
+   Info tooltips — small "i" icon next to metric labels
+   Hover (or focus) to see a plain-English explanation
+   ========================================================= */
+.info-tip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  cursor: help;
+  position: relative;
+  margin-left: 5px;
+  border: 1px solid var(--border-default);
+  transition: background var(--duration-fast), color var(--duration-fast), border-color var(--duration-fast);
+  vertical-align: 1px;
+  flex-shrink: 0;
+  user-select: none;
+}
+.info-tip:hover, .info-tip:focus {
+  background: var(--brand-gold);
+  color: #020617;
+  border-color: var(--brand-gold);
+  outline: none;
+}
+.info-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #020617;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 400;
+  padding: 9px 12px;
+  border-radius: 4px;
+  width: 280px;
+  line-height: 1.5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s 0s, visibility 0s 0.15s;
+  pointer-events: none;
+  z-index: 100;
+  text-align: left;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: normal;
+  font-style: normal;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.info-tip::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #020617;
+  border-bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s 0s, visibility 0s 0.15s;
+  z-index: 101;
+  pointer-events: none;
+}
+.info-tip:hover::after, .info-tip:focus::after,
+.info-tip:hover::before, .info-tip:focus::before {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.15s, visibility 0s;
+}
+/* Right-edge variant: tooltip aligned to the right of icon (prevents overflow) */
+.info-tip.is-right::after {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+.info-tip.is-right::before {
+  left: auto;
+  right: 6px;
+  transform: none;
+}
+/* Below variant: tooltip below the icon (for icons at the top of the page) */
+.info-tip.is-below::after {
+  bottom: auto;
+  top: calc(100% + 9px);
+}
+.info-tip.is-below::before {
+  bottom: auto;
+  top: calc(100% + 3px);
+  border-top: 0;
+  border-bottom: 6px solid #020617;
+}
+
+/* =========================================================
    Compact chart wrappers — fixed-height containers
    so Chart.js never escapes its bounds
    ========================================================= */

@@ -464,13 +464,18 @@
   function renderWinStrip(el, tiles) {
     if (!el) return;
     el.innerHTML = "";
-    tiles.forEach((t) => {
+    tiles.forEach((t, idx) => {
       const tile = document.createElement("div");
       tile.className = "win-tile is-" + (t.direction || "pos");
+      // Right-edge variant on the last tile to keep tooltip in viewport
+      const tipPosCls = (idx >= tiles.length - 2) ? " is-right" : "";
+      const tipMarkup = t.tip
+        ? '<span class="info-tip' + tipPosCls + '" tabindex="0" data-tip="' + t.tip.replace(/"/g, "&quot;") + '">i</span>'
+        : '';
       tile.innerHTML =
         '<div class="win-tile__num">' + (t.num || "") + '</div>' +
         '<div class="win-tile__unit">' + (t.unit || "") + '</div>' +
-        '<div class="win-tile__label">' + (t.label || "") + '</div>' +
+        '<div class="win-tile__label">' + (t.label || "") + tipMarkup + '</div>' +
         (t.source ? '<div class="win-tile__source">' + t.source + '</div>' : '');
       el.appendChild(tile);
     });

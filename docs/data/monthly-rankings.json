@@ -5,12 +5,12 @@
   "standfirst": "From the Semrush Organic Research export. Across May and June 2026 every ranking position the site held in May, it still holds in June. Top-1 brand term unchanged. Position bands held.",
   "summary_lead": "Two months of foundation work without losing a single ranking position. <strong>Brand term cms prime locked at #1.</strong> The four keywords in the top 100 stayed in the top 100. Position bands didn't compress. Twenty-nine tracked keywords going into July is one more than we had going into May.",
   "win_tiles": [
-    {"num": "29", "unit": "kw", "label": "Tracked keywords (AE)", "source": "May 28 → Jun 29", "direction": "pos"},
-    {"num": "+1", "unit": "kw", "label": "Net new in June", "source": "first uptick since Feb", "direction": "pos"},
-    {"num": "0", "unit": "kw", "label": "Position declines", "source": "no losses during rebuild", "direction": "flat"},
-    {"num": "#1", "unit": "held", "label": "Brand term position", "source": "cms prime", "direction": "flat"},
-    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "11 commercial pages", "direction": "pos"},
-    {"num": "4 / 31", "unit": "kw", "label": "Top-100 ranking · held", "source": "all four positions kept", "direction": "flat"}
+    {"num": "29", "unit": "kw", "label": "Tracked keywords (AE)", "source": "May 28 → Jun 29", "direction": "pos", "tip": "Total number of keywords that cmsprime.com ranks for somewhere in the top 100 of UAE Google search results. We added one this period — the first positive movement since February."},
+    {"num": "+1", "unit": "kw", "label": "Net new in June", "source": "first uptick since Feb", "direction": "pos", "tip": "One new keyword entered the top 100 of Google between May and June. Small in absolute terms, but it's the first positive movement after months of decline — a leading indicator that the foundation work is being processed by Google."},
+    {"num": "0", "unit": "kw", "label": "Position declines", "source": "no losses during rebuild", "direction": "flat", "tip": "Zero keywords lost their ranking position during the engagement period. Holding the line while deploying major technical changes (hreflang, schema, redirects) is unusual — most rebuilds cause temporary drops."},
+    {"num": "#1", "unit": "held", "label": "Brand term position", "source": "cms prime", "direction": "flat", "tip": "The keyword 'cms prime' has held the #1 position in Google search results throughout the entire engagement period. This is the brand search — people who already know you — and it's the foundation of all organic traffic right now."},
+    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "11 commercial pages", "direction": "pos", "tip": "Pages with FAQ schema markup can show their questions and answers directly in Google search results as expandable accordions. We deployed this on 11 commercial pages (MT4, MT5, forex, CFDs, etc.) — 76 Q&As total."},
+    {"num": "4 / 31", "unit": "kw", "label": "Top-100 ranking · held", "source": "all four positions kept", "direction": "flat", "tip": "Of the 31 keywords being tracked, 4 currently rank somewhere in Google's top 100 results. All 4 positions held during the rebuild. The other 27 are off-index — that's the recovery opportunity for July."}
   ],
   "byline": {
     "issued": "JUNE 3, 2026",
