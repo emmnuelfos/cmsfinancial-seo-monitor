@@ -32,6 +32,7 @@
           <a class="nav__sub-link" href="./monthly-rankings.html"><span class="nav__sub-link__num">02</span>Organic Rankings</a>
           <a class="nav__sub-link" href="./monthly-tracking.html"><span class="nav__sub-link__num">03</span>Position Tracking</a>
           <a class="nav__sub-link" href="./monthly-backlinks.html"><span class="nav__sub-link__num">04</span>Backlinks</a>
+          <a class="nav__sub-link" href="./monthly-health.html"><span class="nav__sub-link__num">05</span>Site Health</a>
         </div>
       </nav>
       <div class="sidebar__footer">
@@ -56,7 +57,7 @@
 
       <!-- Brief intro -->
       <p class="summary-lead fade-up" data-stagger="1">
-        Aggregated readout across the four engagement chapters. <strong>Twelve metrics improved.</strong> Zero declined. Foundation work shipped on 599 pages. Visibility climbed +6.44% over the engagement window, average position improved by 17 places, and the disavow filing removed approximately 1,000 toxic backlinks while Authority Score held at 25.
+        Aggregated readout across the five engagement chapters. <strong>Fourteen metrics improved.</strong> Zero declined. Foundation work shipped on 599 pages. Visibility climbed +6.44% over the engagement window, average position improved by 17 places, the disavow filing removed approximately 1,000 toxic backlinks while Authority Score held at 25, and Site Audit issues dropped 90% (787 → 75 across 100 audited pages).
       </p>
 
       <!-- Headline wins ticker -->
@@ -294,6 +295,22 @@
               <td class="num is-flat">held</td>
               <td><span class="state state-flat">verified firing</span></td>
             </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Total Site Audit issues<span class="info-tip" tabindex="0" data-tip="Sum of all issue instances detected by Semrush's Site Audit crawler across 100 representative pages. Excludes intentional 301 redirects we deployed. Down from 787 in March to 75 in June.">i</span></td>
+              <td class="chapter-tag">Site Health</td>
+              <td class="num">787</td>
+              <td class="num is-strong">75</td>
+              <td class="num is-pos">−712 issues · −90%</td>
+              <td><span class="state state-pos">cleared</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Active issue categories<span class="info-tip" tabindex="0" data-tip="Distinct types of issues detected (e.g. 'broken internal links', 'missing H1'). 12 entire categories went from active to zero. Of the remaining 8, most are informational notices not errors.">i</span></td>
+              <td class="chapter-tag">Site Health</td>
+              <td class="num">24</td>
+              <td class="num is-strong">8</td>
+              <td class="num is-pos">−16 categories</td>
+              <td><span class="state state-pos">cleared</span></td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -477,6 +494,14 @@
             </div>
             <span class="chapter-index__arrow">→</span>
           </a>
+          <a class="chapter-index__item" href="./monthly-health.html">
+            <span class="chapter-index__num">05</span>
+            <div class="chapter-index__body">
+              <div class="chapter-index__title">Site Health</div>
+              <div class="chapter-index__desc">Technical issues cleared across 3 months. 12 issue categories went from N to zero, total real issues down −90% (787 → 75 across 100 audited pages).</div>
+            </div>
+            <span class="chapter-index__arrow">→</span>
+          </a>
         </div>
       </section>
 
@@ -496,10 +521,10 @@
       if (!ctx) return;
       MonthlyReport.drawCompareBars(
         ctx.getContext("2d"),
-        ["Hreflang pages", "Enriched schema", "FAQ pages", "Disavowed dom", "Redirect rules", "Broken targets fixed"],
-        [0, 0, 0, 532, 0, 0],
-        [599, 599, 11, 586, 18, 40],
-        {beforeLabel: "May 2026", afterLabel: "June 2026", unit: "", shortNum: true}
+        ["Hreflang pages", "Enriched schema", "FAQ pages", "Disavowed dom", "Redirect rules", "Broken targets fixed", "Site Audit issues"],
+        [0, 0, 0, 532, 0, 0, 787],
+        [599, 599, 11, 586, 18, 40, 75],
+        {beforeLabel: "Before engagement", afterLabel: "Current (Jun 4)", unit: "", shortNum: true}
       );
     })();
   </script>
@@ -510,6 +535,7 @@
       <a class="bottom-nav__item" href="./monthly-rankings.html"><span class="bottom-nav__num">02</span>Organic Rankings</a>
       <a class="bottom-nav__item" href="./monthly-tracking.html"><span class="bottom-nav__num">03</span>Position Tracking</a>
       <a class="bottom-nav__item" href="./monthly-backlinks.html"><span class="bottom-nav__num">04</span>Backlinks</a>
+      <a class="bottom-nav__item" href="./monthly-health.html"><span class="bottom-nav__num">05</span>Health</a>
     </div>
   </nav>
 </body>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Site Health — CMS Prime Monthly Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="icon" type="image/png" href="./assets/cms-fav.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/monthly.css">
+  <script src="./js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="./assets/cms-logo-light.svg" alt="CMS Prime" class="brand-logo">
+        <div class="sidebar__brand-sub">Performance Console</div>
+      </div>
+      <nav class="nav">
+        <div class="nav__group-label">Monthly Report</div>
+        <a class="nav__link" href="./monthly.html">
+          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Overview
+        </a>
+        <div class="nav__sublist">
+          <a class="nav__sub-link" href="./monthly-domain.html"><span class="nav__sub-link__num">01</span>Domain Overview</a>
+          <a class="nav__sub-link" href="./monthly-rankings.html"><span class="nav__sub-link__num">02</span>Organic Rankings</a>
+          <a class="nav__sub-link" href="./monthly-tracking.html"><span class="nav__sub-link__num">03</span>Position Tracking</a>
+          <a class="nav__sub-link" href="./monthly-backlinks.html"><span class="nav__sub-link__num">04</span>Backlinks</a>
+          <a class="nav__sub-link is-active" href="./monthly-health.html"><span class="nav__sub-link__num">05</span>Site Health</a>
+        </div>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__status"><span class="status-dot"></span><span>Live data · auto-refresh Mondays</span></div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main summary-main">
+
+      <div class="report-tabs fade-up" data-stagger="0">
+        <span class="report-tabs__kicker">Monthly Report</span>
+        <a class="report-tabs__link" href="./monthly-domain.html"><span class="report-tabs__num">01</span>Domain Overview</a>
+        <a class="report-tabs__link" href="./monthly-rankings.html"><span class="report-tabs__num">02</span>Organic Rankings</a>
+        <a class="report-tabs__link" href="./monthly-tracking.html"><span class="report-tabs__num">03</span>Position Tracking</a>
+        <a class="report-tabs__link" href="./monthly-backlinks.html"><span class="report-tabs__num">04</span>Backlinks</a>
+        <a class="report-tabs__link is-active" href="./monthly-health.html"><span class="report-tabs__num">05</span>Site Health</a>
+      </div>
+
+      <header class="summary-header fade-up" data-stagger="1">
+        <div class="summary-header__left">
+          <span class="summary-header__kicker">Chapter 05 · Technical hygiene</span>
+          <h1 class="summary-header__title" id="pageTitle">—</h1>
+        </div>
+        <div class="summary-header__right">
+          <div class="summary-header__period" id="periodLabel">—</div>
+          <div class="summary-header__updated" id="bylineSource">—</div>
+        </div>
+      </header>
+
+      <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
+
+      <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
+
+      <!-- 3-month trend chart -->
+      <section class="fade-up" data-stagger="4">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Total issues · 3-month trend</h2>
+          <span class="summary-section-head__meta">Mar 17 → Mar 21 → Jun 4</span>
+        </div>
+        <div class="compact-chart">
+          <div class="compact-chart__head">
+            <div class="compact-chart__title" id="trendTitle">—</div>
+            <div class="compact-chart__sub" id="trendSub">—</div>
+          </div>
+          <div class="compact-chart__canvas-wrap is-h260">
+            <canvas id="trendChart"></canvas>
+          </div>
+        </div>
+        <p style="margin-top: var(--space-3); font-size: 12.5px; color: var(--text-muted); line-height: 1.55; font-style: italic;" id="trendCaption">—</p>
+      </section>
+
+      <!-- Comparison chart: biggest wins (issues cleared) -->
+      <section class="fade-up" data-stagger="5">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Biggest issue clearances · Mar 17 → Jun 4<span class="info-tip" tabindex="0" data-tip="Each bar shows the count of that issue at the engagement start (March 17) vs today (June 4). All 9 bars show the issue going from N to 0 — fully resolved.">i</span></h2>
+          <span class="summary-section-head__meta">all cleared to zero</span>
+        </div>
+        <div class="compact-chart">
+          <div class="compact-chart__canvas-wrap is-h260">
+            <canvas id="clearedChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Full issues comparison table -->
+      <section class="fade-up" data-stagger="6">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Every issue category · 3-month side-by-side</h2>
+          <span class="summary-section-head__meta">all 21 categories</span>
+        </div>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Issue</th>
+              <th>Category</th>
+              <th class="is-num">Mar 17</th>
+              <th class="is-num">Mar 21</th>
+              <th class="is-num">Jun 4</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="issuesTable"></tbody>
+        </table>
+      </section>
+
+      <!-- Remaining concerns -->
+      <section class="fade-up" data-stagger="7">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Remaining work for Month 3</h2>
+          <span class="summary-section-head__meta" id="remainingMeta">—</span>
+        </div>
+        <ul class="deploy-list" id="remainingList"></ul>
+        <p style="margin-top: var(--space-3); font-size: 12.5px; color: var(--text-secondary); line-height: 1.6;" id="remainingFootnote">—</p>
+      </section>
+
+      <!-- Deliverables (what shipped) -->
+      <section class="fade-up" data-stagger="8">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Site Health work shipped</h2>
+          <span class="summary-section-head__meta">Mar 17 → Jun 4 · ranked by impact</span>
+        </div>
+        <ul class="deploy-list" id="delivList"></ul>
+      </section>
+
+      <footer class="summary-footer fade-up" data-stagger="9">
+        <p>Source: Semrush Site Audit exports for cmsprime.com captured March 17, March 21, and June 4, 2026. Each crawl covered 100 representative pages — the same sample across all three dates so comparison is apples-to-apples. The mid-engagement compare-audit file (May 17-24) showed Site Health Score declined from 75 to 73 as Semrush's crawler found deeper issues, but the June 4 snapshot reflects all the cleanup work that landed during the engagement.</p>
+        <div class="summary-footer__nav">
+          <a href="./monthly-backlinks.html">← Previous: Backlinks</a>
+          <a href="./monthly.html">Index ↑</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="./monthly-domain.html"><span class="bottom-nav__num">01</span>Domain</a>
+      <a class="bottom-nav__item" href="./monthly-rankings.html"><span class="bottom-nav__num">02</span>Rankings</a>
+      <a class="bottom-nav__item" href="./monthly-tracking.html"><span class="bottom-nav__num">03</span>Tracking</a>
+      <a class="bottom-nav__item" href="./monthly-backlinks.html"><span class="bottom-nav__num">04</span>Backlinks</a>
+      <a class="bottom-nav__item is-active" href="./monthly-health.html"><span class="bottom-nav__num">05</span>Health</a>
+    </div>
+  </nav>
+
+  <script src="./js/monthly-page.js"></script>
+  <script>
+  (async function () {
+    function $(s) { return document.querySelector(s); }
+    try {
+      const r = await fetch("./data/monthly-health.json?cb=" + Date.now());
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const data = await r.json();
+
+      $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
+      $("#periodLabel").textContent = data.period_label || "—";
+      $("#bylineSource").textContent = (data.byline && data.byline.data_source) || "—";
+      $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
+
+      MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
+
+      // 3-month trend chart (line)
+      if (data.trend_chart) {
+        const tc = data.trend_chart;
+        $("#trendTitle").textContent = tc.title || "—";
+        $("#trendSub").textContent = tc.subtitle || "";
+        $("#trendCaption").textContent = tc.caption || "";
+
+        const PAL = MonthlyReport.PAL;
+        new Chart(document.getElementById("trendChart").getContext("2d"), {
+          type: "line",
+          data: {
+            labels: tc.labels,
+            datasets: tc.series.map((s, i) => {
+              const color = s.color === "gold" ? PAL.gold : (s.color === "muted" ? PAL.muted : PAL.blue);
+              return {
+                label: s.label,
+                data: s.data,
+                borderColor: color,
+                backgroundColor: color + "33",
+                borderWidth: 2.5,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                pointBackgroundColor: color,
+                pointBorderColor: "#020617",
+                pointBorderWidth: 2,
+                tension: 0.25,
+                fill: i === tc.series.length - 1 ? "origin" : false,
+              };
+            }),
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: "index", intersect: false },
+            plugins: {
+              legend: {
+                display: true,
+                position: "top",
+                align: "end",
+                labels: {
+                  boxWidth: 10,
+                  boxHeight: 10,
+                  padding: 14,
+                  font: { family: "JetBrains Mono, monospace", size: 11 },
+                  color: PAL.textStrong,
+                  usePointStyle: true,
+                  pointStyle: "rect",
+                },
+              },
+              tooltip: {
+                callbacks: {
+                  label: (item) => item.dataset.label + ": " + item.parsed.y + " issues",
+                },
+              },
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                ticks: { font: { family: "JetBrains Mono, monospace", size: 11, weight: 600 }, color: PAL.textStrong, padding: 8 },
+                border: { color: PAL.rule, width: 1 },
+              },
+              y: {
+                beginAtZero: true,
+                grid: { color: PAL.grid, drawBorder: false },
+                ticks: { font: { family: "JetBrains Mono, monospace", size: 10 }, color: PAL.textStrong, padding: 6 },
+                border: { display: false },
+              },
+            },
+          },
+        });
+      }
+
+      // Biggest issue clearances chart
+      const clearedItems = (data.issues_table.rows || []).filter(r => r.mar17 > 0 && r.jun4 === 0).slice(0, 9);
+      MonthlyReport.drawCompareBars(
+        document.getElementById("clearedChart").getContext("2d"),
+        clearedItems.map(r => r.issue.length > 25 ? r.issue.substr(0, 22) + "..." : r.issue),
+        clearedItems.map(r => r.mar17),
+        clearedItems.map(r => r.jun4),
+        {beforeLabel: "Mar 17, 2026", afterLabel: "Jun 4, 2026", unit: ""}
+      );
+
+      // Full issues table
+      if (data.issues_table) {
+        const tbody = $("#issuesTable");
+        tbody.innerHTML = "";
+        data.issues_table.rows.forEach(r => {
+          let cls = "is-pos";
+          let statusBadge = '<span class="state state-pos">cleared</span>';
+          if (r.direction === "neg" || r.is_remaining) {
+            cls = "is-neg";
+            statusBadge = '<span class="state state-neg">remaining</span>';
+          } else if (r.direction === "flat" || r.is_intentional) {
+            cls = "is-flat";
+            statusBadge = r.is_intentional
+              ? '<span class="state state-flat">intentional</span>'
+              : '<span class="state state-flat">held</span>';
+          }
+          const tipMarkup = r.tip ? '<span class="info-tip" tabindex="0" data-tip="' + r.tip.replace(/"/g,"&quot;") + '">i</span>' : '';
+          const tr = document.createElement("tr");
+          tr.className = cls;
+          tr.innerHTML =
+            '<td class="metric-name">' + r.issue + tipMarkup + '</td>' +
+            '<td class="chapter-tag">' + r.category + '</td>' +
+            '<td class="num">' + r.mar17 + '</td>' +
+            '<td class="num">' + r.mar21 + '</td>' +
+            '<td class="num is-strong">' + r.jun4 + '</td>' +
+            '<td>' + statusBadge + '</td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Remaining work list
+      if (data.remaining_concerns) {
+        const rc = data.remaining_concerns;
+        $("#remainingMeta").textContent = `${rc.rows.length} items · queued for Month 3`;
+        const ul = $("#remainingList");
+        ul.innerHTML = "";
+        rc.rows.forEach(r => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          li.innerHTML =
+            '<span class="deploy-list__date">' + r.priority.toUpperCase() + '</span>' +
+            '<span class="deploy-list__what">' + r.label + ' · <em style="font-style:italic;color:var(--text-muted);">' + r.note + '</em></span>' +
+            '<span class="deploy-list__count">' + r.count + ' instance' + (r.count === 1 ? '' : 's') + '</span>';
+          ul.appendChild(li);
+        });
+        $("#remainingFootnote").innerHTML = rc.note || "";
+      }
+
+      // Deliverables list
+      if (data.deliverables) {
+        const ul = $("#delivList");
+        ul.innerHTML = "";
+        data.deliverables.rows.forEach(d => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          const arrow = "→";
+          li.innerHTML =
+            '<span class="deploy-list__date">' + (d.category || "") + '</span>' +
+            '<span class="deploy-list__what">' + d.metric + ' · <em style="font-style:italic;color:var(--text-muted);">' + d.why + '</em></span>' +
+            '<span class="deploy-list__count">' + d.before + ' ' + arrow + ' ' + d.after + ' ' + (d.unit || '') + '</span>';
+          ul.appendChild(li);
+        });
+      }
+    } catch (e) {
+      console.error(e);
+      document.querySelector(".main").insertAdjacentHTML("beforeend",
+        '<div style="margin-top:24px;padding:16px;background:rgba(239,68,68,0.1);border:1px solid #EF4444;border-radius:4px;color:#EF4444;font-family:JetBrains Mono;font-size:12px;">Couldn\'t load report data: ' + e.message + '</div>');
+    }
+  })();
+  </script>
+</body>
+</html>
