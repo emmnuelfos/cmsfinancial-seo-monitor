@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Link Building — CMS Prime Monthly Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="icon" type="image/png" href="./assets/cms-fav.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/monthly.css">
+  <script src="./js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="./assets/cms-logo-light.svg" alt="CMS Prime" class="brand-logo">
+        <div class="sidebar__brand-sub">Performance Console</div>
+      </div>
+      <nav class="nav">
+        <div class="nav__group-label">Monthly Report</div>
+        <a class="nav__link" href="./monthly.html">
+          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Overview
+        </a>
+        <div class="nav__sublist">
+          <a class="nav__sub-link" href="./monthly-domain.html"><span class="nav__sub-link__num">01</span>Domain Overview</a>
+          <a class="nav__sub-link" href="./monthly-rankings.html"><span class="nav__sub-link__num">02</span>Organic Rankings</a>
+          <a class="nav__sub-link" href="./monthly-tracking.html"><span class="nav__sub-link__num">03</span>Position Tracking</a>
+          <a class="nav__sub-link" href="./monthly-backlinks.html"><span class="nav__sub-link__num">04</span>Backlinks</a>
+          <a class="nav__sub-link" href="./monthly-health.html"><span class="nav__sub-link__num">05</span>Site Health</a>
+          <a class="nav__sub-link is-active" href="./monthly-linkbuilding.html"><span class="nav__sub-link__num">06</span>Link Building</a>
+        </div>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__status"><span class="status-dot"></span><span>Live data · auto-refresh Mondays</span></div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main summary-main">
+
+      <div class="report-tabs fade-up" data-stagger="0">
+        <span class="report-tabs__kicker">Monthly Report</span>
+        <a class="report-tabs__link" href="./monthly-domain.html"><span class="report-tabs__num">01</span>Domain Overview</a>
+        <a class="report-tabs__link" href="./monthly-rankings.html"><span class="report-tabs__num">02</span>Organic Rankings</a>
+        <a class="report-tabs__link" href="./monthly-tracking.html"><span class="report-tabs__num">03</span>Position Tracking</a>
+        <a class="report-tabs__link" href="./monthly-backlinks.html"><span class="report-tabs__num">04</span>Backlinks</a>
+        <a class="report-tabs__link" href="./monthly-health.html"><span class="report-tabs__num">05</span>Site Health</a>
+        <a class="report-tabs__link is-active" href="./monthly-linkbuilding.html"><span class="report-tabs__num">06</span>Link Building</a>
+      </div>
+
+      <header class="summary-header fade-up" data-stagger="1">
+        <div class="summary-header__left">
+          <span class="summary-header__kicker">Chapter 06 · Month 2 plan</span>
+          <h1 class="summary-header__title" id="pageTitle">—</h1>
+        </div>
+        <div class="summary-header__right">
+          <div class="summary-header__period" id="periodLabel">—</div>
+          <div class="summary-header__updated" id="bylineSource">—</div>
+        </div>
+      </header>
+
+      <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
+
+      <!-- 90-day target tiles -->
+      <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
+
+      <!-- Current backlink position + link gap -->
+      <section class="summary-twocol fade-up" data-stagger="4">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Current backlink position<span class="info-tip" tabindex="0" data-tip="Snapshot pulled from the Semrush Backlinks API on Jun 4. 426 individual links examined across 169 unique referring domains in this sample.">i</span></h2>
+            <span class="summary-section-head__meta" id="currentSubtitle">—</span>
+          </div>
+          <table class="summary-table" id="currentStateTable">
+            <thead><tr><th>Metric</th><th class="num-col">Value</th><th>Context</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Where the link gap lives<span class="info-tip is-right" tabindex="0" data-tip="Commercial pages with fewer backlinks than their search competition typically commands. Targets are realistic, not aspirational — based on what the next-three-competitors hold.">i</span></h2>
+            <span class="summary-section-head__meta" id="gapSubtitle">—</span>
+          </div>
+          <div class="compact-chart">
+            <div class="compact-chart__head">
+              <div class="compact-chart__title">Backlinks per page · current vs target</div>
+              <div class="compact-chart__sub">lower = link-starved</div>
+            </div>
+            <div class="compact-chart__canvas-wrap is-h260">
+              <canvas id="gapChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tactics matrix -->
+      <section class="fade-up" data-stagger="5">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title" id="tacticsTitle">—</h2>
+          <span class="summary-section-head__meta" id="tacticsSubtitle">—</span>
+        </div>
+        <table class="summary-table" id="tacticsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tactic</th>
+              <th>Tier</th>
+              <th>Cost</th>
+              <th>Speed</th>
+              <th>Authority</th>
+              <th>Effort</th>
+              <th>Expected yield</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Targets summary + Pipeline -->
+      <section class="summary-twocol fade-up" data-stagger="6">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title" id="targetsTitle">—</h2>
+            <span class="summary-section-head__meta" id="targetsSubtitle">—</span>
+          </div>
+          <ul class="bar-list" id="targetsByPriority"></ul>
+          <div class="summary-section-head" style="margin-top: var(--space-5);">
+            <h2 class="summary-section-head__title">By cost type</h2>
+            <span class="summary-section-head__meta">free wins shipped first</span>
+          </div>
+          <ul class="bar-list" id="targetsByCost"></ul>
+          <div class="summary-section-head" style="margin-top: var(--space-5);">
+            <h2 class="summary-section-head__title">Top P0 picks · ship in week 1</h2>
+            <span class="summary-section-head__meta">where the immediate wins live</span>
+          </div>
+          <ul class="deploy-list" id="p0Picks"></ul>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title" id="pipelineTitle">—</h2>
+            <span class="summary-section-head__meta" id="pipelineSubtitle">—</span>
+          </div>
+          <ul class="bar-list" id="pipelineList"></ul>
+          <p style="margin-top: var(--space-3); font-size: 12.5px; color: var(--text-muted); line-height: 1.55; font-style: italic;" id="pipelineNote">—</p>
+
+          <div class="summary-section-head" style="margin-top: var(--space-5);">
+            <h2 class="summary-section-head__title">Monthly cadence</h2>
+            <span class="summary-section-head__meta">7-9 h / month across four weeks</span>
+          </div>
+          <ul class="deploy-list" id="cadenceList"></ul>
+        </div>
+      </section>
+
+      <!-- Anti-patterns -->
+      <section class="fade-up" data-stagger="7">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title" id="antiTitle">—</h2>
+          <span class="summary-section-head__meta" id="antiSubtitle">—</span>
+        </div>
+        <div class="callout-card">
+          <ul class="anti-list" id="antiList"></ul>
+        </div>
+      </section>
+
+      <!-- Prose narrative -->
+      <section class="fade-up" data-stagger="8">
+        <div class="prose-block">
+          <h2 class="prose-block__title" id="proseTitle">—</h2>
+          <div class="prose-block__body" id="proseBody"></div>
+        </div>
+      </section>
+
+      <!-- Pull quote -->
+      <section class="fade-up" data-stagger="9">
+        <blockquote class="pull-quote">
+          <p class="pull-quote__text" id="pullQuoteText">—</p>
+          <cite class="pull-quote__source" id="pullQuoteSource">—</cite>
+        </blockquote>
+      </section>
+
+      <!-- Files reference -->
+      <section class="fade-up" data-stagger="10">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title" id="filesTitle">—</h2>
+          <span class="summary-section-head__meta" id="filesSubtitle">—</span>
+        </div>
+        <ul class="deploy-list" id="filesList"></ul>
+      </section>
+
+      <footer class="summary-footer fade-up" data-stagger="11">
+        <span>Adnika · CMS Prime engagement</span>
+        <span>Backlinks data · Semrush API · Jun 4, 2026</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="./monthly-domain.html"><span class="bottom-nav__num">01</span>Domain</a>
+      <a class="bottom-nav__item" href="./monthly-rankings.html"><span class="bottom-nav__num">02</span>Rankings</a>
+      <a class="bottom-nav__item" href="./monthly-tracking.html"><span class="bottom-nav__num">03</span>Tracking</a>
+      <a class="bottom-nav__item" href="./monthly-backlinks.html"><span class="bottom-nav__num">04</span>Backlinks</a>
+      <a class="bottom-nav__item" href="./monthly-health.html"><span class="bottom-nav__num">05</span>Health</a>
+      <a class="bottom-nav__item is-active" href="./monthly-linkbuilding.html"><span class="bottom-nav__num">06</span>Links</a>
+    </div>
+  </nav>
+
+  <script src="./js/monthly-page.js"></script>
+  <script>
+  (async function () {
+    function $(s) { return document.querySelector(s); }
+    function esc(s) { return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+    try {
+      const r = await fetch("./data/monthly-linkbuilding.json?cb=" + Date.now());
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const data = await r.json();
+
+      $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
+      $("#periodLabel").textContent = data.period_label || "—";
+      $("#bylineSource").textContent = (data.byline && data.byline.data_source) || "—";
+      $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
+
+      MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
+
+      // Current state
+      if (data.current_state) {
+        $("#currentSubtitle").textContent = data.current_state.subtitle || "";
+        const tbody = $("#currentStateTable tbody");
+        tbody.innerHTML = "";
+        data.current_state.rows.forEach(r => {
+          const tipMarkup = r.tip ? '<span class="info-tip" tabindex="0" data-tip="' + r.tip.replace(/"/g,"&quot;") + '">i</span>' : '';
+          const tierCls = r.tier === "miss" ? "is-neg" : r.tier === "supporting" ? "is-flat" : "is-pos";
+          const tr = document.createElement("tr");
+          tr.className = tierCls;
+          tr.innerHTML =
+            '<td class="metric-name">' + esc(r.label) + tipMarkup + '</td>' +
+            '<td class="num is-strong">' + esc(r.value) + '</td>' +
+            '<td style="font-style:italic; color:var(--text-muted); font-size:12.5px;">' + esc(r.context || "") + '</td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Link gap chart
+      if (data.link_gap) {
+        $("#gapSubtitle").textContent = data.link_gap.subtitle || "";
+        const rows = data.link_gap.rows;
+        const labels = rows.map(r => r.page);
+        const current = rows.map(r => r.current);
+        const targetMin = rows.map(r => r.target_low);
+        const targetMax = rows.map(r => r.target_high);
+        const PAL = MonthlyReport.PAL;
+        new Chart(document.getElementById("gapChart").getContext("2d"), {
+          type: "bar",
+          data: {
+            labels,
+            datasets: [
+              { label: "Current", data: current, backgroundColor: PAL.muted, barPercentage: 0.6 },
+              { label: "Target (low)", data: targetMin, backgroundColor: PAL.blue, barPercentage: 0.6 },
+              { label: "Target (high)", data: targetMax, backgroundColor: PAL.gold, barPercentage: 0.6 },
+            ],
+          },
+          options: {
+            indexAxis: "y",
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: true, position: "top", align: "end",
+                labels: {
+                  boxWidth: 10, boxHeight: 10, padding: 12,
+                  font: { family: "JetBrains Mono, monospace", size: 11 },
+                  color: PAL.textStrong, usePointStyle: true, pointStyle: "rect",
+                },
+              },
+              tooltip: {
+                callbacks: { label: (i) => i.dataset.label + ": " + i.parsed.x + " links" },
+              },
+            },
+            scales: {
+              x: {
+                beginAtZero: true,
+                grid: { color: PAL.grid, drawBorder: false },
+                ticks: { font: { family: "JetBrains Mono, monospace", size: 10 }, color: PAL.textStrong, padding: 6 },
+                border: { display: false },
+              },
+              y: {
+                grid: { display: false },
+                ticks: { font: { family: "JetBrains Mono, monospace", size: 10.5 }, color: PAL.textStrong, padding: 6 },
+                border: { color: PAL.rule, width: 1 },
+              },
+            },
+          },
+        });
+      }
+
+      // Tactics table
+      if (data.tactics) {
+        $("#tacticsTitle").innerHTML = esc(data.tactics.title) + '<span class="info-tip" tabindex="0" data-tip="Each tactic has been ranked by realistic effort-to-result. Tier 1 free wins ship first; paid editorial (Tactic C) waits on a budget approval conversation with the client.">i</span>';
+        $("#tacticsSubtitle").textContent = data.tactics.subtitle || "";
+        const tbody = $("#tacticsTable tbody");
+        tbody.innerHTML = "";
+        data.tactics.rows.forEach(t => {
+          const costClass = t.cost === "free" ? "is-pos" : t.cost === "paid" ? "is-neg" : "is-flat";
+          const tr = document.createElement("tr");
+          tr.className = costClass;
+          tr.innerHTML =
+            '<td class="metric-name" style="font-family:var(--font-mono); font-weight:600;">' + esc(t.id) + '</td>' +
+            '<td><strong>' + esc(t.name) + '</strong>' +
+              '<div style="font-size:11.5px; color:var(--text-muted); margin-top:2px; font-style:italic;">' + esc(t.summary) + '</div>' +
+            '</td>' +
+            '<td class="num">T' + esc(t.tier) + '</td>' +
+            '<td class="num">' + esc(t.cost.replace('_',' ')) + '</td>' +
+            '<td class="num">' + esc(t.speed) + '</td>' +
+            '<td class="num">' + esc(t.authority) + '</td>' +
+            '<td class="num">' + esc(t.effort) + '</td>' +
+            '<td style="font-size:12px; color:var(--brand-gold); font-family:var(--font-mono);">' + esc(t.expected_yield) + '</td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Targets summary — by priority
+      if (data.targets_summary) {
+        $("#targetsTitle").innerHTML = esc(data.targets_summary.title) + '<span class="info-tip" tabindex="0" data-tip="Full target list lives in /cmsprime-audit/link-building/targets.csv. P0 = ship week 1, P1 = ship week 2, P2/P3 = opportunistic.">i</span>';
+        $("#targetsSubtitle").textContent = data.targets_summary.subtitle || "";
+        const ulP = $("#targetsByPriority");
+        ulP.innerHTML = "";
+        const totP = data.targets_summary.by_priority.reduce((s,r) => s + r.count, 0);
+        data.targets_summary.by_priority.forEach(r => {
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + (r.tier || "core");
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + esc(r.label) + '</span>' +
+            '<span class="bar-list__pct">' + r.count + ' domains</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ulP.appendChild(li);
+          requestAnimationFrame(() => { li.querySelector(".bar-list__fill").style.width = (r.count / totP * 100) + "%"; });
+        });
+
+        const ulC = $("#targetsByCost");
+        ulC.innerHTML = "";
+        const totC = data.targets_summary.by_cost.reduce((s,r) => s + r.count, 0);
+        data.targets_summary.by_cost.forEach(r => {
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + (r.tier || "core");
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + esc(r.label) + '</span>' +
+            '<span class="bar-list__pct">' + r.count + ' domains</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ulC.appendChild(li);
+          requestAnimationFrame(() => { li.querySelector(".bar-list__fill").style.width = (r.count / totC * 100) + "%"; });
+        });
+
+        // Top P0 picks
+        const ulPicks = $("#p0Picks");
+        ulPicks.innerHTML = "";
+        data.targets_summary.top_p0_callouts.forEach(p => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          li.innerHTML =
+            '<span class="deploy-list__date">AS ' + esc(String(p.as)) + '</span>' +
+            '<span class="deploy-list__what"><strong>' + esc(p.domain) + '</strong> · ' +
+              '<em style="font-style:italic; color:var(--text-muted); font-size:12px;">' + esc(p.tactic) + '</em></span>' +
+            '<span class="deploy-list__count">P0</span>';
+          ulPicks.appendChild(li);
+        });
+      }
+
+      // Pipeline
+      if (data.pipeline) {
+        $("#pipelineTitle").innerHTML = esc(data.pipeline.title) + '<span class="info-tip is-right" tabindex="0" data-tip="Status flow: drafted (template ready, not sent) → sent (outreach delivered) → responded (target replied) → placed (link is live on their site) / declined / paid-required / no-response (closed at 14 days).">i</span>';
+        $("#pipelineSubtitle").textContent = data.pipeline.subtitle || "";
+        const ul = $("#pipelineList");
+        ul.innerHTML = "";
+        const total = data.pipeline.rows.reduce((s,r) => s + r.count, 0);
+        data.pipeline.rows.forEach(r => {
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + (r.tier || "core");
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + esc(r.label) + '</span>' +
+            '<span class="bar-list__pct">' + r.count + '</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ul.appendChild(li);
+          requestAnimationFrame(() => { li.querySelector(".bar-list__fill").style.width = (total > 0 ? r.count / total * 100 : 0) + "%"; });
+        });
+        $("#pipelineNote").textContent = data.pipeline.note || "";
+      }
+
+      // Cadence
+      if (data.cadence) {
+        const ul = $("#cadenceList");
+        ul.innerHTML = "";
+        data.cadence.rows.forEach(r => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          li.innerHTML =
+            '<span class="deploy-list__date">' + esc(r.week) + '</span>' +
+            '<span class="deploy-list__what"><strong>' + esc(r.focus) + '</strong> · ' +
+              '<em style="font-style:italic; color:var(--text-muted); font-size:12px;">' + esc(r.what) + '</em></span>';
+          ul.appendChild(li);
+        });
+      }
+
+      // Anti-patterns
+      if (data.anti_patterns) {
+        $("#antiTitle").textContent = data.anti_patterns.title || "";
+        $("#antiSubtitle").textContent = data.anti_patterns.subtitle || "";
+        const ul = $("#antiList");
+        ul.innerHTML = "";
+        data.anti_patterns.rows.forEach(r => {
+          const li = document.createElement("li");
+          li.className = "anti-list__item";
+          li.innerHTML =
+            '<span class="anti-list__no" aria-hidden="true">×</span>' +
+            '<div class="anti-list__body">' +
+              '<div class="anti-list__label">' + esc(r.label) + '</div>' +
+              '<div class="anti-list__reason">' + esc(r.reason) + '</div>' +
+            '</div>';
+          ul.appendChild(li);
+        });
+      }
+
+      // Prose
+      if (data.prose) {
+        $("#proseTitle").textContent = data.prose.title || "";
+        $("#proseBody").innerHTML = data.prose.paragraphs.map(p => '<p>' + p + '</p>').join("");
+      }
+
+      // Pull quote
+      if (data.pull_quote) {
+        $("#pullQuoteText").textContent = data.pull_quote.text || "";
+        $("#pullQuoteSource").textContent = data.pull_quote.source || "";
+      }
+
+      // Files
+      if (data.files) {
+        $("#filesTitle").textContent = data.files.title || "";
+        $("#filesSubtitle").textContent = data.files.subtitle || "";
+        const ul = $("#filesList");
+        ul.innerHTML = "";
+        data.files.rows.forEach(f => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          li.innerHTML =
+            '<span class="deploy-list__date">' + esc(f.where) + '</span>' +
+            '<span class="deploy-list__what"><strong style="font-family:var(--font-mono);">' + esc(f.name) + '</strong> · ' +
+              '<em style="font-style:italic; color:var(--text-muted); font-size:12px;">' + esc(f.purpose) + '</em></span>';
+          ul.appendChild(li);
+        });
+      }
+
+    } catch (e) {
+      console.error("Render failed:", e);
+      $("#pageTitle").textContent = "Failed to load data";
+      $("#summaryLead").textContent = "Check that data/monthly-linkbuilding.json is accessible.";
+    }
+  })();
+  </script>
+</body>
+</html>

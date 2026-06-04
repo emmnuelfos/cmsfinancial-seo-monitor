@@ -1,0 +1,183 @@
+{
+  "issue": "02",
+  "period_label": "MONTH 2 PLAN · JUN — AUG 2026",
+  "headline": "Link building, ranked by effort-to-result",
+  "standfirst": "The full Month 2 link-building plan, grounded in the Jun 4 backlink pull. Tactics ordered by what actually moves the needle for a regulated broker.",
+  "summary_lead": "<strong>Three free regulator listings, four free directory submissions, and one partnership ask</strong> are the first 30 days of work. The premier review directories (forexbrokers.com, brokerchooser.com) wait on a paid-placement budget decision. The current backlink position is healthy on anchor distribution but thin on premium authority — only 15 domains above Authority Score 40 and 1 above 60.",
+  "byline": {
+    "issued": "JUN 5, 2026",
+    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
+    "data_source": "SEMRUSH BACKLINKS · JUN 4 2026 · 426 LINKS PROFILED"
+  },
+  "win_tiles": [
+    {
+      "num": "+80",
+      "unit": "RDs",
+      "label": "90-day RD target",
+      "source": "720 → 800-820",
+      "direction": "pos",
+      "tip": "Net new referring domains target over the next 90 days. Achievable with the Tier 1 free directory submissions + 3 regulator listings + 1 PR release per month."
+    },
+    {
+      "num": "+30",
+      "unit": "AS 30+",
+      "label": "Authority domains gained",
+      "source": "70 → 95-110",
+      "direction": "pos",
+      "tip": "Domains at Authority Score 30 or higher are the ones that meaningfully move our own AS. Goal is 30 net new at this tier, mostly from regulator + tier-1 broker directory submissions."
+    },
+    {
+      "num": "+22",
+      "unit": "links",
+      "label": "/online-forex-trading/",
+      "source": "18 → 35-45",
+      "direction": "pos",
+      "tip": "This commercial page is currently link-starved. Outreach focuses anchor variants on it to support its position-tracking keywords."
+    },
+    {
+      "num": "+15",
+      "unit": "links",
+      "label": "/prop-trading/",
+      "source": "9 → 20-30",
+      "direction": "pos",
+      "tip": "Prop trading is competitive and our prop page only has 9 backlinks. Tier 2 prop-firm comparison sites are the unlock."
+    },
+    {
+      "num": "+12",
+      "unit": "links",
+      "label": "/account-comparison/",
+      "source": "3 → 12-18",
+      "direction": "pos",
+      "tip": "Account-comparison pages are top-funnel for prospective traders. Currently only 3 links here. Linking from regulator + directory listings into this page lifts conversion + rankings together."
+    },
+    {
+      "num": "3",
+      "unit": "regulators",
+      "label": "New directory listings",
+      "source": "Mauritius + SVG + St Lucia",
+      "direction": "pos",
+      "tip": "We hold licenses in 4 jurisdictions but only Oman FSA currently shows on a public directory. Filing for the 3 missing listings is free and produces high-trust gov backlinks."
+    }
+  ],
+  "current_state": {
+    "title": "Current backlink position · Jun 4",
+    "subtitle": "From the Semrush API pull · 426 records across 169 unique domains in this sample",
+    "rows": [
+      {"label": "Authority Score", "value": "25", "context": "held through 586-domain disavow", "tier": "core", "tip": "Domain Authority Score (Semrush 0-100). Held at 25 through the cleanup, which is the proof the disavow was healthy."},
+      {"label": "Total referring domains", "value": "~720", "context": "Semrush full count", "tier": "core", "tip": "Total domains with at least one inbound link to cmsprime.com."},
+      {"label": "AS 40+ domains (premium)", "value": "15", "context": "where the gap lives", "tier": "miss", "tip": "Domains with Authority Score 40 or higher. We have very few — this is the leverage point."},
+      {"label": "AS 60+ domains (top-tier)", "value": "1", "context": "almost no top-tier equity", "tier": "miss", "tip": "Top-tier authority domains. Almost none. Reaching forexbrokers.com / brokerchooser.com / fxempire.com would change this."},
+      {"label": "dofollow / nofollow", "value": "34% / 66%", "context": "healthy mix", "tier": "core", "tip": "A balanced dofollow-to-nofollow ratio looks natural. Pure dofollow looks engineered to Google."},
+      {"label": "Brand-anchor share", "value": "71%", "context": "defensively healthy", "tier": "core", "tip": "71% of anchor texts are brand variants (CMS Prime, cmsprime.com). This is Penguin-safe and we want to keep it there. Don't request exact-match anchors on outreach."},
+      {"label": "Disavowed spam links", "value": "124+", "context": "BHS_LINKS + SEO_ANOMALY networks", "tier": "supporting", "tip": "Telegram-anchor spam network links neutralized via the Jun 3 disavow file. Lesson: never buy backlink packages from Telegram channels."}
+    ]
+  },
+  "link_gap": {
+    "title": "Where the link gap lives · commercial pages",
+    "subtitle": "Current backlinks per page vs the realistic target",
+    "rows": [
+      {"page": "/online-forex-trading/", "current": 18, "target_low": 35, "target_high": 45, "category": "Commercial"},
+      {"page": "/prop-trading/", "current": 9, "target_low": 20, "target_high": 30, "category": "Commercial"},
+      {"page": "/stock-cfds-trading/", "current": 0, "target_low": 15, "target_high": 25, "category": "Commercial", "note": "migration: old /cfds-trading/ has 8 links"},
+      {"page": "/account-comparison/", "current": 3, "target_low": 12, "target_high": 18, "category": "Top-funnel"},
+      {"page": "/metatrader-4/", "current": 1, "target_low": 15, "target_high": 25, "category": "Platform"},
+      {"page": "/metatrader-5/", "current": 0, "target_low": 15, "target_high": 25, "category": "Platform"},
+      {"page": "/", "current": 151, "target_low": 160, "target_high": 180, "category": "Homepage", "note": "already strong"}
+    ]
+  },
+  "tactics": {
+    "title": "Tactics · 8 plays ranked by effort-to-result",
+    "subtitle": "Free + fast wins first, paid editorial follows budget approval",
+    "rows": [
+      {"id": "A", "name": "Regulator directory listings", "tier": "1", "cost": "free", "speed": "fast", "authority": "high", "effort": "1h", "lead_time": "1-3 weeks", "summary": "FSC Mauritius, SVG FSA, Saint Lucia FSRA — we hold licenses in all three but only Oman is currently listed. Single email each.", "expected_yield": "3 dofollow links @ AS 25-50"},
+      {"id": "B", "name": "Tier 1 free directory submissions", "tier": "1", "cost": "free", "speed": "fast", "authority": "medium", "effort": "2h", "lead_time": "2-4 weeks", "summary": "100forexbrokers, forexrating, earnforex, topbrokers, myfxbook, forexpeacearmy. Submission forms, no editorial gatekeeping.", "expected_yield": "4-6 dofollow links @ AS 35-60"},
+      {"id": "C", "name": "Tier 1 editorial broker reviews", "tier": "2", "cost": "paid_likely", "speed": "slow", "authority": "high", "effort": "1h + budget call", "lead_time": "6-12 weeks", "summary": "forexbrokers.com, brokerchooser.com, fxempire.com, dailyforex.com. Editorial review process; usually $1500-3500 sponsored placement.", "expected_yield": "1-2 placements pending budget"},
+      {"id": "D", "name": "Regional MENA + Asia directories", "tier": "1", "cost": "free", "speed": "medium", "authority": "medium", "effort": "1.5h", "lead_time": "2-6 weeks", "summary": "arabicbroker, forex.ae, forexmena, zaforex, forex.pk, forexpersian. Feeds the AR + FA installs.", "expected_yield": "4-5 dofollow links + AR/FA link equity"},
+      {"id": "E", "name": "Resource page outreach", "tier": "3", "cost": "free", "speed": "slow", "authority": "medium", "effort": "2h", "lead_time": "4-8 weeks", "summary": "Educational + comparison hubs (babypips, dailyfx). Lowest hit rate but real authority when it lands.", "expected_yield": "1-2 placements"},
+      {"id": "F", "name": "Press release distribution", "tier": "2", "cost": "paid", "speed": "fast", "authority": "varies", "effort": "1h per release", "lead_time": "1-2 weeks per release", "summary": "PRNewswire / BusinessWire for real product launches. Pair with CMS Webtrader updates, partnership announcements, schema deploys.", "expected_yield": "8-15 syndicated mentions per release"},
+      {"id": "G", "name": "Partnership co-marketing", "tier": "1", "cost": "free", "speed": "opportunistic", "authority": "high", "effort": "30min per partner", "lead_time": "2-6 weeks", "summary": "Trading Central + AutoChartist + MetaQuotes + MQL5 partner pages — request inclusion under brokers list.", "expected_yield": "2-3 partner page links @ AS 55-80"},
+      {"id": "H", "name": "Industry awards entries", "tier": "3", "cost": "paid", "speed": "slow", "authority": "medium", "effort": "2h per entry", "lead_time": "annual cycle", "summary": "Finance Magnates Awards, Global Forex Awards, World Finance Awards. Out of scope for Month 2 — budget annual.", "expected_yield": "1 entry per year + win publicity"}
+    ]
+  },
+  "targets_summary": {
+    "title": "Targets · 60+ prioritized domains",
+    "subtitle": "From targets.csv — priority labels P0 to P3",
+    "total_targets": 60,
+    "by_priority": [
+      {"label": "P0 — start week 1", "count": 12, "tier": "core"},
+      {"label": "P1 — start week 2", "count": 18, "tier": "core"},
+      {"label": "P2 — start week 3-4", "count": 18, "tier": "supporting"},
+      {"label": "P3 — opportunistic", "count": 12, "tier": "miss"}
+    ],
+    "by_cost": [
+      {"label": "Free submissions", "count": 35, "tier": "core"},
+      {"label": "Paid editorial / sponsored", "count": 12, "tier": "supporting"},
+      {"label": "Awards + events (paid)", "count": 8, "tier": "supporting"},
+      {"label": "Free with conditions", "count": 5, "tier": "core"}
+    ],
+    "top_p0_callouts": [
+      {"domain": "fscmauritius.org", "tactic": "Regulator directory", "as": 50},
+      {"domain": "myfxbook.com", "tactic": "Free directory", "as": 60},
+      {"domain": "forexpeacearmy.com", "tactic": "Profile + reviews", "as": 60},
+      {"domain": "mql5.com", "tactic": "Official MT directory", "as": 80},
+      {"domain": "tradingcentral.com", "tactic": "Partner page", "as": 55},
+      {"domain": "arabicbroker.com", "tactic": "AR regional", "as": 30}
+    ]
+  },
+  "pipeline": {
+    "title": "Outreach pipeline · current status",
+    "subtitle": "Tracker fields: drafted → sent → responded → placed / declined / no-response",
+    "rows": [
+      {"label": "Drafted (ready to send)", "count": 42, "tier": "core"},
+      {"label": "Sent (awaiting response)", "count": 2, "tier": "supporting"},
+      {"label": "Responded", "count": 0, "tier": "supporting"},
+      {"label": "Placed (link live)", "count": 0, "tier": "core"},
+      {"label": "Declined / paid-required", "count": 0, "tier": "miss"},
+      {"label": "No response (closed)", "count": 0, "tier": "miss"}
+    ],
+    "note": "The two ‘sent’ rows are the existing Crypto Expo Dubai and Money Expo India relationships flagged as ‘keep warm’ for the next event cycle."
+  },
+  "anti_patterns": {
+    "title": "What we will not do",
+    "subtitle": "Lessons from the Telegram-spam disavow + general SEO hygiene",
+    "rows": [
+      {"label": "Buy Telegram/Discord backlink packages", "reason": "Exactly what produced the BHS_LINKS + SEO_ANOMALY problem. 124+ links disavowed Jun 3. Burned the link graph for ~9 months. Never again."},
+      {"label": "Request exact-match commercial anchor text", "reason": "Anchors like ‘best ECN broker’ / ‘forex broker UAE’ trip Penguin. Brand anchors only on outreach. The current 71% brand share is what's keeping cmsprime.com Penguin-safe."},
+      {"label": "Submit to web1.0 generic directories", "reason": "Zero authority, often algorithmically penalized. Waste of time."},
+      {"label": "Mass guest-post submissions on PBN networks", "reason": "Same risk profile as the Telegram spam. Pattern is the same, outcome is the same."},
+      {"label": "Forget the AR/FA installs", "reason": "Three regulated languages means three link-building tracks. Regional MENA outreach (Tactic D) is the cheapest way to feed cmsprime.com/ar/ and cmsprime.com/fa/."}
+    ]
+  },
+  "cadence": {
+    "title": "Monthly cadence · 7-9 hours / month",
+    "subtitle": "Four-week cycle. Adnika delivers the kit; Ehsan or CMS Prime marketing executes.",
+    "rows": [
+      {"week": "Week 1", "focus": "Tactic A + B", "what": "Regulator directories (FSC Mauritius, SVG, Saint Lucia) + free broker directories. Highest ROI free wins."},
+      {"week": "Week 2", "focus": "Tactic D + G", "what": "Regional MENA/Asia directory pushes + partnership outreach (Trading Central, MetaQuotes/MQL5)."},
+      {"week": "Week 3", "focus": "Tactic E + F", "what": "Resource page outreach (slow ROI) + 1 press release if there's a real product launch this month."},
+      {"week": "Week 4", "focus": "Follow-ups", "what": "7-day and 14-day follow-ups on outstanding outreach. Archive completed rows. Review the tracker."}
+    ]
+  },
+  "files": {
+    "title": "Full execution kit",
+    "subtitle": "Living files for the agency + client team",
+    "rows": [
+      {"name": "strategy.md", "purpose": "Full plan + KPIs + tactics + anti-patterns", "where": "/cmsprime-audit/link-building/"},
+      {"name": "targets.csv", "purpose": "60+ prioritized target domains with tier, AS estimate, contact method, cost", "where": "/cmsprime-audit/link-building/"},
+      {"name": "outreach-templates.md", "purpose": "6 reusable email templates per tactic type", "where": "/cmsprime-audit/link-building/"},
+      {"name": "tracker.csv", "purpose": "Pipeline log — status, follow-up dates, placement outcomes", "where": "/cmsprime-audit/link-building/"}
+    ]
+  },
+  "prose": {
+    "title": "The link graph is the trust graph.",
+    "paragraphs": [
+      "After the May-Jun foundation work (hreflang, enriched Organization schema, FAQ schema, broken-link repair, 586-domain disavow filing), cmsprime.com’s on-site signals are clean. What’s still thin is the off-site equity: 720 referring domains is a respectable count but the authority distribution is bottom-heavy. Only 15 domains above AS 40 means we’re competing on commercial keywords against rivals with stronger link graphs.",
+      "Month 2 doesn’t try to fix that in 30 days. It puts the cheapest, fastest, most defensible plays first: three regulator directory listings we already qualify for (FSC Mauritius, SVG, Saint Lucia), four to six free broker-directory submissions, and one partnership ask on the Trading Central side. That set alone should land 6-10 new dofollow links inside the first 30 days at zero spend.",
+      "The harder tier — editorial reviews on forexbrokers.com, brokerchooser.com, fxempire.com — waits on a client budget conversation. Premier broker directories don’t link for free, and they’re right not to. Once placement budget is approved, those become the AS 60+ links the profile is currently missing."
+    ]
+  },
+  "pull_quote": {
+    "text": "Six to ten new dofollow links in the first 30 days at zero spend, if the regulator + free directory list ships in week 1.",
+    "source": "Adnika — Month 2 link-building plan"
+  }
+}
