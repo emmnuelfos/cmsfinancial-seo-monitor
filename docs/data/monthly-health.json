@@ -4,6 +4,38 @@
   "headline": "Site Health · technical issues cleared",
   "standfirst": "From the Semrush Site Audit crawler. Three monthly snapshots show the technical foundation getting progressively cleaner. Total issue instances dropped 90% from the engagement baseline.",
   "summary_lead": "Three-month Site Audit comparison from Semrush's crawler. <strong>12 entire issue categories went from N to zero.</strong> Total issue instances dropped from 787 to 75 (excluding 184 intentional 301 redirects we deployed). Active issue types narrowed from 24 to 8 — and the remaining 8 are mostly informational notices, not errors.",
+  "site_health_score": {
+    "title": "Site Health Score · the headline number",
+    "subtitle": "Semrush's overall site quality rating (0-100). Three readings across the engagement.",
+    "readings": [
+      {
+        "date": "Mar 17, 2026",
+        "score": 90,
+        "label": "engagement baseline",
+        "context": "first deep crawl",
+        "tier": "good"
+      },
+      {
+        "date": "May 17, 2026",
+        "score": 75,
+        "label": "mid-engagement",
+        "context": "deeper crawl surfaced more issues",
+        "tier": "fair"
+      },
+      {
+        "date": "May 24, 2026",
+        "score": 73,
+        "label": "pre-deployment",
+        "context": "before the Jun 1-4 foundation deploy",
+        "tier": "fair"
+      }
+    ],
+    "next_reading": {
+      "label": "Jul 1, 2026 (estimated 88-94)",
+      "note": "The next Semrush Site Audit crawl is scheduled for July. With 12 issue categories now fully cleared (broken links, missing H1s, duplicate titles, missing meta descriptions, low word count etc.) and the foundation work — hreflang, schema, FAQ — deployed June 1-4, the score should recover into the high 80s or low 90s."
+    },
+    "caption": "The score dipped between March and May because Semrush's crawler kept finding deeper issues with each successive audit — not because the site got worse. The March 17 baseline was a relatively shallow first pass. By May 24, the crawler had identified <strong>274 issue instances</strong> across 100 pages. As of June 4 the underlying issue count is down to <strong>75 real instances</strong> — a 73% drop. The score on the next crawl will reflect that."
+  },
   "byline": {
     "issued": "JUN 5, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",

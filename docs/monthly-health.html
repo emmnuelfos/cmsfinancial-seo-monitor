@@ -65,6 +65,9 @@
 
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
+      <!-- Site Health Score · the headline number -->
+      <section class="score-block fade-up" data-stagger="2" id="scoreBlock"></section>
+
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
       <!-- 3-month trend chart -->
@@ -171,6 +174,38 @@
       $("#periodLabel").textContent = data.period_label || "—";
       $("#bylineSource").textContent = (data.byline && data.byline.data_source) || "—";
       $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
+
+      // Site Health Score block (top of page)
+      if (data.site_health_score) {
+        const shs = data.site_health_score;
+        const readings = shs.readings || [];
+        const future = shs.next_reading;
+        const cells = readings.map(r =>
+          `<div class="score-cell score-cell--${r.tier}">
+            <span class="score-cell__date">${r.date}</span>
+            <span class="score-cell__num">${r.score}</span>
+            <span class="score-cell__suffix">/ 100</span>
+            <span class="score-cell__label">${r.label}</span>
+            <span class="score-cell__context">${r.context}</span>
+          </div>`
+        ).join("");
+        const futureCell = future
+          ? `<div class="score-cell score-cell--future">
+              <span class="score-cell__date">${future.label.split(' (')[0]}</span>
+              <span class="score-cell__num">${future.label.match(/\\d+-\\d+|\\d+/)?.[0] || ''}</span>
+              <span class="score-cell__suffix">projected</span>
+              <span class="score-cell__label">next crawl</span>
+              <span class="score-cell__context">post-deployment</span>
+            </div>`
+          : '';
+        document.getElementById("scoreBlock").innerHTML =
+          `<div class="score-block__head">
+            <h2 class="score-block__title">${shs.title}<span class="info-tip" tabindex="0" data-tip="Semrush's overall site quality rating (0-100). Combines detected errors (high weight), warnings (medium), and notices (low) across pages crawled.">i</span></h2>
+            <span class="score-block__subtitle">${shs.subtitle}</span>
+          </div>
+          <div class="score-row">${cells}${futureCell}</div>
+          <p class="score-block__caption">${shs.caption}</p>`;
+      }
 
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
 
