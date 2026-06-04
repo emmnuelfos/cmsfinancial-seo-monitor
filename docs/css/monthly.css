@@ -1870,6 +1870,63 @@ body.has-upload-modal-open { overflow: hidden; }
 }
 
 /* =========================================================
+   Link-building action bar — "Open live tracker" buttons
+   ========================================================= */
+.lb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--rule-color);
+  border-left: 2px solid var(--brand-gold);
+  margin-bottom: var(--space-4);
+}
+.lb-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid var(--rule-color);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+.lb-action-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+.lb-action-btn--primary {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: #06121E;
+}
+.lb-action-btn--primary:hover {
+  background: #ECC85C;
+  border-color: #ECC85C;
+  color: #06121E;
+}
+.lb-action-note {
+  flex: 1 1 100%;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+@media (min-width: 800px) {
+  .lb-action-note { flex: 1 1 auto; margin-top: 0; }
+}
+
+/* =========================================================
    Anti-pattern list (do-not list) — used on the Link-Building page
    ========================================================= */
 .anti-list {
