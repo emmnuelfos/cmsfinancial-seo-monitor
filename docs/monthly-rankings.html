@@ -7,7 +7,7 @@
   <title>Organic Rankings — CMS Prime Monthly Report</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="icon" type="image/png" href="./assets/cms-fav.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
@@ -40,7 +40,7 @@
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main summary-main">
 
       <div class="report-tabs fade-up" data-stagger="0">
         <span class="report-tabs__kicker">Monthly Report</span>
@@ -50,165 +50,128 @@
         <a class="report-tabs__link" href="./monthly-backlinks.html"><span class="report-tabs__num">04</span>Backlinks</a>
       </div>
 
-      <div class="issue-bar fade-up" data-stagger="1">
-        <div class="issue-bar__left">
-          <span class="issue-bar__num" id="issueNum">—</span>
-          <span id="periodLabel">—</span>
+      <header class="summary-header fade-up" data-stagger="1">
+        <div class="summary-header__left">
+          <span class="summary-header__kicker">Chapter 02 · Position view</span>
+          <h1 class="summary-header__title" id="pageTitle">—</h1>
         </div>
-        <div class="issue-bar__right">Organic Rankings · Chapter 02</div>
-      </div>
-
-      <div class="editorial-head fade-up" data-stagger="2">
-        <div class="editorial-head__main">
-          <div class="editorial-head__kicker">Chapter 02 — Position view</div>
-          <h1 class="editorial-head__title" id="pageTitle">—</h1>
-          <p class="editorial-head__standfirst" id="pageStandfirst">—</p>
+        <div class="summary-header__right">
+          <div class="summary-header__period" id="periodLabel">—</div>
+          <div class="summary-header__updated" id="bylineSource">—</div>
         </div>
-        <div class="editorial-head__byline">
-          <div id="bylineIssued"><strong>—</strong></div>
-          <div id="bylineAuthor">—</div>
-          <div id="bylineSource">—</div>
-        </div>
-      </div>
+      </header>
 
-      <div class="marquee-row fade-up" data-stagger="3" id="marqueeRow"></div>
+      <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
-      <!-- § I — Compare Hero (May vs June) -->
-      <div class="section-rule fade-up" data-stagger="4">
-        <span class="section-rule__label">§ I — The headline movement</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">MAY → JUN</span>
-      </div>
+      <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
-      <section class="compare-hero fade-up" data-stagger="4" id="compareHero"></section>
-
-      <!-- § I.b — Deliverables grid -->
-      <div class="section-rule fade-up" data-stagger="4">
-        <span class="section-rule__label">§ I.b — What shipped during the period</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">VERIFIED LIVE</span>
-      </div>
-
-      <div class="sub-section fade-up" data-stagger="4">
-        <div class="sub-section__title" id="delivTitle">—</div>
-        <div class="deliverables-grid" id="deliverablesGrid"></div>
-      </div>
-
-      <!-- Country footprint -->
-      <div class="section-rule fade-up" data-stagger="5">
-        <span class="section-rule__label">§ II — Footprint by Google database</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">FIG. 10</span>
-      </div>
-
-      <div class="sub-section fade-up" data-stagger="5">
-        <div class="sub-section__title" id="countryTitle">—</div>
-        <table class="geo-rows">
-          <tbody id="countryRows"></tbody>
-        </table>
-      </div>
-
-      <!-- Top keywords table -->
-      <div class="section-rule fade-up" data-stagger="6">
-        <span class="section-rule__label">§ III — The five keywords driving traffic</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">TOP 5 OF 29</span>
-      </div>
-
-      <table class="data-rows fade-up" data-stagger="6" id="kwTable">
-        <thead>
-          <tr>
-            <th>Keyword</th>
-            <th class="is-num">Position</th>
-            <th class="is-num">Search volume</th>
-            <th class="is-num">SERP features</th>
-            <th class="is-num">Traffic share</th>
-          </tr>
-        </thead>
-        <tbody id="kwTableBody"></tbody>
-      </table>
-      <p class="page-footer-note__text" id="kwFootnote" style="margin-top: var(--space-3); margin-bottom: var(--space-7);">—</p>
-
-      <!-- Intent split + Top pages (two columns) -->
-      <div class="section-rule fade-up" data-stagger="7">
-        <span class="section-rule__label">§ IV — How traffic finds the site</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">FIG. 11–12</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="7">
+      <!-- Top keywords + Country footprint -->
+      <section class="summary-twocol fade-up" data-stagger="4">
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="intentTitle">Keywords by search intent</div>
-            <div id="intentSplit"></div>
-            <p class="page-footer-note__text" id="intentFootnote" style="margin-top: var(--space-3);">—</p>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Top keywords driving traffic</h2>
+            <span class="summary-section-head__meta">5 of 29 · current state</span>
           </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th class="is-num">Pos</th>
+                <th class="is-num">Volume</th>
+                <th class="is-num">Traffic %</th>
+              </tr>
+            </thead>
+            <tbody id="kwTable"></tbody>
+          </table>
         </div>
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="pagesTitle">Top pages by traffic</div>
-            <table class="data-rows">
-              <tbody id="topPagesBody"></tbody>
-            </table>
-            <p class="page-footer-note__text" id="pagesFootnote" style="margin-top: var(--space-3);">—</p>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Footprint by database</h2>
+            <span class="summary-section-head__meta">US vs IN vs AE</span>
           </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>Market</th>
+                <th class="is-num">Keywords</th>
+                <th>Note</th>
+              </tr>
+            </thead>
+            <tbody id="footprintTable"></tbody>
+          </table>
         </div>
-      </div>
+      </section>
+
+      <!-- Intent split + Top pages -->
+      <section class="summary-twocol fade-up" data-stagger="5">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Keywords by search intent</h2>
+            <span class="summary-section-head__meta">June 2026</span>
+          </div>
+          <ul class="bar-list" id="intentList"></ul>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Top pages by traffic share</h2>
+            <span class="summary-section-head__meta">share of organic traffic</span>
+          </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>URL</th>
+                <th class="is-num">Traffic %</th>
+                <th class="is-num">Keywords</th>
+              </tr>
+            </thead>
+            <tbody id="pagesTable"></tbody>
+          </table>
+        </div>
+      </section>
 
       <!-- Competitors + Position changes -->
-      <div class="section-rule fade-up" data-stagger="8">
-        <span class="section-rule__label">§ V — Who else is in this race</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">131 TOTAL</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="8">
+      <section class="summary-twocol fade-up" data-stagger="6">
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="compTitle">Top organic competitors</div>
-            <table class="data-rows">
-              <tbody id="compBody"></tbody>
-            </table>
-            <p class="page-footer-note__text" id="compFootnote" style="margin-top: var(--space-3);">—</p>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Main organic competitors</h2>
+            <span class="summary-section-head__meta">131 total · top 5</span>
           </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th class="is-num">Shared kw</th>
+                <th class="is-num">Comp %</th>
+              </tr>
+            </thead>
+            <tbody id="compTable"></tbody>
+          </table>
         </div>
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="changesTitle">Position changes this period</div>
-            <div class="empty-state" id="changesEmpty"></div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Position changes</h2>
+            <span class="summary-section-head__meta">May → June</span>
           </div>
+          <div class="callout-card" id="changesCard"></div>
         </div>
-      </div>
+      </section>
 
-      <!-- Prose -->
-      <div class="section-rule fade-up" data-stagger="9">
-        <span class="section-rule__label">§ VI — Analysis</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">PROSE</span>
-      </div>
-
-      <div class="editorial-grid editorial-grid--reverse fade-up" data-stagger="9">
-        <div>
-          <blockquote class="pull-quote">
-            <span id="pullQuoteText">—</span>
-            <span class="pull-quote__source" id="pullQuoteSource">—</span>
-          </blockquote>
+      <!-- Deliverables timeline -->
+      <section class="fade-up" data-stagger="7">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">What shipped during the period</h2>
+          <span class="summary-section-head__meta">ranking-impact deliverables</span>
         </div>
-        <div class="editorial-prose">
-          <h3 id="proseTitle">—</h3>
-          <div id="proseBody" class="drop-cap"></div>
-        </div>
-      </div>
+        <ul class="deploy-list" id="delivList"></ul>
+      </section>
 
-      <div class="page-footer-note fade-up" data-stagger="10">
-        <p class="page-footer-note__text">
-          Source: Semrush Organic Research export for cmsprime.com on the AE database (desktop), captured June 3, 2026. All position, volume, traffic share and intent classifications come directly from that snapshot. Competitor list shown is the top 5 of 131 tracked overlapping domains in the same vertical.
-        </p>
-        <div class="page-footer-note__nav">
+      <footer class="summary-footer fade-up" data-stagger="8">
+        <p>Source: Semrush Organic Research export for cmsprime.com on the AE database (desktop), captured June 3, 2026. Position data is direct snapshot; intent classification comes from Semrush's automated tagging. Em-dashes denote queries where the page does not rank in the top 100.</p>
+        <div class="summary-footer__nav">
           <a href="./monthly-domain.html">← Previous: Domain</a>
           <a href="./monthly-tracking.html">Next: Position Tracking →</a>
         </div>
-      </div>
+      </footer>
     </main>
   </div>
 
@@ -222,163 +185,124 @@
     </div>
   </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="./js/monthly-page.js"></script>
   <script>
   (async function () {
+    function $(s) { return document.querySelector(s); }
     try {
       const r = await fetch("./data/monthly-rankings.json?cb=" + Date.now());
       if (!r.ok) throw new Error("HTTP " + r.status);
       const data = await r.json();
 
-      MonthlyReport.renderHead(data, {
-        issueNum: "#issueNum",
-        periodLabel: "#periodLabel",
-        title: "#pageTitle",
-        standfirst: "#pageStandfirst",
-        issuedAt: "#bylineIssued",
-        author: "#bylineAuthor",
-        dataSource: "#bylineSource",
-      });
+      $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
+      $("#periodLabel").textContent = data.period_label || "—";
+      $("#bylineSource").textContent = (data.byline && data.byline.data_source) || "—";
+      $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
 
-      MonthlyReport.renderMarquee(document.getElementById("marqueeRow"), data.marquee || []);
+      MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
 
-      // Compare hero (May vs June)
-      MonthlyReport.renderCompareHero(document.getElementById("compareHero"), data.compare_hero);
-
-      // Deliverables grid
-      if (data.deliverables) {
-        document.getElementById("delivTitle").textContent = data.deliverables.subtitle || data.deliverables.title;
-        MonthlyReport.renderDeliverables(document.getElementById("deliverablesGrid"), data.deliverables.rows || []);
+      // Top keywords
+      if (data.top_keywords) {
+        const tbody = $("#kwTable");
+        tbody.innerHTML = "";
+        data.top_keywords.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          tr.className = r.position === 1 ? "is-pos" : "is-flat";
+          const kindBadge = r.kind === "brand" ? '<span class="state state-flat" style="margin-left:6px;">brand</span>' :
+                            r.kind === "commercial" ? '<span class="state state-pos" style="margin-left:6px;">commercial</span>' : '';
+          tr.innerHTML =
+            '<td class="metric-name">' + r.kw + kindBadge + '</td>' +
+            '<td class="num is-strong">#' + r.position + '</td>' +
+            '<td class="num">' + r.volume.toLocaleString() + '</td>' +
+            '<td class="num is-pos">' + r.traffic_pct + '%</td>';
+          tbody.appendChild(tr);
+        });
       }
 
       // Country footprint
       if (data.country_footprint) {
-        const cf = data.country_footprint;
-        document.getElementById("countryTitle").textContent = cf.subtitle || cf.title;
-        const tbody = document.getElementById("countryRows");
+        const tbody = $("#footprintTable");
         tbody.innerHTML = "";
-        cf.rows.forEach(r => {
-          const targetCls = r.is_target ? " is-target" : "";
-          const tag = r.is_target ? '<span class="geo-target-tag">target</span>' : '';
+        data.country_footprint.rows.forEach(r => {
           const tr = document.createElement("tr");
+          if (r.is_target) tr.className = "is-pos";
+          const targetTag = r.is_target ? '<span class="state state-pos" style="margin-left:6px;">target</span>' : '';
           tr.innerHTML =
-            '<td class="geo-flag">' + r.flag + '</td>' +
-            '<td class="geo-name' + targetCls + '">' + r.country + tag + '</td>' +
-            '<td class="geo-bar"><div class="geo-bar__track"><div class="geo-bar__fill' + targetCls + '" style="width:0"></div></div></td>' +
-            '<td class="geo-num' + targetCls + '">' + r.value + ' kw</td>' +
-            '<td class="geo-sub">' + (r.note || '') + '</td>';
+            '<td class="metric-name">' + r.flag + ' · ' + r.country + targetTag + '</td>' +
+            '<td class="num is-strong">' + r.value + '</td>' +
+            '<td style="font-size:11.5px;color:var(--text-muted);font-family:var(--font-mono);">' + (r.note || '') + '</td>';
           tbody.appendChild(tr);
-          requestAnimationFrame(() => {
-            const fill = tr.querySelector(".geo-bar__fill");
-            if (fill) fill.style.width = r.share + "%";
-          });
         });
       }
 
-      // Top keywords table
-      if (data.top_keywords) {
-        const tk = data.top_keywords;
-        const tbody = document.getElementById("kwTableBody");
-        tbody.innerHTML = "";
-        tk.rows.forEach(r => {
-          const tr = document.createElement("tr");
-          const posCls = r.position === 1 ? 'is-after' : (r.position <= 10 ? 'is-after' : '');
-          tr.innerHTML =
-            '<td><div class="row-metric">' + r.kw + '</div>' +
-            (r.kind === 'brand' ? '<span class="row-sub">brand term</span>' :
-              (r.kind === 'ambiguous' ? '<span class="row-sub">brand-adjacent</span>' :
-              '<span class="row-sub">commercial</span>')) + '</td>' +
-            '<td class="num ' + posCls + '">#' + r.position + '</td>' +
-            '<td class="num">' + r.volume.toLocaleString() + '</td>' +
-            '<td class="num">' + r.serp_features + '</td>' +
-            '<td class="num">' + r.traffic_pct + '%</td>';
-          tbody.appendChild(tr);
-        });
-        document.getElementById("kwFootnote").textContent = tk.footnote || "";
-      }
-
-      // Intent split (3 stacked bars)
+      // Intent split
       if (data.intent_split) {
-        const is = data.intent_split;
-        document.getElementById("intentTitle").textContent = is.subtitle || is.title;
-        const el = document.getElementById("intentSplit");
-        el.innerHTML = "";
-        is.rows.forEach(row => {
-          const tier = row.color === "amber" ? "core" : (row.color === "gold" ? "supporting" : "miss");
-          const block = document.createElement("div");
-          block.className = "serp-mix__row is-" + tier;
-          block.innerHTML =
-            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
-            '  <span class="serp-mix__label">' + row.label + ' <span style="color:var(--text-faint);font-size:12px;font-family:var(--font-mono);">· ' + row.keywords + ' kw, ' + row.traffic + ' visits</span></span>' +
-            '  <span class="serp-mix__pct">' + row.pct + '%</span>' +
-            '</div>' +
-            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
-          el.appendChild(block);
-          requestAnimationFrame(() => {
-            const fill = block.querySelector(".serp-mix__bar-fill");
-            if (fill) fill.style.width = row.pct + "%";
-          });
+        const ul = $("#intentList");
+        ul.innerHTML = "";
+        data.intent_split.rows.forEach(r => {
+          const tier = r.color === "amber" ? "core" : (r.color === "gold" ? "supporting" : "miss");
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + tier;
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + r.label + ' <span style="color:var(--text-faint);font-size:11px;font-family:var(--font-mono);margin-left:4px;">' + r.keywords + ' kw · ' + r.traffic + ' visits</span></span>' +
+            '<span class="bar-list__pct">' + r.pct + '%</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ul.appendChild(li);
+          requestAnimationFrame(() => { li.querySelector(".bar-list__fill").style.width = r.pct + "%"; });
         });
-        document.getElementById("intentFootnote").textContent = is.footnote || "";
       }
 
       // Top pages
       if (data.top_pages) {
-        const tp = data.top_pages;
-        document.getElementById("pagesTitle").textContent = tp.subtitle || tp.title;
-        const tbody = document.getElementById("topPagesBody");
+        const tbody = $("#pagesTable");
         tbody.innerHTML = "";
-        tp.rows.forEach(r => {
+        data.top_pages.rows.forEach(r => {
           const tr = document.createElement("tr");
-          const homeFlag = r.is_home ? '<span class="row-sub" style="color: var(--brand-gold);">homepage · single point of failure</span>' : '';
+          if (r.is_home) tr.className = "is-flat";
           tr.innerHTML =
-            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:12.5px;letter-spacing:0;">' + r.url + '</div>' + homeFlag + '</td>' +
-            '<td class="num is-after">' + r.traffic_pct + '%</td>' +
-            '<td class="num" style="width:60px;">' + r.keywords + ' kw</td>';
+            '<td class="metric-name" style="font-family:var(--font-mono);font-size:11.5px;">' + r.url + '</td>' +
+            '<td class="num is-strong">' + r.traffic_pct + '%</td>' +
+            '<td class="num">' + r.keywords + '</td>';
           tbody.appendChild(tr);
         });
-        document.getElementById("pagesFootnote").textContent = tp.footnote || "";
       }
 
       // Competitors
       if (data.competitors) {
-        const c = data.competitors;
-        document.getElementById("compTitle").textContent = c.subtitle || c.title;
-        const tbody = document.getElementById("compBody");
+        const tbody = $("#compTable");
         tbody.innerHTML = "";
-        c.rows.forEach(r => {
+        data.competitors.rows.forEach(r => {
           const tr = document.createElement("tr");
           tr.innerHTML =
-            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0;">' + r.domain + '</div></td>' +
-            '<td class="num is-after">' + r.common_kw + ' shared kw</td>' +
-            '<td class="num" style="width:80px;">' + r.comp_pct + '% comp</td>';
+            '<td class="metric-name" style="font-family:var(--font-mono);font-size:12px;">' + r.domain + '</td>' +
+            '<td class="num">' + r.common_kw + '</td>' +
+            '<td class="num is-strong">' + r.comp_pct + '%</td>';
           tbody.appendChild(tr);
         });
-        document.getElementById("compFootnote").textContent = c.footnote || "";
       }
 
-      // Position changes (empty state)
+      // Position changes callout
       if (data.position_changes) {
         const pc = data.position_changes;
-        document.getElementById("changesTitle").textContent = pc.subtitle || pc.title;
-        document.getElementById("changesEmpty").innerHTML =
-          '<div class="empty-state__head">' + pc.message + '</div>' +
-          '<p class="empty-state__detail">' + pc.detail + '</p>';
+        $("#changesCard").innerHTML =
+          '<div class="callout-card__head">' + pc.message + '</div>' +
+          '<p class="callout-card__body">' + pc.detail + '</p>';
       }
 
-      if (data.prose) {
-        document.getElementById("proseTitle").textContent = data.prose.title || "";
-        const body = document.getElementById("proseBody");
-        (data.prose.paragraphs || []).forEach(p => {
-          const para = document.createElement("p");
-          para.innerHTML = p;
-          body.appendChild(para);
+      // Deliverables
+      if (data.deliverables) {
+        const ul = $("#delivList");
+        ul.innerHTML = "";
+        data.deliverables.rows.forEach(d => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          const arrow = d.is_held ? "=" : "→";
+          li.innerHTML =
+            '<span class="deploy-list__date">' + (d.category || "") + '</span>' +
+            '<span class="deploy-list__what">' + d.metric + ' · <em style="font-style:italic;color:var(--text-muted);">' + d.why + '</em></span>' +
+            '<span class="deploy-list__count">' + d.before + ' ' + arrow + ' ' + d.after + ' ' + (d.unit || '') + '</span>';
+          ul.appendChild(li);
         });
-      }
-      if (data.pull_quote) {
-        document.getElementById("pullQuoteText").textContent = data.pull_quote.text;
-        document.getElementById("pullQuoteSource").textContent = "— " + data.pull_quote.source;
       }
     } catch (e) {
       console.error(e);

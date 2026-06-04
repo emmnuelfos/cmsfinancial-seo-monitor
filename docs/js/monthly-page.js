@@ -195,6 +195,22 @@
     });
   }
 
+  // ---- Win-strip renderer (compact tile row for the executive summary style) ----
+  function renderWinStrip(el, tiles) {
+    if (!el) return;
+    el.innerHTML = "";
+    tiles.forEach((t) => {
+      const tile = document.createElement("div");
+      tile.className = "win-tile is-" + (t.direction || "pos");
+      tile.innerHTML =
+        '<div class="win-tile__num">' + (t.num || "") + '</div>' +
+        '<div class="win-tile__unit">' + (t.unit || "") + '</div>' +
+        '<div class="win-tile__label">' + (t.label || "") + '</div>' +
+        (t.source ? '<div class="win-tile__source">' + t.source + '</div>' : '');
+      el.appendChild(tile);
+    });
+  }
+
   // ---- Marquee row renderer ----
   function renderMarquee(el, cells) {
     el.innerHTML = "";
@@ -335,6 +351,7 @@
     drawFeatureChart: drawFeatureChart,
     drawSpark: drawSpark,
     renderMarquee: renderMarquee,
+    renderWinStrip: renderWinStrip,
     renderTrendStrip: renderTrendStrip,
     renderHead: renderHead,
     renderCompareHero: renderCompareHero,

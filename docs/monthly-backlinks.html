@@ -7,7 +7,7 @@
   <title>Backlinks — CMS Prime Monthly Report</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="icon" type="image/png" href="./assets/cms-fav.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
@@ -40,7 +40,7 @@
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main summary-main">
 
       <div class="report-tabs fade-up" data-stagger="0">
         <span class="report-tabs__kicker">Monthly Report</span>
@@ -50,168 +50,109 @@
         <a class="report-tabs__link is-active" href="./monthly-backlinks.html"><span class="report-tabs__num">04</span>Backlinks</a>
       </div>
 
-      <div class="issue-bar fade-up" data-stagger="1">
-        <div class="issue-bar__left">
-          <span class="issue-bar__num" id="issueNum">—</span>
-          <span id="periodLabel">—</span>
+      <header class="summary-header fade-up" data-stagger="1">
+        <div class="summary-header__left">
+          <span class="summary-header__kicker">Chapter 04 · Link profile</span>
+          <h1 class="summary-header__title" id="pageTitle">—</h1>
         </div>
-        <div class="issue-bar__right">Backlinks · Chapter 04</div>
-      </div>
-
-      <div class="editorial-head fade-up" data-stagger="2">
-        <div class="editorial-head__main">
-          <div class="editorial-head__kicker">Chapter 04 — Link profile</div>
-          <h1 class="editorial-head__title" id="pageTitle">—</h1>
-          <p class="editorial-head__standfirst" id="pageStandfirst">—</p>
+        <div class="summary-header__right">
+          <div class="summary-header__period" id="periodLabel">—</div>
+          <div class="summary-header__updated" id="bylineSource">—</div>
         </div>
-        <div class="editorial-head__byline">
-          <div id="bylineIssued"><strong>—</strong></div>
-          <div id="bylineAuthor">—</div>
-          <div id="bylineSource">—</div>
+      </header>
+
+      <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
+
+      <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
+
+      <!-- Cleanup shipped (timeline) -->
+      <section class="fade-up" data-stagger="4">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Link-graph cleanup shipped</h2>
+          <span class="summary-section-head__meta">May → June engagement window</span>
         </div>
-      </div>
+        <ul class="deploy-list" id="cleanupList"></ul>
+      </section>
 
-      <div class="marquee-row fade-up" data-stagger="3" id="marqueeRow"></div>
-
-      <!-- § I — Compare Hero (May vs June) -->
-      <div class="section-rule fade-up" data-stagger="4">
-        <span class="section-rule__label">§ I — Toxic links removed</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">MAY → JUN</span>
-      </div>
-
-      <section class="compare-hero fade-up" data-stagger="4" id="compareHero"></section>
-
-      <!-- § I.b — Deliverables grid -->
-      <div class="section-rule fade-up" data-stagger="5">
-        <span class="section-rule__label">§ I.b — Link-graph cleanup shipped</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">VERIFIED LIVE</span>
-      </div>
-
-      <div class="sub-section fade-up" data-stagger="5">
-        <div class="sub-section__title" id="delivTitle">—</div>
-        <div class="deliverables-grid" id="deliverablesGrid"></div>
-      </div>
-
-      <!-- Authority distribution + Link attributes -->
-      <div class="section-rule fade-up" data-stagger="6">
-        <span class="section-rule__label">§ III — Quality of what remains</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">FIG. 15–16</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="6">
+      <!-- Authority distribution + Link types -->
+      <section class="summary-twocol fade-up" data-stagger="5">
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="authTitle">Referring domains by Authority Score</div>
-            <div id="authDist"></div>
-            <p class="page-footer-note__text" id="authFootnote" style="margin-top: var(--space-3);">—</p>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Referring domains by Authority Score</h2>
+            <span class="summary-section-head__meta">quality distribution of 1,083 linking domains</span>
           </div>
+          <ul class="bar-list" id="authList"></ul>
+          <p style="margin-top: var(--space-3); font-size: 12px; color: var(--text-muted); line-height: 1.5;" id="authFootnote">—</p>
         </div>
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="attrTitle">Link types</div>
-            <div id="linkAttrs"></div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Link types</h2>
+            <span class="summary-section-head__meta">of the 7K remaining links</span>
           </div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="followTitle">Follow vs nofollow</div>
-            <div class="brand-split">
-              <div class="brand-split__bar" id="followBar"></div>
-              <p class="brand-split__caption" id="followCaption">—</p>
-            </div>
+          <ul class="bar-list" id="linkTypesList"></ul>
+
+          <div class="summary-section-head" style="margin-top: var(--space-5);">
+            <h2 class="summary-section-head__title">Follow vs nofollow</h2>
+            <span class="summary-section-head__meta">equity-passing share</span>
           </div>
+          <div class="split-bar" id="followBar"></div>
         </div>
-      </div>
+      </section>
 
       <!-- TLD + Countries -->
-      <div class="section-rule fade-up" data-stagger="7">
-        <span class="section-rule__label">§ IV — Where the links live</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">FIG. 17–18</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="7">
+      <section class="summary-twocol fade-up" data-stagger="6">
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="tldTitle">By top-level domain</div>
-            <div id="tldList"></div>
-            <p class="page-footer-note__text" id="tldFootnote" style="margin-top: var(--space-3);">—</p>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Top-level domain split</h2>
+            <span class="summary-section-head__meta">PBN signatures flagged</span>
           </div>
+          <ul class="bar-list" id="tldList"></ul>
+          <p style="margin-top: var(--space-3); font-size: 12px; color: var(--text-muted); line-height: 1.5;" id="tldFootnote">—</p>
         </div>
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="countriesTitle">By country</div>
-            <table class="geo-rows">
-              <tbody id="countriesBody"></tbody>
-            </table>
-            <p class="page-footer-note__text" id="countriesFootnote" style="margin-top: var(--space-3);">—</p>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Top countries by referring domains</h2>
+            <span class="summary-section-head__meta">where the links physically live</span>
           </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th class="is-num">Domains</th>
+                <th class="is-num">%</th>
+              </tr>
+            </thead>
+            <tbody id="countriesTable"></tbody>
+          </table>
         </div>
-      </div>
+      </section>
 
-      <!-- Top pages + Similar profiles -->
-      <div class="section-rule fade-up" data-stagger="8">
-        <span class="section-rule__label">§ V — Pages doing the link-magnet work</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">EQUITY LEAK</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="8">
-        <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="pagesTitle">Top pages by referring domains</div>
-            <table class="data-rows">
-              <tbody id="topPagesBody"></tbody>
-            </table>
-            <p class="page-footer-note__text" id="pagesFootnote" style="margin-top: var(--space-3);">—</p>
-          </div>
+      <!-- Top pages -->
+      <section class="fade-up" data-stagger="7">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Pages attracting the most domains</h2>
+          <span class="summary-section-head__meta">link magnets · 404 leak flagged</span>
         </div>
-        <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="simTitle">Similar profiles</div>
-            <table class="data-rows">
-              <tbody id="simBody"></tbody>
-            </table>
-            <p class="page-footer-note__text" id="simFootnote" style="margin-top: var(--space-3);">—</p>
-          </div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="catTitle">Referring domain categories</div>
-            <div id="catList"></div>
-            <p class="page-footer-note__text" id="catFootnote" style="margin-top: var(--space-3);">—</p>
-          </div>
-        </div>
-      </div>
+        <table class="summary-table is-compact">
+          <thead>
+            <tr>
+              <th>URL</th>
+              <th class="is-num">Referring domains</th>
+              <th class="is-num">Share</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody id="topPagesTable"></tbody>
+        </table>
+      </section>
 
-      <!-- Prose -->
-      <div class="section-rule fade-up" data-stagger="9">
-        <span class="section-rule__label">§ VI — Analysis</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">PROSE</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="9">
-        <div class="editorial-prose">
-          <h3 id="proseTitle">—</h3>
-          <div id="proseBody" class="drop-cap"></div>
-        </div>
-        <div>
-          <blockquote class="pull-quote">
-            <span id="pullQuoteText">—</span>
-            <span class="pull-quote__source" id="pullQuoteSource">—</span>
-          </blockquote>
-        </div>
-      </div>
-
-      <div class="page-footer-note fade-up" data-stagger="10">
-        <p class="page-footer-note__text">
-          Source: Semrush Backlink Analytics export for cmsprime.com captured June 4, 2026. Twelve-month time-series values extracted from the chart SVG and mapped against the displayed axis labels. Disavow counts confirmed against the Google Search Console disavow tool submission history. The 404 page metric (cmsprime.com/blog/bitcoin-volatility-atr-standard-deviation/ at 111 referring domains) flagged for immediate redirect.
-        </p>
-        <div class="page-footer-note__nav">
+      <footer class="summary-footer fade-up" data-stagger="8">
+        <p>Source: Semrush Backlink Analytics export for cmsprime.com captured June 4, 2026. Two-month engagement view. Disavow counts confirmed against the Google Search Console disavow tool submission history. The 404 page (cmsprime.com/blog/bitcoin-volatility-atr-standard-deviation/ at 111 referring domains) flagged for immediate redirect.</p>
+        <div class="summary-footer__nav">
           <a href="./monthly-tracking.html">← Previous: Position Tracking</a>
           <a href="./monthly.html">Index ↑</a>
         </div>
-      </div>
+      </footer>
     </main>
   </div>
 
@@ -225,7 +166,6 @@
     </div>
   </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="./js/monthly-page.js"></script>
   <script>
   (async function () {
@@ -235,219 +175,113 @@
       if (!r.ok) throw new Error("HTTP " + r.status);
       const data = await r.json();
 
-      MonthlyReport.renderHead(data, {
-        issueNum: "#issueNum",
-        periodLabel: "#periodLabel",
-        title: "#pageTitle",
-        standfirst: "#pageStandfirst",
-        issuedAt: "#bylineIssued",
-        author: "#bylineAuthor",
-        dataSource: "#bylineSource",
-      });
+      $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
+      $("#periodLabel").textContent = data.period_label || "—";
+      $("#bylineSource").textContent = (data.byline && data.byline.data_source) || "—";
+      $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
 
-      MonthlyReport.renderMarquee(document.getElementById("marqueeRow"), data.marquee || []);
+      MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
 
-      // Compare hero (May vs June)
-      MonthlyReport.renderCompareHero(document.getElementById("compareHero"), data.compare_hero);
-
-      // Deliverables grid
+      // Cleanup list
       if (data.deliverables) {
-        document.getElementById("delivTitle").textContent = data.deliverables.subtitle || data.deliverables.title;
-        MonthlyReport.renderDeliverables(document.getElementById("deliverablesGrid"), data.deliverables.rows || []);
+        const ul = $("#cleanupList");
+        ul.innerHTML = "";
+        data.deliverables.rows.forEach(d => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          const arrow = d.is_held ? "=" : "→";
+          li.innerHTML =
+            '<span class="deploy-list__date">' + (d.category || "") + '</span>' +
+            '<span class="deploy-list__what">' + d.metric + ' · <em style="font-style:italic;color:var(--text-muted);">' + d.why + '</em></span>' +
+            '<span class="deploy-list__count">' + d.before + ' ' + arrow + ' ' + d.after + ' ' + (d.unit || '') + '</span>';
+          ul.appendChild(li);
+        });
       }
 
-      // Authority distribution (vertical bars with counts)
+      function renderBarList(targetId, rows, tierMap) {
+        const ul = $("#" + targetId);
+        ul.innerHTML = "";
+        const maxPct = Math.max(...rows.map(r => r.pct));
+        rows.forEach(r => {
+          const tier = tierMap ? (tierMap[r.tier] || "core") : (r.tier || "core");
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + tier;
+          const noteSpan = r.note ? '<span style="color:var(--text-faint);font-size:11px;font-style:italic;margin-left:4px;">· ' + r.note + '</span>' : '';
+          const labelText = r.label || r.band || r.tld || r.country || r.kw;
+          const value = r.count !== undefined ? r.count : (r.value !== undefined ? r.value : '');
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + labelText + noteSpan + '</span>' +
+            '<span class="bar-list__pct">' + (value ? value + ' · ' : '') + r.pct + '%</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ul.appendChild(li);
+          requestAnimationFrame(() => {
+            li.querySelector(".bar-list__fill").style.width = (100 * r.pct / maxPct) + "%";
+          });
+        });
+      }
+
+      // Authority distribution
       if (data.authority_dist) {
-        const ad = data.authority_dist;
-        $("#authTitle").textContent = ad.subtitle || ad.title;
-        const el = $("#authDist");
-        el.innerHTML = "";
-        const maxPct = Math.max(...ad.rows.map(r => r.pct));
-        ad.rows.forEach(r => {
-          const row = document.createElement("div");
-          const tierClass = r.tier === "weak" ? "is-miss" : (r.tier === "low" ? "is-supporting" : "is-core");
-          row.className = "serp-mix__row " + tierClass;
-          row.innerHTML =
-            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;align-items:baseline;">' +
-            '  <span class="serp-mix__label">' + r.band + ' <span style="color:var(--text-faint);font-family:var(--font-mono);font-size:11px;margin-left:4px;">' + (r.note || '') + '</span></span>' +
-            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
-            '</div>' +
-            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
-          el.appendChild(row);
-          requestAnimationFrame(() => {
-            const fill = row.querySelector(".serp-mix__bar-fill");
-            if (fill) fill.style.width = (100 * r.pct / maxPct) + "%";
-          });
-        });
-        $("#authFootnote").textContent = ad.footnote || "";
+        renderBarList("authList", data.authority_dist.rows, {"weak": "miss", "low": "supporting", "mid": "supporting", "high": "core", "premium": "core"});
+        $("#authFootnote").textContent = data.authority_dist.footnote || "";
       }
 
-      // Link attributes
+      // Link types
       if (data.link_attributes) {
-        const la = data.link_attributes;
-        $("#attrTitle").textContent = la.subtitle || la.title;
-        const el = $("#linkAttrs");
-        el.innerHTML = "";
-        la.rows.forEach(r => {
-          const row = document.createElement("div");
-          row.className = "serp-mix__row is-" + (r.tier || "core");
-          row.innerHTML =
-            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
-            '  <span class="serp-mix__label">' + r.label + '</span>' +
-            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
-            '</div>' +
-            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
-          el.appendChild(row);
-          requestAnimationFrame(() => {
-            const fill = row.querySelector(".serp-mix__bar-fill");
-            if (fill) fill.style.width = r.pct + "%";
-          });
-        });
+        renderBarList("linkTypesList", data.link_attributes.rows);
       }
 
       // Follow split
       if (data.follow_split) {
         const fs = data.follow_split;
-        $("#followTitle").textContent = fs.subtitle || fs.title;
-        const bar = $("#followBar");
-        bar.innerHTML =
-          '<div class="brand-split__seg is-brand" style="flex:' + fs.branded_pct + ';">' +
-          '  <div class="brand-split__seg-label">' + fs.branded_label + '</div>' +
-          '  <div class="brand-split__seg-value">' + fs.branded_pct + '%</div>' +
+        $("#followBar").innerHTML =
+          '<div class="split-bar__seg is-brand" style="flex:' + fs.branded_pct + ';">' +
+          '  <span class="split-bar__label">' + fs.branded_label + '</span>' +
+          '  <span class="split-bar__value">' + fs.branded_pct + '%</span>' +
           '</div>' +
-          '<div class="brand-split__seg is-non-brand" style="flex:' + fs.non_branded_pct + ';">' +
-          '  <div class="brand-split__seg-label">' + fs.non_branded_label + '</div>' +
-          '  <div class="brand-split__seg-value">' + fs.non_branded_pct + '%</div>' +
+          '<div class="split-bar__seg is-non-brand" style="flex:' + fs.non_branded_pct + ';">' +
+          '  <span class="split-bar__label">' + fs.non_branded_label + '</span>' +
+          '  <span class="split-bar__value">' + fs.non_branded_pct + '%</span>' +
           '</div>';
-        $("#followCaption").textContent = "3.2K follow links, 3.9K nofollow. Below the 60/40 industry average for finance.";
       }
 
       // TLD list
       if (data.tld_split) {
-        const ts = data.tld_split;
-        $("#tldTitle").textContent = ts.subtitle || ts.title;
-        const el = $("#tldList");
-        el.innerHTML = "";
-        const maxPct = Math.max(...ts.rows.map(r => r.pct));
-        ts.rows.forEach(r => {
-          const row = document.createElement("div");
-          const tier = r.tier === "spam" ? "is-miss" : (r.tier === "core" ? "is-core" : "is-supporting");
-          row.className = "serp-mix__row " + tier;
-          row.innerHTML =
-            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
-            '  <span class="serp-mix__label" style="font-family:var(--font-mono);">' + r.tld + ' <span style="color:var(--text-faint);font-family:var(--font-body);font-size:12px;font-style:italic;margin-left:4px;">' + (r.note || '') + '</span></span>' +
-            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
-            '</div>' +
-            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
-          el.appendChild(row);
-          requestAnimationFrame(() => {
-            const fill = row.querySelector(".serp-mix__bar-fill");
-            if (fill) fill.style.width = (100 * r.pct / maxPct) + "%";
-          });
-        });
-        $("#tldFootnote").textContent = ts.footnote || "";
+        renderBarList("tldList", data.tld_split.rows, {"spam": "miss", "core": "core", "supporting": "supporting", "miss": "miss"});
+        $("#tldFootnote").textContent = data.tld_split.footnote || "";
       }
 
       // Countries
       if (data.countries) {
-        const c = data.countries;
-        $("#countriesTitle").textContent = c.subtitle || c.title;
-        const tbody = $("#countriesBody");
+        const tbody = $("#countriesTable");
         tbody.innerHTML = "";
-        const maxVal = Math.max(...c.rows.map(r => r.value));
-        c.rows.forEach(r => {
+        data.countries.rows.forEach(r => {
           const tr = document.createElement("tr");
           tr.innerHTML =
-            '<td class="geo-flag">' + r.flag + '</td>' +
-            '<td class="geo-name">' + r.country + '</td>' +
-            '<td class="geo-bar"><div class="geo-bar__track"><div class="geo-bar__fill" style="width:0"></div></div></td>' +
-            '<td class="geo-num">' + r.value + '</td>' +
-            '<td class="geo-sub">' + r.pct + '%</td>';
+            '<td class="metric-name">' + r.flag + ' · ' + r.country + '</td>' +
+            '<td class="num is-strong">' + r.value + '</td>' +
+            '<td class="num">' + r.pct + '%</td>';
           tbody.appendChild(tr);
-          requestAnimationFrame(() => {
-            const fill = tr.querySelector(".geo-bar__fill");
-            if (fill) fill.style.width = (100 * r.value / maxVal) + "%";
-          });
         });
-        $("#countriesFootnote").textContent = c.footnote || "";
       }
 
       // Top pages
       if (data.top_pages) {
-        const tp = data.top_pages;
-        $("#pagesTitle").textContent = tp.subtitle || tp.title;
-        const tbody = $("#topPagesBody");
+        const tbody = $("#topPagesTable");
         tbody.innerHTML = "";
-        tp.rows.forEach(r => {
+        data.top_pages.rows.forEach(r => {
           const tr = document.createElement("tr");
-          let sub = "";
-          if (r.is_home) sub = '<span class="row-sub" style="color: var(--brand-gold);">homepage · top link target</span>';
-          else if (r.is_404) sub = '<span class="row-sub" style="color: var(--neg);">404 · equity leak — redirect this</span>';
-          else if (r.is_target) sub = '<span class="row-sub" style="color: var(--pos);">unexpected winner</span>';
-          else if (r.note) sub = '<span class="row-sub">' + r.note + '</span>';
+          let noteHtml = r.note || "";
+          if (r.is_home) { tr.className = "is-flat"; noteHtml = '<span style="color: var(--brand-gold);">homepage</span>'; }
+          else if (r.is_404) { tr.className = "is-neg"; noteHtml = '<span style="color: var(--neg);">404 · equity leak</span>'; }
+          else if (r.is_target) { tr.className = "is-pos"; noteHtml = '<span style="color: var(--pos);">winner · ' + (r.note || '') + '</span>'; }
           tr.innerHTML =
-            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:12px;letter-spacing:0;">' + r.url + '</div>' + sub + '</td>' +
-            '<td class="num is-after">' + r.domains + '</td>' +
-            '<td class="num" style="width:60px;">' + r.share_pct + '%</td>';
+            '<td class="metric-name" style="font-family:var(--font-mono);font-size:11.5px;">' + r.url + '</td>' +
+            '<td class="num is-strong">' + r.domains + '</td>' +
+            '<td class="num">' + r.share_pct + '%</td>' +
+            '<td style="font-size:11.5px;color:var(--text-muted);">' + noteHtml + '</td>';
           tbody.appendChild(tr);
         });
-        $("#pagesFootnote").textContent = tp.footnote || "";
-      }
-
-      // Similar profiles
-      if (data.similar_profiles) {
-        const sp = data.similar_profiles;
-        $("#simTitle").textContent = sp.subtitle || sp.title;
-        const tbody = $("#simBody");
-        tbody.innerHTML = "";
-        sp.rows.forEach(r => {
-          const tr = document.createElement("tr");
-          tr.innerHTML =
-            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0;">' + r.domain + '</div></td>' +
-            '<td class="num">' + r.comp_pct + '% similarity</td>';
-          tbody.appendChild(tr);
-        });
-        $("#simFootnote").textContent = sp.footnote || "";
-      }
-
-      // Categories
-      if (data.ref_categories) {
-        const rc = data.ref_categories;
-        $("#catTitle").textContent = rc.title || "Categories";
-        const el = $("#catList");
-        el.innerHTML = "";
-        const maxPct = Math.max(...rc.rows.map(r => r.pct));
-        rc.rows.forEach(r => {
-          const row = document.createElement("div");
-          row.className = "serp-mix__row " + (r.tier === "core" ? "is-core" : "is-supporting");
-          row.innerHTML =
-            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
-            '  <span class="serp-mix__label">' + r.label + '<span style="color:var(--text-faint);font-family:var(--font-body);font-size:12px;font-style:italic;margin-left:6px;">' + (r.note || '') + '</span></span>' +
-            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
-            '</div>' +
-            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
-          el.appendChild(row);
-          requestAnimationFrame(() => {
-            const fill = row.querySelector(".serp-mix__bar-fill");
-            if (fill) fill.style.width = (100 * r.pct / maxPct) + "%";
-          });
-        });
-        $("#catFootnote").textContent = rc.footnote || "";
-      }
-
-      // Prose
-      if (data.prose) {
-        $("#proseTitle").textContent = data.prose.title || "";
-        const body = $("#proseBody");
-        (data.prose.paragraphs || []).forEach(p => {
-          const para = document.createElement("p");
-          para.innerHTML = p;
-          body.appendChild(para);
-        });
-      }
-      if (data.pull_quote) {
-        $("#pullQuoteText").textContent = data.pull_quote.text;
-        $("#pullQuoteSource").textContent = "— " + data.pull_quote.source;
       }
     } catch (e) {
       console.error(e);

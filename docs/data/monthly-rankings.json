@@ -1,8 +1,17 @@
 {
   "issue": "02",
   "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
-  "headline": "Positions <em>held</em>. Foundation deployed.",
-  "standfirst": "From the Semrush Organic Research export. Across May and June 2026 every ranking position the site held in May, it still holds in June. Top-1 brand term unchanged. Position bands held. And the technical layer underneath those positions — hreflang, schema, FAQ — went from zero to fully shipped across 11 commercial pages.",
+  "headline": "Organic Rankings · positions held",
+  "standfirst": "From the Semrush Organic Research export. Across May and June 2026 every ranking position the site held in May, it still holds in June. Top-1 brand term unchanged. Position bands held.",
+  "summary_lead": "Two months of foundation work without losing a single ranking position. <strong>Brand term cms prime locked at #1.</strong> The four keywords in the top 100 stayed in the top 100. Position bands didn't compress. Twenty-nine tracked keywords going into July is one more than we had going into May.",
+  "win_tiles": [
+    {"num": "29", "unit": "kw", "label": "Tracked keywords (AE)", "source": "May 28 → Jun 29", "direction": "pos"},
+    {"num": "+1", "unit": "kw", "label": "Net new in June", "source": "first uptick since Feb", "direction": "pos"},
+    {"num": "0", "unit": "kw", "label": "Position declines", "source": "no losses during rebuild", "direction": "flat"},
+    {"num": "#1", "unit": "held", "label": "Brand term position", "source": "cms prime", "direction": "flat"},
+    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "11 commercial pages", "direction": "pos"},
+    {"num": "4 / 31", "unit": "kw", "label": "Top-100 ranking · held", "source": "all four positions kept", "direction": "flat"}
+  ],
   "byline": {
     "issued": "JUNE 3, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",

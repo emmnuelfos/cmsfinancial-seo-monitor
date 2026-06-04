@@ -348,7 +348,184 @@
   color: var(--text-muted);
   line-height: 1.55;
 }
-.summary-footer p { margin: 0; max-width: 90ch; }
+.summary-footer p { margin: 0 0 var(--space-3); max-width: 90ch; }
+.summary-footer__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.summary-footer__nav a {
+  color: var(--brand-gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+.summary-footer__nav a:hover { border-bottom-color: var(--brand-gold); }
+
+/* =========================================================
+   Bar list — compact horizontal bars with label + pct
+   Used for SERP mix, intent split, authority dist, TLD, link types
+   ========================================================= */
+.bar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bar-list__item {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--rule-color);
+}
+.bar-list__item:last-child { border-bottom: none; }
+.bar-list__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+  gap: var(--space-3);
+}
+.bar-list__label {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.bar-list__pct {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.bar-list__track {
+  height: 4px;
+  background: var(--border-faint);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar-list__fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 600ms var(--ease-out);
+}
+.bar-list__item.is-core .bar-list__fill { background: var(--pos); }
+.bar-list__item.is-core .bar-list__pct { color: var(--pos); }
+.bar-list__item.is-supporting .bar-list__fill { background: var(--data-blue); }
+.bar-list__item.is-supporting .bar-list__pct { color: var(--data-blue); }
+.bar-list__item.is-miss .bar-list__fill { background: var(--text-faint); }
+.bar-list__item.is-miss .bar-list__pct { color: var(--text-muted); }
+.bar-list__item.is-miss .bar-list__label { color: var(--text-muted); }
+
+/* =========================================================
+   Split bar — two-segment horizontal bar
+   Used for brand vs non-brand, follow vs nofollow
+   ========================================================= */
+.split-bar {
+  display: flex;
+  height: 56px;
+  width: 100%;
+  border: 1px solid var(--rule-color);
+}
+.split-bar__seg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--space-4);
+  position: relative;
+  gap: 2px;
+}
+.split-bar__seg.is-brand {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.18), rgba(251, 191, 36, 0.06));
+  border-right: 1px solid var(--rule-color);
+}
+.split-bar__seg.is-non-brand { background: var(--paper-tint); }
+.split-bar__label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.split-bar__value {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+.split-bar__seg.is-brand .split-bar__value { color: var(--brand-gold); }
+
+/* =========================================================
+   Callout card — for cannibalization, position changes empty state
+   ========================================================= */
+.callout-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--rule-color);
+  border-left: 3px solid var(--brand-gold);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.callout-card__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.005em;
+}
+.callout-card__big {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--brand-gold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.callout-card__sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.callout-card__stats {
+  display: flex;
+  gap: var(--space-5);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border-faint);
+  border-bottom: 1px solid var(--border-faint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.callout-card__stats strong {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  margin-left: 4px;
+}
+.callout-card__body {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
 
 /* Responsive */
 @media (max-width: 1100px) {

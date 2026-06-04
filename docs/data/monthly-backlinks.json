@@ -1,8 +1,17 @@
 {
   "issue": "02",
   "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
-  "headline": "One thousand toxic links <em>removed</em>.",
-  "standfirst": "Two-month engagement view of the backlink profile. Filed a 586-domain disavow during the period (54 new spam domains identified, merged with the existing 532). Backlink count dropped from 8K to 7K as Google processed the filing — that's 1,000 toxic links de-counted from the index. Authority Score held at 25 through the cleanup. Referring domains held within a 30-domain band. The link graph is healthier than it was 60 days ago.",
+  "headline": "Backlinks · link profile scrubbed clean",
+  "standfirst": "Two-month engagement view of the backlink profile. Filed a 586-domain disavow during the period (54 new spam domains identified, merged with the existing 532). Backlink count dropped from 8K to 7K as Google processed the filing — that's 1,000 toxic links de-counted from the index. Authority Score held at 25 through the cleanup. Referring domains held within a 30-domain band.",
+  "summary_lead": "Link-graph cleanup across May and June. <strong>1,000 toxic backlinks removed</strong> from the index as Google processed the 586-domain disavow filing. Referring domains held within a tight 30-domain band — proving the cleanup only removed spam, not legitimate sources. Authority Score steady at 25 throughout.",
+  "win_tiles": [
+    {"num": "1,000", "unit": "links", "label": "Toxic backlinks removed", "source": "via disavow processing", "direction": "pos"},
+    {"num": "586", "unit": "dom", "label": "Total disavow filing", "source": "532 existing + 54 new", "direction": "pos"},
+    {"num": "1.1K", "unit": "held", "label": "Referring domains", "source": "legitimate sources kept", "direction": "flat"},
+    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through major cleanup", "direction": "flat"},
+    {"num": "+18", "unit": "rules", "label": "301 redirect rules", "source": "for 40 broken backlinks", "direction": "pos"},
+    {"num": "+40", "unit": "URLs", "label": "Broken targets fixed", "source": "via Redirection plugin", "direction": "pos"}
+  ],
   "byline": {
     "issued": "JUNE 4, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",

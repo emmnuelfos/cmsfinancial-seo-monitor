@@ -1,8 +1,17 @@
 {
   "issue": "02",
   "period_label": "APR 26 — JUN 4, 2026 · ENGAGEMENT WINDOW",
-  "headline": "Three up, <em>one down</em>, two new in top ten.",
+  "headline": "Position Tracking · 31 keywords, 3 up, 1 down",
   "standfirst": "Position Tracking project for cmsprime.com on the UAE Google database (English desktop). Across the 39-day engagement window, three keywords improved their positions, one declined, and two new keywords broke into the top 10. Visibility climbed +6.44%, average position improved by 17.42 places.",
+  "summary_lead": "39-day readout of the engagement's target keyword set. <strong>Average position climbed 17 places.</strong> Three keywords improved, one declined, two new keywords broke into the top 10. Visibility +6.44% over the window. The brand term cms prime locked at #1 throughout.",
+  "win_tiles": [
+    {"num": "+17", "unit": "places", "label": "Avg position lift", "source": "105.45 → 88.03", "direction": "pos"},
+    {"num": "+6.44%", "unit": "vis", "label": "Visibility over period", "source": "Apr 26 → Jun 4", "direction": "pos"},
+    {"num": "3 / 1", "unit": "kw", "label": "Improved vs declined", "source": "+4.71% / -2.42%", "direction": "pos"},
+    {"num": "+2", "unit": "new", "label": "New keywords in top 10", "source": "pamm forex, cms careers", "direction": "pos"},
+    {"num": "#1", "unit": "held", "label": "Brand term · cms prime", "source": "3.23% visibility", "direction": "flat"},
+    {"num": "75%", "unit": "rate", "label": "Cannibalization · −5pts", "source": "improved this period", "direction": "pos"}
+  ],
   "byline": {
     "issued": "JUN 4, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",

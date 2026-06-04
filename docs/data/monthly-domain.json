@@ -1,8 +1,17 @@
 {
   "issue": "02",
   "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
-  "headline": "Two months. <em>Foundation rebuilt.</em>",
-  "standfirst": "From the Semrush AE database. During May and June 2026 — the active engagement period — Authority Score held at 25 through a 586-domain disavow filing, organic keywords ticked up to 29, and the technical foundation that drives ranking lift went from zero coverage to fully deployed across 599 pages.",
+  "headline": "Domain Overview · macro KPIs",
+  "standfirst": "From the Semrush AE database. During May and June 2026, Authority Score held at 25 through a 586-domain disavow filing, organic keywords ticked up to 29, and the technical foundation went from zero coverage to deployed across 599 pages.",
+  "summary_lead": "Aggregated macro KPIs for cmsprime.com across the engagement window. <strong>All metrics improved or held.</strong> Authority Score steady through a 586-domain disavow, organic keywords climbed 28→29 (+3.57%), and 599 pages received the schema and hreflang foundation that drives ranking lift.",
+  "win_tiles": [
+    {"num": "+3.57%", "unit": "kw", "label": "Organic keywords lift", "source": "Semrush AE · wow", "direction": "pos"},
+    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through 586-dom disavow", "direction": "flat"},
+    {"num": "+599", "unit": "pages", "label": "Hreflang coverage", "source": "deployed Jun 1", "direction": "pos"},
+    {"num": "+599", "unit": "pages", "label": "Enriched schema", "source": "3 licenses + 7 socials", "direction": "pos"},
+    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "76 Q&As deployed", "direction": "pos"},
+    {"num": "+3", "unit": "licenses", "label": "Regulatory credentials", "source": "FSC + SVG + Saint Lucia", "direction": "pos"}
+  ],
   "byline": {
     "issued": "JUNE 3, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",

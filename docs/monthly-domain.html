@@ -7,7 +7,7 @@
   <title>Domain Overview — CMS Prime Monthly Report</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="icon" type="image/png" href="./assets/cms-fav.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
@@ -40,9 +40,8 @@
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main summary-main">
 
-      <!-- Sub-tabs -->
       <div class="report-tabs fade-up" data-stagger="0">
         <span class="report-tabs__kicker">Monthly Report</span>
         <a class="report-tabs__link is-active" href="./monthly-domain.html"><span class="report-tabs__num">01</span>Domain Overview</a>
@@ -51,135 +50,91 @@
         <a class="report-tabs__link" href="./monthly-backlinks.html"><span class="report-tabs__num">04</span>Backlinks</a>
       </div>
 
-      <!-- Issue masthead -->
-      <div class="issue-bar fade-up" data-stagger="1">
-        <div class="issue-bar__left">
-          <span class="issue-bar__num" id="issueNum">—</span>
-          <span id="periodLabel">—</span>
+      <header class="summary-header fade-up" data-stagger="1">
+        <div class="summary-header__left">
+          <span class="summary-header__kicker">Chapter 01 · Macro view</span>
+          <h1 class="summary-header__title" id="pageTitle">—</h1>
         </div>
-        <div class="issue-bar__right">Domain Overview · Chapter 01</div>
-      </div>
-
-      <!-- Editorial head -->
-      <div class="editorial-head fade-up" data-stagger="2">
-        <div class="editorial-head__main">
-          <div class="editorial-head__kicker">Chapter 01 — Macro view</div>
-          <h1 class="editorial-head__title" id="pageTitle">—</h1>
-          <p class="editorial-head__standfirst" id="pageStandfirst">—</p>
+        <div class="summary-header__right">
+          <div class="summary-header__period" id="periodLabel">—</div>
+          <div class="summary-header__updated" id="bylineSource">—</div>
         </div>
-        <div class="editorial-head__byline">
-          <div id="bylineIssued"><strong>—</strong></div>
-          <div id="bylineAuthor">—</div>
-          <div id="bylineSource">—</div>
+      </header>
+
+      <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
+
+      <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
+
+      <!-- All-metrics table -->
+      <section class="fade-up" data-stagger="4">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">All tracked metrics · May vs June</h2>
+          <span class="summary-section-head__meta">7 metrics</span>
         </div>
-      </div>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th class="is-num">May</th>
+              <th class="is-num">Jun</th>
+              <th class="is-num">Delta</th>
+              <th class="is-num">%</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody id="metricsTable"></tbody>
+        </table>
+      </section>
 
-      <!-- Marquee KPI row -->
-      <div class="marquee-row fade-up" data-stagger="3" id="marqueeRow"></div>
-
-      <!-- § I — Compare Hero (May vs June) -->
-      <div class="section-rule fade-up" data-stagger="4">
-        <span class="section-rule__label">§ I — The headline movement</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">MAY → JUN</span>
-      </div>
-
-      <section class="compare-hero fade-up" data-stagger="4" id="compareHero"></section>
-
-      <!-- § II — Deliverables grid -->
-      <div class="section-rule fade-up" data-stagger="5">
-        <span class="section-rule__label">§ II — What shipped during the period</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">VERIFIED LIVE</span>
-      </div>
-
-      <div class="sub-section fade-up" data-stagger="5">
-        <div class="sub-section__title" id="delivTitle">—</div>
-        <div class="deliverables-grid" id="deliverablesGrid"></div>
-      </div>
-
-      <!-- Comparison table -->
-      <div class="section-rule fade-up" data-stagger="5">
-        <span class="section-rule__label">§ II.b — Every metric, side by side</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">TABLE</span>
-      </div>
-
-      <table class="compare-table fade-up" data-stagger="5">
-        <thead>
-          <tr>
-            <th>Metric</th>
-            <th class="is-num">May 2026</th>
-            <th class="is-num">Jun 2026</th>
-            <th class="is-num">Delta</th>
-            <th class="is-num">% / state</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="compareTableBody"></tbody>
-      </table>
-
-      <!-- Geography + Brand split -->
-      <div class="section-rule fade-up" data-stagger="6">
-        <span class="section-rule__label">§ III — Where the traffic comes from</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">FIG. 06–08</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="6">
+      <!-- Two-column: Country split + SERP mix -->
+      <section class="summary-twocol fade-up" data-stagger="5">
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="geoTitle">Country breakdown · worldwide → markets</div>
-            <table class="geo-rows">
-              <tbody id="geoRows"></tbody>
-            </table>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Country breakdown</h2>
+            <span class="summary-section-head__meta" id="countrySubtitle">—</span>
           </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>Market</th>
+                <th class="is-num">Traffic</th>
+                <th class="is-num">Keywords</th>
+              </tr>
+            </thead>
+            <tbody id="countryTable"></tbody>
+          </table>
         </div>
         <div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="brandTitle">Brand vs non-brand</div>
-            <div class="brand-split">
-              <div class="brand-split__bar" id="brandBar"></div>
-              <p class="brand-split__caption" id="brandCaption">—</p>
-            </div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">SERP appearance</h2>
+            <span class="summary-section-head__meta">June 2026 snapshot</span>
           </div>
-          <div class="sub-section">
-            <div class="sub-section__title" id="serpTitle">SERP appearance mix</div>
-            <div id="serpMix"></div>
+          <ul class="bar-list" id="serpList"></ul>
+
+          <div class="summary-section-head" style="margin-top: var(--space-5);">
+            <h2 class="summary-section-head__title">Brand vs non-brand</h2>
+            <span class="summary-section-head__meta">share of organic traffic</span>
           </div>
+          <div class="split-bar" id="brandBar"></div>
         </div>
-      </div>
+      </section>
 
-      <!-- Editorial prose -->
-      <div class="section-rule fade-up" data-stagger="7">
-        <span class="section-rule__label">§ IV — Analysis</span>
-        <span class="section-rule__line"></span>
-        <span class="section-rule__counter">PROSE</span>
-      </div>
-
-      <div class="editorial-grid fade-up" data-stagger="7">
-        <div class="editorial-prose">
-          <h3 id="proseTitle">—</h3>
-          <div id="proseBody" class="drop-cap"></div>
+      <!-- Deliverables timeline -->
+      <section class="fade-up" data-stagger="6">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">What shipped at the domain level</h2>
+          <span class="summary-section-head__meta">verifiable on the live site</span>
         </div>
-        <div>
-          <blockquote class="pull-quote" id="pullQuote">
-            <span id="pullQuoteText">—</span>
-            <span class="pull-quote__source" id="pullQuoteSource">—</span>
-          </blockquote>
-        </div>
-      </div>
+        <ul class="deploy-list" id="delivList"></ul>
+      </section>
 
-      <!-- Footer -->
-      <div class="page-footer-note fade-up" data-stagger="7">
-        <p class="page-footer-note__text">
-          Data drawn from Semrush UAE database snapshots taken on the first of each month. The June reading was captured after the hreflang and schema deployment of June 1; the July reading is the next planned re-measurement. All foundation metrics (hreflang, schema, redirects) verified live on cmsprime.com rather than inferred from Semrush.
-        </p>
-        <div class="page-footer-note__nav">
+      <footer class="summary-footer fade-up" data-stagger="7">
+        <p>Source: Semrush Domain Overview export for cmsprime.com on the AE database (desktop), captured June 3, 2026. All deltas computed against the May reading from kpis.json. Foundation metrics (hreflang, schema, redirects) verified live on cmsprime.com.</p>
+        <div class="summary-footer__nav">
           <a href="./monthly.html">← Index</a>
           <a href="./monthly-rankings.html">Next: Organic Rankings →</a>
         </div>
-      </div>
+      </footer>
     </main>
   </div>
 
@@ -193,129 +148,107 @@
     </div>
   </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="./js/monthly-page.js"></script>
   <script>
   (async function () {
+    function $(s) { return document.querySelector(s); }
     try {
       const r = await fetch("./data/monthly-domain.json?cb=" + Date.now());
       if (!r.ok) throw new Error("HTTP " + r.status);
       const data = await r.json();
 
-      MonthlyReport.renderHead(data, {
-        issueNum: "#issueNum",
-        periodLabel: "#periodLabel",
-        title: "#pageTitle",
-        standfirst: "#pageStandfirst",
-        issuedAt: "#bylineIssued",
-        author: "#bylineAuthor",
-        dataSource: "#bylineSource",
-      });
+      // Header
+      $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
+      $("#periodLabel").textContent = data.period_label || "—";
+      $("#bylineSource").textContent = (data.byline && data.byline.data_source) || "—";
+      $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
 
-      // Marquee
-      MonthlyReport.renderMarquee(document.getElementById("marqueeRow"), data.marquee || []);
+      // Win strip
+      MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
 
-      // Compare hero (May vs June)
-      MonthlyReport.renderCompareHero(document.getElementById("compareHero"), data.compare_hero);
-
-      // Deliverables grid
-      if (data.deliverables) {
-        document.getElementById("delivTitle").textContent = data.deliverables.subtitle || data.deliverables.title;
-        MonthlyReport.renderDeliverables(document.getElementById("deliverablesGrid"), data.deliverables.rows || []);
-      }
-
-      // Comparison table
+      // Metrics table from comparison_table
       if (data.comparison_table) {
-        MonthlyReport.renderCompareTable(document.getElementById("compareTableBody"), data.comparison_table.rows || []);
+        const tbody = $("#metricsTable");
+        tbody.innerHTML = "";
+        data.comparison_table.rows.forEach(r => {
+          const cls = "is-" + (r.direction || "flat");
+          const tr = document.createElement("tr");
+          tr.className = cls;
+          tr.innerHTML =
+            '<td class="metric-name">' + r.metric + '</td>' +
+            '<td class="num">' + r.may + '</td>' +
+            '<td class="num is-strong">' + r.jun + '</td>' +
+            '<td class="num ' + cls + '">' + r.delta + '</td>' +
+            '<td class="num ' + cls + '">' + r.delta_pct + '</td>' +
+            '<td style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);">' + (r.note || '') + '</td>';
+          tbody.appendChild(tr);
+        });
       }
 
       // Country split
       if (data.country_split) {
-        const cs = data.country_split;
-        document.getElementById("geoTitle").textContent = cs.subtitle || cs.title;
-        const tbody = document.getElementById("geoRows");
+        $("#countrySubtitle").textContent = data.country_split.subtitle || "";
+        const tbody = $("#countryTable");
         tbody.innerHTML = "";
-        cs.rows.forEach(r => {
+        data.country_split.rows.forEach(r => {
           const tr = document.createElement("tr");
-          if (r.is_total) tr.classList.add("is-total");
-          if (r.is_total) {
-            tr.innerHTML =
-              '<td class="geo-flag">·</td>' +
-              '<td class="geo-name">' + r.country + '</td>' +
-              '<td class="geo-bar"></td>' +
-              '<td class="geo-num">' + r.traffic + '</td>' +
-              '<td class="geo-sub">' + r.keywords + ' kw</td>';
-          } else {
-            const targetCls = r.is_target ? " is-target" : "";
-            const tag = r.is_target ? '<span class="geo-target-tag">target</span>' : '';
-            tr.innerHTML =
-              '<td class="geo-flag">' + r.flag + '</td>' +
-              '<td class="geo-name' + targetCls + '">' + r.country + tag + '</td>' +
-              '<td class="geo-bar"><div class="geo-bar__track"><div class="geo-bar__fill' + targetCls + '" style="width:0"></div></div></td>' +
-              '<td class="geo-num' + targetCls + '">' + r.traffic + '</td>' +
-              '<td class="geo-sub">' + r.keywords + ' kw</td>';
-          }
+          if (r.is_total) tr.className = "is-flat";
+          if (r.is_target) tr.className = "is-pos";
+          const targetTag = r.is_target ? '<span class="state state-pos" style="margin-left:6px;">target</span>' : '';
+          tr.innerHTML =
+            '<td class="metric-name">' + r.flag + ' · ' + r.country + targetTag + '</td>' +
+            '<td class="num is-strong">' + r.traffic + '</td>' +
+            '<td class="num">' + r.keywords + '</td>';
           tbody.appendChild(tr);
-          if (!r.is_total) {
-            requestAnimationFrame(() => {
-              const fill = tr.querySelector(".geo-bar__fill");
-              if (fill) fill.style.width = (r.share || 0) + "%";
-            });
-          }
         });
       }
 
-      // Brand split
-      if (data.brand_split) {
-        const bs = data.brand_split;
-        document.getElementById("brandTitle").textContent = bs.subtitle || bs.title;
-        const bar = document.getElementById("brandBar");
-        bar.innerHTML =
-          '<div class="brand-split__seg is-brand" style="flex:' + bs.branded_pct + ';">' +
-          '  <div class="brand-split__seg-label">' + bs.branded_label + '</div>' +
-          '  <div class="brand-split__seg-value">' + bs.branded_pct + '%</div>' +
-          '</div>' +
-          '<div class="brand-split__seg is-non-brand" style="flex:' + bs.non_branded_pct + ';">' +
-          '  <div class="brand-split__seg-label">' + bs.non_branded_label + '</div>' +
-          '  <div class="brand-split__seg-value">' + bs.non_branded_pct + '%</div>' +
-          '</div>';
-        document.getElementById("brandCaption").textContent = "The brand term 'cms prime' accounts for nearly all organic traffic. Non-brand commercial queries are the recovery opportunity.";
-      }
-
-      // SERP mix
+      // SERP list (bar-list component)
       if (data.serp_mix) {
-        const sm = data.serp_mix;
-        document.getElementById("serpTitle").textContent = sm.subtitle || sm.title;
-        const el = document.getElementById("serpMix");
-        el.innerHTML = "";
-        sm.rows.forEach(r => {
-          const row = document.createElement("div");
-          row.className = "serp-mix__row is-" + r.tier;
-          row.innerHTML =
-            '<span class="serp-mix__label">' + r.label + '</span>' +
-            '<span class="serp-mix__pct">' + r.pct + '%</span>' +
-            '<div class="serp-mix__bar"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
-          el.appendChild(row);
+        const ul = $("#serpList");
+        ul.innerHTML = "";
+        data.serp_mix.rows.forEach(r => {
+          const li = document.createElement("li");
+          li.className = "bar-list__item is-" + r.tier;
+          li.innerHTML =
+            '<div class="bar-list__row"><span class="bar-list__label">' + r.label + '</span>' +
+            '<span class="bar-list__pct">' + r.pct + '%</span></div>' +
+            '<div class="bar-list__track"><div class="bar-list__fill" style="width:0"></div></div>';
+          ul.appendChild(li);
           requestAnimationFrame(() => {
-            const fill = row.querySelector(".serp-mix__bar-fill");
-            if (fill) fill.style.width = r.pct + "%";
+            li.querySelector(".bar-list__fill").style.width = r.pct + "%";
           });
         });
       }
 
-      // Prose
-      if (data.prose) {
-        document.getElementById("proseTitle").textContent = data.prose.title || "";
-        const body = document.getElementById("proseBody");
-        (data.prose.paragraphs || []).forEach((p, i) => {
-          const para = document.createElement("p");
-          para.innerHTML = p;
-          body.appendChild(para);
-        });
+      // Brand split bar
+      if (data.brand_split) {
+        const bs = data.brand_split;
+        $("#brandBar").innerHTML =
+          '<div class="split-bar__seg is-brand" style="flex:' + bs.branded_pct + ';">' +
+          '  <span class="split-bar__label">' + bs.branded_label + '</span>' +
+          '  <span class="split-bar__value">' + bs.branded_pct + '%</span>' +
+          '</div>' +
+          '<div class="split-bar__seg is-non-brand" style="flex:' + bs.non_branded_pct + ';">' +
+          '  <span class="split-bar__label">' + bs.non_branded_label + '</span>' +
+          '  <span class="split-bar__value">' + bs.non_branded_pct + '%</span>' +
+          '</div>';
       }
-      if (data.pull_quote) {
-        document.getElementById("pullQuoteText").textContent = data.pull_quote.text;
-        document.getElementById("pullQuoteSource").textContent = "— " + data.pull_quote.source;
+
+      // Deliverables list (compact)
+      if (data.deliverables) {
+        const ul = $("#delivList");
+        ul.innerHTML = "";
+        data.deliverables.rows.forEach(d => {
+          const li = document.createElement("li");
+          li.className = "deploy-list__item";
+          const arrow = d.is_held ? "=" : "→";
+          li.innerHTML =
+            '<span class="deploy-list__date">' + (d.category || "") + '</span>' +
+            '<span class="deploy-list__what">' + d.metric + ' · <em style="font-style:italic;color:var(--text-muted);">' + d.why + '</em></span>' +
+            '<span class="deploy-list__count">' + d.before + ' ' + arrow + ' ' + d.after + ' ' + (d.unit || '') + '</span>';
+          ul.appendChild(li);
+        });
       }
     } catch (e) {
       console.error(e);
