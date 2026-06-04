@@ -50,7 +50,7 @@
       const ok = await window.CMSAuth.checkAuth();
       if (ok) {
         const params = new URLSearchParams(window.location.search);
-        const back = params.get('back') || 'index.html';
+        const back = params.get('back') || 'monthly.html';
         window.location.replace('./' + back);
         return;
       }
@@ -69,7 +69,7 @@
         const result = await window.CMSAuth.attemptLogin(pwd.value);
         if (result.ok) {
           const params = new URLSearchParams(window.location.search);
-          const back = params.get('back') || 'index.html';
+          const back = params.get('back') || 'monthly.html';
           window.location.replace('./' + back);
         } else {
           err.textContent = result.error;

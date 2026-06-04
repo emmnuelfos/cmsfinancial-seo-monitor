@@ -53,7 +53,7 @@ async function gatePage() {
   if (window.location.pathname.endsWith('/login.html') || window.location.pathname.endsWith('/login')) return;
   const ok = await checkAuth();
   if (!ok) {
-    const back = window.location.pathname.split('/').pop() || 'index.html';
+    const back = window.location.pathname.split('/').pop() || 'monthly.html';
     window.location.href = `./login.html?back=${encodeURIComponent(back)}`;
   }
 }
