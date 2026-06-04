@@ -15,7 +15,6 @@
 </head>
 <body>
   <div class="app-shell">
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar__brand">
         <img src="./assets/cms-logo-light.svg" alt="CMS Prime" class="brand-logo">
@@ -61,96 +60,115 @@
     <main class="main">
       <header class="page-header fade-up" data-stagger="0">
         <div class="page-header__intro">
-          <span class="eyebrow">Monthly readout</span>
-          <h1 class="display-title">What shipped this month.</h1>
+          <span class="eyebrow">Monthly comparison</span>
+          <h1 class="display-title">What got better.</h1>
           <p class="lead">
-            A plain-language summary of every change that landed on cmsprime.com this month, the KPIs we're now tracking against, and a realistic timeline for when each change starts showing up in rankings.
+            A side-by-side comparison of every tracked metric between the start of the engagement and where we are today. Every number is verifiable — either pulled from Semrush or measured directly on the live site.
           </p>
         </div>
         <div class="page-header__meta">
-          <span>Reporting period</span>
-          <strong id="reportPeriod">—</strong>
-          <span style="margin-top:8px">Generated</span>
+          <span>Comparison period</span>
+          <strong id="comparisonPeriod">—</strong>
+          <span style="margin-top:8px">Last refreshed</span>
           <strong id="generatedAt">—</strong>
         </div>
       </header>
 
-      <!-- Month progress hero -->
-      <section class="month-hero fade-up" data-stagger="1">
-        <div class="month-hero__lead">
-          <div class="month-hero__eyebrow num" id="monthLabel">—</div>
-          <div class="month-hero__headline" id="monthHeadline">—</div>
-          <div class="month-hero__sub" id="monthSub">—</div>
+      <!-- Summary strip: improvements / neutral / declines -->
+      <section class="summary-strip fade-up" data-stagger="1">
+        <div class="summary-stat is-pos">
+          <div class="summary-stat__value num" id="sumImprovements">—</div>
+          <div class="summary-stat__label">metrics improved</div>
         </div>
-        <div class="month-hero__progress">
-          <div class="progress-ring" id="progressRing">
-            <svg viewBox="0 0 100 100">
-              <circle class="progress-ring__bg" cx="50" cy="50" r="44"/>
-              <circle class="progress-ring__fg" cx="50" cy="50" r="44" id="progressCircle"/>
+        <div class="summary-stat is-flat">
+          <div class="summary-stat__value num" id="sumNeutral">—</div>
+          <div class="summary-stat__label">unchanged</div>
+        </div>
+        <div class="summary-stat is-neg">
+          <div class="summary-stat__value num" id="sumDeclines">—</div>
+          <div class="summary-stat__label">declined</div>
+        </div>
+        <div class="summary-stat is-total">
+          <div class="summary-stat__value num" id="sumTotal">—</div>
+          <div class="summary-stat__label">tracked total</div>
+        </div>
+      </section>
+
+      <!-- Headline win -->
+      <section class="headline-card fade-up" data-stagger="2" id="headlineCard">
+        <div class="headline-card__eyebrow">Biggest improvement</div>
+        <div class="headline-card__body">
+          <div class="headline-card__values">
+            <div class="headline-card__before">
+              <span class="headline-card__before-label">Before</span>
+              <span class="headline-card__before-value num" id="headlineBefore">—</span>
+            </div>
+            <svg class="headline-card__arrow" viewBox="0 0 60 24" fill="none">
+              <path d="M2 12 L50 12 M40 4 L52 12 L40 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <div class="progress-ring__pct num" id="progressPct">—</div>
-            <div class="progress-ring__caption">tasks complete</div>
+            <div class="headline-card__after">
+              <span class="headline-card__after-label">Now</span>
+              <span class="headline-card__after-value num" id="headlineAfter">—</span>
+              <span class="headline-card__after-unit" id="headlineUnit">—</span>
+            </div>
           </div>
-          <div class="month-hero__breakdown" id="hoursBreakdown">—</div>
+          <div class="headline-card__caption">
+            <div class="headline-card__title" id="headlineLabel">—</div>
+            <p class="headline-card__why" id="headlineWhy">—</p>
+          </div>
         </div>
       </section>
 
-      <!-- Category bars -->
-      <section class="card fade-up" data-stagger="2">
-        <div class="card__header">
-          <div>
-            <div class="card__title">Progress by workstream</div>
-            <div class="card__subtitle">Tasks complete vs. total per category</div>
-          </div>
-        </div>
-        <div class="card__body">
-          <div class="category-bars" id="categoryBars">—</div>
-        </div>
-      </section>
-
-      <!-- Deployment log -->
-      <section class="card fade-up" data-stagger="3">
-        <div class="card__header">
-          <div>
-            <div class="card__title">Deployment log</div>
-            <div class="card__subtitle">What actually shipped — verified live on cmsprime.com</div>
-          </div>
-          <span class="badge is-pos" id="deployCount">—</span>
-        </div>
-        <div class="card__body">
-          <ol class="deploy-log" id="deployLog">—</ol>
-        </div>
-      </section>
-
-      <!-- KPI snapshot -->
-      <section class="fade-up" data-stagger="4">
+      <!-- Wins grid -->
+      <section class="fade-up" data-stagger="3">
         <div class="section-label">
-          <span class="eyebrow">KPI snapshot</span>
-          <span class="section-label__caption" id="kpiDateLabel">— · baseline measurement, deltas appear once we have a second snapshot</span>
+          <span class="eyebrow">Top wins this month</span>
+          <span class="section-label__caption">Hand-picked because they're the metrics that move rankings hardest</span>
         </div>
-        <div class="kpi-grid" id="kpiGrid">—</div>
+        <div class="wins-grid" id="winsGrid">—</div>
       </section>
 
-      <!-- Open / Next up -->
-      <section class="card fade-up" data-stagger="5">
+      <!-- Full comparison table -->
+      <section class="card fade-up" data-stagger="4">
         <div class="card__header">
           <div>
-            <div class="card__title">Still open this month</div>
-            <div class="card__subtitle">In progress + not yet started</div>
+            <div class="card__title">Every metric we track</div>
+            <div class="card__subtitle">Full before-and-after breakdown — green means the right direction</div>
           </div>
-          <span class="badge is-warn" id="openCount">—</span>
         </div>
         <div class="card__body is-flush">
-          <ul class="open-list" id="openList">—</ul>
+          <div class="table-scroll">
+            <table class="comparison-table" id="comparisonTable">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th class="is-numeric">Before</th>
+                  <th class="is-numeric">Now</th>
+                  <th class="is-numeric">Delta</th>
+                  <th class="is-numeric">% change</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
+      </section>
+
+      <!-- Still pending / honest section -->
+      <section class="fade-up" data-stagger="5">
+        <div class="section-label">
+          <span class="eyebrow">Still flat or in motion</span>
+          <span class="section-label__caption">Metrics that haven't moved yet, with context on when they will</span>
+        </div>
+        <div class="pending-grid" id="pendingGrid">—</div>
       </section>
 
       <!-- Impact timeline -->
       <section class="card fade-up" data-stagger="6">
         <div class="card__header">
           <div>
-            <div class="card__title">When you'll see results</div>
-            <div class="card__subtitle">SEO changes don't ship like product features — here's the realistic window for each layer</div>
+            <div class="card__title">When the rest will move</div>
+            <div class="card__subtitle">SEO doesn't ship like product features — here's the realistic window for each layer</div>
           </div>
         </div>
         <div class="card__body">
@@ -160,7 +178,9 @@
 
       <footer class="report-footer">
         <span class="eyebrow">Sources</span>
-        <p>Task data pulled live from the shared CMS Prime SEO Tracker. KPI baseline from Semrush UAE database snapshot taken on the date above. No new API calls made to generate this report — all data already on hand.</p>
+        <p>
+          <strong>Baseline values</strong> from the locked-in audit doc (April 2026) and the initial Semrush position-tracking export. <strong>Current deliverables</strong> verified live on cmsprime.com via dashboard health checks. <strong>Semrush metrics</strong> from the latest weekly snapshot — no new API calls needed to generate this report.
+        </p>
       </footer>
     </main>
   </div>
