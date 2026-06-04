@@ -648,6 +648,9 @@ a:hover { color: var(--text-primary); }
 [data-stagger="5"] { animation-delay: 300ms; }
 [data-stagger="6"] { animation-delay: 360ms; }
 [data-stagger="7"] { animation-delay: 420ms; }
+[data-stagger="8"] { animation-delay: 480ms; }
+[data-stagger="9"] { animation-delay: 540ms; }
+[data-stagger="10"] { animation-delay: 600ms; }
 
 /* =========================================================
    Login page

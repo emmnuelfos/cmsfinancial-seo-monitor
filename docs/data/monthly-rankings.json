@@ -1,94 +1,143 @@
 {
   "issue": "02",
-  "period_label": "FEBRUARY — JULY 2026",
-  "headline": "Where the ranks moved.",
-  "standfirst": "Of 31 keywords being tracked for the UAE database, four sit in the top 100 today — same count as engagement start, but the composition has shifted and the next round of signals (hreflang + schema, deployed June 1) hasn't been re-measured yet. The shape underneath is moving even when the headline rank count holds.",
+  "period_label": "JANUARY — JUNE 2026",
+  "headline": "Twenty-nine keywords, mostly <em>brand</em>.",
+  "standfirst": "From the Semrush Organic Rankings export for the AE database on June 3, 2026. The keyword count dropped from ~52 in January to 29 today, then ticked back up 3.57% this week. Of those 29, the brand term 'cms prime' alone drives 89.7% of all organic traffic — the recovery target is moving demand toward non-brand commercial queries.",
   "byline": {
-    "issued": "JUNE 4, 2026",
+    "issued": "JUNE 3, 2026",
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",
-    "data_source": "SEMRUSH POSITION TRACKING"
+    "data_source": "SEMRUSH AE · ORGANIC RESEARCH"
   },
-  "months": ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  "months": ["Jan 26", "Feb 26", "Mar 26", "Apr 26", "May 26", "Jun 26"],
   "feature_chart": {
-    "title": "Position distribution across the tracked keyword set",
-    "subtitle": "Count of tracked keywords per ranking band, monthly",
+    "title": "Tracked organic keywords, six months · AE database",
+    "subtitle": "Total keywords cmsprime.com ranks for in UAE Google",
     "meta": {
-      "tracked_terms": "31",
-      "currently_ranking": "4",
-      "off_index": "27"
+      "current": "29",
+      "wow_delta": "+3.57%",
+      "period_high": "52 (Jan)"
     },
     "series": [
-      {"label": "Top 3",     "data": [1, 1, 1, 1, 1, null], "color": "gold"},
-      {"label": "Pos 4–10",  "data": [2, 2, 2, 2, 2, null], "color": "amber"},
-      {"label": "Pos 11–30", "data": [1, 1, 1, 1, 1, null], "color": "blue"},
-      {"label": "Pos 31–100","data": [0, 0, 0, 0, 0, null], "color": "blueSoft"},
-      {"label": "Off index", "data": [27, 27, 27, 27, 27, null], "color": "muted"}
+      {
+        "label": "Tracked keywords (AE)",
+        "data": [52, 34, 33, 30, 29, 29],
+        "color": "amber"
+      }
     ],
-    "caption": "The flat horizontal line is the bottom band — 27 keywords still outside the top 100 — and it tells the most honest story. The work we deployed June 1 (hreflang + Organization schema + 586 disavow) has not had a re-measurement window yet. Reindex typically takes 14 to 28 days; expect the bottom band to start dropping on the July 1 reading.",
+    "caption": "The drop from ~52 in January to ~33 by March looks like a Google algorithm reweighting — keywords dropped out of the top 100 in February and never came back. The flat 29-30 plateau since April reflects the brand-dominated mix: those keywords are stable but few. The +3.57% uptick this week, while small in absolute terms, is the first weekly increase since the February reset.",
     "caption_aside": {
-      "Tracked total": "31 kw",
-      "In top 100": "4 (13%)",
-      "Off index": "27 (87%)"
+      "January 2026": "52 keywords",
+      "February drop": "34 (-35%)",
+      "Current": "29 keywords",
+      "Week-over-week": "+3.57%"
     }
   },
   "marquee": [
     {
-      "label": "Ranking in top 100",
-      "value": "4",
-      "unit": "of 31",
-      "sub": "no change · awaiting reindex",
-      "delta": "0",
+      "label": "Organic keywords",
+      "value": "29",
+      "unit": "ranking",
+      "sub": "down from 52 in Jan",
+      "delta": "+3.57%",
+      "direction": "pos"
+    },
+    {
+      "label": "Organic traffic (AE)",
+      "value": "428",
+      "unit": "visits",
+      "sub": "1 visit per ~15 kw",
+      "delta": "-1.83%",
+      "direction": "neg"
+    },
+    {
+      "label": "Branded traffic",
+      "value": "414",
+      "unit": "visits",
+      "sub": "96.7% of total",
+      "delta": "0%",
       "direction": "flat"
     },
     {
-      "label": "Top 3 positions",
-      "value": "1",
-      "unit": "keyword",
-      "sub": "“cms prime” at #1, held",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Position 4–10",
-      "value": "2",
-      "unit": "keywords",
-      "sub": "pamm forex #4, cms careers #5",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Off-index keywords",
-      "value": "27",
-      "unit": "to recover",
-      "sub": "JS/CSS + content work next",
-      "delta": "0",
-      "direction": "flat"
+      "label": "Non-branded traffic",
+      "value": "14",
+      "unit": "visits",
+      "sub": "the recovery target",
+      "delta": "-36.36%",
+      "direction": "neg"
     }
   ],
-  "movers": {
-    "gainers": [
-      {"kw": "cms prime", "from": "1", "to": "1", "delta": "held"},
-      {"kw": "pamm forex trading", "from": "5", "to": "4", "delta": "+1"},
-      {"kw": "pamm account", "from": "27", "to": "25", "delta": "+2"},
-      {"kw": "cms careers", "from": "6", "to": "5", "delta": "+1"}
-    ],
-    "decliners": [
-      {"kw": "metatrader 5 webtrader", "from": "—", "to": "—", "delta": "still off"},
-      {"kw": "stock cfd trading", "from": "—", "to": "—", "delta": "still off"},
-      {"kw": "commodity trading uae", "from": "—", "to": "—", "delta": "still off"},
-      {"kw": "online forex trading platforms", "from": "—", "to": "—", "delta": "still off"}
+  "country_footprint": {
+    "title": "Where cmsprime.com ranks, by database",
+    "subtitle": "Same domain, three Google jurisdictions, very different keyword footprints",
+    "rows": [
+      {"flag": "US", "country": "United States", "value": 128, "share": 100, "note": "highest count, lower competition"},
+      {"flag": "IN", "country": "India", "value": 56, "share": 43.8, "note": "secondary market, growing"},
+      {"flag": "AE", "country": "United Arab Emirates", "value": 29, "share": 22.7, "is_target": true, "note": "primary target — most competition here"}
     ]
   },
+  "top_keywords": {
+    "title": "The five keywords driving organic traffic",
+    "subtitle": "Position, volume, and share of total organic traffic",
+    "rows": [
+      {"kw": "cms prime",          "position": 1, "volume": 480, "serp_features": 6, "traffic_pct": 89.71, "kind": "brand"},
+      {"kw": "cms prime dubai",    "position": 1, "volume": 30,  "serp_features": 5, "traffic_pct": 5.60,  "kind": "brand"},
+      {"kw": "cms finance",        "position": 7, "volume": 260, "serp_features": 3, "traffic_pct": 1.40,  "kind": "ambiguous"},
+      {"kw": "cms prime",          "position": 6, "volume": 480, "serp_features": 0, "traffic_pct": 1.40,  "kind": "brand"},
+      {"kw": "cms login",          "position": 6, "volume": 90,  "serp_features": 1, "traffic_pct": 0.93,  "kind": "brand"}
+    ],
+    "footnote": "Top 5 of 29 tracked keywords accounts for 99.04% of organic traffic. Heavy reliance on a single brand term — long-tail commercial queries are the unmet opportunity."
+  },
+  "intent_split": {
+    "title": "Keywords by search intent",
+    "subtitle": "What people actually want when they search these terms",
+    "rows": [
+      {"label": "Informational",  "pct": 71.0, "keywords": 22, "traffic": 14,  "color": "blue", "note": "explainers, tutorials"},
+      {"label": "Navigational",   "pct": 22.6, "keywords": 7,  "traffic": 414, "color": "amber", "note": "brand and login searches"},
+      {"label": "Transactional",  "pct": 6.5,  "keywords": 2,  "traffic": 4,   "color": "gold", "note": "ready-to-act queries"}
+    ],
+    "footnote": "Informational queries dominate keyword count but drive almost no traffic — that's typical when a site ranks for the FAQ-style long tail but not at the top. Navigational (brand) is small in count but supplies 97% of traffic."
+  },
+  "top_pages": {
+    "title": "Top pages by organic traffic share",
+    "subtitle": "Five pages account for the entire indexable footprint",
+    "rows": [
+      {"url": "cmsprime.com/",                       "traffic_pct": 97.19, "keywords": 9, "is_home": true},
+      {"url": "cmsprime.com/about-us/",              "traffic_pct": 1.40,  "keywords": 1},
+      {"url": "mycms.cmsprime.com/login",            "traffic_pct": 0.93,  "keywords": 1},
+      {"url": "cmsprime.com/ebook/",                 "traffic_pct": 0.46,  "keywords": 2},
+      {"url": "cmsprime.com/trading-central/",       "traffic_pct": 0.01,  "keywords": 1}
+    ],
+    "footnote": "The homepage alone soaks up 97.19% of organic traffic. That's a single-point-of-failure pattern — when the homepage's ranking moves, everything moves."
+  },
+  "competitors": {
+    "title": "Main organic competitors in AE",
+    "subtitle": "Domains overlapping keywords with cmsprime.com",
+    "rows": [
+      {"domain": "cmsfinancial.ae", "common_kw": 5, "comp_pct": 72},
+      {"domain": "industry-era.com", "common_kw": 1, "comp_pct": 25},
+      {"domain": "cms.com",          "common_kw": 2, "comp_pct": 21},
+      {"domain": "cmsnift.com",      "common_kw": 2, "comp_pct": 19},
+      {"domain": "brokersome.com",   "common_kw": 1, "comp_pct": 16}
+    ],
+    "footnote": "131 competitors tracked overall. The top one (cmsfinancial.ae) is a brand-name lookalike — much of the overlap is people typing the wrong CMS."
+  },
+  "position_changes": {
+    "title": "Position changes this period",
+    "subtitle": "New, lost, improved, declined",
+    "state": "static",
+    "message": "Nothing moved.",
+    "detail": "No keywords entered or exited the top 100. No position shifts of 3+ places. This is the pre-deployment baseline — the hreflang and Organization schema work landed June 1, and the position-tracker reindex window is 14-28 days. Re-measurement expected July 1."
+  },
   "prose": {
-    "title": "Why the bands look frozen.",
+    "title": "Reading the rankings, honestly.",
     "paragraphs": [
-      "Position tracking is a lagging indicator by design. The visibility score on the Domain Overview page moved within a week of deployment because Google read the new structured data into the index quickly. But ranking changes for individual keywords require Google to re-evaluate the page against a query — which only happens at the next crawl-and-rank cycle.",
-      "For a domain with Authority Score 25 and the commercial-intent vertical we operate in, that cycle averages <strong>14 to 28 days post-deploy</strong>. We deployed June 1. The next meaningful re-measurement should be the July 1 reading.",
-      "The 27-keyword off-index list is the priority watch. If even three of them break into the top 100 in July, the trajectory works. If none do, we revisit content depth on those specific pages."
+      "Twenty-nine ranking keywords sounds small. It is small. But the relevant question isn't the count — it's the composition. <strong>Of those 29, only 2 are transactional.</strong> The other 27 split between informational (FAQ-style) and navigational (brand). When people search 'cms prime' or 'cms prime dubai', they find us. When they search 'forex broker dubai' or 'cfd trading platform', they don't.",
+      "The drop from 52 to 29 keywords over six months is concerning on the surface — but it's mostly noise from long-tail keywords cycling in and out of the top 100. The 27-keyword commercial recovery list documented in the Keywords chapter is where ranking ground was actually lost.",
+      "<strong>The brand-versus-commercial gap is the real story.</strong> 96.7% of organic traffic comes through 'cms prime' branded searches. The 3.3% that isn't brand-driven is what the technical fixes (FAQ schema, hreflang, enriched Organization markup) deployed June 1 are meant to expand. Expect the first signs on the July 1 reading."
     ]
   },
   "pull_quote": {
-    "text": "If three off-index keywords break into the top 100 in July, the trajectory works.",
-    "source": "Forward read, July 1 forecast"
+    "text": "When people search 'cms prime', they find us. When they search 'forex broker dubai', they don't.",
+    "source": "The brand-versus-commercial gap, June 2026"
   }
 }

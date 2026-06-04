@@ -71,10 +71,11 @@
 
       <div class="marquee-row fade-up" data-stagger="3" id="marqueeRow"></div>
 
+      <!-- Feature chart: keyword count over 6 months -->
       <div class="section-rule fade-up" data-stagger="4">
-        <span class="section-rule__label">§ I — Position-band distribution</span>
+        <span class="section-rule__label">§ I — Keyword count trajectory</span>
         <span class="section-rule__line"></span>
-        <span class="section-rule__counter">FIG. 06</span>
+        <span class="section-rule__counter">FIG. 09</span>
       </div>
 
       <section class="feature-chart fade-up" data-stagger="4">
@@ -94,30 +95,100 @@
         </div>
       </section>
 
+      <!-- Country footprint -->
       <div class="section-rule fade-up" data-stagger="5">
-        <span class="section-rule__label">§ II — Gainers and decliners</span>
+        <span class="section-rule__label">§ II — Footprint by Google database</span>
         <span class="section-rule__line"></span>
-        <span class="section-rule__counter">SIX-MONTH WINDOW</span>
+        <span class="section-rule__counter">FIG. 10</span>
       </div>
 
-      <div class="movers-grid fade-up" data-stagger="5">
-        <div class="movers-col">
-          <div class="movers-col__head">▲ Gainers</div>
-          <ul class="movers-list" id="gainersList"></ul>
-        </div>
-        <div class="movers-col">
-          <div class="movers-col__head">▼ Still off-index</div>
-          <ul class="movers-list" id="declinersList"></ul>
-        </div>
+      <div class="sub-section fade-up" data-stagger="5">
+        <div class="sub-section__title" id="countryTitle">—</div>
+        <table class="geo-rows">
+          <tbody id="countryRows"></tbody>
+        </table>
       </div>
 
+      <!-- Top keywords table -->
       <div class="section-rule fade-up" data-stagger="6">
-        <span class="section-rule__label">§ III — Analysis</span>
+        <span class="section-rule__label">§ III — The five keywords driving traffic</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">TOP 5 OF 29</span>
+      </div>
+
+      <table class="data-rows fade-up" data-stagger="6" id="kwTable">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th class="is-num">Position</th>
+            <th class="is-num">Search volume</th>
+            <th class="is-num">SERP features</th>
+            <th class="is-num">Traffic share</th>
+          </tr>
+        </thead>
+        <tbody id="kwTableBody"></tbody>
+      </table>
+      <p class="page-footer-note__text" id="kwFootnote" style="margin-top: var(--space-3); margin-bottom: var(--space-7);">—</p>
+
+      <!-- Intent split + Top pages (two columns) -->
+      <div class="section-rule fade-up" data-stagger="7">
+        <span class="section-rule__label">§ IV — How traffic finds the site</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">FIG. 11–12</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="7">
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="intentTitle">Keywords by search intent</div>
+            <div id="intentSplit"></div>
+            <p class="page-footer-note__text" id="intentFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="pagesTitle">Top pages by traffic</div>
+            <table class="data-rows">
+              <tbody id="topPagesBody"></tbody>
+            </table>
+            <p class="page-footer-note__text" id="pagesFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitors + Position changes -->
+      <div class="section-rule fade-up" data-stagger="8">
+        <span class="section-rule__label">§ V — Who else is in this race</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">131 TOTAL</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="8">
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="compTitle">Top organic competitors</div>
+            <table class="data-rows">
+              <tbody id="compBody"></tbody>
+            </table>
+            <p class="page-footer-note__text" id="compFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="changesTitle">Position changes this period</div>
+            <div class="empty-state" id="changesEmpty"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prose -->
+      <div class="section-rule fade-up" data-stagger="9">
+        <span class="section-rule__label">§ VI — Analysis</span>
         <span class="section-rule__line"></span>
         <span class="section-rule__counter">PROSE</span>
       </div>
 
-      <div class="editorial-grid editorial-grid--reverse fade-up" data-stagger="6">
+      <div class="editorial-grid editorial-grid--reverse fade-up" data-stagger="9">
         <div>
           <blockquote class="pull-quote">
             <span id="pullQuoteText">—</span>
@@ -130,9 +201,9 @@
         </div>
       </div>
 
-      <div class="page-footer-note fade-up" data-stagger="7">
+      <div class="page-footer-note fade-up" data-stagger="10">
         <p class="page-footer-note__text">
-          Position data exported from Semrush position-tracking project for the UAE database. The tracked keyword set was locked at engagement start and has not been altered since — every term compared at the same difficulty across the entire period. Em-dashes denote queries where the page does not rank in the top 100 results at all.
+          Source: Semrush Organic Research export for cmsprime.com on the AE database (desktop), captured June 3, 2026. All position, volume, traffic share and intent classifications come directly from that snapshot. Competitor list shown is the top 5 of 131 tracked overlapping domains in the same vertical.
         </p>
         <div class="page-footer-note__nav">
           <a href="./monthly-domain.html">← Previous: Domain</a>
@@ -173,6 +244,7 @@
 
       MonthlyReport.renderMarquee(document.getElementById("marqueeRow"), data.marquee || []);
 
+      // Feature chart — keyword count
       const fc = data.feature_chart || {};
       document.getElementById("featTitle").textContent = fc.title || "—";
       document.getElementById("featSubtitle").textContent = fc.subtitle || "—";
@@ -187,30 +259,122 @@
         for (const k in fc.caption_aside) dl.innerHTML += '<dt>' + k + '</dt><dd>' + fc.caption_aside[k] + '</dd>';
       }
       const ctx = document.getElementById("featChart").getContext("2d");
-      // Stacked area for position distribution
-      const chart = MonthlyReport.drawFeatureChart(ctx, data.months, fc.series, { yUnit: " kw", beginAtZero: true });
-      chart.options.scales.y.stacked = true;
-      chart.data.datasets.forEach(d => { d.fill = "-1"; });
-      chart.data.datasets[0].fill = "origin";
-      chart.update();
+      MonthlyReport.drawFeatureChart(ctx, data.months, fc.series, { unit: " kw", yUnit: " kw", beginAtZero: false });
 
-      // Movers
-      function renderMovers(targetId, items, isGain) {
-        const ul = document.getElementById(targetId);
-        ul.innerHTML = "";
-        items.forEach(m => {
-          const li = document.createElement("li");
-          li.className = "mover-item";
-          const dCls = isGain ? "is-pos" : "is-neg";
-          li.innerHTML =
-            '<span class="mover-item__keyword">' + m.kw + '</span>' +
-            '<span class="mover-item__from-to">' + m.from + ' → ' + m.to + '</span>' +
-            '<span class="mover-item__delta ' + dCls + '">' + m.delta + '</span>';
-          ul.appendChild(li);
+      // Country footprint
+      if (data.country_footprint) {
+        const cf = data.country_footprint;
+        document.getElementById("countryTitle").textContent = cf.subtitle || cf.title;
+        const tbody = document.getElementById("countryRows");
+        tbody.innerHTML = "";
+        cf.rows.forEach(r => {
+          const targetCls = r.is_target ? " is-target" : "";
+          const tag = r.is_target ? '<span class="geo-target-tag">target</span>' : '';
+          const tr = document.createElement("tr");
+          tr.innerHTML =
+            '<td class="geo-flag">' + r.flag + '</td>' +
+            '<td class="geo-name' + targetCls + '">' + r.country + tag + '</td>' +
+            '<td class="geo-bar"><div class="geo-bar__track"><div class="geo-bar__fill' + targetCls + '" style="width:0"></div></div></td>' +
+            '<td class="geo-num' + targetCls + '">' + r.value + ' kw</td>' +
+            '<td class="geo-sub">' + (r.note || '') + '</td>';
+          tbody.appendChild(tr);
+          requestAnimationFrame(() => {
+            const fill = tr.querySelector(".geo-bar__fill");
+            if (fill) fill.style.width = r.share + "%";
+          });
         });
       }
-      renderMovers("gainersList", data.movers.gainers || [], true);
-      renderMovers("declinersList", data.movers.decliners || [], false);
+
+      // Top keywords table
+      if (data.top_keywords) {
+        const tk = data.top_keywords;
+        const tbody = document.getElementById("kwTableBody");
+        tbody.innerHTML = "";
+        tk.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          const posCls = r.position === 1 ? 'is-after' : (r.position <= 10 ? 'is-after' : '');
+          tr.innerHTML =
+            '<td><div class="row-metric">' + r.kw + '</div>' +
+            (r.kind === 'brand' ? '<span class="row-sub">brand term</span>' :
+              (r.kind === 'ambiguous' ? '<span class="row-sub">brand-adjacent</span>' :
+              '<span class="row-sub">commercial</span>')) + '</td>' +
+            '<td class="num ' + posCls + '">#' + r.position + '</td>' +
+            '<td class="num">' + r.volume.toLocaleString() + '</td>' +
+            '<td class="num">' + r.serp_features + '</td>' +
+            '<td class="num">' + r.traffic_pct + '%</td>';
+          tbody.appendChild(tr);
+        });
+        document.getElementById("kwFootnote").textContent = tk.footnote || "";
+      }
+
+      // Intent split (3 stacked bars)
+      if (data.intent_split) {
+        const is = data.intent_split;
+        document.getElementById("intentTitle").textContent = is.subtitle || is.title;
+        const el = document.getElementById("intentSplit");
+        el.innerHTML = "";
+        is.rows.forEach(row => {
+          const tier = row.color === "amber" ? "core" : (row.color === "gold" ? "supporting" : "miss");
+          const block = document.createElement("div");
+          block.className = "serp-mix__row is-" + tier;
+          block.innerHTML =
+            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
+            '  <span class="serp-mix__label">' + row.label + ' <span style="color:var(--text-faint);font-size:12px;font-family:var(--font-mono);">· ' + row.keywords + ' kw, ' + row.traffic + ' visits</span></span>' +
+            '  <span class="serp-mix__pct">' + row.pct + '%</span>' +
+            '</div>' +
+            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
+          el.appendChild(block);
+          requestAnimationFrame(() => {
+            const fill = block.querySelector(".serp-mix__bar-fill");
+            if (fill) fill.style.width = row.pct + "%";
+          });
+        });
+        document.getElementById("intentFootnote").textContent = is.footnote || "";
+      }
+
+      // Top pages
+      if (data.top_pages) {
+        const tp = data.top_pages;
+        document.getElementById("pagesTitle").textContent = tp.subtitle || tp.title;
+        const tbody = document.getElementById("topPagesBody");
+        tbody.innerHTML = "";
+        tp.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          const homeFlag = r.is_home ? '<span class="row-sub" style="color: var(--brand-gold);">homepage · single point of failure</span>' : '';
+          tr.innerHTML =
+            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:12.5px;letter-spacing:0;">' + r.url + '</div>' + homeFlag + '</td>' +
+            '<td class="num is-after">' + r.traffic_pct + '%</td>' +
+            '<td class="num" style="width:60px;">' + r.keywords + ' kw</td>';
+          tbody.appendChild(tr);
+        });
+        document.getElementById("pagesFootnote").textContent = tp.footnote || "";
+      }
+
+      // Competitors
+      if (data.competitors) {
+        const c = data.competitors;
+        document.getElementById("compTitle").textContent = c.subtitle || c.title;
+        const tbody = document.getElementById("compBody");
+        tbody.innerHTML = "";
+        c.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          tr.innerHTML =
+            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0;">' + r.domain + '</div></td>' +
+            '<td class="num is-after">' + r.common_kw + ' shared kw</td>' +
+            '<td class="num" style="width:80px;">' + r.comp_pct + '% comp</td>';
+          tbody.appendChild(tr);
+        });
+        document.getElementById("compFootnote").textContent = c.footnote || "";
+      }
+
+      // Position changes (empty state)
+      if (data.position_changes) {
+        const pc = data.position_changes;
+        document.getElementById("changesTitle").textContent = pc.subtitle || pc.title;
+        document.getElementById("changesEmpty").innerHTML =
+          '<div class="empty-state__head">' + pc.message + '</div>' +
+          '<p class="empty-state__detail">' + pc.detail + '</p>';
+      }
 
       if (data.prose) {
         document.getElementById("proseTitle").textContent = data.prose.title || "";
