@@ -226,9 +226,9 @@
           '<span class="trend-cell__current">' + fmt(it.current) + '<span style="font-size:14px;color:var(--text-muted);margin-left:4px;font-weight:500;font-variant-numeric:tabular-nums;">' + (it.unit || '') + '</span></span>' +
           '<span class="trend-cell__delta ' + deltaCls + '">' + deltaTxt + '</span>' +
         '</div>' +
-        '<canvas class="trend-cell__spark" id="trend-spark-' + i + '"></canvas>';
+        '<div class="trend-cell__spark-wrap"><canvas id="trend-spark-' + i + '" width="200" height="36"></canvas></div>';
       el.appendChild(cell);
-      // Render the spark after the canvas is in the DOM
+      // Render the spark after the canvas is in the DOM (positioned wrapper has a fixed height now)
       setTimeout(() => {
         const c = document.getElementById("trend-spark-" + i);
         if (c && it.series) drawSpark(c.getContext("2d"), it.series);
