@@ -1,0 +1,101 @@
+{
+  "issue": "02",
+  "period_label": "FEBRUARY — JULY 2026",
+  "headline": "The thirty-one keywords, one at a time.",
+  "standfirst": "Every term we track has its own trajectory. Some moved, most are still inside the reindex window. This is the per-keyword view — for each one, where it sits, where it sat, and what its trend line looks like.",
+  "byline": {
+    "issued": "JUNE 4, 2026",
+    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
+    "data_source": "SEMRUSH POSITION TRACKING"
+  },
+  "months": ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  "feature_chart": {
+    "title": "Top movers — six-month position lines",
+    "subtitle": "Lower = better. The brand term holds; commercial terms still climbing.",
+    "meta": {
+      "tracked_terms": "31",
+      "shown": "6 of top movers",
+      "scale": "Pos 1 (top) → 100 (bottom)"
+    },
+    "series": [
+      {"label": "cms prime",            "data": [1, 1, 1, 1, 1, null],   "color": "gold"},
+      {"label": "pamm forex trading",   "data": [6, 6, 5, 5, 4, null],   "color": "amber"},
+      {"label": "cms careers",          "data": [7, 7, 6, 6, 5, null],   "color": "blue"},
+      {"label": "pamm account",         "data": [30, 29, 28, 27, 25, null], "color": "blueSoft"},
+      {"label": "forex trading uae",    "data": [null, null, null, null, null, null], "color": "muted"},
+      {"label": "mt5 platform",         "data": [null, null, null, null, null, null], "color": "muted"}
+    ],
+    "caption": "Lines that point up the page in this view are good — Semrush position 1 sits at the top, position 100 sits at the bottom. The four indexed terms moved 1–3 positions over the period; the bottom two have been off-index throughout and represent the next month's recovery target.",
+    "caption_aside": {
+      "Lines climbing": "4",
+      "Lines flat": "0",
+      "Off-index": "27 (incl. 2 shown)"
+    }
+  },
+  "marquee": [
+    {
+      "label": "Top mover",
+      "value": "pamm account",
+      "unit": "+5 pos",
+      "sub": "30 → 25 over 6 months",
+      "delta": "+5",
+      "direction": "pos"
+    },
+    {
+      "label": "Holding rank 1",
+      "value": "cms prime",
+      "unit": "",
+      "sub": "brand term, every month",
+      "delta": "held",
+      "direction": "flat"
+    },
+    {
+      "label": "Climbing into top 5",
+      "value": "pamm forex",
+      "unit": "4th",
+      "sub": "from 6th, four months",
+      "delta": "+2",
+      "direction": "pos"
+    },
+    {
+      "label": "Awaiting reindex",
+      "value": "27",
+      "unit": "keywords",
+      "sub": "off-index since Feb",
+      "delta": "Jul target",
+      "direction": "flat"
+    }
+  ],
+  "table": {
+    "headers": ["Keyword", "Volume", "Feb", "Jun", "Δ", "6-mo trend"],
+    "rows": [
+      {"kw": "cms prime",                  "vol": "880",   "before": "1",  "after": "1",  "delta_label": "held",   "delta": 0,   "direction": "flat", "series": [1,1,1,1,1]},
+      {"kw": "pamm forex trading",         "vol": "590",   "before": "6",  "after": "4",  "delta_label": "+2",     "delta": 2,   "direction": "pos",  "series": [6,6,5,5,4]},
+      {"kw": "cms careers",                "vol": "210",   "before": "7",  "after": "5",  "delta_label": "+2",     "delta": 2,   "direction": "pos",  "series": [7,7,6,6,5]},
+      {"kw": "pamm account",               "vol": "320",   "before": "30", "after": "25", "delta_label": "+5",     "delta": 5,   "direction": "pos",  "series": [30,29,28,27,25]},
+      {"kw": "forex trading brokers",      "vol": "1,300", "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "online forex trading platforms", "vol": "720", "before": "—", "after": "—", "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "mt5 platform",               "vol": "1,000", "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "mt4 forex brokers",          "vol": "590",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "stock cfd trading",          "vol": "480",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "commodity trading uae",      "vol": "390",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "cfd index trading",          "vol": "260",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "proprietary trading",        "vol": "1,900", "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "funded trading account",     "vol": "880",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "what is prop trading",       "vol": "590",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]},
+      {"kw": "metatrader 5 webtrader",     "vol": "210",   "before": "—",  "after": "—",  "delta_label": "still off", "delta": null, "direction": "flat", "series": [null,null,null,null,null]}
+    ]
+  },
+  "prose": {
+    "title": "What it means to be “still off index.”",
+    "paragraphs": [
+      "Twenty-seven of thirty-one tracked keywords show an em-dash in the position column. That isn't a missing data point — it's Semrush's way of saying the page does not rank in the top 100 results for that query at all.",
+      "For a Dubai-licensed forex broker with Authority Score 25, this isn't unusual at engagement start. The commercial-intent terms in this list (proprietary trading, mt5 platform, funded trading account) are won by domains in the 35–60 AS range with deep topical content. We're below the threshold today.",
+      "The work deployed June 1 starts to address that. Enriched Organization schema with regulatory credentials helps Google place us in the right competitive set. Hreflang stops the EN/AR/FA versions from fragmenting equity. FAQ schema on commercial pages adds rich-result eligibility. Combined, these should pull <strong>at least three of the twenty-seven into the top 100</strong> on the July 1 reading."
+    ]
+  },
+  "pull_quote": {
+    "text": "Twenty-seven em-dashes in the position column. Each one is a recovery target.",
+    "source": "Engagement memo, June 4"
+  }
+}

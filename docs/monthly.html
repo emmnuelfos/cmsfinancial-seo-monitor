@@ -20,197 +20,110 @@
         <img src="./assets/cms-logo-light.svg" alt="CMS Prime" class="brand-logo">
         <div class="sidebar__brand-sub">Performance Console</div>
       </div>
-
       <nav class="nav">
         <div class="nav__group-label">Performance</div>
-        <a class="nav__link" href="./index.html">
-          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-          Overview
-        </a>
-        <a class="nav__link" href="./rankings.html">
-          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
-          Rankings
-        </a>
-        <a class="nav__link" href="./backlinks.html">
-          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          Backlinks
-        </a>
-        <a class="nav__link" href="./health.html">
-          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          Technical Health
-        </a>
-        <a class="nav__link is-active" href="./monthly.html">
-          <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Monthly Report
-        </a>
+        <a class="nav__link" href="./index.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+        <a class="nav__link" href="./rankings.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+        <a class="nav__link" href="./backlinks.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Backlinks</a>
+        <a class="nav__link" href="./health.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Technical Health</a>
+        <a class="nav__link is-active" href="./monthly.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Monthly Report</a>
       </nav>
-
       <div class="sidebar__footer">
-        <div class="sidebar__status">
-          <span class="status-dot"></span>
-          <span>Live data · auto-refresh Mondays</span>
-        </div>
-        <button class="sidebar__logout" onclick="window.CMSAuth.logout()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          Sign out
-        </button>
+        <div class="sidebar__status"><span class="status-dot"></span><span>Live data · auto-refresh Mondays</span></div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign out</button>
       </div>
     </aside>
 
     <main class="main">
-      <header class="page-header fade-up" data-stagger="0">
-        <div class="page-header__intro">
-          <span class="eyebrow">Monthly comparison</span>
-          <h1 class="display-title">What got better.</h1>
-          <p class="lead">
-            A side-by-side comparison of every tracked metric between the start of the engagement and where we are today. Every number is verifiable — either pulled from Semrush or measured directly on the live site.
+      <div class="issue-bar fade-up" data-stagger="0">
+        <div class="issue-bar__left">
+          <span class="issue-bar__num">Issue №02</span>
+          <span>FEBRUARY — JULY 2026</span>
+        </div>
+        <div class="issue-bar__right">Updated June 4, 2026 · Adnika ✕ CMS Prime</div>
+      </div>
+
+      <div class="editorial-head fade-up" data-stagger="1">
+        <div class="editorial-head__main">
+          <div class="editorial-head__kicker">Monthly Report</div>
+          <h1 class="editorial-head__title">A six-month <em>readout</em>.</h1>
+          <p class="editorial-head__standfirst">
+            Three reports, one period. Domain Overview maps the macro trajectory. Organic Rankings shows where the tracked keywords sit now and where they sat in February. Keyword Overview takes it term by term. Each is laid out for clarity over density.
           </p>
         </div>
-        <div class="page-header__meta">
-          <span>Comparison period</span>
-          <strong id="comparisonPeriod">—</strong>
-          <span style="margin-top:8px">Last refreshed</span>
-          <strong id="generatedAt">—</strong>
+        <div class="editorial-head__byline">
+          <div><strong>JUN 04, 2026</strong></div>
+          <div>READING TIME — 6 MIN</div>
+          <div>DATA — SEMRUSH UAE</div>
         </div>
-      </header>
+      </div>
 
-      <!-- Summary strip: improvements / neutral / declines -->
-      <section class="summary-strip fade-up" data-stagger="1">
-        <div class="summary-stat is-pos">
-          <div class="summary-stat__value num" id="sumImprovements">—</div>
-          <div class="summary-stat__label">metrics improved</div>
-        </div>
-        <div class="summary-stat is-flat">
-          <div class="summary-stat__value num" id="sumNeutral">—</div>
-          <div class="summary-stat__label">unchanged</div>
-        </div>
-        <div class="summary-stat is-neg">
-          <div class="summary-stat__value num" id="sumDeclines">—</div>
-          <div class="summary-stat__label">declined</div>
-        </div>
-        <div class="summary-stat is-total">
-          <div class="summary-stat__value num" id="sumTotal">—</div>
-          <div class="summary-stat__label">tracked total</div>
-        </div>
-      </section>
-
-      <!-- Headline win -->
-      <section class="headline-card fade-up" data-stagger="2" id="headlineCard">
-        <div class="headline-card__eyebrow">Biggest improvement</div>
-        <div class="headline-card__body">
-          <div class="headline-card__values">
-            <div class="headline-card__before">
-              <span class="headline-card__before-label">Before</span>
-              <span class="headline-card__before-value num" id="headlineBefore">—</span>
-            </div>
-            <svg class="headline-card__arrow" viewBox="0 0 60 24" fill="none">
-              <path d="M2 12 L50 12 M40 4 L52 12 L40 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <div class="headline-card__after">
-              <span class="headline-card__after-label">Now</span>
-              <span class="headline-card__after-value num" id="headlineAfter">—</span>
-              <span class="headline-card__after-unit" id="headlineUnit">—</span>
-            </div>
-          </div>
-          <div class="headline-card__caption">
-            <div class="headline-card__title" id="headlineLabel">—</div>
-            <p class="headline-card__why" id="headlineWhy">—</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Wins grid -->
-      <section class="fade-up" data-stagger="3">
-        <div class="section-label">
-          <span class="eyebrow">Top wins this month</span>
-          <span class="section-label__caption">Hand-picked because they're the metrics that move rankings hardest</span>
-        </div>
-        <div class="wins-grid" id="winsGrid">—</div>
-      </section>
-
-      <!-- Full comparison table -->
-      <section class="card fade-up" data-stagger="4">
-        <div class="card__header">
+      <div class="chapter-list">
+        <a class="chapter-item fade-up" data-stagger="2" href="./monthly-domain.html">
+          <div class="chapter-item__num">01</div>
           <div>
-            <div class="card__title">Every metric we track</div>
-            <div class="card__subtitle">Full before-and-after breakdown — green means the right direction</div>
+            <div class="chapter-item__title">Domain Overview</div>
+            <p class="chapter-item__desc">Visibility, authority, indexation, and traffic across the six-month period. The macro story — what the brand's organic presence looks like from above, and how the foundation work has affected it.</p>
           </div>
-        </div>
-        <div class="card__body is-flush">
-          <div class="table-scroll">
-            <table class="comparison-table" id="comparisonTable">
-              <thead>
-                <tr>
-                  <th>Metric</th>
-                  <th class="is-numeric">Before</th>
-                  <th class="is-numeric">Now</th>
-                  <th class="is-numeric">Delta</th>
-                  <th class="is-numeric">% change</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+          <div class="chapter-item__meta">
+            <strong>+62.5%</strong>
+            visibility, six-month<br>
+            <strong>4 KPIs</strong>
+            with monthly trend
           </div>
-        </div>
-      </section>
+          <span class="chapter-item__arrow">→</span>
+        </a>
 
-      <!-- Still pending / honest section -->
-      <section class="fade-up" data-stagger="5">
-        <div class="section-label">
-          <span class="eyebrow">Still flat or in motion</span>
-          <span class="section-label__caption">Metrics that haven't moved yet, with context on when they will</span>
-        </div>
-        <div class="pending-grid" id="pendingGrid">—</div>
-      </section>
-
-      <!-- Impact timeline -->
-      <section class="card fade-up" data-stagger="6">
-        <div class="card__header">
+        <a class="chapter-item fade-up" data-stagger="3" href="./monthly-rankings.html">
+          <div class="chapter-item__num">02</div>
           <div>
-            <div class="card__title">When the rest will move</div>
-            <div class="card__subtitle">SEO doesn't ship like product features — here's the realistic window for each layer</div>
+            <div class="chapter-item__title">Organic Rankings</div>
+            <p class="chapter-item__desc">Position distribution across the tracked keyword set, top movers, and the bands that have shifted (or held). Includes both the keywords gaining ground and the twenty-seven still off-index awaiting reindex.</p>
           </div>
-        </div>
-        <div class="card__body">
-          <div class="timeline" id="timeline">—</div>
-        </div>
-      </section>
+          <div class="chapter-item__meta">
+            <strong>4 / 31</strong>
+            in top 100<br>
+            <strong>Pos 1</strong>
+            on brand term
+          </div>
+          <span class="chapter-item__arrow">→</span>
+        </a>
 
-      <footer class="report-footer">
-        <span class="eyebrow">Sources</span>
-        <p>
-          <strong>Baseline values</strong> from the locked-in audit doc (April 2026) and the initial Semrush position-tracking export. <strong>Current deliverables</strong> verified live on cmsprime.com via dashboard health checks. <strong>Semrush metrics</strong> from the latest weekly snapshot — no new API calls needed to generate this report.
+        <a class="chapter-item fade-up" data-stagger="4" href="./monthly-keywords.html">
+          <div class="chapter-item__num">03</div>
+          <div>
+            <div class="chapter-item__title">Keyword Overview</div>
+            <p class="chapter-item__desc">Term by term — every tracked keyword with its six-month trajectory, search volume, and direction. The page where individual SEO bets are scored.</p>
+          </div>
+          <div class="chapter-item__meta">
+            <strong>+5 pos</strong>
+            top mover<br>
+            <strong>27 KW</strong>
+            recovery list
+          </div>
+          <span class="chapter-item__arrow">→</span>
+        </a>
+      </div>
+
+      <div class="page-footer-note">
+        <p class="page-footer-note__text">
+          Method: each chapter compares the latest Semrush snapshot (June 1, 2026) against monthly readings going back to February. Where a metric is verifiable on the live site rather than from Semrush — hreflang presence, schema coverage, redirect status — the chapter says so. No third-party assumptions.
         </p>
-      </footer>
+        <div class="page-footer-note__nav">
+          <a href="./index.html">← Console home</a>
+        </div>
+      </div>
     </main>
   </div>
 
-  <!-- Mobile bottom nav -->
   <nav class="bottom-nav" aria-label="Mobile">
     <div class="bottom-nav__inner">
-      <a class="bottom-nav__item" href="./index.html">
-        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-        Overview
-      </a>
-      <a class="bottom-nav__item" href="./rankings.html">
-        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
-        Rankings
-      </a>
-      <a class="bottom-nav__item" href="./backlinks.html">
-        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        Links
-      </a>
-      <a class="bottom-nav__item" href="./health.html">
-        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        Health
-      </a>
-      <a class="bottom-nav__item is-active" href="./monthly.html">
-        <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Report
-      </a>
+      <a class="bottom-nav__item" href="./index.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+      <a class="bottom-nav__item" href="./rankings.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+      <a class="bottom-nav__item" href="./backlinks.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Links</a>
+      <a class="bottom-nav__item" href="./health.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health</a>
+      <a class="bottom-nav__item is-active" href="./monthly.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Report</a>
     </div>
   </nav>
-
-  <script src="./js/monthly.js"></script>
 </body>
 </html>

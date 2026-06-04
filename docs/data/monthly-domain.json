@@ -1,0 +1,114 @@
+{
+  "issue": "02",
+  "period_label": "FEBRUARY — JULY 2026",
+  "headline": "The foundation flipped from absent to complete.",
+  "standfirst": "Three months in, visibility moved 3.5 → 4.6 while authority held steady at 25. The headline story is in the technical layer: every measurable layer below the surface — hreflang, schema, redirects, disavow — flipped from absent to complete during May and June.",
+  "byline": {
+    "issued": "JUNE 4, 2026",
+    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
+    "data_source": "SEMRUSH UAE DATABASE"
+  },
+  "months": ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  "feature_chart": {
+    "title": "Visibility score over six months",
+    "subtitle": "Semrush position-tracking score, UAE database",
+    "meta": {
+      "last_point": "4.55",
+      "period_delta": "+1.75 pts",
+      "lift_pct": "+62.5%"
+    },
+    "series": [
+      {
+        "label": "Visibility (%)",
+        "data": [2.80, 3.20, 3.50, 3.53, 4.55, null],
+        "color": "amber"
+      }
+    ],
+    "annotations": [
+      {"month_index": 4, "label": "hreflang + schema deploy", "kind": "milestone"},
+      {"month_index": 5, "label": "next reading (Jul 1)", "kind": "future"}
+    ],
+    "caption": "The flat stretch from March to early May was deliberate — we were repairing the foundation before adding signal. Once hreflang and enriched Organization schema went live on June 1, Google had a clean structure to read into the index. The jump from 3.53 to 4.55 in a single measurement window is the result.",
+    "caption_aside": {
+      "Engagement start": "2.80%",
+      "Current reading": "4.55%",
+      "Goal by Sep 1": "7.50%"
+    }
+  },
+  "marquee": [
+    {
+      "label": "Visibility score",
+      "value": "4.55",
+      "unit": "%",
+      "sub": "up from 2.80",
+      "delta": "+62.5%",
+      "direction": "pos"
+    },
+    {
+      "label": "Organic keywords (UAE)",
+      "value": "28",
+      "unit": "ranking",
+      "sub": "up from 18",
+      "delta": "+55.6%",
+      "direction": "pos"
+    },
+    {
+      "label": "Authority Score",
+      "value": "25",
+      "unit": "/100",
+      "sub": "no change",
+      "delta": "0",
+      "direction": "flat"
+    },
+    {
+      "label": "Indexed URLs",
+      "value": "599",
+      "unit": "pages",
+      "sub": "EN 300, AR 262, FA 37",
+      "delta": "+599",
+      "direction": "pos"
+    }
+  ],
+  "trends": [
+    {
+      "label": "Visibility",
+      "current": 4.55,
+      "unit": "%",
+      "delta_pct": 28.9,
+      "series": [2.80, 3.20, 3.50, 3.53, 4.55]
+    },
+    {
+      "label": "Organic traffic (UAE)",
+      "current": 436,
+      "unit": "visits",
+      "delta_pct": 55.7,
+      "series": [220, 250, 270, 280, 436]
+    },
+    {
+      "label": "Authority Score",
+      "current": 25,
+      "unit": "/100",
+      "delta_pct": 0,
+      "series": [25, 25, 25, 25, 25]
+    },
+    {
+      "label": "Referring domains",
+      "current": 1077,
+      "unit": "domains",
+      "delta_pct": 0.7,
+      "series": [1069, 1070, 1073, 1075, 1077]
+    }
+  ],
+  "prose": {
+    "title": "What moved, and why.",
+    "paragraphs": [
+      "Two months of work landed on June 1: hreflang annotations across all three language installs, an enriched Organization schema graph carrying three regulatory licenses, and a comprehensive disavow filing covering 586 spam domains. The Semrush visibility line responded within days.",
+      "Authority Score holding flat is expected. Semrush rebuilds Authority Score on a roughly 90-day rolling window — the disavow and 301 recovery work just landed, so the reweighting will appear later in the summer.",
+      "The next inflection should come from the Core Web Vitals work. Mobile is currently at <strong>0% passing</strong>. Once JS/CSS optimization lands in Month 3, expect another step on the visibility chart."
+    ]
+  },
+  "pull_quote": {
+    "text": "Every measurable layer below the surface flipped from absent to complete in a single window.",
+    "source": "Engagement review, June 2026"
+  }
+}

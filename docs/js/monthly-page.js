@@ -1,0 +1,264 @@
+/* Shared rendering helpers for the 3 Monthly Report sub-pages.
+   Loaded BEFORE the per-page initializer.
+   Depends on Chart.js (loaded inline in the HTML). */
+(function (root) {
+  "use strict";
+
+  // ---- Chart palette aligned to the editorial design ----
+  const PAL = {
+    gold:     "#FBBF24",
+    goldSoft: "rgba(251, 191, 36, 0.18)",
+    amber:    "#F59E0B",
+    amberSoft:"rgba(245, 158, 11, 0.18)",
+    blue:     "#60A5FA",
+    blueSoft: "rgba(96, 165, 250, 0.18)",
+    pos:      "#22C55E",
+    neg:      "#EF4444",
+    muted:    "#475569",
+    grid:     "rgba(30, 41, 59, 0.6)",
+    rule:     "rgba(30, 41, 59, 0.9)",
+    text:     "#94A3B8",
+    textStrong: "#F8FAFC",
+  };
+
+  const FONT_MONO = "JetBrains Mono, Menlo, monospace";
+  const FONT_BODY = "Inter, system-ui, sans-serif";
+
+  // ---- Number formatting helpers ----
+  function fmt(n) {
+    if (n === null || n === undefined || n === "") return "—";
+    if (typeof n === "number") {
+      if (Number.isInteger(n)) return n.toLocaleString();
+      return n.toFixed(2);
+    }
+    return String(n);
+  }
+  function fmtSigned(n) {
+    if (n === null || n === undefined) return "—";
+    if (n === 0) return "0";
+    return (n > 0 ? "+" : "") + fmt(n);
+  }
+  function deltaClass(direction) {
+    if (direction === "pos") return "is-pos";
+    if (direction === "neg") return "is-neg";
+    return "is-flat";
+  }
+
+  // ---- Common Chart.js setup ----
+  if (root.Chart) {
+    Chart.defaults.font.family = FONT_MONO;
+    Chart.defaults.font.size = 11;
+    Chart.defaults.color = PAL.text;
+    Chart.defaults.borderColor = PAL.grid;
+    Chart.defaults.plugins.legend.display = false;
+    Chart.defaults.plugins.tooltip.backgroundColor = "#020617";
+    Chart.defaults.plugins.tooltip.borderColor = "#334155";
+    Chart.defaults.plugins.tooltip.borderWidth = 1;
+    Chart.defaults.plugins.tooltip.titleFont = { family: FONT_MONO, size: 10, weight: 600 };
+    Chart.defaults.plugins.tooltip.bodyFont = { family: FONT_MONO, size: 11 };
+    Chart.defaults.plugins.tooltip.padding = 10;
+    Chart.defaults.plugins.tooltip.titleColor = PAL.text;
+    Chart.defaults.plugins.tooltip.bodyColor = PAL.textStrong;
+    Chart.defaults.plugins.tooltip.cornerRadius = 0;
+    Chart.defaults.animation.duration = 800;
+    Chart.defaults.animation.easing = "easeOutQuart";
+  }
+
+  // ---- Feature line chart with annotated last point ----
+  function drawFeatureChart(ctx, months, series, opts) {
+    opts = opts || {};
+    const datasets = series.map((s, i) => {
+      const colorKey = s.color || "amber";
+      const colorMain = PAL[colorKey] || PAL.amber;
+      const colorSoft = PAL[colorKey + "Soft"] || PAL.amberSoft;
+      return {
+        label: s.label,
+        data: s.data,
+        borderColor: colorMain,
+        backgroundColor: colorSoft,
+        borderWidth: 2.5,
+        pointRadius: function (c) {
+          // Larger point at the last non-null value
+          const arr = c.dataset.data;
+          let lastIdx = arr.length - 1;
+          while (lastIdx >= 0 && arr[lastIdx] === null) lastIdx--;
+          return c.dataIndex === lastIdx ? 6 : 3;
+        },
+        pointHoverRadius: 7,
+        pointBackgroundColor: colorMain,
+        pointBorderColor: "#020617",
+        pointBorderWidth: 2,
+        tension: 0.28,
+        spanGaps: false,
+        fill: opts.fill !== false && series.length === 1 ? "origin" : false,
+      };
+    });
+
+    return new Chart(ctx, {
+      type: "line",
+      data: { labels: months, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            display: series.length > 1,
+            position: "bottom",
+            align: "start",
+            labels: {
+              boxWidth: 10,
+              boxHeight: 10,
+              padding: 16,
+              font: { family: FONT_MONO, size: 11 },
+              color: PAL.text,
+              usePointStyle: true,
+              pointStyle: "rect",
+            },
+          },
+          tooltip: {
+            callbacks: {
+              title: function (items) { return items[0].label.toUpperCase(); },
+              label: function (item) {
+                if (item.parsed.y === null) return item.dataset.label + ": pending";
+                return item.dataset.label + ": " + fmt(item.parsed.y) + (opts.unit || "");
+              },
+            },
+          },
+        },
+        scales: {
+          x: {
+            grid: { color: "transparent", drawBorder: false },
+            ticks: {
+              font: { family: FONT_MONO, size: 11, weight: 500 },
+              color: PAL.text,
+              padding: 8,
+            },
+            border: { color: PAL.rule, width: 1 },
+          },
+          y: {
+            position: opts.yPosition || "right",
+            beginAtZero: opts.beginAtZero === true,
+            reverse: opts.reverse === true,
+            grid: { color: PAL.grid, drawTicks: false, drawBorder: false },
+            ticks: {
+              font: { family: FONT_MONO, size: 10 },
+              color: PAL.text,
+              padding: 8,
+              callback: function (v) { return fmt(v) + (opts.yUnit || ""); },
+            },
+            border: { display: false },
+          },
+        },
+      },
+    });
+  }
+
+  // ---- Sparkline (mini chart inside a cell) ----
+  function drawSpark(ctx, data, opts) {
+    opts = opts || {};
+    const filtered = data.filter(d => d !== null);
+    const all0 = filtered.every(v => v === filtered[0]);
+    const color = opts.color || (filtered.length === 0 ? PAL.muted : (filtered[filtered.length - 1] >= filtered[0] ? PAL.pos : PAL.neg));
+    return new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: data.map((_, i) => i),
+        datasets: [{
+          data: data,
+          borderColor: color,
+          backgroundColor: color + "22",
+          borderWidth: 1.6,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          tension: 0.28,
+          fill: "origin",
+          spanGaps: false,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 600 },
+        plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: {
+          x: { display: false, grid: { display: false } },
+          y: {
+            display: false,
+            grid: { display: false },
+            reverse: opts.reverse === true,
+            min: opts.min,
+            max: opts.max,
+          },
+        },
+      },
+    });
+  }
+
+  // ---- Marquee row renderer ----
+  function renderMarquee(el, cells) {
+    el.innerHTML = "";
+    cells.forEach((c) => {
+      const cell = document.createElement("div");
+      cell.className = "marquee-cell";
+      const deltaCls = deltaClass(c.direction);
+      cell.innerHTML =
+        '<div class="marquee-cell__label">' + c.label + '</div>' +
+        '<div class="marquee-cell__value">' + c.value + (c.unit ? '<span style="font-size:18px;color:var(--text-muted);margin-left:6px;font-weight:500;">' + c.unit + '</span>' : '') + '</div>' +
+        '<div class="marquee-cell__sub">' + (c.sub || '') + '</div>' +
+        '<span class="marquee-cell__delta ' + deltaCls + '">' + c.delta + '</span>';
+      el.appendChild(cell);
+    });
+  }
+
+  // ---- Trend strip renderer (4 sparklines) ----
+  function renderTrendStrip(el, items, months) {
+    el.innerHTML = "";
+    items.forEach((it, i) => {
+      const cell = document.createElement("div");
+      cell.className = "trend-cell";
+      const deltaCls = it.delta_pct > 0 ? "is-pos" : (it.delta_pct < 0 ? "is-neg" : "is-flat");
+      const deltaTxt = it.delta_pct === null || it.delta_pct === undefined ? "—" :
+                      (it.delta_pct > 0 ? "+" : "") + it.delta_pct + "%";
+      cell.innerHTML =
+        '<div class="trend-cell__label">' + it.label + '</div>' +
+        '<div class="trend-cell__head">' +
+          '<span class="trend-cell__current">' + fmt(it.current) + '<span style="font-size:14px;color:var(--text-muted);margin-left:4px;font-weight:500;font-variant-numeric:tabular-nums;">' + (it.unit || '') + '</span></span>' +
+          '<span class="trend-cell__delta ' + deltaCls + '">' + deltaTxt + '</span>' +
+        '</div>' +
+        '<canvas class="trend-cell__spark" id="trend-spark-' + i + '"></canvas>';
+      el.appendChild(cell);
+      // Render the spark after the canvas is in the DOM
+      setTimeout(() => {
+        const c = document.getElementById("trend-spark-" + i);
+        if (c && it.series) drawSpark(c.getContext("2d"), it.series);
+      }, 50 + i * 40);
+    });
+  }
+
+  // ---- Issue bar + editorial head common rendering ----
+  function renderHead(data, sel) {
+    const iss = document.querySelector(sel.issueNum); if (iss) iss.textContent = "Issue №" + (data.issue || "01");
+    const per = document.querySelector(sel.periodLabel); if (per) per.textContent = data.period_label || "—";
+    const ttl = document.querySelector(sel.title); if (ttl) ttl.innerHTML = data.headline || "";
+    const std = document.querySelector(sel.standfirst); if (std) std.textContent = data.standfirst || "";
+    if (data.byline) {
+      const i = document.querySelector(sel.issuedAt); if (i) i.innerHTML = "<strong>" + (data.byline.issued || "") + "</strong>";
+      const a = document.querySelector(sel.author); if (a) a.textContent = data.byline.author || "";
+      const ds = document.querySelector(sel.dataSource); if (ds) ds.textContent = data.byline.data_source || "";
+    }
+  }
+
+  // ---- Public API ----
+  root.MonthlyReport = {
+    PAL: PAL,
+    fmt: fmt,
+    fmtSigned: fmtSigned,
+    deltaClass: deltaClass,
+    drawFeatureChart: drawFeatureChart,
+    drawSpark: drawSpark,
+    renderMarquee: renderMarquee,
+    renderTrendStrip: renderTrendStrip,
+    renderHead: renderHead,
+  };
+})(window);
