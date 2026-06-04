@@ -19,7 +19,47 @@
 }
 
 /* =========================================================
-   Sub-section navigation (3 children of Monthly Report)
+   Sidebar nested links (Monthly Report children)
+   ========================================================= */
+.nav__sublist {
+  display: flex;
+  flex-direction: column;
+  margin: var(--space-1) 0 var(--space-3) 0;
+  padding-left: 28px;
+  border-left: 1px solid var(--border-subtle);
+  margin-left: 28px;
+}
+.nav__sub-link {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 6px 0 6px var(--space-3);
+  letter-spacing: -0.005em;
+  position: relative;
+  transition: color var(--duration-fast);
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+}
+.nav__sub-link:hover { color: var(--text-primary); }
+.nav__sub-link.is-active {
+  color: var(--brand-gold);
+  font-weight: 500;
+  border-left-color: var(--brand-gold);
+}
+.nav__sub-link__num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-right: var(--space-2);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.nav__sub-link.is-active .nav__sub-link__num { color: var(--brand-gold); opacity: 0.7; }
+
+/* =========================================================
+   Sub-section tabs (in-page tabs for Monthly Report children)
    Sits below the main header like a newspaper section bar
    ========================================================= */
 .report-tabs {
@@ -242,15 +282,16 @@
 .feature-chart__meta strong { color: var(--text-secondary); font-weight: 600; }
 .feature-chart__canvas {
   position: relative;
-  height: 380px;
+  height: 300px;
   background:
     linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, transparent 100%),
     var(--paper-tint);
-  padding: var(--space-5) var(--space-3) var(--space-4);
+  padding: var(--space-4) var(--space-3) var(--space-3);
 }
 .feature-chart__canvas canvas {
   display: block;
   max-width: 100%;
+  max-height: 100% !important;
 }
 .feature-chart__caption {
   display: grid;
@@ -744,6 +785,7 @@
   .feature-chart__caption-aside { text-align: left; }
 }
 @media (max-width: 700px) {
+  .feature-chart__canvas { height: 240px; }
   .marquee-row { grid-template-columns: 1fr; }
   .marquee-cell { border-right: none; border-bottom: 1px solid var(--rule-color); }
   .marquee-cell:last-child { border-bottom: none; }
