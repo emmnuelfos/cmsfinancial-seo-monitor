@@ -487,7 +487,7 @@
   }
 
   // ============================================================
-  // init(opts) — wires up the upload widget on the current page
+  // init(opts) — renders a discrete floating upload button + modal
   // ============================================================
   function init(opts) {
     opts = opts || {};
@@ -498,59 +498,81 @@
       fileLabel,      // "Semrush Site Audit Overview export (.htm / .html)"
       onApplied,      // function() — called after override applied or cleared
     } = opts;
-    const container = document.getElementById("uploadWidget");
-    if (!container) return;
+
+    // If init was already called this page (e.g. hot-reload), nuke the old mount
+    document.querySelectorAll(".upload-fab, .upload-modal").forEach(n => n.remove());
+    // Empty out the legacy inline placeholder so it's truly invisible
+    const inlinePlaceholder = document.getElementById("uploadWidget");
+    if (inlinePlaceholder) inlinePlaceholder.innerHTML = "";
 
     const hasOverride = !!getOverride(pageKey);
-    container.innerHTML = `
-      <div class="upload-widget">
-        <button type="button" class="upload-widget__toggle" data-action="toggle">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="17 8 12 3 7 8"/>
-            <line x1="12" y1="3" x2="12" y2="15"/>
-          </svg>
-          <span class="upload-widget__toggle-label">${hasOverride ? "Update with new Semrush export" : "Upload next month's Semrush export"}</span>
-          ${hasOverride ? `<span class="upload-widget__badge">override active</span>` : ""}
-          <span class="upload-widget__chev">▾</span>
-        </button>
-        <div class="upload-widget__body" hidden>
-          <p class="upload-widget__help">${escapeHtml(fileLabel || "Drop in the latest Semrush HTML export (.htm or .html, saved via SingleFile)")}.
-            We'll parse it client-side, merge into this page, and cache it in your browser.
-            <strong>Download the merged JSON</strong> below to commit it permanently to the repo.</p>
-          <div class="upload-widget__drop" data-action="drop">
-            <input type="file" id="uploadFile_${pageKey}" accept=".htm,.html,text/html" hidden>
-            <label for="uploadFile_${pageKey}" class="upload-widget__pick">
-              Choose file
-            </label>
-            <span class="upload-widget__filename" data-role="filename">No file chosen</span>
-          </div>
-          <div class="upload-widget__preview" data-role="preview" hidden>
-            <div class="upload-widget__preview-head">Extracted</div>
-            <dl class="upload-widget__preview-list" data-role="preview-list"></dl>
-            <div class="upload-widget__actions">
-              <button type="button" class="upload-widget__btn upload-widget__btn--primary" data-action="apply">Apply to dashboard</button>
-              <button type="button" class="upload-widget__btn" data-action="download">Download merged JSON</button>
-              <button type="button" class="upload-widget__btn upload-widget__btn--ghost" data-action="cancel">Cancel</button>
-            </div>
-          </div>
-          ${hasOverride ? `
-          <div class="upload-widget__current">
-            <span>This page is currently showing an uploaded override.</span>
-            <button type="button" class="upload-widget__btn upload-widget__btn--ghost" data-action="reset">Reset to default</button>
-          </div>` : ""}
-          <div class="upload-widget__status" data-role="status"></div>
-        </div>
-      </div>`;
 
-    const $ = sel => container.querySelector(sel);
-    const fileInput = $("#uploadFile_" + pageKey);
-    const filenameLabel = container.querySelector('[data-role="filename"]');
-    const previewBox = container.querySelector('[data-role="preview"]');
-    const previewList = container.querySelector('[data-role="preview-list"]');
-    const statusBox = container.querySelector('[data-role="status"]');
-    const body = container.querySelector(".upload-widget__body");
-    const toggle = container.querySelector('[data-action="toggle"]');
+    // ---- Floating action button (bottom-right) ----
+    const fab = document.createElement("button");
+    fab.type = "button";
+    fab.className = "upload-fab" + (hasOverride ? " has-override" : "");
+    fab.setAttribute("aria-label", hasOverride ? "Update Semrush data — override active" : "Upload new Semrush data");
+    fab.setAttribute("title", hasOverride ? "Update Semrush data (override currently active)" : "Upload next month's Semrush export");
+    fab.innerHTML =
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>' +
+      '  <polyline points="17 8 12 3 7 8"/>' +
+      '  <line x1="12" y1="3" x2="12" y2="15"/>' +
+      '</svg>' +
+      (hasOverride ? '<span class="upload-fab__dot" aria-hidden="true"></span>' : '');
+    document.body.appendChild(fab);
+
+    // ---- Modal (hidden until FAB is clicked) ----
+    const modal = document.createElement("div");
+    modal.className = "upload-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "uploadModalTitle");
+    modal.hidden = true;
+    modal.innerHTML =
+      '<div class="upload-modal__backdrop" data-action="close"></div>' +
+      '<div class="upload-modal__panel">' +
+      '  <div class="upload-modal__head">' +
+      '    <div>' +
+      '      <div class="upload-modal__kicker">Upload Semrush export</div>' +
+      '      <h2 class="upload-modal__title" id="uploadModalTitle">' + (hasOverride ? "Replace current upload" : "Add next month's data") + '</h2>' +
+      '    </div>' +
+      '    <button type="button" class="upload-modal__close" data-action="close" aria-label="Close">' +
+      '      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+      '    </button>' +
+      '  </div>' +
+      '  <div class="upload-modal__body">' +
+      '    <p class="upload-widget__help">' + escapeHtml(fileLabel || "Drop in the latest Semrush HTML export (.htm or .html, saved via SingleFile)") + '. ' +
+      '      Parsed client-side and cached in your browser. <strong>Download the merged JSON</strong> to commit permanently.</p>' +
+      '    <div class="upload-widget__drop" data-action="drop">' +
+      '      <input type="file" id="uploadFile_' + pageKey + '" accept=".htm,.html,text/html" hidden>' +
+      '      <label for="uploadFile_' + pageKey + '" class="upload-widget__pick">Choose file</label>' +
+      '      <span class="upload-widget__filename" data-role="filename">No file chosen</span>' +
+      '    </div>' +
+      '    <div class="upload-widget__preview" data-role="preview" hidden>' +
+      '      <div class="upload-widget__preview-head">Extracted</div>' +
+      '      <dl class="upload-widget__preview-list" data-role="preview-list"></dl>' +
+      '      <div class="upload-widget__actions">' +
+      '        <button type="button" class="upload-widget__btn upload-widget__btn--primary" data-action="apply">Apply to dashboard</button>' +
+      '        <button type="button" class="upload-widget__btn" data-action="download">Download merged JSON</button>' +
+      '        <button type="button" class="upload-widget__btn upload-widget__btn--ghost" data-action="cancel">Cancel</button>' +
+      '      </div>' +
+      '    </div>' +
+      (hasOverride ?
+      '    <div class="upload-widget__current">' +
+      '      <span>This page is currently showing an uploaded override.</span>' +
+      '      <button type="button" class="upload-widget__btn upload-widget__btn--ghost" data-action="reset">Reset to default</button>' +
+      '    </div>' : '') +
+      '    <div class="upload-widget__status" data-role="status"></div>' +
+      '  </div>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    const fileInput = modal.querySelector("#uploadFile_" + pageKey);
+    const filenameLabel = modal.querySelector('[data-role="filename"]');
+    const previewBox = modal.querySelector('[data-role="preview"]');
+    const previewList = modal.querySelector('[data-role="preview-list"]');
+    const statusBox = modal.querySelector('[data-role="status"]');
     let stagedOverride = null;
 
     function setStatus(msg, tone) {
@@ -559,17 +581,26 @@
       statusBox.className = "upload-widget__status" + (tone ? " is-" + tone : "");
     }
 
-    toggle.addEventListener("click", () => {
-      const isOpen = !body.hasAttribute("hidden");
-      if (isOpen) body.setAttribute("hidden", "");
-      else body.removeAttribute("hidden");
-      container.querySelector(".upload-widget__chev").textContent = isOpen ? "▾" : "▴";
+    function openModal() {
+      modal.hidden = false;
+      requestAnimationFrame(() => modal.classList.add("is-open"));
+      document.body.classList.add("has-upload-modal-open");
+    }
+    function closeModal() {
+      modal.classList.remove("is-open");
+      document.body.classList.remove("has-upload-modal-open");
+      setTimeout(() => { modal.hidden = true; }, 200);
+    }
+
+    fab.addEventListener("click", openModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
     });
 
     fileInput.addEventListener("change", async (e) => {
       const file = e.target.files && e.target.files[0];
       if (!file) return;
-      filenameLabel.textContent = file.name + ` (${Math.round(file.size/1024)} KB)`;
+      filenameLabel.textContent = file.name + " (" + Math.round(file.size/1024) + " KB)";
       setStatus("Parsing…");
       try {
         const text = await file.text();
@@ -584,11 +615,12 @@
       }
     });
 
-    container.addEventListener("click", async (e) => {
+    modal.addEventListener("click", async (e) => {
       const action = e.target.closest("[data-action]")?.dataset.action;
       if (!action) return;
-      if (action === "apply" && stagedOverride) {
-        // Process the staged override — finalize the site_health_score readings merge
+      if (action === "close") {
+        closeModal();
+      } else if (action === "apply" && stagedOverride) {
         const finalized = await finalizeOverride(pageKey, stagedOverride, sourceUrl);
         setOverride(pageKey, finalized);
         setStatus("Applied. Reloading…", "ok");
@@ -596,11 +628,10 @@
         setTimeout(() => location.reload(), 400);
       } else if (action === "download" && stagedOverride) {
         const finalized = await finalizeOverride(pageKey, stagedOverride, sourceUrl);
-        // Download the FULL merged dataset (override applied to the base), so the user can commit it
         const base = await (await fetch(sourceUrl + "?cb=" + Date.now())).json();
         const merged = deepMerge(base, finalized);
-        delete merged._meta; // don't ship _meta to the published JSON
-        downloadJson(`monthly-${pageKey}.json`, merged);
+        delete merged._meta;
+        downloadJson("monthly-" + pageKey + ".json", merged);
         setStatus("Downloaded. Commit this file to docs/data/ to make it permanent.", "ok");
       } else if (action === "cancel") {
         stagedOverride = null;

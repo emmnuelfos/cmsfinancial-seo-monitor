@@ -858,56 +858,138 @@
 }
 
 /* =========================================================
-   Upload widget — drop in next month's Semrush HTML
+   Upload widget — discrete floating button + modal
    ========================================================= */
-.upload-widget {
-  background: var(--bg-surface);
+.upload-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
   border: 1px solid var(--rule-color);
-  border-left: 2px solid var(--brand-gold);
-  margin-bottom: var(--space-4);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 200ms ease;
+  box-shadow: 0 4px 16px -4px rgba(2, 6, 23, 0.5);
 }
-.upload-widget__toggle {
-  width: 100%;
+.upload-fab:hover {
+  background: var(--bg-surface);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px -4px rgba(2, 6, 23, 0.7);
+}
+.upload-fab:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+}
+.upload-fab.has-override {
+  color: var(--brand-gold);
+}
+.upload-fab__dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pos);
+  box-shadow: 0 0 0 2px var(--bg-elevated);
+}
+
+.upload-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-primary);
+  justify-content: center;
+  padding: var(--space-4);
+}
+.upload-modal[hidden] { display: none; }
+.upload-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.upload-modal.is-open .upload-modal__backdrop { opacity: 1; }
+.upload-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule-color);
+  border-top: 2px solid var(--brand-gold);
+  box-shadow: 0 20px 60px -10px rgba(2, 6, 23, 0.8);
+  transform: translateY(8px);
+  opacity: 0;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.upload-modal.is-open .upload-modal__panel {
+  transform: translateY(0);
+  opacity: 1;
+}
+.upload-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5) var(--space-3);
+  border-bottom: 1px solid var(--rule-color);
+}
+.upload-modal__kicker {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-align: left;
-}
-.upload-widget__toggle:hover { background: rgba(248, 250, 252, 0.02); }
-.upload-widget__toggle-label { flex: 1; }
-.upload-widget__toggle svg { color: var(--brand-gold); flex-shrink: 0; }
-.upload-widget__chev {
-  font-family: var(--font-mono);
-  color: var(--text-faint);
-  font-size: 14px;
-}
-.upload-widget__badge {
-  font-size: 9px;
-  font-weight: 700;
   letter-spacing: 0.14em;
-  background: var(--pos);
-  color: #06121E;
-  padding: 2px 6px;
-  border-radius: 1px;
   text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: 4px;
 }
-.upload-widget__body {
-  padding: var(--space-3) var(--space-4) var(--space-4);
-  border-top: 1px solid var(--rule-color);
+.upload-modal__title {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.upload-modal__close {
+  background: none;
+  border: 1px solid var(--rule-color);
+  color: var(--text-muted);
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 150ms ease;
+  flex-shrink: 0;
+}
+.upload-modal__close:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+.upload-modal__body {
+  padding: var(--space-4) var(--space-5) var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
 }
+body.has-upload-modal-open { overflow: hidden; }
+
 .upload-widget__help {
   font-size: 12.5px;
   color: var(--text-secondary);
