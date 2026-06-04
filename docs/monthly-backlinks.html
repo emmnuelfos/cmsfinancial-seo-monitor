@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Backlinks — CMS Prime Monthly Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="icon" type="image/png" href="./assets/cms-fav.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/monthly.css">
+  <script src="./js/auth.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="./assets/cms-logo-light.svg" alt="CMS Prime" class="brand-logo">
+        <div class="sidebar__brand-sub">Performance Console</div>
+      </div>
+      <nav class="nav">
+        <div class="nav__group-label">Performance</div>
+        <a class="nav__link" href="./index.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+        <a class="nav__link" href="./rankings.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+        <a class="nav__link" href="./backlinks.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Backlinks</a>
+        <a class="nav__link" href="./health.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Technical Health</a>
+        <a class="nav__link is-active" href="./monthly.html"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Monthly Report</a>
+        <div class="nav__sublist">
+          <a class="nav__sub-link" href="./monthly-domain.html"><span class="nav__sub-link__num">01</span>Domain Overview</a>
+          <a class="nav__sub-link" href="./monthly-rankings.html"><span class="nav__sub-link__num">02</span>Organic Rankings</a>
+          <a class="nav__sub-link" href="./monthly-keywords.html"><span class="nav__sub-link__num">03</span>Keyword Overview</a>
+          <a class="nav__sub-link is-active" href="./monthly-backlinks.html"><span class="nav__sub-link__num">04</span>Backlinks</a>
+        </div>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__status"><span class="status-dot"></span><span>Live data · auto-refresh Mondays</span></div>
+        <button class="sidebar__logout" onclick="window.CMSAuth.logout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <div class="report-tabs fade-up" data-stagger="0">
+        <span class="report-tabs__kicker">Monthly Report</span>
+        <a class="report-tabs__link" href="./monthly-domain.html"><span class="report-tabs__num">01</span>Domain Overview</a>
+        <a class="report-tabs__link" href="./monthly-rankings.html"><span class="report-tabs__num">02</span>Organic Rankings</a>
+        <a class="report-tabs__link" href="./monthly-keywords.html"><span class="report-tabs__num">03</span>Keyword Overview</a>
+        <a class="report-tabs__link is-active" href="./monthly-backlinks.html"><span class="report-tabs__num">04</span>Backlinks</a>
+      </div>
+
+      <div class="issue-bar fade-up" data-stagger="1">
+        <div class="issue-bar__left">
+          <span class="issue-bar__num" id="issueNum">—</span>
+          <span id="periodLabel">—</span>
+        </div>
+        <div class="issue-bar__right">Backlinks · Chapter 04</div>
+      </div>
+
+      <div class="editorial-head fade-up" data-stagger="2">
+        <div class="editorial-head__main">
+          <div class="editorial-head__kicker">Chapter 04 — Link profile</div>
+          <h1 class="editorial-head__title" id="pageTitle">—</h1>
+          <p class="editorial-head__standfirst" id="pageStandfirst">—</p>
+        </div>
+        <div class="editorial-head__byline">
+          <div id="bylineIssued"><strong>—</strong></div>
+          <div id="bylineAuthor">—</div>
+          <div id="bylineSource">—</div>
+        </div>
+      </div>
+
+      <div class="marquee-row fade-up" data-stagger="3" id="marqueeRow"></div>
+
+      <!-- Feature chart: backlinks 12mo -->
+      <div class="section-rule fade-up" data-stagger="4">
+        <span class="section-rule__label">§ I — Total backlinks, twelve months</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">FIG. 13 · DISAVOW EFFECT</span>
+      </div>
+
+      <section class="feature-chart fade-up" data-stagger="4">
+        <div class="feature-chart__head">
+          <div>
+            <h2 class="feature-chart__title" id="featTitle">—</h2>
+            <div class="feature-chart__subtitle" id="featSubtitle">—</div>
+          </div>
+          <div class="feature-chart__meta" id="featMeta">—</div>
+        </div>
+        <div class="feature-chart__canvas">
+          <canvas id="featChart"></canvas>
+        </div>
+        <div class="feature-chart__caption">
+          <p id="featCaption">—</p>
+          <dl class="feature-chart__caption-aside" id="featAside"></dl>
+        </div>
+      </section>
+
+      <!-- Second chart: referring domains -->
+      <div class="section-rule fade-up" data-stagger="5">
+        <span class="section-rule__label">§ II — Referring domains held steady</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">FIG. 14 · CONTRAST</span>
+      </div>
+
+      <section class="feature-chart fade-up" data-stagger="5">
+        <div class="feature-chart__head">
+          <div>
+            <h2 class="feature-chart__title" id="secTitle">—</h2>
+            <div class="feature-chart__subtitle" id="secSubtitle">—</div>
+          </div>
+          <div class="feature-chart__meta" id="secMeta">—</div>
+        </div>
+        <div class="feature-chart__canvas">
+          <canvas id="secChart"></canvas>
+        </div>
+        <div class="feature-chart__caption">
+          <p id="secCaption">—</p>
+        </div>
+      </section>
+
+      <!-- Authority distribution + Link attributes -->
+      <div class="section-rule fade-up" data-stagger="6">
+        <span class="section-rule__label">§ III — Quality of what remains</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">FIG. 15–16</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="6">
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="authTitle">Referring domains by Authority Score</div>
+            <div id="authDist"></div>
+            <p class="page-footer-note__text" id="authFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="attrTitle">Link types</div>
+            <div id="linkAttrs"></div>
+          </div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="followTitle">Follow vs nofollow</div>
+            <div class="brand-split">
+              <div class="brand-split__bar" id="followBar"></div>
+              <p class="brand-split__caption" id="followCaption">—</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TLD + Countries -->
+      <div class="section-rule fade-up" data-stagger="7">
+        <span class="section-rule__label">§ IV — Where the links live</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">FIG. 17–18</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="7">
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="tldTitle">By top-level domain</div>
+            <div id="tldList"></div>
+            <p class="page-footer-note__text" id="tldFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="countriesTitle">By country</div>
+            <table class="geo-rows">
+              <tbody id="countriesBody"></tbody>
+            </table>
+            <p class="page-footer-note__text" id="countriesFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top pages + Similar profiles -->
+      <div class="section-rule fade-up" data-stagger="8">
+        <span class="section-rule__label">§ V — Pages doing the link-magnet work</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">EQUITY LEAK</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="8">
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="pagesTitle">Top pages by referring domains</div>
+            <table class="data-rows">
+              <tbody id="topPagesBody"></tbody>
+            </table>
+            <p class="page-footer-note__text" id="pagesFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="simTitle">Similar profiles</div>
+            <table class="data-rows">
+              <tbody id="simBody"></tbody>
+            </table>
+            <p class="page-footer-note__text" id="simFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+          <div class="sub-section">
+            <div class="sub-section__title" id="catTitle">Referring domain categories</div>
+            <div id="catList"></div>
+            <p class="page-footer-note__text" id="catFootnote" style="margin-top: var(--space-3);">—</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prose -->
+      <div class="section-rule fade-up" data-stagger="9">
+        <span class="section-rule__label">§ VI — Analysis</span>
+        <span class="section-rule__line"></span>
+        <span class="section-rule__counter">PROSE</span>
+      </div>
+
+      <div class="editorial-grid fade-up" data-stagger="9">
+        <div class="editorial-prose">
+          <h3 id="proseTitle">—</h3>
+          <div id="proseBody" class="drop-cap"></div>
+        </div>
+        <div>
+          <blockquote class="pull-quote">
+            <span id="pullQuoteText">—</span>
+            <span class="pull-quote__source" id="pullQuoteSource">—</span>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="page-footer-note fade-up" data-stagger="10">
+        <p class="page-footer-note__text">
+          Source: Semrush Backlink Analytics export for cmsprime.com captured June 4, 2026. Twelve-month time-series values extracted from the chart SVG and mapped against the displayed axis labels. Disavow counts confirmed against the Google Search Console disavow tool submission history. The 404 page metric (cmsprime.com/blog/bitcoin-volatility-atr-standard-deviation/ at 111 referring domains) flagged for immediate redirect.
+        </p>
+        <div class="page-footer-note__nav">
+          <a href="./monthly-keywords.html">← Previous: Keywords</a>
+          <a href="./monthly.html">Index ↑</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="./index.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+      <a class="bottom-nav__item" href="./rankings.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>Rankings</a>
+      <a class="bottom-nav__item" href="./backlinks.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Links</a>
+      <a class="bottom-nav__item" href="./health.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health</a>
+      <a class="bottom-nav__item is-active" href="./monthly.html"><svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Report</a>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="./js/monthly-page.js"></script>
+  <script>
+  (async function () {
+    function $(s) { return document.querySelector(s); }
+    try {
+      const r = await fetch("./data/monthly-backlinks.json?cb=" + Date.now());
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const data = await r.json();
+
+      MonthlyReport.renderHead(data, {
+        issueNum: "#issueNum",
+        periodLabel: "#periodLabel",
+        title: "#pageTitle",
+        standfirst: "#pageStandfirst",
+        issuedAt: "#bylineIssued",
+        author: "#bylineAuthor",
+        dataSource: "#bylineSource",
+      });
+
+      MonthlyReport.renderMarquee(document.getElementById("marqueeRow"), data.marquee || []);
+
+      function shortNum(n) {
+        if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "K";
+        return n;
+      }
+
+      // Feature chart: Backlinks 12mo
+      const fc = data.feature_chart || {};
+      $("#featTitle").textContent = fc.title || "—";
+      $("#featSubtitle").textContent = fc.subtitle || "—";
+      if (fc.meta) {
+        let meta = "";
+        for (const k in fc.meta) meta += k + ' <strong>' + fc.meta[k] + '</strong><br>';
+        $("#featMeta").innerHTML = meta;
+      }
+      $("#featCaption").textContent = fc.caption || "—";
+      if (fc.caption_aside) {
+        const dl = $("#featAside");
+        for (const k in fc.caption_aside) dl.innerHTML += '<dt>' + k + '</dt><dd>' + fc.caption_aside[k] + '</dd>';
+      }
+      const ctx = document.getElementById("featChart").getContext("2d");
+      const featChart = MonthlyReport.drawFeatureChart(ctx, data.months_long, fc.series, { unit: "", yUnit: "", beginAtZero: true });
+      // Custom Y tick formatter for backlinks (shows as "7K", "34K")
+      featChart.options.scales.y.ticks.callback = function(v) { return shortNum(v); };
+      featChart.update();
+
+      // Second chart: Referring Domains 12mo
+      const sc = data.second_chart || {};
+      $("#secTitle").textContent = sc.title || "—";
+      $("#secSubtitle").textContent = sc.subtitle || "—";
+      if (sc.meta) {
+        let meta = "";
+        for (const k in sc.meta) meta += k + ' <strong>' + sc.meta[k] + '</strong><br>';
+        $("#secMeta").innerHTML = meta;
+      }
+      $("#secCaption").textContent = sc.caption || "—";
+      const sctx = document.getElementById("secChart").getContext("2d");
+      MonthlyReport.drawFeatureChart(sctx, data.months_long, sc.series, { unit: "", yUnit: "", beginAtZero: false });
+
+      // Authority distribution (vertical bars with counts)
+      if (data.authority_dist) {
+        const ad = data.authority_dist;
+        $("#authTitle").textContent = ad.subtitle || ad.title;
+        const el = $("#authDist");
+        el.innerHTML = "";
+        const maxPct = Math.max(...ad.rows.map(r => r.pct));
+        ad.rows.forEach(r => {
+          const row = document.createElement("div");
+          const tierClass = r.tier === "weak" ? "is-miss" : (r.tier === "low" ? "is-supporting" : "is-core");
+          row.className = "serp-mix__row " + tierClass;
+          row.innerHTML =
+            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;align-items:baseline;">' +
+            '  <span class="serp-mix__label">' + r.band + ' <span style="color:var(--text-faint);font-family:var(--font-mono);font-size:11px;margin-left:4px;">' + (r.note || '') + '</span></span>' +
+            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
+            '</div>' +
+            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
+          el.appendChild(row);
+          requestAnimationFrame(() => {
+            const fill = row.querySelector(".serp-mix__bar-fill");
+            if (fill) fill.style.width = (100 * r.pct / maxPct) + "%";
+          });
+        });
+        $("#authFootnote").textContent = ad.footnote || "";
+      }
+
+      // Link attributes
+      if (data.link_attributes) {
+        const la = data.link_attributes;
+        $("#attrTitle").textContent = la.subtitle || la.title;
+        const el = $("#linkAttrs");
+        el.innerHTML = "";
+        la.rows.forEach(r => {
+          const row = document.createElement("div");
+          row.className = "serp-mix__row is-" + (r.tier || "core");
+          row.innerHTML =
+            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
+            '  <span class="serp-mix__label">' + r.label + '</span>' +
+            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
+            '</div>' +
+            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
+          el.appendChild(row);
+          requestAnimationFrame(() => {
+            const fill = row.querySelector(".serp-mix__bar-fill");
+            if (fill) fill.style.width = r.pct + "%";
+          });
+        });
+      }
+
+      // Follow split
+      if (data.follow_split) {
+        const fs = data.follow_split;
+        $("#followTitle").textContent = fs.subtitle || fs.title;
+        const bar = $("#followBar");
+        bar.innerHTML =
+          '<div class="brand-split__seg is-brand" style="flex:' + fs.branded_pct + ';">' +
+          '  <div class="brand-split__seg-label">' + fs.branded_label + '</div>' +
+          '  <div class="brand-split__seg-value">' + fs.branded_pct + '%</div>' +
+          '</div>' +
+          '<div class="brand-split__seg is-non-brand" style="flex:' + fs.non_branded_pct + ';">' +
+          '  <div class="brand-split__seg-label">' + fs.non_branded_label + '</div>' +
+          '  <div class="brand-split__seg-value">' + fs.non_branded_pct + '%</div>' +
+          '</div>';
+        $("#followCaption").textContent = "3.2K follow links, 3.9K nofollow. Below the 60/40 industry average for finance.";
+      }
+
+      // TLD list
+      if (data.tld_split) {
+        const ts = data.tld_split;
+        $("#tldTitle").textContent = ts.subtitle || ts.title;
+        const el = $("#tldList");
+        el.innerHTML = "";
+        const maxPct = Math.max(...ts.rows.map(r => r.pct));
+        ts.rows.forEach(r => {
+          const row = document.createElement("div");
+          const tier = r.tier === "spam" ? "is-miss" : (r.tier === "core" ? "is-core" : "is-supporting");
+          row.className = "serp-mix__row " + tier;
+          row.innerHTML =
+            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
+            '  <span class="serp-mix__label" style="font-family:var(--font-mono);">' + r.tld + ' <span style="color:var(--text-faint);font-family:var(--font-body);font-size:12px;font-style:italic;margin-left:4px;">' + (r.note || '') + '</span></span>' +
+            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
+            '</div>' +
+            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
+          el.appendChild(row);
+          requestAnimationFrame(() => {
+            const fill = row.querySelector(".serp-mix__bar-fill");
+            if (fill) fill.style.width = (100 * r.pct / maxPct) + "%";
+          });
+        });
+        $("#tldFootnote").textContent = ts.footnote || "";
+      }
+
+      // Countries
+      if (data.countries) {
+        const c = data.countries;
+        $("#countriesTitle").textContent = c.subtitle || c.title;
+        const tbody = $("#countriesBody");
+        tbody.innerHTML = "";
+        const maxVal = Math.max(...c.rows.map(r => r.value));
+        c.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          tr.innerHTML =
+            '<td class="geo-flag">' + r.flag + '</td>' +
+            '<td class="geo-name">' + r.country + '</td>' +
+            '<td class="geo-bar"><div class="geo-bar__track"><div class="geo-bar__fill" style="width:0"></div></div></td>' +
+            '<td class="geo-num">' + r.value + '</td>' +
+            '<td class="geo-sub">' + r.pct + '%</td>';
+          tbody.appendChild(tr);
+          requestAnimationFrame(() => {
+            const fill = tr.querySelector(".geo-bar__fill");
+            if (fill) fill.style.width = (100 * r.value / maxVal) + "%";
+          });
+        });
+        $("#countriesFootnote").textContent = c.footnote || "";
+      }
+
+      // Top pages
+      if (data.top_pages) {
+        const tp = data.top_pages;
+        $("#pagesTitle").textContent = tp.subtitle || tp.title;
+        const tbody = $("#topPagesBody");
+        tbody.innerHTML = "";
+        tp.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          let sub = "";
+          if (r.is_home) sub = '<span class="row-sub" style="color: var(--brand-gold);">homepage · top link target</span>';
+          else if (r.is_404) sub = '<span class="row-sub" style="color: var(--neg);">404 · equity leak — redirect this</span>';
+          else if (r.is_target) sub = '<span class="row-sub" style="color: var(--pos);">unexpected winner</span>';
+          else if (r.note) sub = '<span class="row-sub">' + r.note + '</span>';
+          tr.innerHTML =
+            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:12px;letter-spacing:0;">' + r.url + '</div>' + sub + '</td>' +
+            '<td class="num is-after">' + r.domains + '</td>' +
+            '<td class="num" style="width:60px;">' + r.share_pct + '%</td>';
+          tbody.appendChild(tr);
+        });
+        $("#pagesFootnote").textContent = tp.footnote || "";
+      }
+
+      // Similar profiles
+      if (data.similar_profiles) {
+        const sp = data.similar_profiles;
+        $("#simTitle").textContent = sp.subtitle || sp.title;
+        const tbody = $("#simBody");
+        tbody.innerHTML = "";
+        sp.rows.forEach(r => {
+          const tr = document.createElement("tr");
+          tr.innerHTML =
+            '<td><div class="row-metric" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0;">' + r.domain + '</div></td>' +
+            '<td class="num">' + r.comp_pct + '% similarity</td>';
+          tbody.appendChild(tr);
+        });
+        $("#simFootnote").textContent = sp.footnote || "";
+      }
+
+      // Categories
+      if (data.ref_categories) {
+        const rc = data.ref_categories;
+        $("#catTitle").textContent = rc.title || "Categories";
+        const el = $("#catList");
+        el.innerHTML = "";
+        const maxPct = Math.max(...rc.rows.map(r => r.pct));
+        rc.rows.forEach(r => {
+          const row = document.createElement("div");
+          row.className = "serp-mix__row " + (r.tier === "core" ? "is-core" : "is-supporting");
+          row.innerHTML =
+            '<div style="display:flex;justify-content:space-between;width:100%;grid-column:1/-1;margin-bottom:4px;">' +
+            '  <span class="serp-mix__label">' + r.label + '<span style="color:var(--text-faint);font-family:var(--font-body);font-size:12px;font-style:italic;margin-left:6px;">' + (r.note || '') + '</span></span>' +
+            '  <span class="serp-mix__pct">' + r.count + ' · ' + r.pct + '%</span>' +
+            '</div>' +
+            '<div class="serp-mix__bar" style="grid-column:1/-1;"><div class="serp-mix__bar-fill" style="width:0"></div></div>';
+          el.appendChild(row);
+          requestAnimationFrame(() => {
+            const fill = row.querySelector(".serp-mix__bar-fill");
+            if (fill) fill.style.width = (100 * r.pct / maxPct) + "%";
+          });
+        });
+        $("#catFootnote").textContent = rc.footnote || "";
+      }
+
+      // Prose
+      if (data.prose) {
+        $("#proseTitle").textContent = data.prose.title || "";
+        const body = $("#proseBody");
+        (data.prose.paragraphs || []).forEach(p => {
+          const para = document.createElement("p");
+          para.innerHTML = p;
+          body.appendChild(para);
+        });
+      }
+      if (data.pull_quote) {
+        $("#pullQuoteText").textContent = data.pull_quote.text;
+        $("#pullQuoteSource").textContent = "— " + data.pull_quote.source;
+      }
+    } catch (e) {
+      console.error(e);
+      document.querySelector(".main").insertAdjacentHTML("beforeend",
+        '<div style="margin-top:24px;padding:16px;background:rgba(239,68,68,0.1);border:1px solid #EF4444;border-radius:4px;color:#EF4444;font-family:JetBrains Mono;font-size:12px;">Couldn\'t load report data: ' + e.message + '</div>');
+    }
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+{
+  "issue": "02",
+  "period_label": "JULY 2025 — JUNE 2026 · TWELVE MONTHS",
+  "headline": "The link profile, <em>scrubbed clean</em>.",
+  "standfirst": "Backlink count dropped from a peak of 34,000 in October to 7,000 today — a decline you want, not one you fear. Google has been processing the disavow filings (586 spam domains submitted to date), and the toxic-link drag those domains were creating is being released from the index. Referring domains held at 1.1K through the same period, meaning the legitimate sources stayed. Authority Score held at 25.",
+  "byline": {
+    "issued": "JUNE 4, 2026",
+    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
+    "data_source": "SEMRUSH BACKLINK ANALYTICS"
+  },
+  "months_long": ["Jul 25", "Aug 25", "Sep 25", "Oct 25", "Nov 25", "Dec 25", "Jan 26", "Feb 26", "Mar 26", "Apr 26", "May 26", "Jun 26"],
+  "feature_chart": {
+    "title": "Total backlinks, twelve months",
+    "subtitle": "Count of all links pointing at cmsprime.com — including toxic ones being disavowed",
+    "meta": {
+      "current": "7K",
+      "wow_delta": "-7%",
+      "period_high": "34K (Oct 2025)",
+      "from_peak": "-79%"
+    },
+    "series": [
+      {
+        "label": "Backlinks",
+        "data": [32000, 33000, 34000, 34000, 34000, 24000, 24000, 23000, 23000, 10000, 8000, 7000],
+        "color": "amber"
+      }
+    ],
+    "caption": "The peak in October-November 2025 was inflated by spam farms and link-injection PBNs that had been pointing at the site since before the engagement. The first step-down in December reflects the initial Adnika disavow file (532 domains submitted by previous SEO). The April drop is the new merged disavow we filed (586 domains total). The May-June decline is Google continuing to drop the disavowed links from its count. This is the link graph getting cleaner, not weaker.",
+    "caption_aside": {
+      "Period peak": "34K (Oct 2025)",
+      "Today": "7K",
+      "Disavowed domains": "586 total",
+      "Authority Score": "25 (held)"
+    }
+  },
+  "marquee": [
+    {
+      "label": "Referring domains",
+      "value": "1.1K",
+      "unit": "domains",
+      "sub": "legitimate sources held",
+      "delta": "-3%",
+      "direction": "flat"
+    },
+    {
+      "label": "Backlinks",
+      "value": "7K",
+      "unit": "links",
+      "sub": "down 79% from Oct peak — by design",
+      "delta": "-7%",
+      "direction": "flat"
+    },
+    {
+      "label": "Authority Score",
+      "value": "25",
+      "unit": "/100",
+      "sub": "held through cleanup",
+      "delta": "held",
+      "direction": "flat"
+    },
+    {
+      "label": "Follow ratio",
+      "value": "45",
+      "unit": "%",
+      "sub": "3.2K follow, 3.9K nofollow",
+      "delta": "below avg",
+      "direction": "neg"
+    }
+  ],
+  "second_chart": {
+    "title": "Referring domains, twelve months",
+    "subtitle": "Unique domains linking — the legitimate-source signal",
+    "meta": {
+      "current": "1.1K",
+      "wow_delta": "-3%",
+      "period_high": "1,137 (Oct 25)"
+    },
+    "series": [
+      {
+        "label": "Referring domains",
+        "data": [849, 874, 920, 1137, 1125, 1106, 1120, 1082, 1092, 1098, 1107, 1077],
+        "color": "blue"
+      }
+    ],
+    "caption": "While backlink count dropped 79% from peak, referring domains held within a narrow 1077-1137 range. That's the right pattern: many spam links from few domains were disavowed, but the legitimate domain count stayed stable. Authority Score (which weighs domain quality, not link quantity) held at 25 — confirming the change is healthy."
+  },
+  "link_attributes": {
+    "title": "How the remaining links attribute",
+    "subtitle": "Of the 7,000 links left, type and attribute distribution",
+    "rows": [
+      {"label": "Text links",     "pct": 87,  "count": "6.2K", "tier": "core",       "note": "anchor in body copy"},
+      {"label": "Image links",    "pct": 12,  "count": "850",  "tier": "supporting", "note": "logo and badge embeds"},
+      {"label": "Frame links",    "pct": 0.1, "count": "6",    "tier": "miss",       "note": "negligible"},
+      {"label": "Form links",     "pct": 0,   "count": "0",    "tier": "miss",       "note": "none"}
+    ]
+  },
+  "follow_split": {
+    "title": "Follow vs nofollow",
+    "subtitle": "Equity-passing share of the remaining link profile",
+    "branded_label": "Follow",
+    "branded_pct": 45,
+    "non_branded_label": "Nofollow",
+    "non_branded_pct": 55,
+    "follow_count": "3.2K",
+    "nofollow_count": "3.9K",
+    "sponsored": 15,
+    "ugc": 32
+  },
+  "authority_dist": {
+    "title": "Referring domains by Authority Score",
+    "subtitle": "Quality distribution of the 1,083 linking domains",
+    "rows": [
+      {"band": "91 — 100", "count": 4,   "pct": 0.4, "tier": "premium",   "note": "wikipedia, govt domains"},
+      {"band": "81 — 90",  "count": 3,   "pct": 0.3, "tier": "premium"},
+      {"band": "71 — 80",  "count": 2,   "pct": 0.2, "tier": "premium"},
+      {"band": "61 — 70",  "count": 2,   "pct": 0.2, "tier": "high"},
+      {"band": "51 — 60",  "count": 14,  "pct": 1.3, "tier": "high"},
+      {"band": "41 — 50",  "count": 30,  "pct": 2.8, "tier": "mid"},
+      {"band": "31 — 40",  "count": 26,  "pct": 2.4, "tier": "mid"},
+      {"band": "21 — 30",  "count": 56,  "pct": 5.2, "tier": "low"},
+      {"band": "11 — 20",  "count": 51,  "pct": 4.7, "tier": "low"},
+      {"band": "0 — 10",   "count": 899, "pct": 83,  "tier": "weak", "note": "the long tail — quality build target"}
+    ],
+    "footnote": "83% of referring domains sit in the lowest authority band. That's typical for a site that hasn't done formal outreach yet. The link-building work in Month 3 should start moving the 11-30 band specifically."
+  },
+  "tld_split": {
+    "title": "Where the links come from (TLD)",
+    "subtitle": "Top-level domain distribution of referring domains",
+    "rows": [
+      {"tld": ".com",     "pct": 51, "count": 555, "tier": "core"},
+      {"tld": ".space",   "pct": 7,  "count": 80,  "tier": "spam",      "note": "low-cost PBN signal"},
+      {"tld": ".site",    "pct": 7,  "count": 78,  "tier": "spam",      "note": "low-cost PBN signal"},
+      {"tld": ".gov",     "pct": 0,  "count": 0,   "tier": "miss"},
+      {"tld": ".edu",     "pct": 0,  "count": 0,   "tier": "miss"},
+      {"tld": "other",    "pct": 34, "count": 374, "tier": "supporting"}
+    ],
+    "footnote": "14% of referring domains are on .space / .site TLDs — those are usually the cheap-PBN signatures. They'll keep filtering through the disavow over the next 90 days."
+  },
+  "countries": {
+    "title": "Top countries by referring domains",
+    "subtitle": "Where the links physically live",
+    "rows": [
+      {"flag": "US", "country": "United States",   "value": 365, "pct": 39},
+      {"flag": "SG", "country": "Singapore",       "value": 80,  "pct": 9},
+      {"flag": "FR", "country": "France",          "value": 21,  "pct": 2},
+      {"flag": "IR", "country": "Iran",            "value": 17,  "pct": 2},
+      {"flag": "DE", "country": "Germany",         "value": 17,  "pct": 2},
+      {"flag": "UK", "country": "United Kingdom",  "value": 11,  "pct": 1}
+    ],
+    "footnote": "Singapore at 9% is unusual for a UAE-based broker. Those are likely free-host blog network signatures. Iran links are flagged for review under the country compliance policy."
+  },
+  "ref_categories": {
+    "title": "Referring domain categories",
+    "rows": [
+      {"label": "Online Services",          "pct": 8, "count": 87},
+      {"label": "Finance",                  "pct": 6, "count": 62, "tier": "core", "note": "industry-relevant"},
+      {"label": "Mass Media",               "pct": 3, "count": 37},
+      {"label": "Information Technology",   "pct": 3, "count": 35},
+      {"label": "Advertising & Marketing",  "pct": 1, "count": 8}
+    ],
+    "footnote": "Only 6% of links come from finance-vertical domains. That's the gap — outreach to actual forex/finance publications is the Month 3 link-building target."
+  },
+  "top_pages": {
+    "title": "Pages attracting the most domains",
+    "subtitle": "Which URLs are doing the link-magnet work",
+    "rows": [
+      {"url": "cmsprime.com/", "domains": 399, "share_pct": 36.9, "is_home": true},
+      {"url": "cmsprime.com/usdt-erc20/", "domains": 200, "share_pct": 18.5, "is_target": true, "note": "the unexpected winner"},
+      {"url": "cmsprime.com/ (http)", "domains": 199, "share_pct": 18.4, "note": "legacy http variant"},
+      {"url": "cmsprime.com/ (http www)", "domains": 183, "share_pct": 16.9, "note": "legacy www variant"},
+      {"url": "cmsprime.com/blog/bitcoin-volatility-atr-standard-deviation/", "domains": 111, "share_pct": 10.3, "is_404": true, "note": "broken page — 111 domains losing equity"}
+    ],
+    "footnote": "The 404 on the bitcoin-volatility post is the single biggest equity-leak. 111 domains link to a dead URL. Adding a redirect from that slug to an active page is a 1-line fix that recovers measurable equity."
+  },
+  "similar_profiles": {
+    "title": "Similar link profiles (competitors)",
+    "rows": [
+      {"domain": "gvdmarkets.com",         "comp_pct": 34},
+      {"domain": "goldengatepr.com",       "comp_pct": 33},
+      {"domain": "eobroker.com",           "comp_pct": 33},
+      {"domain": "californiawalnuts.ae",   "comp_pct": 33},
+      {"domain": "cignahealthcare.com.sa", "comp_pct": 32}
+    ],
+    "footnote": "These are domains with link-profile shapes most similar to cmsprime.com — useful for finding shared backlink opportunities in the same outreach round."
+  },
+  "prose": {
+    "title": "A drop you want.",
+    "paragraphs": [
+      "Backlink count went from a peak of 34,000 in October to 7,000 today. That's a -79% drop and on its face it sounds catastrophic. It isn't. The links lost are precisely the ones we asked Google to ignore — <strong>586 spam domains submitted to the disavow tool</strong> across two batches (the initial 532 from prior SEO work, and the new 54 identified during Task #23). Google has been processing those over the past nine months, and Semrush is reflecting the result.",
+      "The number to actually watch is referring domains. That metric held inside a narrow 1077-1137 band the entire period. Each disavowed domain might have been pointing 30-50 spam links at the site; removing all of them takes the link count down by thousands but the domain count by single digits.",
+      "<strong>The Authority Score holding at 25</strong> is the proof. If the disavow had wiped out genuinely good links by mistake, Authority Score would have dropped. It didn't move. Combined with the holding referring-domain count, this is the picture of a successful cleanup."
+    ]
+  },
+  "pull_quote": {
+    "text": "Links lost are precisely the ones we asked Google to ignore.",
+    "source": "Reading the 12-month backlink graph"
+  }
+}
