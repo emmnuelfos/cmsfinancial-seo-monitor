@@ -257,7 +257,7 @@
         scales: {
           x: {
             grid: { display: false },
-            ticks: { font: { family: FONT_MONO, size: 10.5 }, color: PAL.text },
+            ticks: { font: { family: FONT_MONO, size: 10.5 }, color: PAL.textStrong },
             border: { color: PAL.rule },
           },
           y: {
@@ -316,7 +316,7 @@
           x: {
             beginAtZero: true,
             grid: { color: PAL.grid },
-            ticks: { font: { family: FONT_MONO, size: 10 }, color: PAL.text },
+            ticks: { font: { family: FONT_MONO, size: 10 }, color: PAL.textStrong },
             border: { display: false },
           },
           y: {
@@ -370,6 +370,7 @@
                   text: label + " · " + data.datasets[0].data[i] + (opts.unit || ""),
                   fillStyle: data.datasets[0].backgroundColor[i],
                   strokeStyle: data.datasets[0].backgroundColor[i],
+                  fontColor: PAL.textStrong,
                   lineWidth: 0,
                   index: i,
                 }));
