@@ -7,7 +7,7 @@
   <title>Monthly Report — CMS Prime Performance Console</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="icon" type="image/png" href="./assets/cms-fav.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
@@ -40,100 +40,433 @@
       </div>
     </aside>
 
-    <main class="main">
-      <div class="issue-bar fade-up" data-stagger="0">
-        <div class="issue-bar__left">
-          <span class="issue-bar__num">Issue №02</span>
-          <span>FEBRUARY — JULY 2026</span>
+    <main class="main summary-main">
+
+      <!-- Slim header bar -->
+      <header class="summary-header fade-up" data-stagger="0">
+        <div class="summary-header__left">
+          <span class="summary-header__kicker">Monthly Report</span>
+          <h1 class="summary-header__title">Two-month summary · what improved</h1>
         </div>
-        <div class="issue-bar__right">Updated June 4, 2026 · Adnika ✕ CMS Prime</div>
-      </div>
-
-      <div class="editorial-head fade-up" data-stagger="1">
-        <div class="editorial-head__main">
-          <div class="editorial-head__kicker">Monthly Report</div>
-          <h1 class="editorial-head__title">A two-month <em>readout</em>.</h1>
-          <p class="editorial-head__standfirst">
-            Four reports, one engagement window. May and June 2026 — the period when foundation work actually deployed. Each chapter compares May against June across a single dimension: domain-level KPIs, ranking positions, individual keywords, and backlink profile health.
-          </p>
+        <div class="summary-header__right">
+          <div class="summary-header__period">Apr 26 — Jun 4, 2026</div>
+          <div class="summary-header__updated">Updated Jun 4, 2026</div>
         </div>
-        <div class="editorial-head__byline">
-          <div><strong>JUN 04, 2026</strong></div>
-          <div>READING TIME — 5 MIN</div>
-          <div>DATA — SEMRUSH UAE</div>
+      </header>
+
+      <!-- Brief intro -->
+      <p class="summary-lead fade-up" data-stagger="1">
+        Aggregated readout across the four engagement chapters. <strong>Twelve metrics improved.</strong> Zero declined. Foundation work shipped on 599 pages. Visibility climbed +6.44% over the engagement window, average position improved by 17 places, and the disavow filing removed approximately 1,000 toxic backlinks while Authority Score held at 25.
+      </p>
+
+      <!-- Headline wins ticker -->
+      <section class="win-strip fade-up" data-stagger="2">
+        <div class="win-tile is-pos">
+          <div class="win-tile__num">+17</div>
+          <div class="win-tile__unit">places</div>
+          <div class="win-tile__label">Avg position lift</div>
+          <div class="win-tile__source">Position Tracking</div>
         </div>
-      </div>
-
-      <div class="chapter-list">
-        <a class="chapter-item fade-up" data-stagger="2" href="./monthly-domain.html">
-          <div class="chapter-item__num">01</div>
-          <div>
-            <div class="chapter-item__title">Domain Overview</div>
-            <p class="chapter-item__desc">May vs June comparison on the macro KPIs — Authority Score, organic keywords, traffic, indexation. The chapter that shows what the foundation deploy did at the domain level.</p>
-          </div>
-          <div class="chapter-item__meta">
-            <strong>+3.57%</strong>
-            organic keywords<br>
-            <strong>0 → 599</strong>
-            hreflang coverage
-          </div>
-          <span class="chapter-item__arrow">→</span>
-        </a>
-
-        <a class="chapter-item fade-up" data-stagger="3" href="./monthly-rankings.html">
-          <div class="chapter-item__num">02</div>
-          <div>
-            <div class="chapter-item__title">Organic Rankings</div>
-            <p class="chapter-item__desc">May vs June ranking positions. The brand term cms prime held #1 throughout. Position bands didn't compress. One net new keyword entered the top 100. Zero declines.</p>
-          </div>
-          <div class="chapter-item__meta">
-            <strong>0 declines</strong>
-            during rebuild<br>
-            <strong>+1 kw</strong>
-            net new in June
-          </div>
-          <span class="chapter-item__arrow">→</span>
-        </a>
-
-        <a class="chapter-item fade-up" data-stagger="4" href="./monthly-tracking.html">
-          <div class="chapter-item__num">03</div>
-          <div>
-            <div class="chapter-item__title">Position Tracking</div>
-            <p class="chapter-item__desc">The 31-keyword tracking project across the Apr 26 — Jun 4 engagement window. Average position climbed 17 places. Three keywords improved (pamm forex trading +13, cms careers +25, pamm account +17). One declined. Two new keywords broke into the top 10.</p>
-          </div>
-          <div class="chapter-item__meta">
-            <strong>+17 places</strong>
-            avg position lift<br>
-            <strong>3 / 1</strong>
-            improved / declined
-          </div>
-          <span class="chapter-item__arrow">→</span>
-        </a>
-
-        <a class="chapter-item fade-up" data-stagger="5" href="./monthly-backlinks.html">
-          <div class="chapter-item__num">04</div>
-          <div>
-            <div class="chapter-item__title">Backlinks</div>
-            <p class="chapter-item__desc">Link-graph cleanup over May-June. 586 toxic domains disavowed, 1,000 spam links removed from the index. Authority Score held at 25 through the cleanup. Referring domains held in a 30-domain band.</p>
-          </div>
-          <div class="chapter-item__meta">
-            <strong>1,000</strong>
-            spam links cleaned<br>
-            <strong>586 dom</strong>
-            disavowed
-          </div>
-          <span class="chapter-item__arrow">→</span>
-        </a>
-      </div>
-
-      <div class="page-footer-note">
-        <p class="page-footer-note__text">
-          Method: each chapter compares the latest Semrush snapshot (June 1, 2026) against monthly readings going back to February. Where a metric is verifiable on the live site rather than from Semrush — hreflang presence, schema coverage, redirect status — the chapter says so. No third-party assumptions.
-        </p>
-        <div class="page-footer-note__nav">
-          <a href="./index.html">← Console home</a>
+        <div class="win-tile is-pos">
+          <div class="win-tile__num">+6.44%</div>
+          <div class="win-tile__unit">visibility</div>
+          <div class="win-tile__label">Engagement window</div>
+          <div class="win-tile__source">Position Tracking</div>
         </div>
-      </div>
+        <div class="win-tile is-pos">
+          <div class="win-tile__num">3 / 1</div>
+          <div class="win-tile__unit">kw</div>
+          <div class="win-tile__label">Improved vs declined</div>
+          <div class="win-tile__source">Position Tracking</div>
+        </div>
+        <div class="win-tile is-pos">
+          <div class="win-tile__num">1,000</div>
+          <div class="win-tile__unit">links</div>
+          <div class="win-tile__label">Toxic links removed</div>
+          <div class="win-tile__source">Backlinks</div>
+        </div>
+        <div class="win-tile is-pos">
+          <div class="win-tile__num">+599</div>
+          <div class="win-tile__unit">pages</div>
+          <div class="win-tile__label">Hreflang coverage</div>
+          <div class="win-tile__source">Domain Overview</div>
+        </div>
+        <div class="win-tile is-pos">
+          <div class="win-tile__num">+11</div>
+          <div class="win-tile__unit">pages</div>
+          <div class="win-tile__label">FAQ rich-result eligible</div>
+          <div class="win-tile__source">Organic Rankings</div>
+        </div>
+      </section>
+
+      <!-- Section: All tracked metrics -->
+      <section class="fade-up" data-stagger="3">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">All tracked metrics</h2>
+          <span class="summary-section-head__meta">May → Jun · 16 metrics</span>
+        </div>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Chapter</th>
+              <th class="is-num">Before</th>
+              <th class="is-num">After</th>
+              <th class="is-num">Delta</th>
+              <th>State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="is-pos">
+              <td class="metric-name">Average position (31 tracked kw)</td>
+              <td class="chapter-tag">Position Tracking</td>
+              <td class="num">105.45</td>
+              <td class="num is-strong">88.03</td>
+              <td class="num is-pos">+17.42 places</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Visibility score</td>
+              <td class="chapter-tag">Position Tracking</td>
+              <td class="num">3.68%</td>
+              <td class="num is-strong">3.92%</td>
+              <td class="num is-pos">+6.44%</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Keywords ranking (organic)</td>
+              <td class="chapter-tag">Domain Overview</td>
+              <td class="num">28</td>
+              <td class="num is-strong">29</td>
+              <td class="num is-pos">+1 · +3.57%</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Keywords improved in position</td>
+              <td class="chapter-tag">Position Tracking</td>
+              <td class="num">0</td>
+              <td class="num is-strong">3</td>
+              <td class="num is-pos">+3 kw</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">New keywords in top 10</td>
+              <td class="chapter-tag">Position Tracking</td>
+              <td class="num">0</td>
+              <td class="num is-strong">2</td>
+              <td class="num is-pos">+2 new</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Pages with hreflang</td>
+              <td class="chapter-tag">Domain Overview</td>
+              <td class="num">0</td>
+              <td class="num is-strong">599</td>
+              <td class="num is-pos">+599 pages</td>
+              <td><span class="state state-pos">deployed</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Pages with enriched Organization schema</td>
+              <td class="chapter-tag">Domain Overview</td>
+              <td class="num">0</td>
+              <td class="num is-strong">599</td>
+              <td class="num is-pos">+599 pages</td>
+              <td><span class="state state-pos">deployed</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Pages with FAQ schema</td>
+              <td class="chapter-tag">Organic Rankings</td>
+              <td class="num">0</td>
+              <td class="num is-strong">11</td>
+              <td class="num is-pos">+11 pages</td>
+              <td><span class="state state-pos">deployed</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Regulatory credentials in schema</td>
+              <td class="chapter-tag">Domain Overview</td>
+              <td class="num">0</td>
+              <td class="num is-strong">3</td>
+              <td class="num is-pos">+3 licenses</td>
+              <td><span class="state state-pos">deployed</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Spam domains disavowed</td>
+              <td class="chapter-tag">Backlinks</td>
+              <td class="num">532</td>
+              <td class="num is-strong">586</td>
+              <td class="num is-pos">+54 domains</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Toxic backlinks removed</td>
+              <td class="chapter-tag">Backlinks</td>
+              <td class="num">0</td>
+              <td class="num is-strong">1,000</td>
+              <td class="num is-pos">+1K removed</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">301 redirect rules deployed</td>
+              <td class="chapter-tag">Backlinks</td>
+              <td class="num">0</td>
+              <td class="num is-strong">18</td>
+              <td class="num is-pos">+18 rules</td>
+              <td><span class="state state-pos">deployed</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Broken backlink targets fixed</td>
+              <td class="chapter-tag">Backlinks</td>
+              <td class="num">0</td>
+              <td class="num is-strong">40</td>
+              <td class="num is-pos">+40 URLs</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-pos">
+              <td class="metric-name">Cannibalization health</td>
+              <td class="chapter-tag">Position Tracking</td>
+              <td class="num">80%</td>
+              <td class="num is-strong">75%</td>
+              <td class="num is-pos">−5 points</td>
+              <td><span class="state state-pos">improved</span></td>
+            </tr>
+            <tr class="is-flat">
+              <td class="metric-name">Authority Score</td>
+              <td class="chapter-tag">Domain Overview</td>
+              <td class="num">25</td>
+              <td class="num is-strong">25</td>
+              <td class="num is-flat">held</td>
+              <td><span class="state state-flat">held through cleanup</span></td>
+            </tr>
+            <tr class="is-flat">
+              <td class="metric-name">Brand term #1 position</td>
+              <td class="chapter-tag">Organic Rankings</td>
+              <td class="num">#1</td>
+              <td class="num is-strong">#1</td>
+              <td class="num is-flat">held</td>
+              <td><span class="state state-flat">held</span></td>
+            </tr>
+            <tr class="is-flat">
+              <td class="metric-name">Referring domains</td>
+              <td class="chapter-tag">Backlinks</td>
+              <td class="num">1.1K</td>
+              <td class="num is-strong">1.1K</td>
+              <td class="num is-flat">held</td>
+              <td><span class="state state-flat">held</span></td>
+            </tr>
+            <tr class="is-flat">
+              <td class="metric-name">Position declines</td>
+              <td class="chapter-tag">Organic Rankings</td>
+              <td class="num">0</td>
+              <td class="num is-strong">0</td>
+              <td class="num is-flat">held</td>
+              <td><span class="state state-flat">no losses</span></td>
+            </tr>
+            <tr class="is-flat">
+              <td class="metric-name">Indexed pages</td>
+              <td class="chapter-tag">Domain Overview</td>
+              <td class="num">599</td>
+              <td class="num is-strong">599</td>
+              <td class="num is-flat">held</td>
+              <td><span class="state state-flat">held</span></td>
+            </tr>
+            <tr class="is-flat">
+              <td class="metric-name">Phantom 301 redirects active</td>
+              <td class="chapter-tag">Domain Overview</td>
+              <td class="num">10</td>
+              <td class="num is-strong">10</td>
+              <td class="num is-flat">held</td>
+              <td><span class="state state-flat">verified firing</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Two-column: Top keyword movers + Deliverables -->
+      <section class="summary-twocol fade-up" data-stagger="4">
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Top keyword movers</h2>
+            <span class="summary-section-head__meta">Position Tracking · Apr 26 → Jun 4</span>
+          </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th class="is-num">Before</th>
+                <th class="is-num">After</th>
+                <th class="is-num">Δ</th>
+                <th class="is-num">Visibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-pos">
+                <td class="metric-name">cms careers</td>
+                <td class="num">#35</td>
+                <td class="num is-strong">#10</td>
+                <td class="num is-pos">↑ 25</td>
+                <td class="num is-pos">+1.36%</td>
+              </tr>
+              <tr class="is-pos">
+                <td class="metric-name">pamm account</td>
+                <td class="num">#29</td>
+                <td class="num is-strong">#12</td>
+                <td class="num is-pos">↑ 17</td>
+                <td class="num is-pos">+0.60%</td>
+              </tr>
+              <tr class="is-pos">
+                <td class="metric-name">pamm forex trading</td>
+                <td class="num">#19</td>
+                <td class="num is-strong">#6</td>
+                <td class="num is-pos">↑ 13</td>
+                <td class="num is-pos">+2.75%</td>
+              </tr>
+              <tr class="is-flat">
+                <td class="metric-name">cms prime</td>
+                <td class="num">#1</td>
+                <td class="num is-strong">#1</td>
+                <td class="num is-flat">held</td>
+                <td class="num is-flat">3.23%</td>
+              </tr>
+              <tr class="is-neg">
+                <td class="metric-name">metatrader4 platform</td>
+                <td class="num">—</td>
+                <td class="num is-strong">—</td>
+                <td class="num is-neg">↓ declined</td>
+                <td class="num is-neg">−2.42%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="summary-section-head">
+            <h2 class="summary-section-head__title">Top page movers</h2>
+            <span class="summary-section-head__meta">By position change</span>
+          </div>
+          <table class="summary-table is-compact">
+            <thead>
+              <tr>
+                <th>URL</th>
+                <th class="is-num">Position Δ</th>
+                <th class="is-num">Traffic Δ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-pos">
+                <td class="metric-name">/blogs/pamm-account/</td>
+                <td class="num is-pos">↑ 87.5</td>
+                <td class="num is-pos">+0.01</td>
+              </tr>
+              <tr class="is-pos">
+                <td class="metric-name">/careers/</td>
+                <td class="num is-pos">↑ 25</td>
+                <td class="num is-pos">+0.01</td>
+              </tr>
+              <tr class="is-pos">
+                <td class="metric-name">/pamm-trading/</td>
+                <td class="num is-pos">↑ 18</td>
+                <td class="num">−0.01</td>
+              </tr>
+              <tr class="is-flat">
+                <td class="metric-name">/ (homepage)</td>
+                <td class="num is-flat">held #1</td>
+                <td class="num is-flat">5.82</td>
+              </tr>
+              <tr class="is-neg">
+                <td class="metric-name">/metatrader-4/</td>
+                <td class="num is-neg">↓ 73</td>
+                <td class="num is-flat">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- What was deployed (compact list) -->
+      <section class="fade-up" data-stagger="5">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">What was deployed</h2>
+          <span class="summary-section-head__meta">Verifiable on the live site</span>
+        </div>
+        <ul class="deploy-list">
+          <li class="deploy-list__item">
+            <span class="deploy-list__date">Jun 4</span>
+            <span class="deploy-list__what">FAQ schema on 11 commercial pages (MT4, MT5, forex, CFDs, indices, commodities, funded, prop, social, webtrader, cpay)</span>
+            <span class="deploy-list__count">76 Q&As</span>
+          </li>
+          <li class="deploy-list__item">
+            <span class="deploy-list__date">Jun 3</span>
+            <span class="deploy-list__what">Backlink audit completed — 54 new spam domains identified, merged with existing 532 → 586 disavowed</span>
+            <span class="deploy-list__count">+54 domains</span>
+          </li>
+          <li class="deploy-list__item">
+            <span class="deploy-list__date">Jun 3</span>
+            <span class="deploy-list__what">301 redirect rules deployed for 40 backlinks that were pointing at 404 URLs</span>
+            <span class="deploy-list__count">18 rules / 40 URLs</span>
+          </li>
+          <li class="deploy-list__item">
+            <span class="deploy-list__date">Jun 1</span>
+            <span class="deploy-list__what">Enriched Organization schema deployed on all 599 indexable pages (3 regulatory licenses, 7 socials, 5 contact channels)</span>
+            <span class="deploy-list__count">599 pages</span>
+          </li>
+          <li class="deploy-list__item">
+            <span class="deploy-list__date">Jun 1</span>
+            <span class="deploy-list__what">Hreflang annotations deployed on all three language installs (EN, AR, FA) — stops cross-language cannibalization</span>
+            <span class="deploy-list__count">3 installs</span>
+          </li>
+          <li class="deploy-list__item">
+            <span class="deploy-list__date">May 28</span>
+            <span class="deploy-list__what">Custom SEO dashboard launched at cmsprime.adnika.com — weekly auto-refresh, no Semrush API spend</span>
+            <span class="deploy-list__count">5 pages</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Chapter index (compact list) -->
+      <section class="fade-up" data-stagger="6">
+        <div class="summary-section-head">
+          <h2 class="summary-section-head__title">Full chapters</h2>
+          <span class="summary-section-head__meta">Detailed breakdowns</span>
+        </div>
+        <div class="chapter-index">
+          <a class="chapter-index__item" href="./monthly-domain.html">
+            <span class="chapter-index__num">01</span>
+            <div class="chapter-index__body">
+              <div class="chapter-index__title">Domain Overview</div>
+              <div class="chapter-index__desc">Visibility, authority, indexation, traffic. Authority Score held at 25 through 586-domain disavow.</div>
+            </div>
+            <span class="chapter-index__arrow">→</span>
+          </a>
+          <a class="chapter-index__item" href="./monthly-rankings.html">
+            <span class="chapter-index__num">02</span>
+            <div class="chapter-index__body">
+              <div class="chapter-index__title">Organic Rankings</div>
+              <div class="chapter-index__desc">Position view, top keywords, intent split. Brand #1 held throughout, zero declines during rebuild.</div>
+            </div>
+            <span class="chapter-index__arrow">→</span>
+          </a>
+          <a class="chapter-index__item" href="./monthly-tracking.html">
+            <span class="chapter-index__num">03</span>
+            <div class="chapter-index__body">
+              <div class="chapter-index__title">Position Tracking</div>
+              <div class="chapter-index__desc">31-keyword tracking project. Avg position +17, visibility +6.44%, 3 keywords improved, 2 new in top 10.</div>
+            </div>
+            <span class="chapter-index__arrow">→</span>
+          </a>
+          <a class="chapter-index__item" href="./monthly-backlinks.html">
+            <span class="chapter-index__num">04</span>
+            <div class="chapter-index__body">
+              <div class="chapter-index__title">Backlinks</div>
+              <div class="chapter-index__desc">Link-graph cleanup. 1,000 toxic links removed, referring domains held, Authority Score held at 25.</div>
+            </div>
+            <span class="chapter-index__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer note -->
+      <footer class="summary-footer fade-up" data-stagger="7">
+        <p>Aggregated from the four engagement chapters. All values pulled from Semrush exports captured June 3 — June 4, 2026. The "deployed" column shows work shipped on the live site, verifiable independently. The next significant re-measurement window opens July 1 when Google's reindex cycle completes for the schema and hreflang work.</p>
+      </footer>
     </main>
   </div>
 
