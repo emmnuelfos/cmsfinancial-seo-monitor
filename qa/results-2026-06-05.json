@@ -1,0 +1,182 @@
+{
+  "run_at": "2026-06-05 01:20 UTC",
+  "summary": {
+    "PASS": 21,
+    "FAIL": 1,
+    "WARN": 1
+  },
+  "total_checks": 23,
+  "unexpected_fails": 0,
+  "known_pending": [
+    {
+      "check": "faq_schema_missing",
+      "detail": "11 pages without FAQ schema: /metatrader-4/, /metatrader-5/, /online-forex-trading/, /prop-trading/, /social-trading/",
+      "reason": "Task #38 in_progress: Cloudflare cache purge for FAQ schema. Origin is verified live; edge is still stale until the cache TTL expires or a manual purge runs."
+    }
+  ],
+  "first_failure": "",
+  "overall_state": "warn",
+  "all_results": [
+    {
+      "check": "hreflang_https://cmsprime.com/",
+      "status": "PASS",
+      "detail": "4 langs present: en-US, ar, fa-IR, x-default",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "hreflang_https://cmsprime.com/ar/",
+      "status": "PASS",
+      "detail": "4 langs present: en-US, ar, fa-IR, x-default",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "hreflang_https://cmsprime.com/fa/",
+      "status": "PASS",
+      "detail": "4 langs present: en-US, ar, fa-IR, x-default",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "org_schema_type",
+      "status": "PASS",
+      "detail": "dual-type confirmed: ['Organization', 'FinancialService']",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "org_schema_credentials",
+      "status": "PASS",
+      "detail": "3 credentials: Financial Services Commission of Mauritius, Saint Vincent and the Grenadines, Saint Lucia...",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "org_schema_foundingDate",
+      "status": "PASS",
+      "detail": "foundingDate = 2004",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "org_schema_sameAs",
+      "status": "PASS",
+      "detail": "7 social profile links",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "org_schema_languages",
+      "status": "PASS",
+      "detail": "all 3 languages declared: ['en', 'ar', 'fa']",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "org_schema_contactPoint",
+      "status": "PASS",
+      "detail": "5 contact points",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "faq_schema_missing",
+      "status": "FAIL",
+      "detail": "11 pages without FAQ schema: /metatrader-4/, /metatrader-5/, /online-forex-trading/, /prop-trading/, /social-trading/",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "redirects",
+      "status": "PASS",
+      "detail": "8/8 sample redirects firing as expected",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "redirects_query_strings",
+      "status": "WARN",
+      "detail": "URLs with query strings (e.g. ?utm_source=) return HTTP 404 instead of 301 - any old backlink with tracking params 404s. Fix candidate for Phase 3: add [QSA] flag to .htaccess rules or update Redirection plugin to handle query strings.",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "robots_txt",
+      "status": "PASS",
+      "detail": "User-agent + Sitemap directives present; sitemap = https://cmsprime.com/sitemap_index.xml",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "sitemap_index",
+      "status": "PASS",
+      "detail": "sitemap_index.xml lists 8 sub-sitemaps",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 1.11s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/ar/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 0.97s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/fa/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 1.66s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/metatrader-4/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 0.99s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/online-forex-trading/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 1.09s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/prop-trading/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 1.35s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/account-comparison/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 0.87s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "uptime_https://cmsprime.com/licenses-regulations/",
+      "status": "PASS",
+      "detail": "HTTP 200 in 0.80s",
+      "expected": null,
+      "found": null
+    },
+    {
+      "check": "dashboard_data_files",
+      "status": "PASS",
+      "detail": "all 6 chapter data files reachable",
+      "expected": null,
+      "found": null
+    }
+  ]
+}

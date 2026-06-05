@@ -61,6 +61,9 @@
         Aggregated readout across the five engagement chapters. <strong>Fourteen metrics improved.</strong> Zero declined. Foundation work shipped on 599 pages. Visibility climbed +6.44% over the engagement window, average position improved by 17 places, the disavow filing removed approximately 1,000 toxic backlinks while Authority Score held at 25, and Site Audit issues dropped 90% (787 → 75 across 100 audited pages).
       </p>
 
+      <!-- QA status bar — live regression-check status -->
+      <section class="fade-up" data-stagger="1" id="qaStatusBar"></section>
+
       <!-- Headline wins ticker -->
       <section class="win-strip fade-up" data-stagger="2">
         <div class="win-tile is-pos">
@@ -536,6 +539,97 @@
         {beforeLabel: "Before engagement", afterLabel: "Current (Jun 4)", unit: "", shortNum: true}
       );
     })();
+
+    // QA status bar — reads docs/data/qa-status.json (refreshed weekly by the Monday cron)
+    (async function renderQaStatus() {
+      const mount = document.getElementById("qaStatusBar");
+      if (!mount) return;
+      try {
+        const r = await fetch("./data/qa-status.json?cb=" + Date.now());
+        if (!r.ok) {
+          mount.innerHTML = '<div class="qa-bar qa-bar--unknown"><span class="qa-bar__badge">QA</span><span class="qa-bar__main">No QA status yet — first cron run will populate this.</span></div>';
+          return;
+        }
+        const d = await r.json();
+        const state = d.overall_state || "warn"; // pass | warn | fail
+        const stateLabel = { pass: "Passing", warn: "Warning", fail: "Failure" }[state];
+
+        // Compute age of the run
+        const runAt = d.run_at || "";
+        let ageStr = "";
+        const m = runAt.match(/^(\d{4}-\d{2}-\d{2})/);
+        if (m) {
+          const runDate = new Date(m[1] + "T00:00:00Z");
+          const now = new Date();
+          const diffDays = Math.floor((now - runDate) / 86400000);
+          ageStr = diffDays === 0 ? "today" : diffDays === 1 ? "1 day ago" : diffDays + " days ago";
+        }
+
+        const knownCount = (d.known_pending || []).length;
+        const knownNote = knownCount > 0
+          ? ` · <span class="qa-bar__known">${knownCount} known-pending</span>`
+          : "";
+
+        const failNote = d.unexpected_fails > 0
+          ? ` · <span class="qa-bar__failnote">${d.unexpected_fails} regression alert${d.unexpected_fails === 1 ? "" : "s"}</span>`
+          : "";
+
+        mount.innerHTML =
+          '<div class="qa-bar qa-bar--' + state + '">' +
+            '<span class="qa-bar__badge">QA · ' + stateLabel + '</span>' +
+            '<span class="qa-bar__main">' +
+              '<strong>' + d.summary.PASS + ' / ' + d.total_checks + ' checks pass</strong>' +
+              knownNote + failNote +
+              ' <span class="qa-bar__meta">last run ' + ageStr + '</span>' +
+            '</span>' +
+            '<span class="qa-bar__expand" data-action="qa-expand">details ▾</span>' +
+          '</div>' +
+          '<div class="qa-bar__details" hidden id="qaBarDetails">' +
+            '<div class="qa-bar__details-head">Checks · ' + (d.run_at || "—") + '</div>' +
+            renderQaDetailRows(d) +
+          '</div>';
+
+        mount.addEventListener("click", function (e) {
+          if (e.target.closest('[data-action="qa-expand"]')) {
+            const det = document.getElementById("qaBarDetails");
+            const expand = mount.querySelector('[data-action="qa-expand"]');
+            if (det.hidden) {
+              det.removeAttribute("hidden");
+              expand.textContent = "details ▴";
+            } else {
+              det.setAttribute("hidden", "");
+              expand.textContent = "details ▾";
+            }
+          }
+        });
+      } catch (e) {
+        console.error("QA bar render failed:", e);
+        mount.innerHTML = '<div class="qa-bar qa-bar--unknown"><span class="qa-bar__badge">QA</span><span class="qa-bar__main">QA status could not load.</span></div>';
+      }
+    })();
+
+    function renderQaDetailRows(d) {
+      const rows = d.all_results || [];
+      const grouped = { PASS: [], WARN: [], FAIL: [] };
+      for (const r of rows) (grouped[r.status] || grouped.PASS).push(r);
+      let html = '<ul class="qa-bar__detail-list">';
+      ["FAIL", "WARN", "PASS"].forEach(function (status) {
+        for (const r of grouped[status]) {
+          html += '<li class="qa-bar__detail-item is-' + status.toLowerCase() + '">' +
+                    '<span class="qa-bar__detail-status">' + status + '</span>' +
+                    '<span class="qa-bar__detail-check">' + escapeHtml(r.check) + '</span>' +
+                    '<span class="qa-bar__detail-text">' + escapeHtml(r.detail) + '</span>' +
+                  '</li>';
+        }
+      });
+      html += '</ul>';
+      return html;
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]);
+      });
+    }
   </script>
 
   <nav class="bottom-nav" aria-label="Mobile">

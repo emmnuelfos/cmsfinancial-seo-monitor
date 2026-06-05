@@ -43,17 +43,32 @@ jobs:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: python monitor.py
 
-      - name: Commit updated dashboard data
+      - name: Run QA regression check
+        # continue-on-error so a regression alert doesn't block the dashboard data commit.
+        # The script exits 1 on unexpected failures; we record that as a job warning and
+        # the dashboard's qa-status.json badge surfaces the failure visually.
+        continue-on-error: true
+        id: qa
+        env:
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+        run: python qa/regression_check.py
+
+      - name: Commit updated dashboard data + QA results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/*.json
+          git add docs/data/*.json qa/results-*.json
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "chore(data): auto-update dashboard data $(date -u +%Y-%m-%d)"
+            git commit -m "chore(data): auto-update dashboard data + QA $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      - name: Flag QA regression in run output
+        if: steps.qa.outcome == 'failure'
+        run: |
+          echo "::warning::QA regression check reported unexpected failures. See docs/data/qa-status.json and the 'QA History' tab in the Google Sheet."
 
       - name: Archive audit JSON
         if: always()

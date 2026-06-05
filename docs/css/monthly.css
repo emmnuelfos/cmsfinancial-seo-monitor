@@ -1870,6 +1870,134 @@ body.has-upload-modal-open { overflow: hidden; }
 }
 
 /* =========================================================
+   QA status bar — overview page's regression-check live indicator
+   ========================================================= */
+.qa-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--rule-color);
+  background: var(--bg-surface);
+  font-size: 12.5px;
+  flex-wrap: wrap;
+}
+.qa-bar--pass { border-left: 2px solid var(--pos); }
+.qa-bar--warn { border-left: 2px solid var(--brand-gold); }
+.qa-bar--fail { border-left: 2px solid var(--neg); background: rgba(239, 68, 68, 0.06); }
+.qa-bar--unknown { border-left: 2px solid var(--text-faint); }
+
+.qa-bar__badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--rule-color);
+  white-space: nowrap;
+}
+.qa-bar--pass .qa-bar__badge { color: var(--pos); border-color: rgba(34, 197, 94, 0.4); }
+.qa-bar--warn .qa-bar__badge { color: var(--brand-gold); border-color: rgba(212, 175, 55, 0.4); }
+.qa-bar--fail .qa-bar__badge { color: var(--neg); border-color: rgba(239, 68, 68, 0.4); }
+
+.qa-bar__main {
+  flex: 1;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  line-height: 1.5;
+  min-width: 0;
+}
+.qa-bar__main strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.qa-bar__meta {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-left: 8px;
+}
+.qa-bar__known {
+  color: var(--brand-gold);
+  font-weight: 500;
+}
+.qa-bar__failnote {
+  color: var(--neg);
+  font-weight: 600;
+}
+.qa-bar__expand {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid var(--rule-color);
+  background: transparent;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+.qa-bar__expand:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+.qa-bar__details {
+  border: 1px solid var(--rule-color);
+  border-top: none;
+  background: var(--bg-surface);
+  padding: var(--space-3) var(--space-4);
+  max-height: 360px;
+  overflow-y: auto;
+}
+.qa-bar__details-head {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+}
+.qa-bar__detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.qa-bar__detail-item {
+  display: grid;
+  grid-template-columns: 56px max-content 1fr;
+  gap: var(--space-3);
+  font-size: 11.5px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--border-faint);
+}
+.qa-bar__detail-item.is-fail { color: var(--text-primary); }
+.qa-bar__detail-item.is-warn { color: var(--text-primary); }
+.qa-bar__detail-item.is-pass { color: var(--text-muted); }
+.qa-bar__detail-status {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.qa-bar__detail-item.is-pass .qa-bar__detail-status { color: var(--pos); }
+.qa-bar__detail-item.is-warn .qa-bar__detail-status { color: var(--brand-gold); }
+.qa-bar__detail-item.is-fail .qa-bar__detail-status { color: var(--neg); }
+.qa-bar__detail-check {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.qa-bar__detail-text {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* =========================================================
    Targets framing banner — sits above the win-strip on the
    Link Building page to make "these are stretch targets" explicit
    ========================================================= */
