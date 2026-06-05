@@ -59,7 +59,12 @@ function sha256Pure(input) {
 
   bytes.push(0x80);
   while ((bytes.length % 64) !== 56) bytes.push(0);
-  for (let i = 7; i >= 0; i--) bytes.push((bitLen >>> (i * 8)) & 0xff);
+  // 64-bit big-endian bit-length. JS bitwise ops are 32-bit, so high 4 bytes are always 0
+  // (works correctly for messages up to 2^32 bits / 512 MB — fine for any password).
+  for (let i = 7; i >= 0; i--) {
+    const shift = i * 8;
+    bytes.push(shift < 32 ? (bitLen >>> shift) & 0xff : 0);
+  }
 
   function rotr(n, x) { return (x >>> n) | (x << (32 - n)); }
   function w32(arr, off) { return (arr[off] << 24) | (arr[off+1] << 16) | (arr[off+2] << 8) | arr[off+3]; }
