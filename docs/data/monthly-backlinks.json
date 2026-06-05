@@ -1,214 +1,94 @@
 {
   "issue": "02",
-  "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
-  "headline": "Backlinks · link profile scrubbed clean",
-  "standfirst": "Two-month engagement view of the backlink profile. Filed a 586-domain disavow during the period (54 new spam domains identified, merged with the existing 532). Backlink count dropped from 8K to 7K as Google processed the filing — that's 1,000 toxic links de-counted from the index. Authority Score held at 25 through the cleanup. Referring domains held within a 30-domain band.",
-  "summary_lead": "Link-graph cleanup across May and June. <strong>1,000 toxic backlinks removed</strong> from the index as Google processed the 586-domain disavow filing. Referring domains held within a tight 30-domain band — proving the cleanup only removed spam, not legitimate sources. Authority Score steady at 25 throughout.",
+  "period_label": "APR — JUN 2026 · ENGAGEMENT PERIOD",
+  "headline": "Backlinks · profile mapped, cleanup queued",
+  "standfirst": "Two-month engagement view of the cmsfinancial.ae backlink profile. 529 referring domains carry 4.8K backlinks. The picture is quantity-rich and quality-poor: 87% of referring domains sit at Authority Score 0–10, the largest single referring domain (frycu.com, 2,177 backlinks) shares the same Hetzner IP as cmsfinancial.ae itself, and 24% of links are nofollow. This chapter is the prerequisite work for Task 24 (Backlink audit + HSTS support fix + security review). The audit identified what gets disavowed, what gets kept, and what gets pursued — chapter 06 carries the active campaign.",
+  "summary_lead": "<strong>The backlink profile needs cleanup before it needs growth.</strong> 87% of 529 referring domains carry an Authority Score under 10, including the largest single source — frycu.com (2,177 backlinks) — which shares cmsfinancial.ae's own server IP. The cleanup list (Task 24 deliverable) flags ~60 likely PBN/spam domains for disavow filing. Healthy backlinks: link to /, /careers/, /regulation/ from MoneyExpoIndia, BrokerSome, fxverify, cashbackforex — keep these.",
   "win_tiles": [
-    {"num": "1,000", "unit": "links", "label": "Toxic backlinks removed", "source": "via disavow processing", "direction": "pos", "tip": "Backlinks from spam websites (PBNs, link farms, hacked sites) hurt your Google ranking. We filed a list asking Google to ignore 586 such domains, and Google removed about 1,000 of those toxic links from how it scores your site."},
-    {"num": "586", "unit": "dom", "label": "Total disavow filing", "source": "532 existing + 54 new", "direction": "pos", "tip": "A 'disavow file' is a list submitted to Google asking it to ignore certain backlinks when scoring your site. Used to remove toxic/spam links. Total of 586 spam domains submitted: 532 already on file from prior SEO, plus 54 newly identified this engagement."},
-    {"num": "1.1K", "unit": "held", "label": "Referring domains", "source": "legitimate sources kept", "direction": "flat", "tip": "Number of unique websites that link to cmsprime.com. Steady at ~1,100 throughout the cleanup means we removed many spam links but the legitimate referring-domain count stayed stable — proof the disavow targeted only toxic sources."},
-    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through major cleanup", "direction": "flat", "tip": "Semrush's overall domain strength score (0-100). Holding at 25 through a 586-domain disavow filing is the proof point that matters most — disavows usually cost AS points temporarily because the link graph shrinks. Ours didn't move."},
-    {"num": "+18", "unit": "rules", "label": "301 redirect rules", "source": "for 40 broken backlinks", "direction": "pos", "tip": "A 301 redirect permanently sends visitors and SEO value from an old URL to a new one. We set up 18 redirect rules to capture value from backlinks that were pointing at deleted/moved pages, recovering link equity that was being lost."},
-    {"num": "+40", "unit": "URLs", "label": "Broken targets fixed", "source": "via Redirection plugin", "direction": "pos", "tip": "We HTTP-tested every backlink target on the site. 40 of them were pointing at broken (404) pages — their SEO value was being lost entirely. All 40 now redirect to working pages, recovering their ranking signal."}
+    {"num": "529", "unit": "RD", "label": "Referring domains", "source": "current snapshot", "direction": "flat", "tip": "Unique domains with at least one backlink to cmsfinancial.ae. Volume is healthy in raw terms but the quality distribution is heavily skewed low — 87% sit at AS 0–10."},
+    {"num": "4.8K", "unit": "BL", "label": "Total backlinks", "source": "−5% vs Apr", "direction": "neg", "tip": "Total backlinks dropped 5% over the period. That's natural decay from links going stale, not a sign of lost wins. No new RDs acquired yet."},
+    {"num": "76%", "unit": "follow", "label": "Dofollow link share", "source": "3.7K dofollow", "direction": "flat", "tip": "Three-quarters of backlinks pass authority. 24% nofollow is industry-typical for an organic profile not built through paid placements."},
+    {"num": "87%", "unit": "RD", "label": "AS 0–10 share", "source": "low-trust skew", "direction": "neg", "tip": "464 of 529 referring domains carry Semrush Authority Score under 10. These contribute almost nothing to ranking. Lifting the median is what link-building solves."},
+    {"num": "529→246", "unit": "RD/IP", "label": "RD-to-IP concentration", "source": "204 subnets", "direction": "neg", "tip": "529 referring domains share only 246 unique IPs and 204 subnets. The ratio (2.15 RDs per IP) is high — multiple domains live on the same server, a classic PBN signature. Major disavow target."},
+    {"num": "~60", "unit": "RD", "label": "Disavow candidates flagged", "source": "Task 24 deliverable", "direction": "pos", "tip": "Audit identified roughly 60 referring domains for disavow filing: shared-IP clusters, off-topic adult/casino, broken or recycled domains. List ready to submit through GSC."}
   ],
   "byline": {
-    "issued": "JUNE 4, 2026",
-    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
-    "data_source": "SEMRUSH BACKLINK ANALYTICS"
+    "issued": "JUNE 5, 2026",
+    "author": "ADNIKA · CMS FINANCIAL ENGAGEMENT",
+    "data_source": "SEMRUSH · BACKLINK ANALYTICS"
   },
-  "months_long": ["May 2026", "June 2026"],
-  "compare_hero": {
-    "title": "Toxic backlinks removed from the index",
-    "subtitle": "What Google de-counted as the disavow file was processed",
-    "left_label": "MAY 2026",
-    "left_value": "8K",
-    "left_sub": "total backlinks (incl. toxic)",
-    "right_label": "JUNE 2026",
-    "right_value": "7K",
-    "right_sub": "after disavow processing",
-    "delta_value": "−1K",
-    "delta_pct": "1,000 spam links removed",
-    "direction": "pos",
-    "caption": "A drop in this column is the result you want when you file a disavow. Google removed roughly 1,000 toxic links from the index during May-June as it processed the 586-domain filing. The legitimate sources stayed — referring domains held at 1.1K throughout."
-  },
-  "marquee": [
-    {
-      "label": "Toxic links removed",
-      "value": "1,000",
-      "unit": "links",
-      "sub": "via disavow processing",
-      "delta": "+1K cleaned",
-      "direction": "pos"
-    },
-    {
-      "label": "Disavow filing",
-      "value": "586",
-      "unit": "domains",
-      "sub": "532 existing + 54 new in June",
-      "delta": "+54",
-      "direction": "pos"
-    },
-    {
-      "label": "Referring domains",
-      "value": "1.1K",
-      "unit": "domains",
-      "sub": "legitimate sources held",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Authority Score",
-      "value": "25",
-      "unit": "/100",
-      "sub": "held through cleanup",
-      "delta": "held",
-      "direction": "flat"
-    }
+  "top_anchors": [
+    {"anchor": "<Empty Anchor>", "domains": 12, "backlinks": 1216, "note": "Image links with no alt text. Audit + fix where we own the source."},
+    {"anchor": "www.cmsfinancial.ae", "domains": 265, "backlinks": 297, "note": "Raw URL — typical for citations and footers."},
+    {"anchor": "frycu.com", "domains": 80, "backlinks": 156, "note": "Anchor text is OUR top RD's own domain — suspicious. Investigate."},
+    {"anchor": "cms financial", "domains": 62, "backlinks": 151, "note": "Branded anchor. Healthy."},
+    {"anchor": "fxchatbook.com", "domains": 66, "backlinks": 133, "note": "Anchor is another RD's domain. Cluster signal."}
   ],
+  "top_referring_domains": [
+    {"domain": "frycu.com", "ip": "159.69.137.161", "backlinks": 2177, "flag": "SAME IP AS cmsfinancial.ae", "note": "Largest single source. Shares server IP with the site. Almost certainly self-cluster / PBN. Disavow."},
+    {"domain": "tactical-squad.de", "ip": "178.254.50.115", "backlinks": 597, "note": "Investigate relevance — DE host, broker-unrelated TLD use."},
+    {"domain": "fxchatbook.com", "ip": "172.67.171.36", "backlinks": 499, "note": "Possible legit broker-niche directory. Confirm and decide."},
+    {"domain": "fxverify.com", "ip": "172.67.72.129", "backlinks": 82, "note": "Forex-broker review site. Keep."},
+    {"domain": "cashbackforex.com", "ip": "104.20.22.42", "backlinks": 72, "note": "Major forex-cashback portal. Keep."}
+  ],
+  "tld_split": [
+    {"tld": ".com", "share_pct": 73, "referring_domains": 390},
+    {"tld": ".in", "share_pct": 2, "referring_domains": 13},
+    {"tld": ".us", "share_pct": 2, "referring_domains": 12},
+    {"tld": "other", "share_pct": 22, "referring_domains": 116},
+    {"tld": ".gov / .edu", "share_pct": 0, "referring_domains": 0, "note": "Gap — no government or education citations yet."}
+  ],
+  "country_split": [
+    {"country": "United States", "share_pct": 69, "referring_domains": 339},
+    {"country": "Singapore", "share_pct": 14, "referring_domains": 69},
+    {"country": "United Kingdom", "share_pct": 3, "referring_domains": 17},
+    {"country": "India", "share_pct": 3, "referring_domains": 15},
+    {"country": "France", "share_pct": 3, "referring_domains": 14},
+    {"country": "Moldova", "share_pct": 3, "referring_domains": 13, "note": "Common spam-host country. Review."}
+  ],
+  "authority_score_dist": [
+    {"band": "91–100", "share_pct": 0.2, "referring_domains": 1},
+    {"band": "81–90", "share_pct": 0.2, "referring_domains": 1},
+    {"band": "51–60", "share_pct": 0.9, "referring_domains": 5},
+    {"band": "41–50", "share_pct": 2.8, "referring_domains": 15},
+    {"band": "31–40", "share_pct": 2.1, "referring_domains": 11},
+    {"band": "21–30", "share_pct": 3.4, "referring_domains": 18},
+    {"band": "11–20", "share_pct": 3.0, "referring_domains": 16},
+    {"band": "0–10", "share_pct": 87.7, "referring_domains": 464, "is_problem": true}
+  ],
+  "top_backlinked_pages": [
+    {"url": "http://www.cmsfinancial.ae/", "referring_domains": 362, "backlinks": 474},
+    {"url": "https://cmsfinancial.ae/", "referring_domains": 249, "backlinks": 1858},
+    {"url": "/careers/", "referring_domains": 54, "backlinks": 68},
+    {"url": "/regulation/", "referring_domains": 33, "backlinks": 151},
+    {"url": "http://cmsfinancial.ae/", "referring_domains": 31, "backlinks": 76, "note": "HTTP variant — redirect chain target for the HSTS fix below"}
+  ],
+  "comparison_table": {
+    "title": "Backlink profile · April vs June",
+    "rows": [
+      {"metric": "Referring domains", "may": "608", "jun": "529", "delta": "−79", "delta_pct": "−13.0%", "direction": "neg", "note": "natural decay"},
+      {"metric": "Total backlinks", "may": "5.1K", "jun": "4.8K", "delta": "−300", "delta_pct": "−5.0%", "direction": "neg"},
+      {"metric": "Authority Score", "may": "8", "jun": "8", "delta": "0", "delta_pct": "baseline", "direction": "flat"},
+      {"metric": "Dofollow share", "may": "76%", "jun": "76%", "delta": "0", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Disavow candidates flagged", "may": "0", "jun": "60", "delta": "+60", "delta_pct": "audited", "direction": "pos"},
+      {"metric": "HSTS-eligible pages (HTTP backlinks)", "may": "2", "jun": "2", "delta": "0", "delta_pct": "to fix", "direction": "flat", "note": "Task 24 sub-deliverable"}
+    ]
+  },
   "deliverables": {
-    "title": "Link-graph cleanup shipped",
-    "subtitle": "Each item below changed during May-June 2026",
+    "title": "Tasks 22-24 outputs from this chapter",
+    "subtitle": "What the backlink audit produces, beyond the raw read",
     "rows": [
-      {
-        "metric": "Disavowed spam domains",
-        "before": 532,
-        "after": 586,
-        "unit": "domains",
-        "category": "Link Building",
-        "why": "Audited 430 backlinks via Semrush API, identified 54 new spam/PBN/low-quality sources, merged with existing list and re-submitted to Google."
-      },
-      {
-        "metric": "Backlinks de-counted by Google",
-        "before": 0,
-        "after": 1000,
-        "unit": "toxic links",
-        "category": "Link Building",
-        "why": "Google processed the disavow filing and removed approximately 1,000 toxic links from the index. The link graph is now cleaner — Authority Score implicitly weighs quality higher."
-      },
-      {
-        "metric": "301 redirect rules added",
-        "before": 0,
-        "after": 18,
-        "unit": "rules",
-        "category": "Link Building",
-        "why": "Deployed via the Redirection plugin to recover equity from 40 backlinks that were pointing at 404 URLs. Their link juice now lands on relevant live pages."
-      },
-      {
-        "metric": "Broken backlink targets fixed",
-        "before": 0,
-        "after": 40,
-        "unit": "URLs",
-        "category": "Link Building",
-        "why": "HTTP-tested every target URL of the site's 430 known backlinks. 40 of them were pointing at 404s; all 40 now redirect to working pages."
-      },
-      {
-        "metric": "Referring domains (legitimate)",
-        "before": "1.1K",
-        "after": "1.1K",
-        "unit": "domains",
-        "category": "Strategy",
-        "why": "Held within a 30-domain band throughout the cleanup. The disavow removed many spam-source links but the legitimate referring-domain count stayed steady — proof the cleanup didn't damage genuine outreach.",
-        "is_held": true
-      },
-      {
-        "metric": "Authority Score",
-        "before": 25,
-        "after": 25,
-        "unit": "/100",
-        "category": "Strategy",
-        "why": "Held at 25 through a 586-domain disavow. Disavows typically cost AS points in the short term — ours didn't, meaning the disavowed domains were genuinely toxic.",
-        "is_held": true
-      }
+      {"metric": "Disavow file (60 domains)", "before": 0, "after": 60, "unit": "domains", "category": "Task 24 · Backlink audit", "why": "60 candidate RDs flagged: frycu.com cluster (shared Hetzner IP), low-AS Moldova/India spam, off-topic recycled domains. Disavow .txt ready to upload via GSC's Disavow Tool."},
+      {"metric": "HSTS-redirect cleanup targets", "before": 2, "after": 0, "unit": "pages", "category": "Task 24 · HSTS fix", "why": "2 backlinks point at http://cmsfinancial.ae and http://www.cmsfinancial.ae. Fix: enforce HSTS on the server so HTTP → HTTPS redirect chain is one hop, not two, preserving link equity."},
+      {"metric": "Outreach target list", "before": 0, "after": 23, "unit": "domains", "category": "Tasks 22 + 23 · Link-building", "why": "23 high-priority editorial outreach targets identified — UAE regulator portals (CMA, DED, SCA), broker comparison sites (BrokerChooser, ForexBrokers, Investopedia), GCC business media (Khaleej Times, Gulf News, The National). Pursued in chapter 06."}
     ]
-  },
-  "link_attributes": {
-    "title": "How the remaining links attribute",
-    "subtitle": "Of the 7,000 cleaner links, type distribution",
-    "rows": [
-      {"label": "Text links",     "pct": 87,  "count": "6.2K", "tier": "core",       "note": "anchor in body copy"},
-      {"label": "Image links",    "pct": 12,  "count": "850",  "tier": "supporting", "note": "logo and badge embeds"},
-      {"label": "Frame links",    "pct": 0.1, "count": "6",    "tier": "miss",       "note": "negligible"},
-      {"label": "Form links",     "pct": 0,   "count": "0",    "tier": "miss",       "note": "none"}
-    ]
-  },
-  "follow_split": {
-    "title": "Follow vs nofollow",
-    "subtitle": "Equity-passing share of the cleaned link profile",
-    "branded_label": "Follow",
-    "branded_pct": 45,
-    "non_branded_label": "Nofollow",
-    "non_branded_pct": 55,
-    "follow_count": "3.2K",
-    "nofollow_count": "3.9K",
-    "sponsored": 15,
-    "ugc": 32
-  },
-  "authority_dist": {
-    "title": "Referring domains by Authority Score",
-    "subtitle": "Quality distribution of the 1,083 linking domains",
-    "rows": [
-      {"band": "91 — 100", "count": 4,   "pct": 0.4, "tier": "premium",   "note": "wikipedia, govt domains"},
-      {"band": "81 — 90",  "count": 3,   "pct": 0.3, "tier": "premium"},
-      {"band": "71 — 80",  "count": 2,   "pct": 0.2, "tier": "premium"},
-      {"band": "61 — 70",  "count": 2,   "pct": 0.2, "tier": "high"},
-      {"band": "51 — 60",  "count": 14,  "pct": 1.3, "tier": "high"},
-      {"band": "41 — 50",  "count": 30,  "pct": 2.8, "tier": "mid"},
-      {"band": "31 — 40",  "count": 26,  "pct": 2.4, "tier": "mid"},
-      {"band": "21 — 30",  "count": 56,  "pct": 5.2, "tier": "low"},
-      {"band": "11 — 20",  "count": 51,  "pct": 4.7, "tier": "low"},
-      {"band": "0 — 10",   "count": 899, "pct": 83,  "tier": "weak", "note": "the long tail — quality build target"}
-    ],
-    "footnote": "Outreach to actual finance vertical publications (the 6% Finance-category domains) is the Month 3 link-building target — that's where the dial moves from 'cleaned' to 'strengthened'."
-  },
-  "tld_split": {
-    "title": "Where the remaining links come from (TLD)",
-    "subtitle": "After spam removal — top-level domain distribution",
-    "rows": [
-      {"tld": ".com",     "pct": 51, "count": 555, "tier": "core"},
-      {"tld": ".space",   "pct": 7,  "count": 80,  "tier": "spam",      "note": "PBN candidates flagged for next disavow round"},
-      {"tld": ".site",    "pct": 7,  "count": 78,  "tier": "spam",      "note": "PBN candidates flagged for next disavow round"},
-      {"tld": ".gov",     "pct": 0,  "count": 0,   "tier": "miss"},
-      {"tld": ".edu",     "pct": 0,  "count": 0,   "tier": "miss"},
-      {"tld": "other",    "pct": 34, "count": 374, "tier": "supporting"}
-    ],
-    "footnote": "The remaining 14% on .space and .site TLDs are flagged for the next disavow round. Cleanup is incremental, not one-shot."
-  },
-  "countries": {
-    "title": "Top countries by referring domains",
-    "subtitle": "Where the cleaned link profile lives",
-    "rows": [
-      {"flag": "US", "country": "United States",   "value": 365, "pct": 39},
-      {"flag": "SG", "country": "Singapore",       "value": 80,  "pct": 9},
-      {"flag": "FR", "country": "France",          "value": 21,  "pct": 2},
-      {"flag": "IR", "country": "Iran",            "value": 17,  "pct": 2},
-      {"flag": "DE", "country": "Germany",         "value": 17,  "pct": 2},
-      {"flag": "UK", "country": "United Kingdom",  "value": 11,  "pct": 1}
-    ],
-    "footnote": "US dominates the legitimate link profile at 39%. Singapore at 9% is being investigated as a likely free-host PBN cluster for the next disavow round."
-  },
-  "top_pages": {
-    "title": "Pages attracting the most domains",
-    "subtitle": "Which URLs are doing the link-magnet work",
-    "rows": [
-      {"url": "cmsprime.com/", "domains": 399, "share_pct": 36.9, "is_home": true},
-      {"url": "cmsprime.com/usdt-erc20/", "domains": 200, "share_pct": 18.5, "is_target": true, "note": "the unexpected winner"},
-      {"url": "cmsprime.com/ (http)", "domains": 199, "share_pct": 18.4, "note": "legacy http variant"},
-      {"url": "cmsprime.com/ (http www)", "domains": 183, "share_pct": 16.9, "note": "legacy www variant"},
-      {"url": "cmsprime.com/blog/bitcoin-volatility-atr-standard-deviation/", "domains": 111, "share_pct": 10.3, "is_404": true, "note": "broken page — 1-line fix recovers equity"}
-    ],
-    "footnote": "The bitcoin-volatility post is the single biggest equity-leak right now: 111 referring domains pointing at a 404. A 301 redirect to /commodities-trading/ would recover that equity immediately. Scheduled for next sprint."
   },
   "prose": {
-    "title": "A clean-up that worked.",
+    "title": "What the profile actually looks like.",
     "paragraphs": [
-      "Two months of link-graph cleanup. <strong>586 spam domains</strong> filed in the disavow tool (54 newly identified during the engagement plus the 532 already on file). Google processed the filing and removed approximately <strong>1,000 toxic links from the index</strong>. That's exactly the result you want from a disavow — fewer counted links, same legitimate domain count.",
-      "<strong>The Authority Score held at 25 the entire time.</strong> Disavows typically cost AS points temporarily because the link graph shrinks. Ours didn't move, which means Google's algorithm validated that the disavowed domains were genuinely toxic. The cleanup was clean.",
-      "Beyond the disavow: 18 new 301 redirect rules were deployed via the Redirection plugin, and 40 backlinks that were pointing at 404 URLs now redirect to working pages. The single biggest remaining equity-leak — a 404 blog post with 111 referring domains — is queued for one-line repair next sprint."
+      "<strong>The headline number is misleading.</strong> 529 referring domains sounds healthy, but 87% of them sit at Authority Score 0–10 — Semrush's bottom rung, contributing almost nothing to ranking. The actual editorial-grade RD count (AS 30+) is closer to 32 domains.",
+      "<strong>The frycu.com signal.</strong> Top single referring domain is frycu.com, with 2,177 backlinks pointing at cmsfinancial.ae. The frycu.com server IP is 159.69.137.161 — the same Hetzner IP that hosts cmsfinancial.ae. Same operator, same network, self-reference. Almost certainly a PBN or staging artifact. Goes onto the disavow.",
+      "<strong>Two healthy patterns to preserve.</strong> The brand homepage and /regulation/ page hold 362 + 33 unique referring domains respectively. Citations come from legitimate forex-niche portals (BrokerSome, fxverify, cashbackforex, MoneyExpoIndia). Keep these, build more like them — that's the chapter 06 playbook."
     ]
-  },
-  "pull_quote": {
-    "text": "586 toxic domains disavowed. Authority Score held at 25. The cleanup was clean.",
-    "source": "May-June link-graph readout"
   }
 }

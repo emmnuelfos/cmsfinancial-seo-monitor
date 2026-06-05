@@ -1,191 +1,66 @@
 {
   "issue": "02",
-  "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
-  "headline": "Organic Rankings · positions held",
-  "standfirst": "From the Semrush Organic Research export. Across May and June 2026 every ranking position the site held in May, it still holds in June. Top-1 brand term unchanged. Position bands held.",
-  "summary_lead": "Two months of foundation work without losing a single ranking position. <strong>Brand term cms prime locked at #1.</strong> The four keywords in the top 100 stayed in the top 100. Position bands didn't compress. Twenty-nine tracked keywords going into July is one more than we had going into May.",
+  "period_label": "APR — JUN 2026 · ENGAGEMENT PERIOD",
+  "headline": "Organic Rankings · brand held, commercial gap remains",
+  "standfirst": "From the Semrush Organic Research export for cmsfinancial.ae. 36 keywords ranking on the AE database, 11 on US, 4 on UK. The brand term cluster (cms finance + cms) drives 99.7% of organic traffic — non-brand commercial terms are still the opportunity. The June 4 FAQ deploy is the first move to change that.",
+  "summary_lead": "<strong>Brand position #1 held.</strong> 'cms finance' continues to drive 85.31% of organic traffic from #1. Commercial keyword coverage remains thin — only 2 commercial-intent terms ranking out of 36 — which is the gap the Task 18 FAQ schema and the Month-2 link-building plan are designed to close.",
   "win_tiles": [
-    {"num": "29", "unit": "kw", "label": "Tracked keywords (AE)", "source": "May 28 → Jun 29", "direction": "pos", "tip": "Total number of keywords that cmsprime.com ranks for somewhere in the top 100 of UAE Google search results. We added one this period — the first positive movement since February."},
-    {"num": "+1", "unit": "kw", "label": "Net new in June", "source": "first uptick since Feb", "direction": "pos", "tip": "One new keyword entered the top 100 of Google between May and June. Small in absolute terms, but it's the first positive movement after months of decline — a leading indicator that the foundation work is being processed by Google."},
-    {"num": "0", "unit": "kw", "label": "Position declines", "source": "no losses during rebuild", "direction": "flat", "tip": "Zero keywords lost their ranking position during the engagement period. Holding the line while deploying major technical changes (hreflang, schema, redirects) is unusual — most rebuilds cause temporary drops."},
-    {"num": "#1", "unit": "held", "label": "Brand term position", "source": "cms prime", "direction": "flat", "tip": "The keyword 'cms prime' has held the #1 position in Google search results throughout the entire engagement period. This is the brand search — people who already know you — and it's the foundation of all organic traffic right now."},
-    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "11 commercial pages", "direction": "pos", "tip": "Pages with FAQ schema markup can show their questions and answers directly in Google search results as expandable accordions. We deployed this on 11 commercial pages (MT4, MT5, forex, CFDs, etc.) — 76 Q&As total."},
-    {"num": "4 / 31", "unit": "kw", "label": "Top-100 ranking · held", "source": "all four positions kept", "direction": "flat", "tip": "Of the 31 keywords being tracked, 4 currently rank somewhere in Google's top 100 results. All 4 positions held during the rebuild. The other 27 are off-index — that's the recovery opportunity for July."}
+    {"num": "#1", "unit": "", "label": "cms finance · brand #1", "source": "260 vol · 85.31% traffic", "direction": "flat", "tip": "Top brand keyword. Drives 85.31% of organic traffic from position 1. Brand search dominance is healthy but the engagement target is commercial intent."},
+    {"num": "36", "unit": "kw", "label": "Total AE keywords", "source": "+1 vs May 35", "direction": "pos", "tip": "Keywords ranking somewhere in top 100 of UAE Google. Up from 35 to 36 — the first new entry since the Task 1–7 technical foundation deploy."},
+    {"num": "11", "unit": "kw", "label": "US database", "source": "additional reach", "direction": "flat", "tip": "Keywords ranking in US Google. Smaller surface area than AE but indicates the brand has reach beyond home market."},
+    {"num": "0", "unit": "rich", "label": "Pages with FAQ in SERP", "source": "deploy + reindex pending", "direction": "flat", "tip": "FAQ schema deployed June 4 on 8 commercial pages but Google's 28-day reindex hasn't completed. Next measurement July 1."},
+    {"num": "47.6%", "unit": "kw", "label": "Informational intent share", "source": "20 keywords", "direction": "flat", "tip": "Almost half of ranking keywords are informational queries. Healthy mid-funnel coverage, opportunity for transactional terms."},
+    {"num": "11.9%", "unit": "kw", "label": "Transactional intent share", "source": "5 keywords", "direction": "flat", "tip": "Five transactional keywords ranking. The conversion-stage terms (open account, trade gold, best forex broker UAE) are the gap to close."}
   ],
   "byline": {
-    "issued": "JUNE 3, 2026",
-    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
+    "issued": "JUNE 5, 2026",
+    "author": "ADNIKA · CMS FINANCIAL ENGAGEMENT",
     "data_source": "SEMRUSH AE · ORGANIC RESEARCH"
   },
-  "months": ["May 2026", "June 2026"],
-  "compare_hero": {
-    "title": "Tracked keywords ranking in UAE Google",
-    "subtitle": "Up from 28 in May to 29 in June — the first weekly increase since February",
-    "left_label": "MAY 2026",
-    "left_value": "28",
-    "left_sub": "starting baseline",
-    "right_label": "JUNE 2026",
-    "right_value": "29",
-    "right_sub": "after foundation deploy",
-    "delta_value": "+1",
-    "delta_pct": "+3.57%",
-    "direction": "pos",
-    "caption": "New keywords entering the index after the June 1 deploy. Google has begun processing the hreflang annotations and schema markup; first sign of the foundation work taking effect."
-  },
-  "marquee": [
-    {
-      "label": "Tracked keywords (AE)",
-      "value": "29",
-      "unit": "ranking",
-      "sub": "May 28 → Jun 29",
-      "delta": "+3.57%",
-      "direction": "pos"
-    },
-    {
-      "label": "Top-100 keywords",
-      "value": "4",
-      "unit": "of 31",
-      "sub": "all four positions held",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Branded #1 position",
-      "value": "cms prime",
-      "unit": "",
-      "sub": "rank unchanged across period",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Pages with FAQ schema",
-      "value": "11",
-      "unit": "pages",
-      "sub": "deployed June 1 · 0 → 11",
-      "delta": "+11",
-      "direction": "pos"
-    }
+  "top_keywords": [
+    {"keyword": "cms finance", "position": 1, "volume": 260, "traffic_pct": 85.31, "intent": "I"},
+    {"keyword": "cms", "position": 9, "volume": 1900, "traffic_pct": 6.29, "intent": "I"},
+    {"keyword": "cms finance", "position": 5, "volume": 260, "traffic_pct": 4.89, "intent": "I"},
+    {"keyword": "cms", "position": 10, "volume": 1900, "traffic_pct": 3.49, "intent": "I"},
+    {"keyword": "cms packages", "position": 26, "volume": 40, "traffic_pct": 0.01, "intent": "I"}
   ],
-  "deliverables": {
-    "title": "What shipped during the period",
-    "subtitle": "Ranking-impact work that landed during May-June 2026",
+  "intent_breakdown": [
+    {"intent": "Informational", "share_pct": 47.6, "keywords": 20, "traffic": 143},
+    {"intent": "Navigational", "share_pct": 35.7, "keywords": 15, "traffic": 0},
+    {"intent": "Commercial", "share_pct": 4.8, "keywords": 2, "traffic": 0},
+    {"intent": "Transactional", "share_pct": 11.9, "keywords": 5, "traffic": 0}
+  ],
+  "top_pages": [
+    {"url": "/", "traffic_share": 95.10, "keywords": 20},
+    {"url": "/our-team/", "traffic_share": 4.89, "keywords": 4},
+    {"url": "/careers/", "traffic_share": 0.01, "keywords": 1},
+    {"url": "my.cmsfinancial.ae/ar/login", "traffic_share": 0.01, "keywords": 2},
+    {"url": "/trading-central/", "traffic_share": 0.01, "keywords": 3}
+  ],
+  "competitors": [
+    {"domain": "cmsprime.com", "common_keywords": 6, "competition_level": 74},
+    {"domain": "dsfinance.ph", "common_keywords": 1, "competition_level": 23},
+    {"domain": "cmsfinancialltd.co.uk", "common_keywords": 1, "competition_level": 23},
+    {"domain": "cms.gov.ae", "common_keywords": 1, "competition_level": 22},
+    {"domain": "cmsglobal.com", "common_keywords": 4, "competition_level": 21}
+  ],
+  "comparison_table": {
+    "title": "Rankings position bands",
     "rows": [
-      {
-        "metric": "FAQ rich-result eligible pages",
-        "before": 0,
-        "after": 11,
-        "unit": "pages",
-        "category": "Content",
-        "why": "76 Q&As deployed via FAQPage JSON-LD on the 11 commercial pages (MT4, MT5, online forex, stock CFDs, indices, commodities, funded accounts, prop trading, social trading, webtrader, cpay)."
-      },
-      {
-        "metric": "Hreflang annotations",
-        "before": 0,
-        "after": 599,
-        "unit": "pages",
-        "category": "Technical",
-        "why": "Stops EN, AR, FA pages from cannibalising each other in the index. Each version now competes on its own keywords."
-      },
-      {
-        "metric": "Enriched Organization schema",
-        "before": 0,
-        "after": 599,
-        "unit": "pages",
-        "category": "Technical",
-        "why": "Three regulatory licenses + 7 social profiles + 5 contact channels now broadcast through every page. Major E-E-A-T uplift for finance YMYL ranking signals."
-      },
-      {
-        "metric": "Brand position #1",
-        "before": "#1",
-        "after": "#1",
-        "unit": "",
-        "category": "Strategy",
-        "why": "Brand term 'cms prime' held #1 throughout — no slippage during foundation rebuild.",
-        "is_held": true
-      },
-      {
-        "metric": "Position changes (declines)",
-        "before": 0,
-        "after": 0,
-        "unit": "keywords",
-        "category": "Technical",
-        "why": "Zero keywords lost rank during the rebuild. Nothing slipped while the foundation work was happening.",
-        "is_held": true
-      }
+      {"metric": "Total keywords AE", "may": "35", "jun": "36", "delta": "+1", "delta_pct": "+2.9%", "direction": "pos"},
+      {"metric": "Top-1 brand position", "may": "#1", "jun": "#1", "delta": "held", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Top 10 positions", "may": "2", "jun": "2", "delta": "0", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Commercial intent keywords", "may": "2", "jun": "2", "delta": "0", "delta_pct": "held", "direction": "flat", "note": "FAQ deploy targets this band"},
+      {"metric": "Transactional intent keywords", "may": "5", "jun": "5", "delta": "0", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Pages contributing traffic", "may": "8", "jun": "8", "delta": "held", "delta_pct": "held", "direction": "flat"}
     ]
-  },
-  "country_footprint": {
-    "title": "Where cmsprime.com ranks, by database",
-    "subtitle": "Same domain, three Google jurisdictions — current June snapshot",
-    "rows": [
-      {"flag": "US", "country": "United States", "value": 128, "share": 100, "note": "highest count, lower competition"},
-      {"flag": "IN", "country": "India", "value": 56, "share": 43.8, "note": "secondary market, growing"},
-      {"flag": "AE", "country": "United Arab Emirates", "value": 29, "share": 22.7, "is_target": true, "note": "primary target — most competition here"}
-    ]
-  },
-  "top_keywords": {
-    "title": "The keywords driving traffic today",
-    "subtitle": "Position, volume, and share of total organic traffic — June 2026",
-    "rows": [
-      {"kw": "cms prime",          "position": 1, "volume": 480, "serp_features": 6, "traffic_pct": 89.71, "kind": "brand"},
-      {"kw": "cms prime dubai",    "position": 1, "volume": 30,  "serp_features": 5, "traffic_pct": 5.60,  "kind": "brand"},
-      {"kw": "cms finance",        "position": 7, "volume": 260, "serp_features": 3, "traffic_pct": 1.40,  "kind": "ambiguous"},
-      {"kw": "cms prime",          "position": 6, "volume": 480, "serp_features": 0, "traffic_pct": 1.40,  "kind": "brand"},
-      {"kw": "cms login",          "position": 6, "volume": 90,  "serp_features": 1, "traffic_pct": 0.93,  "kind": "brand"}
-    ],
-    "footnote": "All five of these positions held from May into June. The brand term 'cms prime' continued at #1 throughout the engagement period."
-  },
-  "intent_split": {
-    "title": "Keywords by search intent",
-    "subtitle": "What people want when they search these terms",
-    "rows": [
-      {"label": "Informational",  "pct": 71.0, "keywords": 22, "traffic": 14,  "color": "blue", "note": "explainers, tutorials"},
-      {"label": "Navigational",   "pct": 22.6, "keywords": 7,  "traffic": 414, "color": "amber", "note": "brand and login searches"},
-      {"label": "Transactional",  "pct": 6.5,  "keywords": 2,  "traffic": 4,   "color": "gold", "note": "ready-to-act queries"}
-    ],
-    "footnote": "Navigational queries supply 97% of traffic from just 7 keywords. The opportunity sits in the 22 informational and 2 transactional terms — exactly what the FAQ schema deployment was built to lift."
-  },
-  "top_pages": {
-    "title": "Top pages by organic traffic share",
-    "subtitle": "June 2026 distribution",
-    "rows": [
-      {"url": "cmsprime.com/",                       "traffic_pct": 97.19, "keywords": 9, "is_home": true},
-      {"url": "cmsprime.com/about-us/",              "traffic_pct": 1.40,  "keywords": 1},
-      {"url": "mycms.cmsprime.com/login",            "traffic_pct": 0.93,  "keywords": 1},
-      {"url": "cmsprime.com/ebook/",                 "traffic_pct": 0.46,  "keywords": 2},
-      {"url": "cmsprime.com/trading-central/",       "traffic_pct": 0.01,  "keywords": 1}
-    ],
-    "footnote": "Homepage carries 97% of traffic. The FAQ schema deployment on 11 commercial pages is specifically aimed at distributing this load — those pages now have rich-result eligibility they didn't have in May."
-  },
-  "competitors": {
-    "title": "Main organic competitors in AE",
-    "subtitle": "Domains overlapping keywords — June 2026",
-    "rows": [
-      {"domain": "cmsfinancial.ae", "common_kw": 5, "comp_pct": 72},
-      {"domain": "industry-era.com", "common_kw": 1, "comp_pct": 25},
-      {"domain": "cms.com",          "common_kw": 2, "comp_pct": 21},
-      {"domain": "cmsnift.com",      "common_kw": 2, "comp_pct": 19},
-      {"domain": "brokersome.com",   "common_kw": 1, "comp_pct": 16}
-    ],
-    "footnote": "131 competitors tracked overall — top 5 shown."
-  },
-  "position_changes": {
-    "title": "Position changes during May-June",
-    "subtitle": "How tracked positions shifted",
-    "state": "static",
-    "message": "Zero declines.",
-    "detail": "No keyword lost rank during the engagement period. The brand term locked at #1 throughout, and the four top-100 positions all held. With the June 1 schema and hreflang deploy now in Google's reindex queue, the July 1 reading is the first window where positive movement should appear."
   },
   "prose": {
-    "title": "Holding the line while building underneath.",
+    "title": "What the rankings tell us.",
     "paragraphs": [
-      "Two months of foundation work without losing a single position. Brand term <strong>cms prime locked at #1</strong> throughout May and June. The four keywords in the top 100 stayed in the top 100. Position bands didn't compress. Twenty-nine tracked keywords going into July is one more than we had going into May.",
-      "The improvement that matters won't show in ranking position columns yet — it shows in the foundation layer the rankings sit on. Coming into May, the site had <strong>zero pages with FAQ schema, zero with proper hreflang, zero with regulatory credentials in the Organization markup</strong>. By June 3, all three of those had been deployed across the relevant pages.",
-      "<strong>Google's reindex cycle for a domain at Authority Score 25 is 14-28 days post-deploy.</strong> The schema and hreflang shipped June 1. That puts the first meaningful re-measurement at July 1. Until then, the right metric is 'nothing slipped during the rebuild' — and nothing did."
+      "<strong>The brand term works.</strong> 'cms finance' at #1 with 85.31% traffic share is a clean leading position. The brand cluster (cms + cms finance) accounts for 99.7% of all organic traffic, which is exactly the right shape for a 22-year-old broker with strong word-of-mouth in the UAE.",
+      "<strong>The non-brand gap is the engagement target.</strong> Only 2 commercial-intent keywords ranking out of 36 total. The Task 18 FAQ schema deploy on June 4 broadcasts FAQPage JSON-LD on 8 commercial pages (forex, commodities, indices, stocks, MT5, account-comparison, regulated, homepage). That makes those pages eligible for FAQ rich results, but the eligibility doesn't translate to ranking until Google reindexes — typically 28 days for schema deploys.",
+      "<strong>cmsprime.com is the closest competitor.</strong> Six common keywords, 74% competition level. The Domain Overview competitive positioning map shows cmsprime sitting at higher organic-search-traffic volume but similar keyword count — meaning their traffic-per-keyword is higher because their pages rank better. Closing that gap is what chapter 06 (Link Building) and the upcoming Tasks 9, 10, 11 (keyword research, clustering, structure plan) collectively buy."
     ]
-  },
-  "pull_quote": {
-    "text": "Two months of foundation work without losing a single position.",
-    "source": "May-June engagement summary"
   }
 }

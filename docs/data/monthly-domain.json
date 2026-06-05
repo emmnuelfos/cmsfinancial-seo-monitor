@@ -1,176 +1,108 @@
 {
-  "issue": "02",
-  "period_label": "MAY — JUNE 2026 · ENGAGEMENT PERIOD",
+  "issue": "01",
+  "period_label": "APR — JUN 2026 · ENGAGEMENT PERIOD",
   "headline": "Domain Overview · macro KPIs",
-  "standfirst": "From the Semrush AE database. During May and June 2026, Authority Score held at 25 through a 586-domain disavow filing, organic keywords ticked up to 29, and the technical foundation went from zero coverage to deployed across 599 pages.",
-  "summary_lead": "Aggregated macro KPIs for cmsprime.com across the engagement window. <strong>All metrics improved or held.</strong> Authority Score steady through a 586-domain disavow, organic keywords climbed 28→29 (+3.57%), and 599 pages received the schema and hreflang foundation that drives ranking lift.",
+  "standfirst": "From the Semrush AE database for cmsfinancial.ae. April and May 2026 cleared the technical foundation (Tasks 1–7: title tags, meta descriptions, H1s, internal/external link cleanup, ALT attributes, robots.txt). June 4 deployed Task 18 — AI Search FAQ on 8 commercial pages plus Yoast Organization graph enrichment with the CMA licence stack. Authority Score sits at 8 on a 100-point scale: a starting floor that the link-building plan in chapter 06 is designed to lift.",
+  "summary_lead": "Aggregated macro KPIs for cmsfinancial.ae across the April–June engagement window. <strong>Technical foundation cleared.</strong> Organic keywords climbed 35→36 (+2.9%), AI Search readiness deployed on 8 commercial pages, and the Yoast Organization graph now broadcasts both CMA licences (20200000144 + 20200000223) on every page. Authority Score and the off-page link profile are the next-cycle priorities — chapter 06 carries the plan.",
   "win_tiles": [
-    {"num": "+3.57%", "unit": "kw", "label": "Organic keywords lift", "source": "Semrush AE · wow", "direction": "pos", "tip": "Number of keywords your site ranks for in Google's free (non-paid) results. Up from 28 to 29 this week — new keywords entering the index is the first sign that Google has processed our technical work."},
-    {"num": "25", "unit": "/100", "label": "Authority Score · held", "source": "through 586-dom disavow", "direction": "flat", "tip": "Semrush's overall domain strength score (0-100). Higher is better. Holding at 25 through a 586-domain disavow filing means the cleanup was healthy — disavows usually cost Authority Score points temporarily."},
-    {"num": "+599", "unit": "pages", "label": "Hreflang coverage", "source": "deployed Jun 1", "direction": "pos", "tip": "Hreflang is the code that tells Google which language version of a page belongs to which audience (English, Arabic, Persian). Without it, your three language versions compete with each other. Now deployed across all 599 indexable pages."},
-    {"num": "+599", "unit": "pages", "label": "Enriched schema", "source": "3 licenses + 7 socials", "direction": "pos", "tip": "Schema is hidden markup that tells search engines what your content is about — including your regulatory licenses, contact methods, and social profiles. Major trust signal for financial services sites. Now on all 599 pages."},
-    {"num": "+11", "unit": "pages", "label": "FAQ rich-result eligible", "source": "76 Q&As deployed", "direction": "pos", "tip": "Pages with FAQ schema markup can show their questions and answers directly in Google search results as expandable accordions. This takes up more screen real estate and can pull traffic from AI Overviews."},
-    {"num": "+3", "unit": "licenses", "label": "Regulatory credentials", "source": "FSC + SVG + Saint Lucia", "direction": "pos", "tip": "Three government-issued financial services licenses (FSC Mauritius, Saint Vincent and the Grenadines, Saint Lucia) are now broadcast through structured data on every page. Big credibility signal for YMYL ('Your Money Your Life') finance queries."}
+    {"num": "+2.9%", "unit": "kw", "label": "Organic keywords lift", "source": "Semrush AE · wow", "direction": "pos", "tip": "Keywords cmsfinancial.ae ranks for in Google's free results in the UAE database. Up from 35 to 36. New keywords entering the index after the technical foundation deploy is the first sign Google has processed the meta-description and H1 work."},
+    {"num": "8", "unit": "/100", "label": "Authority Score · baseline", "source": "starting floor", "direction": "flat", "tip": "Semrush's domain strength score (0-100). Higher is better. AS of 8 reflects a young off-page profile: many low-quality referring domains and no editorial campaign yet. Lifting this is the central work of chapters 04 + 06."},
+    {"num": "+8", "unit": "pages", "label": "AI Search FAQ eligible", "source": "Task 18 · Jun 4", "direction": "pos", "tip": "Visible FAQ accordions plus FAQPage JSON-LD schema deployed on 8 commercial pages (forex, commodities, indices, stocks, MT5, account-comparison, regulated, homepage). 52 Q&As total. Eligible for FAQ rich results and Perplexity / ChatGPT citation."},
+    {"num": "+1", "unit": "graph", "label": "Yoast Org enrichment", "source": "FinancialService + CMA", "direction": "pos", "tip": "Yoast Organization graph now carries both CMA licences (20200000144 + 20200000223), DED registration 561501, the FinancialService @type, GCC areaServed, 8 awards, Business Bay address. Major E-E-A-T signal for YMYL finance queries."},
+    {"num": "+1", "unit": "speakable", "label": "SpeakableSpecification", "source": "homepage · Jun 4", "direction": "pos", "tip": "Voice-readable markup on the homepage targeting the H1 and FAQ Q&As. Lets Google Assistant and Siri read out the brand pitch and the most common questions cleanly."},
+    {"num": "100%", "unit": "SERP", "label": "Organic share of appearances", "source": "AI Overviews 0%", "direction": "flat", "tip": "Every cmsfinancial.ae ranking shows up as a standard text result. Zero pickup in AI Overviews so far — the Task 18 schema deploy is the first move to change that."}
   ],
   "byline": {
-    "issued": "JUNE 3, 2026",
-    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
+    "issued": "JUNE 5, 2026",
+    "author": "ADNIKA · CMS FINANCIAL ENGAGEMENT",
     "data_source": "SEMRUSH AE · DESKTOP"
   },
   "months": ["May 2026", "June 2026"],
   "compare_hero": {
     "title": "Organic keywords ranking in UAE Google",
-    "subtitle": "The leading indicator. Movement here precedes traffic lift.",
+    "subtitle": "The leading indicator. New keyword entry precedes traffic lift.",
     "left_label": "MAY 2026",
-    "left_value": "28",
-    "left_sub": "starting baseline",
-    "right_label": "JUNE 2026",
-    "right_value": "29",
-    "right_sub": "after foundation deploy",
+    "left_value": "35",
+    "left_sub": "pre-foundation baseline",
+    "right_label": "JUN 2026",
+    "right_value": "36",
+    "right_sub": "after Task 1–7 + 18 deploy",
     "delta_value": "+1",
-    "delta_pct": "+3.57%",
+    "delta_pct": "+2.9%",
     "direction": "pos",
-    "caption": "New keywords entering the index is the first sign that Google has processed the schema, hreflang, and FAQ markup deployed June 1. The +3.57% week-over-week movement is the first positive uptick since February."
+    "caption": "The +2.9% week-over-week is small in absolute terms but directionally significant. New keywords entering the index is how foundation work first shows up in Semrush. The next meaningful re-measurement opens once Google's 28-day reindex closes on the June 4 schema deploy."
   },
   "marquee": [
-    {
-      "label": "Organic keywords",
-      "value": "29",
-      "unit": "ranking",
-      "sub": "May 28 → Jun 29",
-      "delta": "+3.57%",
-      "direction": "pos"
-    },
-    {
-      "label": "Authority Score",
-      "value": "25",
-      "unit": "/100",
-      "sub": "held during disavow filing",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Branded position #1",
-      "value": "cms prime",
-      "unit": "",
-      "sub": "rank held across the period",
-      "delta": "held",
-      "direction": "flat"
-    },
-    {
-      "label": "Indexed pages",
-      "value": "599",
-      "unit": "URLs",
-      "sub": "EN 300 · AR 262 · FA 37",
-      "delta": "held",
-      "direction": "flat"
-    }
+    {"label": "Organic keywords AE", "value": "36", "unit": "ranking", "sub": "+1 vs May 35", "delta": "+2.9%", "direction": "pos"},
+    {"label": "Authority Score", "value": "8", "unit": "/100", "sub": "starting floor", "delta": "baseline", "direction": "flat"},
+    {"label": "Top brand position", "value": "cms finance", "unit": "#1", "sub": "85.3% of organic traffic", "delta": "held", "direction": "flat"},
+    {"label": "Top pages ranking", "value": "8", "unit": "URLs", "sub": "/, /our-team/, /careers/ +5", "delta": "held", "direction": "flat"}
   ],
   "deliverables": {
     "title": "What shipped during the period",
-    "subtitle": "Verifiable on the live site — every item below went from 0 to deployed during May-June 2026",
+    "subtitle": "Verifiable on the live site — every item below moved from absent or pre-engagement state to deployed during Apr–Jun 2026",
     "rows": [
-      {
-        "metric": "Pages with hreflang annotations",
-        "before": 0,
-        "after": 599,
-        "unit": "pages",
-        "category": "Technical",
-        "why": "Stops Google from treating EN /, AR /ar/, FA /fa/ as competing for the same query. Each language gets credit for its own keyword cluster."
-      },
-      {
-        "metric": "Pages with enriched Organization schema",
-        "before": 0,
-        "after": 599,
-        "unit": "pages",
-        "category": "Technical",
-        "why": "Yoast schema graph now includes 3 regulatory licenses (FSC GB19024331, SVG 3060 LLC, Saint Lucia 2023-00661), 7 social profiles, 5 contact channels. Strengthens E-E-A-T for finance YMYL."
-      },
-      {
-        "metric": "Pages with FAQ rich-result eligibility",
-        "before": 0,
-        "after": 11,
-        "unit": "pages",
-        "category": "Content",
-        "why": "76 Q&As across MT4, MT5, forex, CFDs, indices, commodities and other commercial pages. Eligible for FAQ accordions under SERP listings and pickup by AI Overviews."
-      },
-      {
-        "metric": "Regulatory credentials in schema",
-        "before": 0,
-        "after": 3,
-        "unit": "licenses",
-        "category": "Technical",
-        "why": "FSC Mauritius, Saint Vincent and the Grenadines, Saint Lucia — all three now broadcast through the Organization schema on every page."
-      },
-      {
-        "metric": "Spam domains disavowed",
-        "before": 532,
-        "after": 586,
-        "unit": "domains",
-        "category": "Link Building",
-        "why": "Audited 430 backlinks via Semrush, identified 54 new spam/PBN sources, merged with existing list. Toxic-link drag on rankings stops."
-      },
-      {
-        "metric": "Phantom-slug 301 redirects active",
-        "before": 10,
-        "after": 10,
-        "unit": "redirects",
-        "category": "Technical",
-        "why": "Verified all 10 still firing correctly. mt4-trading-platform, cfd-trading, commodity-trading-uae and 7 others redirect to real pages so ranking signals land correctly.",
-        "is_held": true
-      }
+      {"metric": "Title tag duplicates fixed", "before": 30, "after": 0, "unit": "pages", "category": "Technical · Task 1", "why": "30 pages had duplicate or oversized title tags. Each now carries a unique, focused title under 60 characters. Eliminates SERP cannibalization between similar pages."},
+      {"metric": "Missing meta descriptions added", "before": 44, "after": 43, "unit": "pages", "category": "Technical · Task 2", "why": "44 pages were missing meta descriptions when first audited. One remaining in current crawl. New descriptions follow Yoast's 120–156 char window with the primary keyword in the first 60 chars."},
+      {"metric": "Missing H1 tags added", "before": 35, "after": 0, "unit": "pages", "category": "Technical · Task 3", "why": "35 pages had no H1 or duplicated H1. Each now carries a single semantic H1 matching the page's primary intent."},
+      {"metric": "Broken internal links fixed", "before": 46, "after": 0, "unit": "links", "category": "Technical · Task 4", "why": "46 internal links pointed at 404 URLs. All redirected to live equivalents or removed. Stops link equity from leaking into dead ends."},
+      {"metric": "Broken external links cleaned", "before": 37, "after": 0, "unit": "links", "category": "Technical · Task 5", "why": "37 external links pointed at expired or non-existent destinations. Each replaced with a working equivalent or removed."},
+      {"metric": "ALT attributes added", "before": 30, "after": 0, "unit": "images", "category": "Technical · Task 6", "why": "30 images had no ALT text. Each now has a descriptive ALT used by screen readers and image search."},
+      {"metric": "Sitemap declared in robots.txt", "before": 0, "after": 1, "unit": "directive", "category": "Technical · Task 7", "why": "robots.txt now declares the XML sitemap so crawlers find it on first visit. Removes the dependency on submission via Search Console."},
+      {"metric": "Pages with AI Search FAQ + schema", "before": 0, "after": 8, "unit": "pages", "category": "Content · Task 18", "why": "Visible FAQ sections (52 Q&As) plus FAQPage JSON-LD on the 8 commercial pages. Yoast Organization graph enriched with CMA licences, DED registration, FinancialService type, 8 awards, GCC areaServed. SpeakableSpecification added to homepage."},
+      {"metric": "Pages with duplicate content", "before": 2, "after": 0, "unit": "pages", "category": "Technical · Task 15", "why": "Two pages had near-duplicate body content. Rewrites moved each to a distinct topical focus."},
+      {"metric": "Pages blocked from crawl reviewed", "before": 23, "after": 20, "unit": "pages", "category": "Technical · Task 19", "why": "Three previously blocked pages should be indexable. Robots and noindex tags cleaned up."}
     ]
   },
   "comparison_table": {
-    "title": "Every metric, May vs June",
+    "title": "Every metric, April vs June",
     "rows": [
-      {"metric": "Organic keywords (AE)",          "may": "28",   "jun": "29",   "delta": "+1",     "delta_pct": "+3.57%", "direction": "pos"},
-      {"metric": "Authority Score",                 "may": "25",   "jun": "25",   "delta": "0",      "delta_pct": "held",   "direction": "flat"},
-      {"metric": "Indexed pages",                   "may": "599",  "jun": "599",  "delta": "0",      "delta_pct": "held",   "direction": "flat"},
-      {"metric": "Referring domains",               "may": "1.1K", "jun": "1.1K", "delta": "−30",    "delta_pct": "−2.7%",  "direction": "flat", "note": "within natural band"},
-      {"metric": "Branded traffic share",           "may": "96.7%","jun": "96.7%","delta": "0",      "delta_pct": "held",   "direction": "flat"},
-      {"metric": "Standard organic SERP appearance","may": "89.7%","jun": "89.7%","delta": "0",      "delta_pct": "held",   "direction": "flat"},
-      {"metric": "Top-1 position (brand term)",     "may": "#1",   "jun": "#1",   "delta": "held",   "delta_pct": "held",   "direction": "flat"}
+      {"metric": "Organic keywords (AE)", "may": "35", "jun": "36", "delta": "+1", "delta_pct": "+2.9%", "direction": "pos"},
+      {"metric": "Authority Score", "may": "8", "jun": "8", "delta": "0", "delta_pct": "baseline", "direction": "flat", "note": "no change expected until LB campaign"},
+      {"metric": "Organic traffic (visits/mo)", "may": "143", "jun": "143", "delta": "0", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Referring domains", "may": "608", "jun": "529", "delta": "−79", "delta_pct": "−13.0%", "direction": "neg", "note": "natural decay; no new RDs acquired yet"},
+      {"metric": "Backlinks (total)", "may": "5.1K", "jun": "4.8K", "delta": "−300", "delta_pct": "−5.0%", "direction": "neg", "note": "decay tied to RD drop"},
+      {"metric": "Pages with FAQ schema", "may": "0", "jun": "8", "delta": "+8", "delta_pct": "+100%", "direction": "pos"},
+      {"metric": "Yoast Org schema enriched", "may": "0", "jun": "1", "delta": "+1", "delta_pct": "deployed", "direction": "pos", "note": "CMA + awards + GCC"},
+      {"metric": "Top-1 keyword (cms finance)", "may": "#1", "jun": "#1", "delta": "held", "delta_pct": "held", "direction": "flat"}
     ]
   },
   "country_split": {
-    "title": "Where the global traffic is coming from",
-    "subtitle": "Worldwide breakdown across markets — June 2026 snapshot",
+    "title": "Where the visibility is",
+    "subtitle": "AE database snapshot — June 2026",
     "rows": [
-      {"flag": "WW", "country": "Worldwide total", "traffic": "3.4K", "keywords": "454", "is_total": true},
-      {"flag": "IN", "country": "India", "traffic": "2.4K", "keywords": "56", "share": 70.6},
-      {"flag": "AE", "country": "United Arab Emirates", "traffic": "428", "keywords": "29", "share": 12.6, "is_target": true},
-      {"flag": "ZA", "country": "South Africa", "traffic": "247", "keywords": "4", "share": 7.3},
-      {"flag": "··", "country": "All other markets", "traffic": "353", "keywords": "365", "share": 10.4}
+      {"flag": "AE", "country": "United Arab Emirates", "traffic": "143", "keywords": "36", "share": 70.6, "is_target": true},
+      {"flag": "US", "country": "United States", "traffic": "0", "keywords": "11", "share": 21.6},
+      {"flag": "UK", "country": "United Kingdom", "traffic": "0", "keywords": "4", "share": 7.8}
     ]
   },
   "brand_split": {
     "title": "Brand vs non-brand",
     "subtitle": "Share of organic traffic by intent",
-    "branded_pct": 96.7,
-    "non_branded_pct": 3.3,
+    "branded_pct": 99.7,
+    "non_branded_pct": 0.3,
     "branded_label": "Brand searches",
     "non_branded_label": "Non-brand queries"
   },
   "serp_mix": {
-    "title": "How CMS Prime shows up in SERPs",
-    "subtitle": "Distribution of organic appearances when ranked",
+    "title": "How CMS Financial appears in SERPs",
+    "subtitle": "Distribution of organic appearances when ranked · June 2026",
     "rows": [
-      {"label": "Standard organic listings", "pct": 89.7, "tier": "core"},
+      {"label": "Standard organic listings", "pct": 100.0, "tier": "core"},
       {"label": "AI Overviews", "pct": 0.0, "tier": "miss"},
-      {"label": "Other SERP features", "pct": 10.3, "tier": "supporting"}
+      {"label": "Other SERP features", "pct": 0.0, "tier": "supporting"}
     ]
   },
   "prose": {
     "title": "What two months bought us.",
     "paragraphs": [
-      "May and June 2026 were the engagement's deployment window. Coming into May, the site had <strong>zero hreflang coverage</strong>, no enriched Organization schema, no FAQ markup, and an outdated disavow file. By June 3 — when this snapshot was taken — every one of those layers was deployed.",
-      "Authority Score holding at <strong>25 through a 586-domain disavow filing</strong> is the proof point that matters most. Disavows typically cost AS points in the short term because the link graph shrinks. Ours didn't move — meaning the disavowed domains were genuinely toxic and Google's algorithm agreed.",
-      "Organic keywords ticking up <strong>28 → 29</strong> is small in absolute terms but directionally significant: it's the first weekly increase since February. New keywords entering the index is how the foundation work shows up in Semrush before traffic and ranking lift follow. <strong>The next meaningful re-measurement is July 1</strong>, when the 28-day reindex window closes."
+      "April and May closed out Month 1 of the engagement: <strong>Tasks 1–7</strong> shipped the technical foundation (title tags, meta descriptions, H1s, internal/external link fixes, ALT attributes, robots.txt). May added content work (Tasks 14, 15, 16, 17 — thin-page rewrites, duplicate content fix, two SEO articles).",
+      "<strong>June 4 was the AI Search deploy.</strong> Task 18 went live across 8 commercial pages — visible FAQ accordions plus FAQPage JSON-LD, paired with Yoast Organization graph enrichment (CMA licences 20200000144 + 20200000223, DED 561501, FinancialService @type, 8 awards, GCC areaServed). Homepage broadcasts a SpeakableSpecification targeting the H1 and FAQ Q&As. This is the technical lever for AI Overview eligibility once Google reindexes.",
+      "<strong>Referring domains slipped 13% (608 → 529)</strong> and backlinks 5% (5.1K → 4.8K) — that's natural decay, not lost wins. The link-building work hasn't started yet. <strong>Authority Score sits at 8 and won't move until chapter 06's link-building plan executes.</strong> The next meaningful re-measurement is July 1, when the 28-day reindex window closes on the FAQ schema."
     ]
   },
   "pull_quote": {
-    "text": "Authority Score held at 25 through a 586-domain disavow. That's the foundation working.",
-    "source": "Two-month engagement readout, June 2026"
+    "text": "Technical foundation cleared. AI Search readiness deployed. Authority lift is the next-cycle priority.",
+    "source": "Two-month engagement readout, June 5, 2026"
   }
 }

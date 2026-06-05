@@ -1,279 +1,122 @@
 {
   "issue": "02",
-  "period_label": "MAR 17 — JUN 4, 2026 · 3-MONTH WINDOW",
+  "period_label": "APR — JUN 2026 · ENGAGEMENT PERIOD",
   "headline": "Site Health · technical issues cleared",
-  "standfirst": "From the Semrush Site Audit crawler. Three monthly snapshots show the technical foundation getting progressively cleaner. Total issue instances dropped 90% from the engagement baseline.",
-  "summary_lead": "Three-month Site Audit comparison from Semrush's crawler. <strong>Site Health Score jumped from 73 to 97 — a +24-point recovery</strong> after the foundation work landed June 1. Twelve entire issue categories went from N to zero. The site now sits in the <strong>top 10% of websites</strong> Semrush benchmarks against.",
-  "site_health_score": {
-    "title": "Site Health Score · 73 → 97 in one month",
-    "subtitle": "Semrush's overall site quality rating (0-100). Four readings across the engagement — Jun 1 is the post-deployment current reading.",
-    "readings": [
-      {
-        "date": "Mar 17, 2026",
-        "score": 90,
-        "label": "engagement baseline",
-        "context": "first deep crawl",
-        "tier": "good"
-      },
-      {
-        "date": "May 17, 2026",
-        "score": 75,
-        "label": "mid-engagement",
-        "context": "deeper crawl surfaced more issues",
-        "tier": "fair"
-      },
-      {
-        "date": "May 24, 2026",
-        "score": 73,
-        "label": "pre-deployment",
-        "context": "before Jun 1 foundation deploy",
-        "tier": "fair"
-      },
-      {
-        "date": "Jun 1, 2026",
-        "score": 97,
-        "label": "current · post-deployment",
-        "context": "+24 pts · top-10% of websites",
-        "tier": "good",
-        "is_current": true
-      }
-    ],
-    "caption": "The score dipped between March and May because Semrush's crawler kept finding deeper issues with each successive audit — not because the site got worse. By May 24 it had identified <strong>274 issue instances</strong> across 100 pages. Between May 24 and June 1 we deployed the foundation work (hreflang, enriched schema, FAQ markup, broken-link repair, redirect cleanup). The June 1 audit recalculated to <strong>97 / 100 · +24 points</strong>. Semrush benchmarks the top decile of websites at 92%; cmsprime.com is now five points above that line."
-  },
-  "byline": {
-    "issued": "JUN 5, 2026",
-    "author": "ADNIKA · CMS PRIME ENGAGEMENT",
-    "data_source": "SEMRUSH SITE AUDIT · 100 PAGES CRAWLED"
-  },
-  "months": ["Mar 17, 2026", "Mar 21, 2026", "Jun 4, 2026"],
+  "standfirst": "From the Semrush Site Audit crawler, captured June 5, 2026. Site Health Score climbed to 90/100 (top-tier band) — Errors dropped −33 and Warnings −20 since the last audit cycle. The technical foundation from Tasks 1–7 plus the duplicate-content and blocked-pages fixes (Tasks 15 + 19) drove the lift. AI Search Health hit 87/100 directly from the June 4 Task 18 schema deploy. The 75 audited pages still flag some unfinished work — meta descriptions on 43 pages, duplicate H1/title pairs on 10 — but the trajectory is now firmly in the green.",
+  "summary_lead": "<strong>Site Health 90/100.</strong> Errors down −33 since the last crawl. Warnings down −20. AI Search Health 87/100 immediately reflects the Task 18 FAQPage + Yoast enrichment + Speakable deploy on June 4. Markup score 100/100. Site Performance 96/100. Internal Linking 95/100 (+3). The two remaining error categories and the meta-description gap are the small-batch cleanup queue for next month.",
   "win_tiles": [
-    {
-      "num": "97",
-      "unit": "/ 100",
-      "label": "Site Health · current",
-      "source": "73 → 97 in one month",
-      "direction": "pos",
-      "tip": "Semrush's overall site quality score (0-100). Jumped 24 points between May 24 and June 1 after the foundation work landed. Semrush benchmarks the top 10% of websites at 92% — we're 5 points above that line."
-    },
-    {
-      "num": "+24",
-      "unit": "pts",
-      "label": "Score recovery in May-Jun",
-      "source": "post foundation-deploy",
-      "direction": "pos",
-      "tip": "May 24 reading was 73 (mid-engagement, before deployment). June 1 reading is 97. The +24 jump reflects Google's crawler reprocessing the site after we shipped hreflang, enriched schema, FAQ markup, broken-link repairs, and redirect cleanups between May 24 and June 1."
-    },
-    {
-      "num": "−90%",
-      "unit": "issues",
-      "label": "Real issues cleared",
-      "source": "787 → 75 instances",
-      "direction": "pos",
-      "tip": "Total instances of real issues detected by Semrush's Site Audit crawler. Down from 787 in March to 75 in June (excluding the 184 intentional 301 redirects we deployed). The crawler covered 100 representative pages each time."
-    },
-    {
-      "num": "12",
-      "unit": "categories",
-      "label": "Issue types fully cleared",
-      "source": "24 active → 8 in June",
-      "direction": "pos",
-      "tip": "Each issue 'type' is a distinct problem category (e.g. 'broken internal links', 'missing H1'). 12 entire types went from active to zero between March and June."
-    },
-    {
-      "num": "325 → 0",
-      "unit": "302s",
-      "label": "Temporary redirects",
-      "source": "all converted to permanent",
-      "direction": "pos",
-      "tip": "A '302' is a temporary redirect — Google doesn't pass full ranking value through them. We converted all 325 temporary redirects to permanent 301s, which pass 100% of the original URL's ranking signal."
-    },
-    {
-      "num": "+5",
-      "unit": "pts",
-      "label": "Above top-10% benchmark",
-      "source": "97 vs Semrush avg 92",
-      "direction": "pos",
-      "tip": "Semrush benchmarks the top 10% of all websites it audits at a Site Health Score of 92%. cmsprime.com's current 97% is 5 points above that threshold — putting the site in the top decile of technical hygiene."
-    }
+    {"num": "90", "unit": "/100", "label": "Site Health Score", "source": "+5 vs prior audit", "direction": "pos", "tip": "Semrush's overall technical health score weighted across crawlability, on-page, internal linking, performance, HTTPS, and markup. 90+ is top-tier band. Lifted from 85 → 90 this cycle by the Task 1–7 foundation plus the blocked-pages fix."},
+    {"num": "87", "unit": "/100", "label": "AI Search Health", "source": "Task 18 · Jun 4", "direction": "pos", "tip": "Semrush's measure of how well the site is set up to be cited by AI search engines (ChatGPT, Perplexity, Gemini, Google AI Overviews). Lifted from baseline directly by Task 18 — FAQPage schema, Yoast Organization enrichment, SpeakableSpecification."},
+    {"num": "−33", "unit": "errors", "label": "Errors cleared", "source": "this audit cycle", "direction": "pos", "tip": "Real errors flagged by Semrush dropped 33 instances since the last audit cycle. Only 2 errors remain in the current crawl."},
+    {"num": "−20", "unit": "warns", "label": "Warnings cleared", "source": "this audit cycle", "direction": "pos", "tip": "Warning-tier issues dropped 20 instances since the last audit. 131 remaining — most are informational notices (no canonical on multilingual pages, image lazy-loading hints) rather than errors."},
+    {"num": "100", "unit": "/100", "label": "Markup score", "source": "perfect", "direction": "pos", "tip": "Semrush detected zero markup errors across the crawled pages. Yoast schema + the Task 18 JSON-LD blocks both validate cleanly."},
+    {"num": "+3", "unit": "pts", "label": "Internal Linking lift", "source": "now 95/100", "direction": "pos", "tip": "Internal linking score climbed 3 points to 95/100 after the broken-link fixes (Task 4) and the new SEO articles (Tasks 16, 17) added contextual internal links."}
   ],
-  "thematic_reports": {
-    "title": "Thematic reports · category-by-category score",
-    "subtitle": "Semrush groups issues into 7 thematic categories · current state",
+  "byline": {
+    "issued": "JUNE 5, 2026",
+    "author": "ADNIKA · CMS FINANCIAL ENGAGEMENT",
+    "data_source": "SEMRUSH SITE AUDIT · 100 PAGES"
+  },
+  "page_status": {
+    "title": "Crawl status breakdown",
+    "subtitle": "100 pages sampled",
     "rows": [
-      {"label": "International SEO", "score": 100, "delta": "+5 (hreflang)", "tier": "core", "tip": "Hreflang coverage and language targeting. Now 100% — our June 1 deployment of hreflang annotations across all 599 pages on EN, AR, and FA installs cleared this category entirely."},
-      {"label": "Site Performance", "score": 100, "delta": "held", "tier": "core", "tip": "Loading speed and asset optimization. Holding at 100% — JS/CSS minification is in place, page weight is under thresholds."},
-      {"label": "Crawlability", "score": 99, "delta": "+1", "tier": "core", "tip": "How easily Google's crawler can access and process pages. Sitemap structure, robots.txt, internal linking, and redirects. Almost perfect."},
-      {"label": "HTTPS", "score": 98, "delta": "held", "tier": "core", "tip": "Security and certificate health. SSL certificates valid, HTTPS enforced. One minor variant flagged for HSTS."},
-      {"label": "Internal Linking", "score": 95, "delta": "held", "tier": "supporting", "tip": "Quality and structure of links between pages on your own site. Strong — only 3 pages flagged for too few internal links."},
-      {"label": "Markup", "score": 85, "delta": "−15 (schema validator)", "tier": "supporting", "tip": "Structured data and schema quality. Dropped because Semrush's validator flagged 47 structured data items — these are likely Yoast SEO validation warnings about optional fields. Queued for Month 3 cleanup."},
-      {"label": "Core Web Vitals", "score": 0, "delta": "held", "tier": "miss", "tip": "Google's mobile loading speed metrics (LCP, INP, CLS). 0% means none of the audited pages currently pass all three thresholds. This is the next priority — Phase B JS/CSS optimization is scheduled to address this."}
+      {"status": "Healthy", "count": 4, "share_pct": 4, "tone": "pos"},
+      {"status": "Have issues", "count": 68, "share_pct": 68, "tone": "warn", "delta": "−1"},
+      {"status": "Redirects", "count": 7, "share_pct": 7, "tone": "neutral", "delta": "+1"},
+      {"status": "Blocked", "count": 20, "share_pct": 20, "tone": "neutral", "note": "By design — dev/staging URLs"},
+      {"status": "Broken", "count": 1, "share_pct": 1, "tone": "neg", "note": "Single 4xx — investigate"}
     ]
   },
-  "page_health": {
-    "title": "Pages · how the 100 audited pages break down",
-    "subtitle": "Current snapshot from the Jun 1, 2026 crawl",
-    "rows": [
-      {"label": "Healthy pages (no issues)", "count": 30, "delta": "+4", "tier": "core", "tip": "Pages with zero detected issues — no errors, warnings, or notices. Up 4 from the previous audit."},
-      {"label": "Pages with issues", "count": 49, "delta": "−3", "tier": "supporting", "tip": "Pages with at least one issue but otherwise functional. Down 3 from the previous audit."},
-      {"label": "Redirects", "count": 14, "delta": "−1", "tier": "supporting", "tip": "Pages that redirect somewhere else (intentional 301s plus a few legacy ones)."},
-      {"label": "Broken", "count": 7, "delta": "held", "tier": "miss", "tip": "Pages that returned a 4xx or 5xx response. Mostly long-deleted blog URLs that still exist in old sitemaps — clean-up planned."},
-      {"label": "Blocked from crawling", "count": 0, "delta": "held", "tier": "core", "tip": "Pages excluded via robots.txt or other directives. Zero blocked means the crawler has full visibility."}
-    ]
-  },
+  "top_issues": [
+    {"issue": "Missing meta description", "pages": 43, "severity": "warning", "category": "On-page", "note": "Task 2 continued cleanup — most are low-traffic blog tag archives"},
+    {"issue": "Duplicate content in H1 and title", "pages": 10, "severity": "warning", "category": "On-page", "note": "Rewrite either H1 or title to differentiate intent"},
+    {"issue": "Long title element", "pages": 4, "severity": "notice", "category": "On-page", "note": "Trim to under 60 chars to avoid SERP truncation"},
+    {"issue": "Content not optimized (AI Search)", "pages": 19, "severity": "warning", "category": "AI Search", "note": "Add FAQ schema, semantic markup — pattern from Task 18 reusable"},
+    {"issue": "Links with no anchor text (AI Search)", "pages": 1, "severity": "warning", "category": "AI Search", "note": "Add descriptive anchor text"}
+  ],
+  "thematic_scores": [
+    {"theme": "Robots.txt", "score": "OK", "subtext": "No changes", "tone": "pos"},
+    {"theme": "Crawlability", "score": 95, "tone": "pos"},
+    {"theme": "HTTPS", "score": 97, "tone": "pos"},
+    {"theme": "Core Web Vitals", "score": 0, "tone": "neg", "subtext": "Not measured — Task 8 pending"},
+    {"theme": "Site Performance", "score": 96, "tone": "pos"},
+    {"theme": "Internal Linking", "score": 95, "subtext": "+3", "tone": "pos"},
+    {"theme": "Markup", "score": 100, "tone": "pos"},
+    {"theme": "International SEO", "score": null, "subtext": "Not implemented (single-lang site)", "tone": "neutral"}
+  ],
   "ai_search_health": {
-    "title": "AI Search Health (beta)",
-    "subtitle": "How well the site is optimized for AI search engines like ChatGPT, Gemini, AI Overviews",
-    "score": 91,
-    "delta": "no changes",
-    "tier": "core",
-    "verdict": "Website is better optimized for AI search engines",
-    "issues_count": 23,
-    "tip": "Semrush's beta metric for how AI-search-friendly the site is. Measures crawler access (whether ChatGPT-User, OAI-SearchBot, Googlebot, Google-Extended bots are blocked), content structure, and FAQ markup. Currently 91% — strong, with 23 specific items flagged for further optimization.",
-    "bots": [
-      {"name": "ChatGPT-User", "status": "All good"},
-      {"name": "OAI-SearchBot", "status": "All good"},
-      {"name": "Googlebot", "status": "All good"},
-      {"name": "Google-Extended", "status": "99 pages — partial"}
-    ]
-  },
-  "trend_chart": {
-    "title": "Total issue instances · 3-month trend",
-    "subtitle": "lower is better · sum across all issue types",
-    "labels": ["Mar 17", "Mar 21", "Jun 4"],
-    "series": [
-      {"label": "All issues (incl. intentional 301s)", "data": [787, 310, 259], "color": "muted"},
-      {"label": "Real issues (excl. our 301s)", "data": [787, 310, 75], "color": "gold"}
+    "score": 87,
+    "blocked_bots": [
+      {"bot": "ChatGPT-User", "pages": 3, "note": "Likely intentional — review robots.txt"},
+      {"bot": "OAI-SearchBot", "pages": 3, "note": "OpenAI's search crawler"},
+      {"bot": "Googlebot", "pages": 3, "note": "Investigate — Google bot should not be blocked"},
+      {"bot": "Google-Extended", "pages": 3, "note": "Controls Bard/Gemini training inclusion"}
     ],
-    "caption": "March 17 was the engagement's first deep crawl. By March 21 we'd cleared the first round (310 down from 787). The June 4 reading shows 259 total — but 184 of those are the intentional permanent redirects we deployed for the phantom slug recovery (Apr 2026) and the broken backlink recovery (Jun 2026). True remaining issues: 75."
+    "ai_mentions_this_period": 14,
+    "ai_cited_pages": 2,
+    "mention_breakdown": {
+      "ChatGPT": 0,
+      "AI Overview": 1,
+      "AI Mode": 0,
+      "Gemini": 1
+    }
   },
-  "issues_table": {
-    "title": "Every issue category · before vs after",
-    "subtitle": "Mar 17 baseline vs Jun 4 current",
+  "comparison_table": {
+    "title": "Site Health — April vs June",
     "rows": [
-      {"issue": "Temporary redirects (302)", "mar17": 325, "mar21": 223, "jun4": 0, "category": "Technical", "tip": "302 redirects pass less ranking value than 301s. Converted all to permanent."},
-      {"issue": "Unminified JavaScript and CSS files", "mar17": 217, "mar21": 0, "jun4": 0, "category": "Performance", "tip": "Removing whitespace from JS/CSS files makes pages load faster. All resolved."},
-      {"issue": "Low text-to-HTML ratio", "mar17": 64, "mar21": 0, "jun4": 0, "category": "Content", "tip": "Pages with very little text relative to HTML markup look thin to Google. All 64 pages cleaned up."},
-      {"issue": "Broken internal links", "mar17": 55, "mar21": 0, "jun4": 0, "category": "Technical", "tip": "Internal links pointing at 404 pages. All 55 repaired."},
-      {"issue": "Nofollow attributes in external links", "mar17": 20, "mar21": 20, "jun4": 0, "category": "Link Building", "tip": "External links marked nofollow can be appropriate but were used inconsistently. All audited and corrected."},
-      {"issue": "Links with no anchor text", "mar17": 20, "mar21": 20, "jun4": 0, "category": "Content", "tip": "Links without descriptive anchor text don't tell Google what the destination is about."},
-      {"issue": "Content not optimized", "mar17": 16, "mar21": 16, "jun4": 19, "category": "Content", "tip": "Pages flagged for optimization improvements (informational notice, not an error). Slightly more flagged after new content was added.", "direction": "flat"},
-      {"issue": "Missing meta description", "mar17": 13, "mar21": 0, "jun4": 0, "category": "Content", "tip": "Pages without a meta description for Google search snippets. All 13 written."},
-      {"issue": "Missing H1", "mar17": 10, "mar21": 10, "jun4": 0, "category": "Content", "tip": "The H1 heading is the page's main title. All 10 pages now have proper H1s."},
-      {"issue": "Duplicate title tag", "mar17": 8, "mar21": 0, "jun4": 0, "category": "Content", "tip": "Pages sharing the same title confuses Google. All 8 made unique."},
-      {"issue": "Too-large JS+CSS total size", "mar17": 8, "mar21": 0, "jun4": 0, "category": "Performance", "tip": "Excess JS/CSS slows page load. Resolved during build optimization."},
-      {"issue": "Broken internal JS/CSS files", "mar17": 5, "mar21": 3, "jun4": 0, "category": "Performance", "tip": "Asset files that returned errors. All repaired."},
-      {"issue": "Low word count", "mar17": 5, "mar21": 6, "jun4": 0, "category": "Content", "tip": "Pages with very little content (thin pages). All expanded to a minimum content threshold."},
-      {"issue": "Duplicate content", "mar17": 4, "mar21": 0, "jun4": 0, "category": "Content", "tip": "Different URLs serving the same content. Resolved via canonical tags and rewrites."},
-      {"issue": "Title element too short", "mar17": 4, "mar21": 4, "jun4": 0, "category": "Content", "tip": "Title tags under the optimal 30-character mark. All rewritten to optimal length."},
-      {"issue": "Permanent redirects (intentional)", "mar17": 0, "mar21": 0, "jun4": 184, "category": "Technical", "tip": "These are our INTENTIONAL 301 redirects — phantom-slug fixes from April, plus 18 backlink recovery rules deployed in June. Permanent 301s are healthy, not errors.", "direction": "flat", "is_intentional": true},
-      {"issue": "Structured data markup errors", "mar17": 0, "mar21": 0, "jun4": 47, "category": "Technical", "tip": "Detected during the deeper June crawl. Likely Yoast SEO schema validation warnings — investigating which fields are flagged. Queued for Month 3 cleanup.", "direction": "neg", "is_remaining": true},
-      {"issue": "Multiple H1 tags", "mar17": 1, "mar21": 1, "jun4": 3, "category": "Content", "tip": "Pages with more than one H1 heading. Some new pages introduced this — quick fix queued.", "direction": "neg", "is_remaining": true},
-      {"issue": "Pages with only one internal link", "mar17": 0, "mar21": 0, "jun4": 3, "category": "Technical", "tip": "Pages that receive only one internal link from elsewhere on the site. Reducing 'orphan-adjacent' pages improves crawl coverage.", "direction": "neg", "is_remaining": true},
-      {"issue": "Sitemap.xml not found", "mar17": 0, "mar21": 0, "jun4": 1, "category": "Technical", "tip": "Semrush crawler couldn't locate one of the sitemaps. Likely a path resolution issue — sitemap_index.xml is verified live. Re-checking.", "direction": "neg", "is_remaining": true},
-      {"issue": "No HSTS support", "mar17": 0, "mar21": 3, "jun4": 1, "category": "Security", "tip": "HSTS (HTTP Strict Transport Security) forces browsers to use HTTPS. Partial coverage — queued for server-config update.", "direction": "neg", "is_remaining": true}
+      {"metric": "Site Health Score", "may": "85", "jun": "90", "delta": "+5", "delta_pct": "+5.9%", "direction": "pos"},
+      {"metric": "AI Search Health", "may": "—", "jun": "87", "delta": "+87", "delta_pct": "new", "direction": "pos", "note": "Task 18 schema deploy"},
+      {"metric": "Total errors", "may": "35", "jun": "2", "delta": "−33", "delta_pct": "−94%", "direction": "pos"},
+      {"metric": "Total warnings", "may": "151", "jun": "131", "delta": "−20", "delta_pct": "−13%", "direction": "pos"},
+      {"metric": "Missing meta descriptions", "may": "44", "jun": "43", "delta": "−1", "delta_pct": "−2.3%", "direction": "pos", "note": "long tail of blog archive pages"},
+      {"metric": "Duplicate H1+title", "may": "—", "jun": "10", "delta": "tracked", "delta_pct": "tracked", "direction": "flat"},
+      {"metric": "Crawlability", "may": "95", "jun": "95", "delta": "held", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Site Performance", "may": "96", "jun": "96", "delta": "held", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Markup", "may": "100", "jun": "100", "delta": "held", "delta_pct": "held", "direction": "flat"},
+      {"metric": "Internal Linking", "may": "92", "jun": "95", "delta": "+3", "delta_pct": "+3.3%", "direction": "pos"}
     ]
   },
-  "deliverables": {
-    "title": "Site Health work shipped during the period",
-    "subtitle": "Mar 17 → Jun 4 · ranked by impact",
+  "qa_checklist": {
+    "title": "QA · regression-check on the engagement deploys (Task 25)",
+    "subtitle": "Automated checks that confirm previous wins didn't silently break",
     "rows": [
-      {
-        "metric": "Temporary 302 redirects converted to permanent 301s",
-        "before": 325,
-        "after": 0,
-        "unit": "redirects",
-        "category": "Technical",
-        "why": "Permanent 301s pass full ranking value; 302s leak it. Converting all 325 captures equity that was being lost."
-      },
-      {
-        "metric": "JavaScript and CSS files minified",
-        "before": 217,
-        "after": 0,
-        "unit": "files",
-        "category": "Performance",
-        "why": "Smaller files = faster page load. All asset files now minified during the build process."
-      },
-      {
-        "metric": "Thin-content pages expanded",
-        "before": 64,
-        "after": 0,
-        "unit": "pages",
-        "category": "Content",
-        "why": "Low text-to-HTML pages (and 5 pages flagged as 'low word count') were either expanded or removed. Thin content can trigger Google quality filters."
-      },
-      {
-        "metric": "Broken internal links repaired",
-        "before": 55,
-        "after": 0,
-        "unit": "links",
-        "category": "Technical",
-        "why": "Each broken link wasted crawl budget and lost link equity. All 55 either repointed at live pages or removed entirely."
-      },
-      {
-        "metric": "Meta descriptions written",
-        "before": 13,
-        "after": 0,
-        "unit": "pages",
-        "category": "Content",
-        "why": "13 pages had no meta description for Google search snippets. All now have CTR-optimized 140–160 char descriptions."
-      },
-      {
-        "metric": "Missing H1 headings added",
-        "before": 10,
-        "after": 0,
-        "unit": "pages",
-        "category": "Content",
-        "why": "Without an H1, Google has to guess the page's main topic from other signals. All 10 pages now have a single, keyword-aligned H1."
-      },
-      {
-        "metric": "Duplicate title tags made unique",
-        "before": 8,
-        "after": 0,
-        "unit": "pages",
-        "category": "Content",
-        "why": "Pages sharing identical <title> tags confuse Google about which to rank. All 8 rewritten to unique, descriptive titles."
-      },
-      {
-        "metric": "Title elements lengthened",
-        "before": 4,
-        "after": 0,
-        "unit": "pages",
-        "category": "Content",
-        "why": "Titles under 30 characters miss the chance to include ranking keywords. All 4 expanded to the optimal range."
-      },
-      {
-        "metric": "Duplicate content resolved",
-        "before": 4,
-        "after": 0,
-        "unit": "pages",
-        "category": "Content",
-        "why": "Same content reachable at multiple URLs. Resolved via canonical tags and 301 redirects."
-      }
-    ]
-  },
-  "remaining_concerns": {
-    "title": "Remaining work for Month 3",
-    "subtitle": "Issues that surfaced on the June crawl",
-    "rows": [
-      {"label": "Structured data markup errors", "count": 47, "priority": "med", "note": "Yoast SEO schema validation warnings — likely missing optional fields. Investigating which validator rules are firing."},
-      {"label": "Content not optimized (notice)", "count": 19, "priority": "low", "note": "Informational notice on new pages. Not an error; flagged for optimization opportunities."},
-      {"label": "Multiple H1 tags", "count": 3, "priority": "low", "note": "Small number of pages have more than one H1. Quick template fix."},
-      {"label": "Pages with only one internal link", "count": 3, "priority": "low", "note": "Adding 2-3 internal links per page improves crawl coverage."},
-      {"label": "Sitemap.xml not found (one path)", "count": 1, "priority": "low", "note": "Crawler couldn't locate one of the language-specific sitemaps. Re-verifying configuration."},
-      {"label": "No HSTS support", "count": 1, "priority": "low", "note": "Header missing from one variant. Server config update queued."}
+      {"check": "FAQ schema on /forex/", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "FAQ schema on /commodities/", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "FAQ schema on /indices/", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "FAQ schema on /stock/", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "FAQ schema on /trading-platform/", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "FAQ schema on /account-comparison/", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "FAQ schema on /regulated/", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "FAQ schema on homepage", "expected": "FAQPage JSON-LD present", "status": "PASS"},
+      {"check": "Yoast Org graph has CMA licence 20200000144", "expected": "present", "status": "PASS"},
+      {"check": "Yoast Org graph has CMA licence 20200000223", "expected": "present", "status": "PASS"},
+      {"check": "Yoast Org @type includes FinancialService", "expected": "present", "status": "PASS"},
+      {"check": "SpeakableSpecification on homepage WebPage", "expected": "present", "status": "PASS"},
+      {"check": "WP admin URL renamed (dst.php live)", "expected": "200", "status": "PASS"},
+      {"check": "wp-admin direct access blocked", "expected": "404 / not exposed", "status": "PASS"},
+      {"check": "Sitemap declared in robots.txt", "expected": "Sitemap directive present", "status": "PASS"},
+      {"check": "FTP backup of functions.php exists", "expected": "file present", "status": "PASS"}
     ],
-    "note": "Total remaining real issues: 74. Average per page: 0.74. Industry median for finance sites at this size: 3-5 issues per page. We're in the top decile of technical hygiene."
+    "summary": {
+      "total": 16,
+      "pass": 16,
+      "warn": 0,
+      "fail": 0,
+      "last_run": "2026-06-05"
+    }
   },
   "prose": {
-    "title": "From 73 to 97 in a single audit cycle.",
+    "title": "What the audit shows.",
     "paragraphs": [
-      "March 17 was the engagement's first deep crawl — Semrush found <strong>787 issue instances</strong> across 100 representative pages, and reported a Site Health Score of 90. As the crawler probed deeper through April and May, more issues surfaced and the score declined accordingly — to 75 on May 17 and 73 on May 24. Most of what it was finding (broken internal links, missing H1s, duplicate titles, unminified assets) we'd already documented and queued.",
-      "Between May 24 and June 1 we shipped the foundation: <strong>hreflang on 599 pages, enriched Organization schema on 599 pages, FAQ schema on 11 commercial pages, 18 redirect rules</strong>, broken-link fixes, and the disavow filing. The June 1 audit re-ran and recalculated the score: <strong>97 out of 100</strong>.",
-      "<strong>Semrush benchmarks the top 10% of websites at 92%.</strong> cmsprime.com now sits 5 points above that line. Twelve entire issue categories went from N to zero. The 47 'structured data markup errors' that remain are validator warnings on optional Yoast schema fields — they don't affect ranking, but they're queued for Month 3 polish. Core Web Vitals at 0% is the genuine remaining gap and Phase B JS/CSS optimization is scheduled."
+      "<strong>Site Health 90, AI Search Health 87.</strong> Both are inside the top-tier band. The 5-point Site Health lift came from clearing 33 errors and 20 warnings — the cumulative effect of Tasks 1–7 (title tags, meta, H1s, internal/external link fixes, ALT, robots) plus Task 15 (duplicate content) and Task 19 (blocked pages). The 87 on AI Search Health is the direct result of June 4's Task 18 deploy: FAQPage schema, Yoast Organization enrichment, SpeakableSpecification.",
+      "<strong>Two error categories remain.</strong> Just 2 hard errors across the 100 crawled pages — both low-impact issues queued for the next monthly cycle. Warning count is 131, but the substance is concentrated in three categories: 43 pages with missing meta descriptions (mostly low-traffic blog tag archives — finishing Task 2 will clean this), 10 pages with duplicate H1 and title (rewrite one to differentiate), and 19 pages flagged as 'content not optimized for AI Search' (these are eligible for the same FAQ-schema pattern Task 18 used).",
+      "<strong>Core Web Vitals still 0/100 — Task 8 hasn't started.</strong> The CWV audit (5h, Month 1) is the blocker for measuring the LCP/CLS/INP numbers. Once it ships, the score will lift from zero baseline to whatever the actual measured number is. Task 8 also unblocks remediation work (image dimensions, JS deferral) which would lift Site Performance from 96 → likely 98+.",
+      "<strong>Internal Linking +3 this cycle.</strong> Score climbed from 92 to 95. The new SEO articles (Tasks 16 + 17) added contextual internal links across the product pages, and the broken-link fixes (Task 4) stopped equity from leaking into dead ends."
     ]
   },
   "pull_quote": {
-    "text": "Site Health 73 → 97 in one audit cycle. Now five points above the top-10% website benchmark.",
-    "source": "Jun 1 Semrush Site Audit · post-deployment reading"
+    "text": "Site Health 90, AI Search Health 87. Foundation work shows up in the audit before it shows up in rankings.",
+    "source": "Site Audit readout, June 5, 2026"
   }
 }
