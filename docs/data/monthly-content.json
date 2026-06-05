@@ -1,0 +1,82 @@
+{
+  "issue": "07",
+  "period_label": "TASK 9 + 10 + 11 · STRATEGY TRACK COMPLETE",
+  "headline": "Content strategy · 11 clusters, 80 pieces, 5-month plan",
+  "standfirst": "95 keywords from the Task 9 research grouped into 11 commercial clusters. 80 cluster-aligned blog topics scheduled across May–September. Site structure recommendations + main-nav reorganization to elevate commercial pages. All deliverables live in the CMS Financial sheet.",
+  "summary_lead": "<strong>The full strategy track is closed.</strong> Task 9 (keyword research, 8h), Task 10 (clustering, 3h), and Task 11 (structure + content plan, 4h) all shipped between June 4–5. 95 keywords → 11 clusters → 80 blog topics with target keyword, cluster, URL, intent, and language. The 6 highest-priority content briefs are ready to hand to the writing team Week 1 of May.",
+  "win_tiles": [
+    {"num": "11", "unit": "clusters", "label": "Keyword clusters built", "source": "Task 10 · live in sheet", "direction": "pos", "tip": "95 keywords from the Task 9 research grouped into 11 topic clusters by target page + intent + theme. Each cluster has a priority, total addressable volume, average KD estimate, and a specific content-production recommendation."},
+    {"num": "80", "unit": "pieces", "label": "Blog topics scheduled", "source": "May-Sept · cluster-aligned", "direction": "pos", "tip": "5-month editorial plan with 80 cluster-aligned blog topics. 16 pieces per month across 4 weekly publication slots. Each piece has a target keyword, cluster ID, target URL, intent, and language designation."},
+    {"num": "66 / 14", "unit": "EN / AR", "label": "Language mix", "source": "AR ramps up in Sept", "direction": "pos", "tip": "66 English pieces + 14 Arabic pieces. Arabic content ramps from 1 piece in May to 10 pieces in September, when the AR content pipeline reaches full capacity. Arabic is the biggest underserved commercial opportunity (cluster C11)."},
+    {"num": "46K", "unit": "/mo", "label": "Addressable volume", "source": "across 11 clusters", "direction": "pos", "tip": "Total monthly search volume across all 11 clusters. Currently capturing ~250 monthly (brand cluster only). The remaining 45,750 monthly searches are the engagement growth target."},
+    {"num": "0", "unit": "URLs", "label": "URL changes needed", "source": "existing architecture sound", "direction": "flat", "tip": "All 11 clusters map to existing pages. No URL restructuring required, which preserves the 529 referring domains and their accumulated link equity."},
+    {"num": "+3", "unit": "pages", "label": "New utility pages flagged", "source": "calculator + glossary + Islamic", "direction": "pos", "tip": "Three new pages competitors have that CMS Financial doesn't: /trading-calculator/, /glossary/, and a conditional /islamic-account/. The calculator and glossary are unconditional ships; the Islamic account depends on whether CMS Financial offers swap-free."}
+  ],
+  "byline": {
+    "issued": "JUNE 5, 2026",
+    "author": "ADNIKA · CMS FINANCIAL ENGAGEMENT",
+    "data_source": "TASKS 9 + 10 + 11 DELIVERABLES"
+  },
+  "clusters": {
+    "title": "The 11 clusters",
+    "subtitle": "Each cluster maps to an existing page · sorted by priority",
+    "rows": [
+      {"id": "C01", "name": "Brand · CMS Financial", "url": "/", "kw_count": 12, "volume": "2,700", "kd": 12, "priority": "P0", "state": "Mostly ranking", "action": "Protect via Position Tracking monitoring"},
+      {"id": "C02", "name": "Forex Broker Selection", "url": "/", "kw_count": 11, "volume": "5,500", "kd": 48, "priority": "P0", "state": "Not ranking · KD too high for AS 8", "action": "Brief #6 ships as pillar · 9-12 month timeline"},
+      {"id": "C03", "name": "Account Opening", "url": "/account-comparison/", "kw_count": 11, "volume": "3,000", "kd": 32, "priority": "P0", "state": "Not ranking · KD achievable", "action": "Brief #1 ships as the conversion-funnel hub"},
+      {"id": "C04", "name": "Regulation & Trust", "url": "/regulated/", "kw_count": 5, "volume": "1,200", "kd": 28, "priority": "P0", "state": "FAQ covered by Task 18", "action": "Brief #2 ships · highest AI Overview eligibility"},
+      {"id": "C05", "name": "Account Comparison", "url": "/account-comparison/", "kw_count": 8, "volume": "800", "kd": 30, "priority": "P1", "state": "Existing page underoptimized", "action": "Add comparison-table content blocks"},
+      {"id": "C06", "name": "Gold & Commodities", "url": "/commodities/", "kw_count": 8, "volume": "3,500", "kd": 35, "priority": "P0", "state": "Not ranking · GCC cultural fit", "action": "Brief #3 ships · gold as cluster pillar"},
+      {"id": "C07", "name": "Indices (US + EU)", "url": "/indices/", "kw_count": 5, "volume": "800", "kd": 28, "priority": "P1", "state": "Not ranking · achievable KD", "action": "Section anchors per index symbol on /indices/"},
+      {"id": "C08", "name": "Stock CFDs", "url": "/stock/", "kw_count": 4, "volume": "1,300", "kd": 33, "priority": "P1", "state": "Not ranking", "action": "Brief #5 ships · stock-name brand pull"},
+      {"id": "C09", "name": "MT5 Platform", "url": "/trading-platform/", "kw_count": 8, "volume": "5,500", "kd": 35, "priority": "P1", "state": "Not ranking", "action": "Brief #4 (MT4 vs MT5) is long-tail magnet"},
+      {"id": "C10", "name": "Forex Education", "url": "/forex/", "kw_count": 8, "volume": "15,000", "kd": 45, "priority": "P2", "state": "Not ranking · hardest KD", "action": "Mid-2026 onward · 10-15 part blog series"},
+      {"id": "C11", "name": "Arabic Commercial", "url": "multiple", "kw_count": 14, "volume": "6,800", "kd": 30, "priority": "P0", "state": "Largely uncontested by EN competitors", "action": "Major underserved opportunity · September push"}
+    ]
+  },
+  "calendar": {
+    "title": "5-month editorial plan",
+    "subtitle": "16 pieces per month · 4 per week · cluster-aligned",
+    "rows": [
+      {"month": "May", "theme": "Account Opening + Regulation Trust", "primary_clusters": "C03 + C04", "flagship_briefs": "Briefs #1 + #2", "en_count": 15, "ar_count": 1},
+      {"month": "June", "theme": "Commodities + MT5 Platform", "primary_clusters": "C06 + C09", "flagship_briefs": "Briefs #3 + #4", "en_count": 15, "ar_count": 1},
+      {"month": "July", "theme": "Stocks + Broker Selection", "primary_clusters": "C08 + C02", "flagship_briefs": "Briefs #5 + #6", "en_count": 15, "ar_count": 1},
+      {"month": "August", "theme": "Education + Indices", "primary_clusters": "C10 + C07", "flagship_briefs": "(cluster pillars)", "en_count": 15, "ar_count": 1},
+      {"month": "September", "theme": "Arabic content push + retention", "primary_clusters": "C11 + retention", "flagship_briefs": "AR mirrors of #1, #3, #6", "en_count": 6, "ar_count": 10}
+    ]
+  },
+  "structure": {
+    "title": "Site structure recommendations summary",
+    "subtitle": "Detail in structure-recommendations.md",
+    "rows": [
+      {"category": "Existing pages", "recommendation": "Add section anchors per instrument / account-tier / regulator on the 6 commercial product pages. Embed brief CTAs once articles publish."},
+      {"category": "New pages · ship Month 1", "recommendation": "/trading-calculator/ — pip, margin, swap, P&L. Six of eight surveyed competitors have this; CMS Financial doesn't."},
+      {"category": "New pages · ship Month 2", "recommendation": "/glossary/ — A-Z trading terms. Long-tail SEO compound interest. Six of eight surveyed competitors have this."},
+      {"category": "New pages · conditional", "recommendation": "/islamic-account/ — only if CMS Financial offers swap-free. Targets ~6K monthly searches for is forex halal queries in EN + AR."},
+      {"category": "Main nav reorganization", "recommendation": "Split current Markets & Accounts into separate Markets / Accounts / Platforms top-level items. Surfaces commercial pages over branded About section."},
+      {"category": "Footer module", "recommendation": "Add a Top Topics 4-column footer linking the 4 product pages with descriptive anchors from every page. Major topical-authority distribution lift."}
+    ]
+  },
+  "actions": {
+    "title": "Sheet tabs to open",
+    "subtitle": "All Task 9 + 10 + 11 deliverables are live in the CMS Financial sheet",
+    "rows": [
+      {"step": "1", "owner": "Reference", "action": "Open the Keyword Clusters tab to review the 11 clusters with their target URLs, volumes, KD, and recommendations"},
+      {"step": "2", "owner": "Reference", "action": "Open the Cluster Members tab to see every keyword mapped to its cluster_id (95 rows)"},
+      {"step": "3", "owner": "Writing team", "action": "Open the Blog Master Content tab — May-September rows 20-99 are now filled with cluster-aligned topics. Briefs #1 + #2 ship Week 1 of May."},
+      {"step": "4", "owner": "Operations", "action": "Update the Status column on Blog Master Content as pieces move through drafted → in review → published"}
+    ]
+  },
+  "prose": {
+    "title": "Where this work lands.",
+    "paragraphs": [
+      "<strong>The strategy track is now closed.</strong> Tasks 9, 10, and 11 form a single connected deliverable. The 95-keyword research from Task 9 produced 11 clusters in Task 10, which became 80 production-ready blog slots in Task 11. The same keyword set also informed the cluster-anchor strategy for the link-building campaign in chapter 06 and the Position Tracking seed list in chapter 03.",
+      "<strong>The biggest insight from the clustering exercise:</strong> all 11 clusters map cleanly to existing pages. The site architecture is sound. The work isn't structural — it's strengthening existing pages with section-anchor content, shipping the 6 content briefs as cluster pillars, and rolling out three new utility pages (trading calculator, glossary, conditional Islamic account) that the competitive set already has.",
+      "<strong>The biggest underused opportunity:</strong> cluster C11 (Arabic Commercial) is 6,800 monthly searches that competitors don't optimize for. The calendar pushes 10 Arabic pieces in September because the AR content production line is the cheapest commercial-traffic acquisition in the entire 5-month plan. Native-speaker writer onboarding starts now to be ready by September."
+    ]
+  },
+  "pull_quote": {
+    "text": "Strategy track closed. Keyword research, clustering, content plan — 80 pieces ready to write, all cluster-aligned, all in the sheet.",
+    "source": "Tasks 9 + 10 + 11 closeout, June 5, 2026"
+  }
+}
