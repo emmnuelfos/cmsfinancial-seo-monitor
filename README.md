@@ -1,4 +1,4 @@
-# CMS Prime SEO Reporting
+﻿# CMS Prime SEO Reporting
 
 Automated weekly monitoring + Google Sheets push + Looker Studio dashboard for cmsprime.com.
 
@@ -61,7 +61,7 @@ Repo → Settings → Secrets and variables → Actions → New repository secre
 | Secret name | Value |
 |---|---|
 | `SEMRUSH_API_KEY` | Your Semrush API key |
-| `SHEET_ID` | `1vV_xTnRtmbVx4FtNtl3J7bTUTIK1e7bShhHCCJSsVqc` |
+| `SHEET_ID` | `1n174VdXX34d4-7BAzkNL1IpyAfgDRE2cfK0zhmlkl98` |
 | `GSC_CREDS_JSON` | Paste the entire contents of `cmsprime-gsc-creds.json` (all JSON) |
 
 ### C. Enable Actions + run once manually
