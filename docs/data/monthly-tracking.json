@@ -1,25 +1,38 @@
 {
   "issue": "02",
-  "period_label": "PENDING SETUP",
-  "headline": "Position Tracking · setup pending",
-  "standfirst": "Position Tracking lets us monitor a curated keyword list daily and surface movements before they show up in Organic Rankings. The cmsfinancial.ae tracker hasn't been set up yet — the next monthly cycle will start by configuring it against the Task 9 (keyword research) commercial-keyword list.",
-  "summary_lead": "<strong>This chapter activates once Task 9 (keyword research) completes.</strong> Task 9 produces the commercial keyword list, Task 10 clusters those keywords into target groups, and the resulting list seeds a 30–50 keyword Position Tracking project here. Cadence: daily Semrush check, weekly write-up below.",
+  "period_label": "READY · IMPORT TO SEMRUSH POSITION TRACKING TO ACTIVATE",
+  "headline": "Position Tracking · seed list ready",
+  "standfirst": "The Task 9 keyword research is complete and the 35-keyword Position Tracking seed list has been published to the CMS Financial sheet. The chapter activates the moment Semrush Position Tracking ingests the seed list and the first weekly snapshot completes.",
+  "summary_lead": "<strong>Task 9 done · seed list shipped.</strong> 35 curated keywords ready for Semrush Position Tracking — 5 brand, 10 commercial, 10 transactional, 5 informational, 5 Arabic. Drop the list into Semrush PT (UAE / desktop) and this chapter will start surfacing weekly position movements at the next monthly cycle.",
   "win_tiles": [
-    {"num": "Task 9", "unit": "", "label": "Blocker", "source": "keyword research", "direction": "flat", "tip": "Position Tracking needs a curated keyword list. Task 9 (8h, Month 1) produces that list."},
-    {"num": "30–50", "unit": "kw", "label": "Target tracker size", "source": "after Task 10 clustering", "direction": "flat", "tip": "Recommended tracker size for cmsfinancial.ae's surface area: 30–50 keywords mixed across brand, commercial, and transactional intent."},
-    {"num": "Daily", "unit": "", "label": "Check cadence", "source": "Semrush PT", "direction": "flat", "tip": "Position Tracking refreshes positions daily so we see lift/decline within 24 hours of a Google update."}
+    {"num": "35", "unit": "kw", "label": "PT seed list ready", "source": "live in Google Sheet", "direction": "pos", "tip": "Curated 35-keyword list spanning all five intent categories — designed to give visibility into both brand-position protection and commercial growth movement."},
+    {"num": "5 / 10 / 10", "unit": "B / C / T", "label": "Brand · Commercial · Transactional", "source": "intent balance", "direction": "pos", "tip": "5 brand keywords protect the existing top-ranking surface. 10 commercial keywords track the growth opportunity. 10 transactional keywords measure conversion-driver positions."},
+    {"num": "5", "unit": "AR", "label": "Arabic keywords tracked", "source": "AR market footprint", "direction": "pos", "tip": "Five Arabic commercial and transactional keywords cover the AR-language slice of the GCC search universe — largely uncontested by competitors."},
+    {"num": "Daily", "unit": "", "label": "Refresh cadence", "source": "Semrush PT", "direction": "flat", "tip": "Position Tracking refreshes positions daily, so weekly movement shows up here within 24-48 hours."},
+    {"num": "95", "unit": "kw", "label": "Full keyword universe", "source": "Keyword Master List tab", "direction": "pos", "tip": "The complete 95-keyword research output lives in the Keyword Master List tab. The 35 in PT are the priority subset; the broader 95 inform content planning and link-building anchor strategy."},
+    {"num": "6", "unit": "briefs", "label": "Content briefs ready", "source": "see Task 10 + 11 outputs", "direction": "pos", "tip": "Six content briefs targeting the highest-value commercial gaps. Briefs #1 (How to Open) + #2 (CMA Regulation) map to existing April blog slots."}
   ],
   "byline": {
     "issued": "JUNE 5, 2026",
     "author": "ADNIKA · CMS FINANCIAL ENGAGEMENT",
-    "data_source": "PENDING TASK 9"
+    "data_source": "KEYWORD RESEARCH · TASK 9 DELIVERABLE"
+  },
+  "actions": {
+    "title": "Activate this chapter",
+    "subtitle": "One operator step + one ADNIKA cycle and weekly position movements appear here",
+    "rows": [
+      {"step": "1", "owner": "Operations", "action": "Open the 'Position Tracking Seed' tab in the CMS Financial sheet and copy column A (the 35 keywords)"},
+      {"step": "2", "owner": "Operations", "action": "Open Semrush → cmsfinancial.ae project → Position Tracking. Set parameters: Country = UAE, Device = Desktop, Language = English (auto-detects AR)"},
+      {"step": "3", "owner": "Semrush", "action": "First snapshot completes within 24 hours of import"},
+      {"step": "4", "owner": "ADNIKA", "action": "Next monthly cycle pulls the PT data into this chapter — position changes, visibility lift, top movers all surface here"}
+    ]
   },
   "prose": {
-    "title": "Why this chapter is empty right now.",
+    "title": "What the seed list is built to surface.",
     "paragraphs": [
-      "Position Tracking is a Semrush product that monitors a curated list of keywords every day and surfaces position changes, visibility lift, and SERP-feature gains. It catches movement weeks before Organic Rankings (which refreshes monthly).",
-      "<strong>It needs a keyword list first.</strong> The Tasks 9 + 10 in the SEO Master Tasks sheet — Keyword research for commercial/transactional opportunities (8h) and Keyword clustering + content mapping (3h) — produce that list. Both are currently Not Started.",
-      "<strong>Once those ship</strong>, the next monthly cycle will configure a 30–50 keyword tracker, baseline against it, and start the weekly cadence write-up here."
+      "<strong>The seed list is composed for two simultaneous reads.</strong> The 5 brand keywords give us a leading indicator on brand-position drift — if 'cms finance' or 'cms financial uae' moves off #1, that's a signal worth acting on before it appears in monthly organic-rankings reports. The 25 non-brand keywords (commercial + transactional + Arabic) give us the growth signal: which engagement work moved which positions when.",
+      "<strong>The 10 commercial keywords target the realistic 90-day Tier-A and Tier-B ranges.</strong> These are the keywords from the master list with KD 30-45 that map cleanly to existing pages. As Authority Score lifts from the chapter 06 link-building campaign, these positions should start moving — and we'll see the movement here weekly before it shows up in any other report.",
+      "<strong>The Arabic keywords are the underserved opportunity.</strong> Five AR commercial and transactional keywords cover the highest-volume Arabic intent searches. Competitors largely don't optimize for these (none of cmsfinancial.ae's named competitors rank for Arabic queries). Once the AR content pipeline activates, this is where the wins will surface first."
     ]
   }
 }

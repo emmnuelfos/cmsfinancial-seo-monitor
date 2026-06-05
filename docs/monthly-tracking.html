@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/monthly.css">
   <script src="./js/auth.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -56,7 +55,7 @@
 
       <header class="summary-header fade-up" data-stagger="1">
         <div class="summary-header__left">
-          <span class="summary-header__kicker">Chapter 03 · Tracked keywords</span>
+          <span class="summary-header__kicker" id="kicker">Chapter 03 · Position Tracking</span>
           <h1 class="summary-header__title" id="pageTitle">—</h1>
         </div>
         <div class="summary-header__right">
@@ -67,138 +66,48 @@
 
       <p class="summary-lead fade-up" data-stagger="2" id="summaryLead">—</p>
 
-      <!-- Upload widget · drop next month's Semrush Position Tracking export -->
-      <section class="fade-up" data-stagger="2" id="uploadWidget"></section>
+      <!-- CTAs into the live sheet tabs -->
+      <section class="fade-up" data-stagger="2" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:var(--space-5);">
+        <a class="lb-action-btn lb-action-btn--primary" href="https://docs.google.com/spreadsheets/d/1n174VdXX34d4-7BAzkNL1IpyAfgDRE2cfK0zhmlkl98/edit#gid=488435215" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:var(--brand-gold); color:#0F172A; font-weight:600; font-size:13px; border-radius:6px; text-decoration:none;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Open Position Tracking Seed (35 kw)
+        </a>
+        <a class="lb-action-btn" href="https://docs.google.com/spreadsheets/d/1n174VdXX34d4-7BAzkNL1IpyAfgDRE2cfK0zhmlkl98/edit#gid=1394181179" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:var(--bg-elevated); color:var(--text-primary); font-weight:500; font-size:13px; border-radius:6px; text-decoration:none; border:1px solid var(--border-default);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          View Keyword Master List (95 kw)
+        </a>
+      </section>
 
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
-      <!-- Chart: keyword positions May → June (slope chart) -->
       <section class="fade-up" data-stagger="4">
         <div class="summary-section-head">
-          <h2 class="summary-section-head__title">Keyword positions · slope view</h2>
-          <span class="summary-section-head__meta">lower = better · 4 tracked keywords</span>
+          <h2 class="summary-section-head__title" id="actionsTitle">—</h2>
+          <span class="summary-section-head__meta" id="actionsSubtitle">—</span>
         </div>
-        <div class="compact-chart">
-          <div class="compact-chart__head">
-            <div class="compact-chart__title">Position movement across the engagement window</div>
-            <div class="compact-chart__sub">Apr 26 → Jun 4</div>
-          </div>
-          <div class="compact-chart__canvas-wrap is-h220">
-            <canvas id="slopeChart"></canvas>
-          </div>
-        </div>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th style="width:60px;">Step</th>
+              <th style="width:160px;">Owner</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="actionsTable"></tbody>
+        </table>
       </section>
 
-      <!-- Chart: visibility gain per keyword (horizontal bar) -->
-      <section class="fade-up" data-stagger="4">
+      <section class="fade-up" data-stagger="5" id="proseSection">
         <div class="summary-section-head">
-          <h2 class="summary-section-head__title">Visibility gain per improved keyword</h2>
-          <span class="summary-section-head__meta">total +4.71% · vs −2.42% loss</span>
+          <h2 class="summary-section-head__title" id="proseTitle">—</h2>
         </div>
-        <div class="compact-chart">
-          <div class="compact-chart__canvas-wrap is-h180">
-            <canvas id="visGainChart"></canvas>
-          </div>
-        </div>
+        <div id="proseBody" style="font-size: 14px; line-height: 1.7; color: var(--text-secondary); max-width: 80ch;"></div>
       </section>
 
-      <!-- Top movers — improved + declined -->
-      <section class="summary-twocol fade-up" data-stagger="4">
-        <div>
-          <div class="summary-section-head">
-            <h2 class="summary-section-head__title">▲ Improved positions</h2>
-            <span class="summary-section-head__meta" id="positiveTotal">—</span>
-          </div>
-          <table class="summary-table is-compact">
-            <thead>
-              <tr>
-                <th>Keyword</th>
-                <th class="is-num">Before → After</th>
-                <th class="is-num">Δ</th>
-                <th class="is-num">Vis gain</th>
-              </tr>
-            </thead>
-            <tbody id="improvedTable"></tbody>
-          </table>
-        </div>
-        <div>
-          <div class="summary-section-head">
-            <h2 class="summary-section-head__title">▼ Declined positions</h2>
-            <span class="summary-section-head__meta" id="negativeTotal">—</span>
-          </div>
-          <table class="summary-table is-compact">
-            <thead>
-              <tr>
-                <th>Keyword</th>
-                <th class="is-num">Status</th>
-                <th class="is-num">Vis loss</th>
-              </tr>
-            </thead>
-            <tbody id="declinedTable"></tbody>
-          </table>
-          <p style="margin-top: var(--space-3); font-size: 12px; color: var(--text-muted); line-height: 1.5;">The single decline — <strong style="color: var(--text-primary);">metatrader4 platform</strong> — is the recovery target. The FAQ schema deployed on /metatrader-4/ on June 4 specifically targets this term. Recovery expected on the July 1 reading.</p>
-        </div>
-      </section>
-
-      <!-- Top tracked keywords + Top pages -->
-      <section class="summary-twocol fade-up" data-stagger="5">
-        <div>
-          <div class="summary-section-head">
-            <h2 class="summary-section-head__title">Top tracked keywords today</h2>
-            <span class="summary-section-head__meta">5 of 31 · current state</span>
-          </div>
-          <table class="summary-table is-compact">
-            <thead>
-              <tr>
-                <th>Keyword</th>
-                <th class="is-num">Pos</th>
-                <th class="is-num">Movement</th>
-                <th class="is-num">Visibility</th>
-              </tr>
-            </thead>
-            <tbody id="topkwTable"></tbody>
-          </table>
-        </div>
-        <div>
-          <div class="summary-section-head">
-            <h2 class="summary-section-head__title">Top page movements</h2>
-            <span class="summary-section-head__meta">landing pages with position changes</span>
-          </div>
-          <table class="summary-table is-compact">
-            <thead>
-              <tr>
-                <th>Page</th>
-                <th class="is-num">Position Δ</th>
-                <th class="is-num">Traffic Δ</th>
-              </tr>
-            </thead>
-            <tbody id="topPagesTable"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Position-band movements as a compact list -->
-      <section class="fade-up" data-stagger="6">
-        <div class="summary-section-head">
-          <h2 class="summary-section-head__title">Position-band movements</h2>
-          <span class="summary-section-head__meta">new entries per band during the period</span>
-        </div>
-        <ul class="deploy-list" id="bandsList"></ul>
-      </section>
-
-      <!-- Cannibalization -->
-      <section class="fade-up" data-stagger="7">
-        <div class="summary-section-head">
-          <h2 class="summary-section-head__title">Cannibalization health<span class="info-tip" tabindex="0" data-tip="Cannibalization is when multiple pages on your site compete for the same Google keyword — Google gets confused which to rank and usually demotes both. Lower percentages are better. Down 5 points this period.">i</span></h2>
-          <span class="summary-section-head__meta">page overlap on same queries</span>
-        </div>
-        <div class="callout-card" id="cannibalCard"></div>
-      </section>
-
-      <footer class="summary-footer fade-up" data-stagger="8">
-        <p>Source: Semrush Position Tracking project for the CMS Financial engagement (project 11594457). Database: United Arab Emirates (Google), English, Desktop. Reporting window: April 26 — June 4, 2026 (39 days). 31 keywords tracked. Updated 2 hours before export captured June 4, 2026.</p>
+      <footer class="summary-footer fade-up" data-stagger="6">
+        <p>The 35-keyword Position Tracking seed list is live in the CMS Financial sheet (Position Tracking Seed tab). The full 95-keyword research output is in the Keyword Master List tab. Once the seed list is imported into Semrush Position Tracking, this chapter activates and surfaces weekly position movements within 24-48 hours.</p>
         <div class="summary-footer__nav">
-          <a href="./monthly-rankings.html">← Previous: Rankings</a>
+          <a href="./monthly-rankings.html">← Organic Rankings</a>
           <a href="./monthly-backlinks.html">Next: Backlinks →</a>
         </div>
       </footer>
@@ -217,18 +126,13 @@
   </nav>
 
   <script src="./js/monthly-page.js"></script>
-  <script src="./js/monthly-upload.js"></script>
   <script>
   (async function () {
     function $(s) { return document.querySelector(s); }
-    MonthlyUpload.init({
-      pageKey: "tracking",
-      parser: MonthlyUpload.parsers.tracking,
-      sourceUrl: "./data/monthly-tracking.json",
-      fileLabel: "Semrush Position Tracking HTML export (saved via Save Page / SingleFile)",
-    });
     try {
-      const data = await MonthlyUpload.loadData("tracking", "./data/monthly-tracking.json");
+      const r = await fetch("./data/monthly-tracking.json?cb=" + Date.now());
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const data = await r.json();
 
       $("#pageTitle").textContent = (data.headline || "").replace(/<\/?em>/g, "");
       $("#periodLabel").textContent = data.period_label || "—";
@@ -237,134 +141,36 @@
 
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
 
-      // --- Slope chart: keyword positions May → June ---
-      const slopeItems = [
-        {label: "pamm forex trading", before: 19, after: 6,  color: MonthlyReport.PAL.gold},
-        {label: "cms careers",        before: 35, after: 10, color: MonthlyReport.PAL.amber},
-        {label: "pamm account",       before: 29, after: 12, color: MonthlyReport.PAL.blue},
-        {label: "CMS Financial (brand)",  before: 1,  after: 1,  color: "#A78BFA"},
-      ];
-      MonthlyReport.drawSlope(
-        document.getElementById("slopeChart").getContext("2d"),
-        slopeItems,
-        {leftLabel: "Apr 26 (start)", rightLabel: "Jun 4 (now)"}
-      );
-
-      // --- Visibility gain horizontal bars ---
-      MonthlyReport.drawHorizontalBars(
-        document.getElementById("visGainChart").getContext("2d"),
-        ["pamm forex trading", "cms careers", "pamm account", "metatrader4 platform"],
-        [2.75, 1.36, 0.60, -2.42],
-        {
-          unit: "%",
-          colors: [MonthlyReport.PAL.pos, MonthlyReport.PAL.pos, MonthlyReport.PAL.pos, MonthlyReport.PAL.neg],
-        }
-      );
-
-      // Improved + declined
-      if (data.top_movers) {
-        $("#positiveTotal").textContent = "total " + (data.top_movers.total_positive_impact || "");
-        $("#negativeTotal").textContent = "total " + (data.top_movers.total_negative_impact || "");
-        const impTbody = $("#improvedTable");
-        impTbody.innerHTML = "";
-        data.top_movers.improved.forEach(m => {
+      if (data.actions) {
+        $("#actionsTitle").textContent = data.actions.title || "";
+        $("#actionsSubtitle").textContent = data.actions.subtitle || "";
+        const tb = $("#actionsTable");
+        tb.innerHTML = "";
+        (data.actions.rows || []).forEach(row => {
           const tr = document.createElement("tr");
-          tr.className = "is-pos";
           tr.innerHTML =
-            '<td class="metric-name">' + m.kw + '</td>' +
-            '<td class="num">#' + m.before + ' → <strong>#' + m.after + '</strong></td>' +
-            '<td class="num is-pos">' + m.delta + '</td>' +
-            '<td class="num is-pos">' + m.visibility_gain + '</td>';
-          impTbody.appendChild(tr);
-        });
-        const declTbody = $("#declinedTable");
-        declTbody.innerHTML = "";
-        data.top_movers.declined.forEach(m => {
-          const tr = document.createElement("tr");
-          tr.className = "is-neg";
-          tr.innerHTML =
-            '<td class="metric-name">' + m.kw + '</td>' +
-            '<td class="num">' + m.delta + '</td>' +
-            '<td class="num is-neg">' + m.visibility_loss + '</td>';
-          declTbody.appendChild(tr);
+            '<td class="num is-strong">' + row.step + '</td>' +
+            '<td><span class="chapter-tag">' + row.owner + '</span></td>' +
+            '<td style="font-size:13px; color:var(--text-secondary);">' + row.action + '</td>';
+          tb.appendChild(tr);
         });
       }
 
-      // Top tracked keywords
-      if (data.top_keywords) {
-        const tbody = $("#topkwTable");
-        tbody.innerHTML = "";
-        data.top_keywords.rows.forEach(r => {
-          const tr = document.createElement("tr");
-          let moveCls = "is-flat";
-          if (r.movement.indexOf("↑") >= 0) { tr.className = "is-pos"; moveCls = "is-pos"; }
-          else if (r.movement.indexOf("↓") >= 0 || r.movement === "off-index") { tr.className = "is-neg"; moveCls = "is-neg"; }
-          const posLabel = r.position === "—" ? "off-index" : "#" + r.position;
-          const kindBadge = r.kind === "brand" ? '<span class="state state-flat" style="margin-left:6px;">brand</span>' :
-                            r.kind === "commercial" ? '<span class="state state-pos" style="margin-left:6px;">commercial</span>' : '';
-          tr.innerHTML =
-            '<td class="metric-name">' + r.kw + kindBadge + '</td>' +
-            '<td class="num is-strong">' + posLabel + '</td>' +
-            '<td class="num ' + moveCls + '">' + r.movement + '</td>' +
-            '<td class="num">' + r.visibility + '</td>';
-          tbody.appendChild(tr);
+      if (data.prose) {
+        $("#proseTitle").textContent = data.prose.title || "";
+        const body = $("#proseBody");
+        body.innerHTML = "";
+        (data.prose.paragraphs || []).forEach(p => {
+          const para = document.createElement("p");
+          para.style.marginBottom = "16px";
+          para.innerHTML = p;
+          body.appendChild(para);
         });
-      }
-
-      // Top pages
-      if (data.top_pages) {
-        const tbody = $("#topPagesTable");
-        tbody.innerHTML = "";
-        data.top_pages.rows.forEach(r => {
-          const tr = document.createElement("tr");
-          let posCls = "is-flat";
-          if (r.position_delta.indexOf("↑") >= 0) { tr.className = "is-pos"; posCls = "is-pos"; }
-          else if (r.position_delta.indexOf("↓") >= 0) { tr.className = "is-neg"; posCls = "is-neg"; }
-          let trafCls = "is-flat";
-          if (r.traffic_delta.indexOf("+") >= 0) trafCls = "is-pos";
-          else if (r.traffic_delta.indexOf("-") >= 0) trafCls = "is-neg";
-          tr.innerHTML =
-            '<td class="metric-name" style="font-family:var(--font-mono);font-size:11.5px;">' + r.url.replace("https://cmsfinancial.ae", "") + '</td>' +
-            '<td class="num ' + posCls + '">' + r.position_delta + '</td>' +
-            '<td class="num ' + trafCls + '">' + r.traffic_delta + '</td>';
-          tbody.appendChild(tr);
-        });
-      }
-
-      // Position-band movements
-      if (data.deliverables) {
-        const ul = $("#bandsList");
-        ul.innerHTML = "";
-        data.deliverables.rows.forEach(d => {
-          const li = document.createElement("li");
-          li.className = "deploy-list__item";
-          const arrow = d.is_held ? "=" : "→";
-          li.innerHTML =
-            '<span class="deploy-list__date">' + (d.category || "") + '</span>' +
-            '<span class="deploy-list__what">' + d.metric + ' · <em style="font-style:italic;color:var(--text-muted);">' + d.why + '</em></span>' +
-            '<span class="deploy-list__count">' + d.before + ' ' + arrow + ' ' + d.after + ' ' + (d.unit || '') + '</span>';
-          ul.appendChild(li);
-        });
-      }
-
-      // Cannibalization
-      if (data.cannibalization) {
-        const c = data.cannibalization;
-        $("#cannibalCard").innerHTML =
-          '<div class="callout-card__head">' +
-          '  <span class="callout-card__big">' + c.score + '%</span>' +
-          '  <span class="callout-card__sub">' + c.rate_label + ' · ' + c.score_delta + ' this period</span>' +
-          '</div>' +
-          '<div class="callout-card__stats">' +
-          '  <span>Affected keywords <strong>' + c.affected_keywords + '</strong></span>' +
-          '  <span>Cannibal pages <strong>' + c.cannibal_pages + '</strong></span>' +
-          '</div>' +
-          '<p class="callout-card__body">' + c.note + '</p>';
       }
     } catch (e) {
       console.error(e);
       document.querySelector(".main").insertAdjacentHTML("beforeend",
-        '<div style="margin-top:24px;padding:16px;background:rgba(239,68,68,0.1);border:1px solid #EF4444;border-radius:4px;color:#EF4444;font-family:JetBrains Mono;font-size:12px;">Couldn\'t load report data: ' + e.message + '</div>');
+        '<div style="margin-top:24px;padding:16px;background:rgba(239,68,68,0.1);border:1px solid #EF4444;border-radius:4px;color:#EF4444;font-family:JetBrains Mono;font-size:12px;">Could not load report data: ' + e.message + '</div>');
     }
   })();
   </script>
