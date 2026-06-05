@@ -80,6 +80,14 @@
         <span class="lb-action-note">Tracker + Targets tabs are editable in the team's Google Sheet. Edit there; the dashboard reflects the pipeline counts after the weekly Monday cron.</span>
       </section>
 
+      <!-- 90-day target framing banner -->
+      <section class="fade-up" data-stagger="3">
+        <div class="targets-banner">
+          <div class="targets-banner__kicker" id="targetsBannerKicker">—</div>
+          <p class="targets-banner__note" id="targetsBannerNote">—</p>
+        </div>
+      </section>
+
       <!-- 90-day target tiles -->
       <section class="win-strip fade-up" data-stagger="3" id="winStrip"></section>
 
@@ -239,6 +247,12 @@
       $("#periodLabel").textContent = data.period_label || "—";
       $("#bylineSource").textContent = (data.byline && data.byline.data_source) || "—";
       $("#summaryLead").innerHTML = data.summary_lead || data.standfirst || "—";
+
+      // Targets framing banner
+      if (data.targets_banner) {
+        $("#targetsBannerKicker").textContent = data.targets_banner.label || "";
+        $("#targetsBannerNote").innerHTML = data.targets_banner.note || "";
+      }
 
       MonthlyReport.renderWinStrip(document.getElementById("winStrip"), data.win_tiles || []);
 

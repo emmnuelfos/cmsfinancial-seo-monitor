@@ -1870,6 +1870,37 @@ body.has-upload-modal-open { overflow: hidden; }
 }
 
 /* =========================================================
+   Targets framing banner — sits above the win-strip on the
+   Link Building page to make "these are stretch targets" explicit
+   ========================================================= */
+.targets-banner {
+  padding: var(--space-3) var(--space-4);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.04), rgba(212, 175, 55, 0.01));
+  border: 1px solid var(--rule-color);
+  border-left: 2px solid var(--brand-gold);
+  margin-bottom: var(--space-3);
+}
+.targets-banner__kicker {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: 6px;
+}
+.targets-banner__note {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+.targets-banner__note strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* =========================================================
    Link-building action bar — "Open live tracker" buttons
    ========================================================= */
 .lb-actions {

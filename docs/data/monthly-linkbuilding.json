@@ -9,54 +9,58 @@
     "author": "ADNIKA · CMS PRIME ENGAGEMENT",
     "data_source": "SEMRUSH BACKLINKS · JUN 4 2026 · 426 LINKS PROFILED"
   },
+  "targets_banner": {
+    "label": "90-DAY TARGETS · IF EXECUTION GOES WELL",
+    "note": "These are stretch goals, not commitments. Realistic floor for each metric appears in the tooltip. The only live measurements on this page are <strong>Current backlink position</strong> below and the <strong>Outreach pipeline</strong> further down — those reflect reality."
+  },
   "win_tiles": [
     {
       "num": "+80",
       "unit": "RDs",
-      "label": "90-day RD target",
-      "source": "720 → 800-820",
+      "label": "Stretch · 720 → 800",
+      "source": "Realistic floor: +30 to +40 RDs",
       "direction": "pos",
-      "tip": "Net new referring domains target over the next 90 days. Achievable with the Tier 1 free directory submissions + 3 regulator listings + 1 PR release per month."
+      "tip": "STRETCH TARGET (best case): +80 new referring domains in 90 days, if 3 regulator listings land + 4-6 Tier 1 free directories accept + 1-2 PR releases get syndicated (each brings ~10 mentions). REALISTIC FLOOR (typical 20% response rate): +30 to +40 RDs. Either way: better than zero, and we'll know in 30 days whether we're on the high or low track."
     },
     {
       "num": "+30",
       "unit": "AS 30+",
-      "label": "Authority domains gained",
-      "source": "70 → 95-110",
+      "label": "Stretch · 70 → 95-110",
+      "source": "Realistic floor: +12 to +18",
       "direction": "pos",
-      "tip": "Domains at Authority Score 30 or higher are the ones that meaningfully move our own AS. Goal is 30 net new at this tier, mostly from regulator + tier-1 broker directory submissions."
+      "tip": "STRETCH TARGET: +30 new high-authority (AS 30+) referring domains. Comes mostly from regulator listings (AS 25-50), MQL5 (AS 80), MyFxBook (AS 60), and Tier 1 broker directories (AS 35-60). REALISTIC FLOOR: +12 to +18 if paid editorial doesn't land. The high-AS links are the ones that actually move our own Authority Score."
     },
     {
       "num": "+22",
       "unit": "links",
-      "label": "/online-forex-trading/",
-      "source": "18 → 35-45",
+      "label": "Stretch · /online-forex-trading/",
+      "source": "Floor: +5 to +10",
       "direction": "pos",
-      "tip": "This commercial page is currently link-starved. Outreach focuses anchor variants on it to support its position-tracking keywords."
+      "tip": "STRETCH TARGET: +22 backlinks to /online-forex-trading/ (currently 18). REALISTIC FLOOR: +5 to +10. Highly uncertain because most placements default to linking the homepage; getting deep-page links requires the outreach team to explicitly request /online-forex-trading/ as the target URL. Some directories won't allow specifying a sub-page."
     },
     {
       "num": "+15",
       "unit": "links",
-      "label": "/prop-trading/",
-      "source": "9 → 20-30",
+      "label": "Stretch · /prop-trading/",
+      "source": "Floor: +4 to +8",
       "direction": "pos",
-      "tip": "Prop trading is competitive and our prop page only has 9 backlinks. Tier 2 prop-firm comparison sites are the unlock."
+      "tip": "STRETCH TARGET: +15 backlinks to /prop-trading/ (currently 9). REALISTIC FLOOR: +4 to +8. Depends on whether we find prop-firm-comparison sites that accept new listings and on outreach specifying this page as the link target."
     },
     {
       "num": "+12",
       "unit": "links",
-      "label": "/account-comparison/",
-      "source": "3 → 12-18",
+      "label": "Stretch · /account-comparison/",
+      "source": "Floor: +3 to +6",
       "direction": "pos",
-      "tip": "Account-comparison pages are top-funnel for prospective traders. Currently only 3 links here. Linking from regulator + directory listings into this page lifts conversion + rankings together."
+      "tip": "STRETCH TARGET: +12 backlinks to /account-comparison/ (currently 3). REALISTIC FLOOR: +3 to +6. Hardest of the three per-page targets because account-comparison pages are rarely deep-linked from external sources. Most realistic path: regulator listings link to /licenses-regulations/ and we add internal links from there."
     },
     {
       "num": "3",
       "unit": "regulators",
-      "label": "New directory listings",
-      "source": "Mauritius + SVG + St Lucia",
+      "label": "Free wins available",
+      "source": "Realistic: 2-3 confirmed within 60 days",
       "direction": "pos",
-      "tip": "We hold licenses in 4 jurisdictions but only Oman FSA currently shows on a public directory. Filing for the 3 missing listings is free and produces high-trust gov backlinks."
+      "tip": "STRETCH TARGET: 3 new regulator directory listings (FSC Mauritius, SVG, Saint Lucia FSRA). REALISTIC: 2-3 within 60 days. We genuinely qualify for all three - we hold active licenses - so this is the highest-confidence target on the page. Compliance just needs to send drafts 01-03 and wait for the verification reply."
     }
   ],
   "current_state": {
